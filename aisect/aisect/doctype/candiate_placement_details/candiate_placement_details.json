@@ -1,0 +1,178 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CPD-{DD}-{MM}-{YY}-{####}",
+ "creation": "2024-05-27 06:55:57.426456",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "candiate_id",
+  "candiate_name",
+  "state",
+  "centre",
+  "project",
+  "batch_id",
+  "name_of_organization",
+  "type_of_organization",
+  "column_break_pips",
+  "date_of_joining",
+  "designation",
+  "salary",
+  "hr_name",
+  "hr_contact_no",
+  "hr_mail_id",
+  "address_of_employer",
+  "offer_letter",
+  "first_month_salary_slip",
+  "second_month_salary_slip"
+ ],
+ "fields": [
+  {
+   "fieldname": "candiate_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Candiate ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "candiate_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Candiate Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "centre",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Centre",
+   "options": "Centre",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Projects",
+   "reqd": 1
+  },
+  {
+   "fieldname": "batch_id",
+   "fieldtype": "Link",
+   "label": "Batch ID",
+   "options": "Batch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pips",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name_of_organization",
+   "fieldtype": "Link",
+   "label": "Name of Organization",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_organization",
+   "fieldtype": "Data",
+   "label": "Type of Organization",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "reqd": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "salary",
+   "fieldtype": "Int",
+   "label": "Salary ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hr_name",
+   "fieldtype": "Data",
+   "label": "HR Name",
+   "reqd": 1
+  },
+  {
+   "default": "+91-",
+   "fieldname": "hr_contact_no",
+   "fieldtype": "Phone",
+   "label": "HR Contact No. ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hr_mail_id",
+   "fieldtype": "Data",
+   "label": "HR Mail ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_of_employer",
+   "fieldtype": "Data",
+   "label": "Address of Employer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "offer_letter",
+   "fieldtype": "Attach",
+   "label": "Offer Letter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_month_salary_slip",
+   "fieldtype": "Attach",
+   "label": "First Month Salary Slip",
+   "reqd": 1
+  },
+  {
+   "fieldname": "second_month_salary_slip",
+   "fieldtype": "Attach",
+   "label": "Second Month Salary Slip",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-27 11:05:01.283400",
+ "modified_by": "Administrator",
+ "module": "Aisect",
+ "name": "Candiate Placement Details",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
