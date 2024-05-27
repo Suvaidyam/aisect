@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:Z-{YY}-{###}",
  "creation": "2024-05-27 06:24:44.001820",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -27,10 +28,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 06:25:34.480837",
+ "modified": "2024-05-27 21:16:11.504194",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Zone",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -46,7 +48,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }

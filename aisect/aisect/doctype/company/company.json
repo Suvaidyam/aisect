@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "zone",
   "state",
   "name1",
   "type",
@@ -43,11 +44,18 @@
    "label": "Status",
    "options": "Active\nIncative",
    "reqd": 1
+  },
+  {
+   "fieldname": "zone",
+   "fieldtype": "Link",
+   "label": "Zone",
+   "options": "Zone",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 11:02:31.802140",
+ "modified": "2024-05-27 21:18:24.067997",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",

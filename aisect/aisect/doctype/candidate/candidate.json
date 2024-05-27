@@ -7,13 +7,17 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "email",
+  "gender",
+  "aadhar_number",
+  "category",
+  "qualification",
+  "contact_no",
+  "column_break_mbny",
   "zone",
   "state",
   "centre",
-  "status",
-  "email",
-  "gender",
-  "aadhar_number"
+  "status"
  ],
  "fields": [
   {
@@ -74,11 +78,34 @@
    "fieldtype": "Data",
    "label": "Aadhar Number",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mbny",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qualification",
+   "fieldtype": "Data",
+   "label": "Qualification",
+   "reqd": 1
+  },
+  {
+   "default": "+91-",
+   "fieldname": "contact_no",
+   "fieldtype": "Phone",
+   "label": "Contact No",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 19:33:53.805696",
+ "modified": "2024-05-27 21:13:53.665664",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
@@ -98,6 +125,7 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
