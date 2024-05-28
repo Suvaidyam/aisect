@@ -17,7 +17,10 @@
   "zone",
   "state",
   "centre",
-  "status"
+  "status",
+  "section_break_llsg",
+  "batch",
+  "projects"
  ],
  "fields": [
   {
@@ -101,11 +104,27 @@
    "fieldtype": "Phone",
    "label": "Contact No",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_llsg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "batch",
+   "fieldtype": "Table",
+   "label": "Batch",
+   "options": "Centre Batch"
+  },
+  {
+   "fieldname": "projects",
+   "fieldtype": "Table",
+   "label": "Projects",
+   "options": "ProjectChild"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 21:13:53.665664",
+ "modified": "2024-05-27 22:21:32.721908",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",

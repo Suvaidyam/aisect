@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class CentreProject(Document):
+class CentreBatch(Document):
 	pass

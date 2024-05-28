@@ -3,17 +3,17 @@
 
 frappe.ui.form.on("Candiate Placement Details", {
     refresh(frm) {
+        depended_dropdown(frm,frm.doc.zone,'state','zone')
         depended_dropdown(frm,frm.doc.state,'centre','state')
-        depended_dropdown(frm,frm.doc.centre,'project','centre')
-	},
-
-    state: function (frm) {
-        depended_dropdown(frm,frm.doc.state,'centre','state')
-        frm.set_value('centre', '')
-    },
-    centre: function (frm) {
-        depended_dropdown(frm,frm.doc.centre,'project','centre')
-        frm.set_value('project', '')
-    }
+     },
+     
+     zone: function (frm) {
+         depended_dropdown(frm,frm.doc.zone,'state','zone')
+         frm.set_value('state', '')
+     },
+     state: function (frm) {
+         depended_dropdown(frm,frm.doc.state,'centre','state')
+         frm.set_value('centre', '')
+     },
 
 });

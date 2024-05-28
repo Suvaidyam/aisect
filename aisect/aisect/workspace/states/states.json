@@ -1,0 +1,35 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"R7sfY8TcSn\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"State\",\"col\":12}}]",
+ "creation": "2024-05-26 22:35:01.531244",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "primitive-dot",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "States",
+ "links": [],
+ "modified": "2024-05-28 09:24:05.059154",
+ "modified_by": "Administrator",
+ "module": "Aisect",
+ "name": "States",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Masters",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "State",
+   "label": "State",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 7.0,
+ "shortcuts": [],
+ "title": "States"
+}

@@ -1,0 +1,35 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"QddFg6HF1n\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
+ "creation": "2024-05-26 22:41:30.868061",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "quality",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Success Stories",
+ "links": [],
+ "modified": "2024-05-28 09:22:30.571514",
+ "modified_by": "Administrator",
+ "module": "Aisect",
+ "name": "Success Stories",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Candidate Success Stories",
+   "label": "Candidate Success Stories",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 4.0,
+ "shortcuts": [],
+ "title": "Success Stories"
+}
