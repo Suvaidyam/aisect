@@ -9,6 +9,7 @@
   "candiate_id",
   "zone",
   "state",
+  "centre",
   "project",
   "status",
   "type_of_organization",
@@ -19,7 +20,6 @@
   "second_month_salary_slip",
   "column_break_pips",
   "candiate_name",
-  "centre",
   "batch_id",
   "name_of_organization",
   "designation",
@@ -42,7 +42,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Candiate Name",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "fieldname": "state",
@@ -71,8 +71,8 @@
    "fieldname": "batch_id",
    "fieldtype": "Link",
    "label": "Batch ID",
-   "options": "Batch",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')",
+   "options": "Batch"
   },
   {
    "fieldname": "column_break_pips",
@@ -83,87 +83,87 @@
    "fieldname": "name_of_organization",
    "fieldtype": "Link",
    "label": "Name of Organization",
-   "options": "Company",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')",
+   "options": "Company"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "type_of_organization",
    "fieldtype": "Data",
    "label": "Type of Organization",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "date_of_joining",
    "fieldtype": "Date",
    "label": "Date of Joining",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "designation",
    "fieldtype": "Data",
    "label": "Designation",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "salary",
    "fieldtype": "Int",
    "label": "Salary ",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "hr_name",
    "fieldtype": "Data",
    "label": "HR Name",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "default": "+91-",
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "hr_contact_no",
-   "fieldtype": "Phone",
+   "fieldtype": "Data",
    "label": "HR Contact No. ",
-   "reqd": 1
+   "length": 10,
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "hr_mail_id",
    "fieldtype": "Data",
    "label": "HR Mail ID",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "address_of_employer",
    "fieldtype": "Data",
    "label": "Address of Employer",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "offer_letter",
    "fieldtype": "Attach",
    "label": "Offer Letter",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "first_month_salary_slip",
    "fieldtype": "Attach",
    "label": "First Month Salary Slip",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "second_month_salary_slip",
    "fieldtype": "Attach",
    "label": "Second Month Salary Slip",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "fieldname": "status",
@@ -177,8 +177,7 @@
    "fieldname": "third_month_salary_slip",
    "fieldtype": "Attach",
    "label": " Third Month Salary Slip",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
    "fieldname": "zone",
@@ -190,7 +189,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:09:05.937709",
+ "modified": "2024-05-28 12:42:16.458381",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",
