@@ -6,12 +6,11 @@
  "engine": "InnoDB",
  "field_order": [
   "name_of_the_candidate",
+  "project_training_undertaken",
   "batch_id",
-  "remarks_of_the_training",
   "job_role",
   "column_break_rkov",
-  "candidate_id",
-  "project_training_undertaken",
+  "remarks_of_the_training",
   "achievement_after_training",
   "candidate_image"
  ],
@@ -22,12 +21,6 @@
    "in_list_view": 1,
    "label": "Name of the Candidate ",
    "options": "Candidate",
-   "reqd": 1
-  },
-  {
-   "fieldname": "candidate_id",
-   "fieldtype": "Data",
-   "label": "Candidate ID",
    "reqd": 1
   },
   {
@@ -75,7 +68,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:07:12.763239",
+ "modified": "2024-05-28 15:05:02.798118",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",

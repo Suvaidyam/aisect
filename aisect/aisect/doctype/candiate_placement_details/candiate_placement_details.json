@@ -6,58 +6,58 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "candiate_id",
+  "candiate_name",
   "zone",
   "state",
   "centre",
+  "batch_id",
   "project",
   "status",
+  "name_of_organization",
   "type_of_organization",
   "date_of_joining",
-  "hr_name",
-  "hr_mail_id",
-  "offer_letter",
-  "second_month_salary_slip",
-  "column_break_pips",
-  "candiate_name",
-  "batch_id",
-  "name_of_organization",
   "designation",
+  "column_break_pips",
   "salary",
+  "hr_name",
   "hr_contact_no",
+  "hr_mail_id",
   "address_of_employer",
+  "offer_letter",
   "first_month_salary_slip",
-  "third_month_salary_slip"
+  "second_month_salary_slip",
+  "third_month_salary_slip",
+  "first_month_bank_statement",
+  "second_month_bank_statement",
+  "third_month_bank_statement"
  ],
  "fields": [
   {
-   "fieldname": "candiate_id",
-   "fieldtype": "Data",
+   "fieldname": "candiate_name",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Candiate ID",
+   "label": "Candiate Name",
+   "options": "Candidate",
    "reqd": 1
   },
   {
-   "fieldname": "candiate_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Candiate Name",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
-  },
-  {
+   "fetch_from": "candiate_name.state",
    "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "State",
    "options": "State",
+   "read_only": 1,
    "reqd": 1
   },
   {
+   "fetch_from": "candiate_name.centre",
    "fieldname": "centre",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Centre",
    "options": "Centre",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -68,6 +68,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": ".",
    "fieldname": "batch_id",
    "fieldtype": "Link",
    "label": "Batch ID",
@@ -122,7 +123,6 @@
    "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
-   "default": "+91-",
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "hr_contact_no",
    "fieldtype": "Data",
@@ -169,7 +169,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nAssets\nCertified\nPlaced\nCertified But Not Placed",
+   "options": "\nAssessed\nCertified\nPlaced\nCertified But Not Placed",
    "reqd": 1
   },
   {
@@ -180,16 +180,39 @@
    "mandatory_depends_on": "eval:(doc.status==='Placed')"
   },
   {
+   "fetch_from": "candiate_name.zone",
    "fieldname": "zone",
    "fieldtype": "Link",
    "label": "Zone",
    "options": "Zone",
+   "read_only": 1,
    "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.status==='Placed')",
+   "fieldname": "first_month_bank_statement",
+   "fieldtype": "Attach",
+   "label": "First Month Bank Statement",
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+  },
+  {
+   "depends_on": "eval:(doc.status==='Placed')",
+   "fieldname": "second_month_bank_statement",
+   "fieldtype": "Attach",
+   "label": "Second Month Bank Statement",
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+  },
+  {
+   "depends_on": "eval:(doc.status==='Placed')",
+   "fieldname": "third_month_bank_statement",
+   "fieldtype": "Attach",
+   "label": "Third Month Bank Statement",
+   "mandatory_depends_on": "eval:(doc.status==='Placed')"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 12:42:16.458381",
+ "modified": "2024-05-28 15:09:23.105832",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",

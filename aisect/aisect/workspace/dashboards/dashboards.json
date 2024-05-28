@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"h5DcgwAK2D\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Dashboards</span>\",\"col\":12}}]",
+ "content": "[{\"id\":\"MXfUrWOYAe\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"aSzIAKXGfY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"3Vyndcr4HN\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":3}},{\"id\":\"uzfkMURNFv\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Unplaced Candidates\",\"col\":3}}]",
  "creation": "2024-05-26 22:39:45.093101",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,28 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-05-28 11:47:24.016082",
+ "modified": "2024-05-28 15:21:56.479296",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Assessed Candidates",
+   "number_card_name": "Assessed"
+  },
+  {
+   "label": "Certified Candidates",
+   "number_card_name": "Certified"
+  },
+  {
+   "label": "Placed Candidates",
+   "number_card_name": "Placed"
+  },
+  {
+   "label": "Unplaced Candidates",
+   "number_card_name": "Unplaced Candidates"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
