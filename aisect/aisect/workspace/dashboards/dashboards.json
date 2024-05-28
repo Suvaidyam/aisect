@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"h5DcgwAK2D\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Dashboards</span>\",\"col\":12}}]",
+ "content": "[{\"id\":\"h5DcgwAK2D\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Dashboards</span>\",\"col\":12}},{\"id\":\"jnfESRKc3N\",\"type\":\"card\",\"data\":{\"card_name\":\"test\",\"col\":4}}]",
  "creation": "2024-05-26 22:39:45.093101",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,8 +12,28 @@
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Dashboards",
- "links": [],
- "modified": "2024-05-28 09:21:24.926476",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "test",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Candidate",
+   "link_count": 0,
+   "link_to": "Candidate",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-05-28 09:35:49.172378",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
