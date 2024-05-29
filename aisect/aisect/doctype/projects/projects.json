@@ -21,7 +21,8 @@
    "fieldname": "code",
    "fieldtype": "Data",
    "label": "Code",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "default": "Active",
@@ -35,7 +36,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:33:51.632964",
+ "modified": "2024-05-29 12:39:42.483199",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Projects",

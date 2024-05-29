@@ -3,10 +3,11 @@
  "allow_rename": 1,
  "autoname": "format:CPD-{DD}-{MM}-{YY}-{####}",
  "creation": "2024-05-27 06:55:57.426456",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "candiate_name",
+  "candidate_name",
   "zone",
   "state",
   "centre",
@@ -33,14 +34,6 @@
  ],
  "fields": [
   {
-   "fieldname": "candiate_name",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Candiate Name",
-   "options": "Candidate",
-   "reqd": 1
-  },
-  {
    "fetch_from": "candiate_name.state",
    "fieldname": "state",
    "fieldtype": "Link",
@@ -64,8 +57,7 @@
    "fieldname": "project",
    "fieldtype": "Link",
    "label": "Project",
-   "options": "Projects",
-   "reqd": 1
+   "options": "Projects"
   },
   {
    "fetch_from": ".",
@@ -209,11 +201,21 @@
    "fieldtype": "Attach",
    "label": "Third Month Bank Statement",
    "mandatory_depends_on": "eval:(doc.status==='Placed')"
+  },
+  {
+   "fieldname": "candidate_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Candidate Name",
+   "options": "Candidate",
+   "read_only": 1,
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 10:12:10.495517",
+ "modified": "2024-05-29 15:30:16.982216",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",

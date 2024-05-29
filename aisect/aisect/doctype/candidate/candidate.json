@@ -82,6 +82,7 @@
    "fieldname": "aadhar_number",
    "fieldtype": "Data",
    "label": "Aadhar Number",
+   "length": 12,
    "reqd": 1
   },
   {
@@ -139,7 +140,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 18:29:05.124803",
+ "modified": "2024-05-29 12:42:43.901182",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
