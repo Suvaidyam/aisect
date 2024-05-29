@@ -7,6 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "middle_name",
+  "last_name",
   "email",
   "gender",
   "aadhar_number",
@@ -27,7 +29,7 @@
    "fieldname": "name1",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name",
+   "label": "First Name",
    "reqd": 1
   },
   {
@@ -120,11 +122,24 @@
    "fieldtype": "Table",
    "label": "Projects",
    "options": "ProjectChild"
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:05:38.869784",
+ "modified": "2024-05-28 18:29:05.124803",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",

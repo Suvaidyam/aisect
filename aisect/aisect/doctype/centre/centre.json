@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:CEN-{MM}-{###}",
  "creation": "2024-05-26 22:24:29.410956",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -50,10 +51,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:31:30.532239",
+ "modified": "2024-05-29 10:07:32.066215",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Centre",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

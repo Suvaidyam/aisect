@@ -10,7 +10,9 @@
   "state",
   "centre",
   "name1",
-  "status"
+  "status",
+  "start_date",
+  "end_date"
  ],
  "fields": [
   {
@@ -48,11 +50,23 @@
    "label": "Centre",
    "options": "Centre",
    "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:30:07.508687",
+ "modified": "2024-05-28 17:40:42.577304",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
