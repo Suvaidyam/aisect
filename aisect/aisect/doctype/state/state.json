@@ -22,7 +22,8 @@
    "fieldname": "code",
    "fieldtype": "Data",
    "label": "Code",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "default": "Active",
@@ -43,7 +44,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:32:52.449198",
+ "modified": "2024-05-29 12:38:59.329687",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "State",
