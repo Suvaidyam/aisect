@@ -1,7 +1,8 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:CEN-{MM}-{###}",
+ "autoname": "field:code",
  "creation": "2024-05-26 22:24:29.410956",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,6 +10,7 @@
   "zone",
   "state",
   "name1",
+  "column_break_dmfk",
   "code",
   "status"
  ],
@@ -48,15 +50,20 @@
    "label": "Zone",
    "options": "Zone",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dmfk",
+   "fieldtype": "Column Break"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 12:39:17.691251",
+ "modified": "2024-05-30 10:07:33.979570",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Centre",
- "naming_rule": "Expression",
+ "name": "Centre Location",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

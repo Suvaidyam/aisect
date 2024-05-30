@@ -8,6 +8,7 @@
   "centre",
   "project",
   "candidate",
+  "column_break_kvqd",
   "batch",
   "date_of_joining",
   "status"
@@ -17,8 +18,8 @@
    "fieldname": "centre",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Centre",
-   "options": "Centre",
+   "label": "Centre Location",
+   "options": "Centre Location",
    "reqd": 1
   },
   {
@@ -58,11 +59,15 @@
    "label": "Status",
    "options": "Active\nInactive",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kvqd",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:18:08.365024",
+ "modified": "2024-05-30 08:19:28.894420",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Enrollment",

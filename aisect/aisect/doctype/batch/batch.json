@@ -1,7 +1,8 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{name1}-{MM}-{####}",
+ "autoname": "field:batch_id",
  "creation": "2024-05-27 06:37:06.878356",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,9 +11,14 @@
   "state",
   "centre",
   "name1",
-  "status",
+  "batch_id",
+  "projects",
+  "column_break_tvpa",
   "start_date",
-  "end_date"
+  "end_date",
+  "assessment_date",
+  "actual_assessment_date",
+  "status"
  ],
  "fields": [
   {
@@ -47,8 +53,8 @@
   {
    "fieldname": "centre",
    "fieldtype": "Link",
-   "label": "Centre",
-   "options": "Centre",
+   "label": "Centre Location",
+   "options": "Centre Location",
    "reqd": 1
   },
   {
@@ -62,15 +68,46 @@
    "fieldtype": "Date",
    "label": "End Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "projects",
+   "fieldtype": "Link",
+   "label": "Projects",
+   "options": "Projects",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tvpa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "label": "Assessment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "actual_assessment_date",
+   "fieldtype": "Date",
+   "label": "Actual Assessment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "batch_id",
+   "fieldtype": "Data",
+   "label": "Batch ID",
+   "reqd": 1,
+   "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 17:40:42.577304",
+ "modified": "2024-05-30 09:56:17.911909",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

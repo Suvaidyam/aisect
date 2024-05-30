@@ -1,13 +1,15 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:P-{code}-{####}",
+ "autoname": "field:code",
  "creation": "2024-05-26 22:28:24.336967",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "name1",
   "code",
+  "column_break_htqj",
   "status"
  ],
  "fields": [
@@ -32,15 +34,20 @@
    "label": "Status",
    "options": "Active\nInactive",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_htqj",
+   "fieldtype": "Column Break"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 12:39:42.483199",
+ "modified": "2024-05-30 10:08:28.841663",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Projects",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

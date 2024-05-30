@@ -1,33 +1,37 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:CPD-{DD}-{MM}-{YY}-{####}",
+ "autoname": "field:candidate_name",
  "creation": "2024-05-27 06:55:57.426456",
  "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "candidate_details_section",
   "candidate_name",
   "zone",
   "state",
   "centre",
-  "batch_id",
-  "project",
+  "column_break_iwgi",
+  "projects",
+  "batch",
   "status",
-  "name_of_organization",
+  "placement_details_tab",
   "type_of_organization",
-  "date_of_joining",
+  "name_of_organization",
   "designation",
-  "column_break_pips",
+  "date_of_joining",
   "salary",
-  "hr_name",
-  "hr_contact_no",
-  "hr_mail_id",
-  "address_of_employer",
-  "offer_letter",
   "first_month_salary_slip",
   "second_month_salary_slip",
   "third_month_salary_slip",
+  "column_break_pips",
+  "hr_contact_no",
+  "hr_name",
+  "hr_mail_id",
+  "address_of_employer",
+  "offer_letter",
   "first_month_bank_statement",
   "second_month_bank_statement",
   "third_month_bank_statement"
@@ -48,24 +52,10 @@
    "fieldname": "centre",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Centre",
-   "options": "Centre",
+   "label": "Centre Location",
+   "options": "Centre Location",
    "read_only": 1,
    "reqd": 1
-  },
-  {
-   "fieldname": "project",
-   "fieldtype": "Link",
-   "label": "Project",
-   "options": "Projects"
-  },
-  {
-   "fetch_from": ".",
-   "fieldname": "batch_id",
-   "fieldtype": "Link",
-   "label": "Batch ID",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')",
-   "options": "Batch"
   },
   {
    "fieldname": "column_break_pips",
@@ -147,15 +137,13 @@
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "first_month_salary_slip",
    "fieldtype": "Attach",
-   "label": "First Month Salary Slip",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+   "label": "First Month Salary Slip"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "second_month_salary_slip",
    "fieldtype": "Attach",
-   "label": "Second Month Salary Slip",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+   "label": "Second Month Salary Slip"
   },
   {
    "default": "Assessed",
@@ -169,8 +157,7 @@
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "third_month_salary_slip",
    "fieldtype": "Attach",
-   "label": " Third Month Salary Slip",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+   "label": " Third Month Salary Slip"
   },
   {
    "fetch_from": "candiate_name.zone",
@@ -185,22 +172,19 @@
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "first_month_bank_statement",
    "fieldtype": "Attach",
-   "label": "First Month Bank Statement",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+   "label": "First Month Bank Statement"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "second_month_bank_statement",
    "fieldtype": "Attach",
-   "label": "Second Month Bank Statement",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+   "label": "Second Month Bank Statement"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "third_month_bank_statement",
    "fieldtype": "Attach",
-   "label": "Third Month Bank Statement",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+   "label": "Third Month Bank Statement"
   },
   {
    "fieldname": "candidate_name",
@@ -211,15 +195,48 @@
    "read_only": 1,
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "candidate_details_section",
+   "fieldtype": "Section Break",
+   "label": "Candidate Details"
+  },
+  {
+   "depends_on": "eval:(doc.status==='Placed')",
+   "fieldname": "placement_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Placement"
+  },
+  {
+   "fieldname": "column_break_iwgi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "projects",
+   "fieldtype": "Link",
+   "label": "Projects",
+   "options": "Projects",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": ".",
+   "fieldname": "batch",
+   "fieldtype": "Link",
+   "label": "Batch",
+   "options": "Batch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 15:30:16.982216",
+ "modified": "2024-05-30 09:47:07.932523",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
