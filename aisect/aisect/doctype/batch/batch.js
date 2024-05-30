@@ -21,51 +21,12 @@ frappe.ui.form.on("Batch", {
         frm.is_actual_assessment_date_being_set = false;
     },
     end_date: function (frm) {
-        if (frm.is_end_date_being_set) {
-            return;
-        }
-        if (frm.doc.start_date && frm.doc.end_date && frm.doc.start_date > frm.doc.end_date) {
-            frm.is_end_date_being_set = true;
-            frm.set_value('end_date', '').then(() => {
-                frm.is_end_date_being_set = false;
-                frappe.msgprint({
-                    title: __('Validation Error'),
-                    indicator: 'red',
-                    message: __("<strong>End date</strong> shall not be before the <strong>Start date</strong>")
-                });
-            });
-        }
+        date_validation(frm, frm.doc.end_date, frm.doc.start_date, frm.is_end_date_being_set, 'end_date', 'Start Date', 'End Date')
     },
     assessment_date: function (frm) {
-        if (frm.is_assessment_date_being_set) {
-            return;
-        }
-        if (frm.doc.end_date && frm.doc.assessment_date && frm.doc.end_date > frm.doc.assessment_date) {
-            frm.is_assessment_date_being_set = true;
-            frm.set_value('assessment_date', '').then(() => {
-                frm.is_assessment_date_being_set = false;
-                frappe.msgprint({
-                    title: __('Validation Error'),
-                    indicator: 'red',
-                    message: __("<strong>Assessment date</strong> shall not be before the <strong>End date</strong>")
-                });
-            });
-        }
+        date_validation(frm, frm.doc.assessment_date, frm.doc.end_date, frm.is_assessment_date_being_set, 'assessment_date', 'End Date', 'Assessment Date')
     },
     actual_assessment_date: function (frm) {
-        if (frm.is_actual_assessment_date_being_set) {
-            return;
-        }
-        if (frm.doc.assessment_date && frm.doc.actual_assessment_date && frm.doc.assessment_date > frm.doc.actual_assessment_date) {
-            frm.is_actual_assessment_date_being_set = true;
-            frm.set_value('actual_assessment_date', '').then(() => {
-                frm.is_actual_assessment_date_being_set = false;
-                frappe.msgprint({
-                    title: __('Validation Error'),
-                    indicator: 'red',
-                    message: __("<strong>Actual assessment date</strong> shall not be before the <strong>Assessment date</strong>")
-                });
-            });
-        }
+        date_validation(frm, frm.doc.actual_assessment_date, frm.doc.assessment_date, frm.is_actual_assessment_date_being_set, 'actual_assessment_date', 'Assessment date', 'Actual assessment date')
     }
 });

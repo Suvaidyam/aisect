@@ -8,7 +8,7 @@ app_license = "mit"
 
 # Includes in <head>
 # ------------------
-fixtures=[
+fixtures = [
     "Role",
     "Role Profile"
 ]
@@ -33,13 +33,15 @@ web_include_css = "/assets/aisect/css/aisect.css"
 
 # include js in doctype views
 doctype_js = {
-    "Batch" : "public/js/utils.js",
-    "Centre" : "public/js/utils.js",
-    "Company" : "public/js/utils.js",
-    "Candidate" : "public/js/utils.js",
-    "Candidate Enrollment" : "public/js/utils.js",
-    "Candiate Placement Details" : "public/js/utils.js",
-    }
+    "Batch": "public/js/utils.js",
+    "Centre": "public/js/utils.js",
+    "Company": "public/js/utils.js",
+    "Candidate": "public/js/utils.js",
+    "Candidate Enrollment": "public/js/utils.js",
+    "Candiate Placement Details": "public/js/utils.js",
+    "District": "public/js/utils.js",
+    "Company Branches": "public/js/utils.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -237,4 +239,3 @@ doctype_js = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
