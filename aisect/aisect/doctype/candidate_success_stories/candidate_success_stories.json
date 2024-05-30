@@ -10,6 +10,7 @@
   "project_training_undertaken",
   "batch_id",
   "job_role",
+  "add_job_role",
   "column_break_rkov",
   "remarks_of_the_training",
   "achievement_after_training",
@@ -70,12 +71,19 @@
    "fieldtype": "Attach",
    "label": "Candidate Image",
    "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.job_role==='Other'",
+   "fieldname": "add_job_role",
+   "fieldtype": "Data",
+   "label": "Add Job Role",
+   "mandatory_depends_on": "eval:doc.job_role==='Other'"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:36:19.314509",
+ "modified": "2024-05-30 17:15:16.613226",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",
