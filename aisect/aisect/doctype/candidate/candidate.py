@@ -6,8 +6,7 @@ from frappe.model.document import Document
 
 
 class Candidate(Document):
-	def after_insert(self):
-		print('*****************************************',self.batch)
+	def after_insert(self): 
 		doc = frappe.get_doc({
 			"doctype":"Candiate Placement Details",
 			"candidate_name": self.name,
@@ -15,8 +14,6 @@ class Candidate(Document):
 			"state" : self.state,
 			"centre" : self.centre,
 			"projects" : self.projects,
-			"batch" : self.batch
+			"batch_id" : self.batch_id
 		})
 		doc.save(ignore_permissions=True)
-	def on_update(self):
-		print('*****************************************',self.batch)
