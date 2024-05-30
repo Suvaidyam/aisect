@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "zone",
   "state",
   "district",
   "pin_code",
@@ -100,11 +101,18 @@
   {
    "fieldname": "column_break_yoql",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "zone",
+   "fieldtype": "Link",
+   "label": "Zone",
+   "options": "Zone",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:57:59.454708",
+ "modified": "2024-05-30 16:07:00.580863",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company Branches",
