@@ -36,7 +36,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Type",
-   "options": "IT",
+   "options": "\nPvt Ltd\nProprietor\nPrivate Company\nProprietor Ship\nComputer Centre",
    "reqd": 1
   },
   {
@@ -70,7 +70,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:09:36.300187",
+ "modified": "2024-05-30 17:02:41.069345",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
