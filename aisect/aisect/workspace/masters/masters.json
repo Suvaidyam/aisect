@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-05-30 08:17:30.692356",
+ "modified": "2024-05-30 11:28:19.413319",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
@@ -24,10 +24,10 @@
  "quick_lists": [],
  "roles": [
   {
-   "role": "Administrator"
+   "role": "Head Office (PMU)"
   },
   {
-   "role": "Head Office (PMU)"
+   "role": "Administrator"
   }
  ],
  "sequence_id": 5.0,
