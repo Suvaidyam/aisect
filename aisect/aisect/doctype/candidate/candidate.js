@@ -7,12 +7,12 @@ frappe.ui.form.on("Candidate", {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'centre', 'state')
     },
-    validate(frm){
+    validate(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
             frappe.throw('Enter vaild aadhar number')
         }
     },
-    after_save(frm){
+    after_save(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
             frappe.throw('Enter vaild aadhar number')
         }
