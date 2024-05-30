@@ -18,8 +18,8 @@
   "batch_id",
   "status",
   "placement_details_tab",
-  "type_of_organization",
   "name_of_organization",
+  "type_of_organization",
   "designation",
   "date_of_joining",
   "salary",
@@ -71,10 +71,12 @@
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
+   "fetch_from": "name_of_organization.type",
    "fieldname": "type_of_organization",
    "fieldtype": "Data",
    "label": "Type of Organization",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
+   "mandatory_depends_on": "eval:(doc.status==='Placed')",
+   "read_only": 1
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
@@ -232,7 +234,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:23:25.880725",
+ "modified": "2024-05-30 11:17:55.604673",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",

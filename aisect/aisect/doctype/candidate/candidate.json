@@ -2,13 +2,13 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:code",
+ "autoname": "field:candidate_id",
  "creation": "2024-05-26 22:58:48.777713",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "full_name",
-  "code",
+  "candidate_id",
   "email",
   "gender",
   "aadhar_number",
@@ -115,25 +115,25 @@
    "reqd": 1
   },
   {
-   "fieldname": "code",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Code",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "batch_id",
    "fieldtype": "Link",
    "label": "Batch ID",
    "options": "Batch",
    "reqd": 1
+  },
+  {
+   "fieldname": "candidate_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Candidate ID",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:25:55.299661",
+ "modified": "2024-05-30 11:10:55.317676",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
