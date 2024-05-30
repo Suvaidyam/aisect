@@ -3,13 +3,14 @@
  "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:code",
- "creation": "2024-05-26 22:22:50.285390",
+ "creation": "2024-05-30 08:14:34.755790",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "zone",
+  "state",
   "name1",
-  "column_break_wqhk",
+  "column_break_mbil",
   "code",
   "status"
  ],
@@ -17,12 +18,14 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Name",
    "reqd": 1
   },
   {
    "fieldname": "code",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Code",
    "reqd": 1,
    "unique": 1
@@ -44,17 +47,24 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_wqhk",
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mbil",
    "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:05:45.993130",
+ "modified": "2024-05-30 09:45:55.624608",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "State",
+ "name": "District",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
@@ -69,77 +79,10 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Head Office (PMU)",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Zonal Head",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "State Placement Coordinator",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "State Head",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Centre Placement Coordinator",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Centre Head",
-   "share": 1,
-   "write": 1
   }
  ],
  "show_title_field_in_link": 1,
- "sort_field": "modified",
+ "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
  "title_field": "name1"

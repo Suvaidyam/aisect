@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{name1}-{YY}-{###}",
  "creation": "2024-05-26 22:54:42.133858",
@@ -8,6 +9,8 @@
  "field_order": [
   "zone",
   "state",
+  "sector",
+  "column_break_qolg",
   "name1",
   "type",
   "status"
@@ -51,11 +54,23 @@
    "label": "Zone",
    "options": "Zone",
    "reqd": 1
+  },
+  {
+   "fieldname": "sector",
+   "fieldtype": "Link",
+   "label": "Sector",
+   "options": "Sector",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qolg",
+   "fieldtype": "Column Break"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:34:41.322045",
+ "modified": "2024-05-30 10:09:36.300187",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
@@ -142,7 +157,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }

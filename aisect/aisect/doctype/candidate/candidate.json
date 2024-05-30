@@ -1,14 +1,14 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:CA-{MM}-{YY}-{####}",
+ "autoname": "field:code",
  "creation": "2024-05-26 22:58:48.777713",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
-  "middle_name",
-  "last_name",
+  "full_name",
+  "code",
   "email",
   "gender",
   "aadhar_number",
@@ -19,19 +19,11 @@
   "zone",
   "state",
   "centre",
-  "status",
-  "section_break_llsg",
+  "projects",
   "batch",
-  "projects"
+  "status"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "First Name",
-   "reqd": 1
-  },
   {
    "fieldname": "state",
    "fieldtype": "Link",
@@ -44,8 +36,8 @@
    "fieldname": "centre",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Centre",
-   "options": "Centre",
+   "label": "Centre Location",
+   "options": "Centre Location",
    "reqd": 1
   },
   {
@@ -109,42 +101,43 @@
    "reqd": 1
   },
   {
-   "fieldname": "section_break_llsg",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "batch",
-   "fieldtype": "Table",
+   "fieldtype": "Link",
    "label": "Batch",
-   "options": "Centre Batch"
+   "options": "Batch",
+   "reqd": 1
   },
   {
    "fieldname": "projects",
-   "fieldtype": "Table",
+   "fieldtype": "Link",
    "label": "Projects",
-   "options": "ProjectChild"
-  },
-  {
-   "fieldname": "middle_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Middle Name"
-  },
-  {
-   "fieldname": "last_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Last Name",
+   "options": "Projects",
    "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code",
+   "reqd": 1,
+   "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 12:42:43.901182",
+ "modified": "2024-05-30 09:33:36.574217",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -231,5 +224,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "full_name"
 }

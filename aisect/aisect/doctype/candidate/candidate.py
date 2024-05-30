@@ -13,7 +13,9 @@ class Candidate(Document):
 			"candidate_name": self.name,
 			"zone" : self.zone,
 			"state" : self.state,
-			"centre" : self.centre
+			"centre" : self.centre,
+			"projects" : self.projects,
+			"batch" : self.batch
 		})
 		doc.save(ignore_permissions=True)
 	def on_update(self):

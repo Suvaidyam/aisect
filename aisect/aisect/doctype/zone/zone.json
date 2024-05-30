@@ -1,7 +1,8 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:Z-{YY}-{###}",
+ "autoname": "field:name1",
  "creation": "2024-05-27 06:24:44.001820",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -14,7 +15,8 @@
    "fieldname": "name1",
    "fieldtype": "Data",
    "label": "Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "default": "Active",
@@ -26,13 +28,14 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:17:03.418230",
+ "modified": "2024-05-30 10:01:39.650808",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Zone",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
