@@ -2,6 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "format:CSS-{MM}-{YY}-{####}",
  "creation": "2024-05-26 22:51:05.401160",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,7 +11,7 @@
   "project_training_undertaken",
   "batch_id",
   "job_role",
-  "add_job_role",
+  "other_job_role",
   "column_break_rkov",
   "remarks_of_the_training",
   "achievement_after_training",
@@ -74,19 +75,20 @@
   },
   {
    "depends_on": "eval:doc.job_role==='Other'",
-   "fieldname": "add_job_role",
+   "fieldname": "other_job_role",
    "fieldtype": "Data",
-   "label": "Add Job Role",
+   "label": "Other Job Role",
    "mandatory_depends_on": "eval:doc.job_role==='Other'"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 17:15:16.613226",
+ "modified": "2024-05-31 12:16:18.976199",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
