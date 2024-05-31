@@ -96,8 +96,9 @@
   {
    "default": "+91-",
    "fieldname": "contact_no",
-   "fieldtype": "Phone",
+   "fieldtype": "Data",
    "label": "Contact No",
+   "length": 10,
    "reqd": 1
   },
   {
@@ -133,7 +134,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 11:10:55.317676",
+ "modified": "2024-05-31 14:46:00.311809",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
