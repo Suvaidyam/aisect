@@ -5,8 +5,21 @@
 
 //     },
 // });
+let mobilePattern = /^[6-9]\d{9}$/;
 frappe.ui.form.on("Placement Child", {
-    hr_contact_no: function (frm) {
-        mobile_number_validation(frm, frm.cur_grid.doc.hr_contact_no, 'hr_contact_no')
-    }
+    hr_contact_no: function (frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn);
+        if (!mobilePattern.test(row.hr_contact_no)) {
+            frm.disable_save()
+            frappe.msgprint({
+                title: __('Validation Error'),
+                indicator: 'red',
+                message: __('Enter vaild contact number')
+            });
+        } else {
+            frm.enable_save()
+        }
+
+    },
 });
+
