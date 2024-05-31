@@ -14,7 +14,7 @@ frappe.ui.form.on("Placement Child", {
             frappe.msgprint({
                 title: __('Validation Error'),
                 indicator: 'red',
-                message: __('Enter vaild contact number')
+                message: __(`Enter vaild contact number in row ${row.idx} `)
             });
         } else {
             frm.enable_save()
