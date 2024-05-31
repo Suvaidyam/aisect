@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 
 let aadharPattern = /^\d{4}\d{4}\d{4}$/;
+let mobilePattern = /^[6-9]\d{9}$/;
 frappe.ui.form.on("Candidate", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
@@ -11,10 +12,16 @@ frappe.ui.form.on("Candidate", {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
             frappe.throw('Enter vaild aadhar number')
         }
+        if (!mobilePattern.test(frm.doc.contact_no)) {
+            frappe.throw('Enter vaild contact number')
+        }
     },
     after_save(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
             frappe.throw('Enter vaild aadhar number')
+        }
+        if (!mobilePattern.test(frm.doc.contact_no)) {
+            frappe.throw('Enter vaild contact number')
         }
     },
     zone: function (frm) {
@@ -31,5 +38,8 @@ frappe.ui.form.on("Candidate", {
                 frappe.throw('Enter vaild aadhar number')
             }
         }
+    },
+    contact_no: function (frm) {
+        mobile_number_validation(frm, frm.doc.contact_no, 'contact_no')
     }
 });
