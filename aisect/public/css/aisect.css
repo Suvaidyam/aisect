@@ -1,62 +1,6 @@
-.btn-primary {
-    background-color: #3c67cb !important;
-}
-
-
-.navbar {
-    background-color: #4f96e1 !important;
-}
-
-#navbar-breadcrumbs li a {
-    color: white !important;
-}
-
 .navbar li a::before {
     filter: invert(1) brightness(10);
 }
-
 .navbar svg.es-icon.icon-sm use {
     filter: invert(1) brightness(10);
-}
-
-.d-lg-block,
-.d-sm-block {
-    display: none !important;
-}
-
-#page-login {
-    background: url("./img/loginpage.jpg") no-repeat center center fixed !important;
-    background-size: cover !important;
-    height: 100vh !important;
-    background-position: center center !important;
-}
-
-.for-login {
-    margin-left: 650px;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1200px) {
-    .for-login {
-        margin-left: 500px;
-    }
-}
-
-@media (max-width: 992px) {
-    .for-login {
-        margin-left: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-    .for-login {
-        margin-left: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .for-login {
-        margin-left: 10px;
-        width: calc(100% - 20px);
-    }
 }
