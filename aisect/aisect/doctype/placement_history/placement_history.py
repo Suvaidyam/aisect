@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class CentreBatch(Document):
+class PlacementHistory(Document):
 	pass
