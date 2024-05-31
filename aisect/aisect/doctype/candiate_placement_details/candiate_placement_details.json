@@ -17,36 +17,8 @@
   "projects",
   "batch_id",
   "status",
-  "placement_details_tab",
-  "employer_details_section",
-  "name_of_organization",
-  "designation",
-  "hr_name",
-  "hr_mail_id",
-  "join_job",
-  "column_break_pips",
-  "type_of_organization",
-  "date_of_joining",
-  "hr_contact_no",
-  "type_of_employement",
-  "address_of_employer",
-  "section_break_nonz",
-  "salary",
-  "first_month_salary_slip",
-  "upload_first_month_salary_slip",
-  "second_month_salary_slip",
-  "upload_second_month_salary_slip",
-  "thrird_month_salary_slip",
-  "upload_third_month_salary_slip",
-  "column_break_wiin",
-  "offer_latter",
-  "upload_offer_letter",
-  "first_month_bank_statement",
-  "upload_first_month_bank_statement",
-  "second_month_bank_statement",
-  "upload_second_month_bank_statement",
-  "third_month_bank_statement",
-  "upload_third_month_bank_statement"
+  "section_break_lzdo",
+  "table_dpvf"
  ],
  "fields": [
   {
@@ -68,89 +40,6 @@
    "options": "Centre Location",
    "read_only": 1,
    "reqd": 1
-  },
-  {
-   "fieldname": "column_break_pips",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "name_of_organization",
-   "fieldtype": "Link",
-   "label": "Name of Organization",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')",
-   "options": "Company"
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fetch_from": "name_of_organization.type",
-   "fieldname": "type_of_organization",
-   "fieldtype": "Data",
-   "label": "Type of Organization",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')",
-   "read_only": 1
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "date_of_joining",
-   "fieldtype": "Date",
-   "label": "Date of Joining",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "designation",
-   "fieldtype": "Data",
-   "label": "Designation",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "salary",
-   "fieldtype": "Int",
-   "label": "Monthly Income",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "hr_name",
-   "fieldtype": "Data",
-   "label": "HR Name",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "hr_contact_no",
-   "fieldtype": "Data",
-   "label": "HR Contact No. ",
-   "length": 10,
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "hr_mail_id",
-   "fieldtype": "Data",
-   "label": "HR Mail ID",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
-  },
-  {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "address_of_employer",
-   "fieldtype": "Small Text",
-   "label": "Address",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')"
-  },
-  {
-   "fieldname": "first_month_salary_slip",
-   "fieldtype": "Select",
-   "label": "First Month Salary Slip",
-   "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "second_month_salary_slip",
-   "fieldtype": "Select",
-   "label": "Second Month Salary Slip",
-   "options": "\nYes\nNo"
   },
   {
    "default": "Assessed",
@@ -185,12 +74,6 @@
    "label": "Candidate Details"
   },
   {
-   "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "placement_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Placement"
-  },
-  {
    "fieldname": "column_break_iwgi",
    "fieldtype": "Column Break"
   },
@@ -212,120 +95,22 @@
    "reqd": 1
   },
   {
-   "fieldname": "join_job",
-   "fieldtype": "Select",
-   "label": "Join job",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')",
-   "options": "\nYes\nNo"
-  },
-  {
-   "depends_on": "eval:(doc.join_job==='Yes')",
-   "fieldname": "section_break_nonz",
+   "fieldname": "section_break_lzdo",
    "fieldtype": "Section Break",
-   "label": "Placement Details"
-  },
-  {
-   "depends_on": "eval:(doc.first_month_salary_slip==='Yes')",
-   "fieldname": "upload_first_month_salary_slip",
-   "fieldtype": "Attach",
-   "label": "Upload First Month Salary Slip",
-   "mandatory_depends_on": "eval:(doc.first_month_salary_slip==='Yes')"
-  },
-  {
-   "depends_on": "eval:(doc.second_month_salary_slip==='Yes')",
-   "fieldname": "upload_second_month_salary_slip",
-   "fieldtype": "Attach",
-   "label": "Upload Second Month Salary Slip",
-   "mandatory_depends_on": "eval:(doc.second_month_salary_slip==='Yes')"
-  },
-  {
-   "fieldname": "thrird_month_salary_slip",
-   "fieldtype": "Select",
-   "label": "Thrird Month Salary Slip",
-   "options": "\nYes\nNo"
-  },
-  {
-   "depends_on": "eval:(doc.thrird_month_salary_slip==='Yes')",
-   "fieldname": "upload_third_month_salary_slip",
-   "fieldtype": "Attach",
-   "label": "Upload Third Month Salary Slip",
-   "mandatory_depends_on": "eval:(doc.thrird_month_salary_slip==='Yes')"
-  },
-  {
-   "fieldname": "column_break_wiin",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:(doc.offer_latter==='Yes')",
-   "fieldname": "upload_offer_letter",
-   "fieldtype": "Attach",
-   "label": "Upload Offer Letter",
-   "mandatory_depends_on": "eval:(doc.offer_latter==='Yes')"
-  },
-  {
-   "depends_on": "eval:(doc.second_month_bank_statement==='Yes')",
-   "fieldname": "upload_second_month_bank_statement",
-   "fieldtype": "Attach",
-   "label": "Upload Second Month Bank Statement",
-   "mandatory_depends_on": "eval:(doc.second_month_bank_statement==='Yes')"
-  },
-  {
-   "depends_on": "eval:(doc.first_month_bank_statement==='Yes')",
-   "fieldname": "upload_first_month_bank_statement",
-   "fieldtype": "Attach",
-   "label": "Upload First Month Bank Statement",
-   "mandatory_depends_on": "eval:(doc.first_month_bank_statement==='Yes')"
-  },
-  {
-   "depends_on": "eval:(doc.third_month_bank_statement==='Yes')",
-   "fieldname": "upload_third_month_bank_statement",
-   "fieldtype": "Attach",
-   "label": "Upload Third Month Bank Statement",
-   "mandatory_depends_on": "eval:(doc.third_month_bank_statement==='Yes')"
-  },
-  {
-   "fieldname": "offer_latter",
-   "fieldtype": "Select",
-   "label": "Offer Latter",
-   "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "second_month_bank_statement",
-   "fieldtype": "Select",
-   "label": "Second Month Bank Statement",
-   "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "first_month_bank_statement",
-   "fieldtype": "Select",
-   "label": "First Month Bank Statement",
-   "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "third_month_bank_statement",
-   "fieldtype": "Select",
-   "label": "Third Month Bank Statement",
-   "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "employer_details_section",
-   "fieldtype": "Section Break",
-   "label": "Employer Details"
+   "label": "Placement"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
-   "fieldname": "type_of_employement",
-   "fieldtype": "Select",
-   "label": "Type of Employement",
-   "length": 10,
-   "mandatory_depends_on": "eval:(doc.status==='Placed')",
-   "options": "\nWage Employment\nSelf Employment"
+   "fieldname": "table_dpvf",
+   "fieldtype": "Table",
+   "label": "Place",
+   "options": "Placement Child"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 14:56:14.863333",
+ "modified": "2024-05-31 14:15:36.547577",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",

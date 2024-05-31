@@ -41,6 +41,7 @@ doctype_js = {
     "Candiate Placement Details": "public/js/utils.js",
     "District": "public/js/utils.js",
     "Company Branches": "public/js/utils.js",
+    "Placement Child": "public/js/utils.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
