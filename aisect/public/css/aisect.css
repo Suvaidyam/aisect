@@ -1,6 +1,0 @@
-.navbar li a::before {
-    filter: invert(1) brightness(10);
-}
-.navbar svg.es-icon.icon-sm use {
-    filter: invert(1) brightness(10);
-}

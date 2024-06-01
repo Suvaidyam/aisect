@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:candidate_name",
+ "autoname": "field:code",
  "creation": "2024-05-27 06:55:57.426456",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,6 +10,7 @@
  "field_order": [
   "candidate_details_section",
   "candidate_name",
+  "code",
   "zone",
   "state",
   "centre",
@@ -105,12 +106,22 @@
    "fieldtype": "Table",
    "label": "Place",
    "options": "Placement Child"
+  },
+  {
+   "fetch_from": "candidate_name.candidate_id",
+   "fieldname": "code",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Code",
+   "options": "Candidate",
+   "read_only": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-31 14:15:36.547577",
+ "modified": "2024-06-01 11:40:23.806519",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",
