@@ -5,26 +5,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "candidate",
-  "updated_at",
+  "candidate_name",
+  "modified_at",
   "column_break_wjvu",
   "modified_by1"
  ],
  "fields": [
-  {
-   "fieldname": "candidate",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Candidate",
-   "options": "Candidate",
-   "reqd": 1
-  },
-  {
-   "fieldname": "updated_at",
-   "fieldtype": "Datetime",
-   "label": "Modified At",
-   "reqd": 1
-  },
   {
    "fieldname": "modified_by1",
    "fieldtype": "Data",
@@ -34,11 +20,26 @@
   {
    "fieldname": "column_break_wjvu",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "candidate_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Candidate Name",
+   "options": "Candidate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "modified_at",
+   "fieldtype": "Datetime",
+   "label": "Modified At",
+   "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-31 18:26:50.758872",
+ "modified": "2024-06-01 11:42:10.399129",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement History",
