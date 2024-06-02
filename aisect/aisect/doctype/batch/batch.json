@@ -8,32 +8,27 @@
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "state",
   "centre",
   "projects",
-  "name1",
-  "batch_id",
-  "column_break_tvpa",
-  "start_date",
+  "job_role",
   "end_date",
-  "assessment_date",
   "actual_assessment_date",
+  "column_break_tvpa",
+  "state",
+  "batch_id",
+  "sector",
+  "start_date",
+  "assessment_date",
   "status"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name",
-   "reqd": 1
-  },
   {
    "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nInactive",
+   "options": "Active\nInactive\nIn Progress\nTo Be Started\nCompleted",
    "reqd": 1
   },
   {
@@ -89,8 +84,7 @@
   {
    "fieldname": "actual_assessment_date",
    "fieldtype": "Date",
-   "label": "Actual Assessment Date",
-   "reqd": 1
+   "label": "Actual Assessment Date"
   },
   {
    "fieldname": "batch_id",
@@ -98,12 +92,27 @@
    "label": "Batch ID",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "job_role",
+   "fieldtype": "Link",
+   "label": "Job Role",
+   "options": "Job Role",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "sector",
+   "fieldtype": "Link",
+   "label": "Sector",
+   "options": "Sector",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:39:49.421763",
+ "modified": "2024-06-02 11:00:45.445662",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
@@ -194,5 +203,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "batch_id"
 }

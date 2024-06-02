@@ -7,20 +7,26 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "details_section",
   "full_name",
   "candidate_id",
+  "aadhar_number",
+  "contact_no",
+  "column_break_tmcc",
+  "last_name",
   "email",
   "gender",
-  "aadhar_number",
-  "category",
   "qualification",
-  "contact_no",
+  "batch_details_tab",
   "column_break_mbny",
   "zone",
-  "state",
   "centre",
-  "projects",
   "batch_id",
+  "sector",
+  "column_break_cjyn",
+  "state",
+  "projects",
+  "job_role",
   "status"
  ],
  "fields": [
@@ -82,12 +88,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "category",
-   "fieldtype": "Data",
-   "label": "Category",
-   "reqd": 1
-  },
-  {
    "fieldname": "qualification",
    "fieldtype": "Data",
    "label": "Qualification",
@@ -111,7 +111,7 @@
    "fieldname": "full_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Full Name",
+   "label": "First Name",
    "reqd": 1
   },
   {
@@ -128,12 +128,51 @@
    "label": "Candidate ID",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "column_break_tmcc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "batch_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Batch Details"
+  },
+  {
+   "fieldname": "sector",
+   "fieldtype": "Link",
+   "label": "Sector",
+   "options": "Sector",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cjyn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "job_role",
+   "fieldtype": "Link",
+   "label": "Job Role",
+   "options": "Job Role",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-31 17:42:52.210639",
+ "modified": "2024-06-02 10:51:41.720503",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
