@@ -19,3 +19,6 @@ class Candidate(Document):
             "job_role": self.job_role,
         })
         doc.save(ignore_permissions=True)
+
+    def before_save(self):
+        self.full_name = self.first_name+' '+self.last_name
