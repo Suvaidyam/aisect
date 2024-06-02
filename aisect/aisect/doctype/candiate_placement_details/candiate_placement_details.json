@@ -99,14 +99,13 @@
   },
   {
    "fieldname": "section_break_lzdo",
-   "fieldtype": "Section Break",
-   "label": "Placement"
+   "fieldtype": "Section Break"
   },
   {
    "depends_on": "eval:(doc.status==='Placed')",
    "fieldname": "table_dpvf",
    "fieldtype": "Table",
-   "label": "Place",
+   "label": "Placement",
    "options": "Placement Child"
   },
   {
@@ -139,7 +138,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 11:26:34.289009",
+ "modified": "2024-06-02 12:27:54.652916",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",

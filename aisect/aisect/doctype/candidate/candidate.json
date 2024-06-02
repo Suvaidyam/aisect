@@ -125,8 +125,7 @@
   },
   {
    "fieldname": "details_section",
-   "fieldtype": "Section Break",
-   "label": "Details"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "column_break_tmcc",
