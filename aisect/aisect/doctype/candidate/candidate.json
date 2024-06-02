@@ -124,8 +124,7 @@
   },
   {
    "fieldname": "details_section",
-   "fieldtype": "Section Break",
-   "label": "Details"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "column_break_tmcc",
@@ -172,7 +171,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 11:40:19.549689",
+ "modified": "2024-06-02 12:26:28.785357",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
