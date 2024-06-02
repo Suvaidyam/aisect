@@ -8,26 +8,26 @@
  "engine": "InnoDB",
  "field_order": [
   "details_section",
-  "full_name",
+  "first_name",
   "candidate_id",
   "aadhar_number",
   "contact_no",
+  "qualification",
   "column_break_tmcc",
   "last_name",
   "email",
   "gender",
-  "qualification",
+  "status",
   "batch_details_tab",
   "column_break_mbny",
   "zone",
   "centre",
-  "batch_id",
   "sector",
+  "batch_id",
   "column_break_cjyn",
   "state",
   "projects",
-  "job_role",
-  "status"
+  "job_role"
  ],
  "fields": [
   {
@@ -108,13 +108,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "full_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "First Name",
-   "reqd": 1
-  },
-  {
    "fieldname": "batch_id",
    "fieldtype": "Link",
    "label": "Batch ID",
@@ -167,12 +160,19 @@
    "label": "Job Role",
    "options": "Job Role",
    "reqd": 1
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 10:51:41.720503",
+ "modified": "2024-06-02 11:40:19.549689",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
@@ -263,5 +263,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "full_name"
+ "title_field": "first_name"
 }

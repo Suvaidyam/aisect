@@ -10,14 +10,16 @@
  "field_order": [
   "candidate_details_section",
   "candidate_name",
-  "code",
-  "zone",
   "state",
-  "centre",
-  "column_break_iwgi",
   "projects",
-  "batch_id",
+  "job_role",
   "status",
+  "code",
+  "column_break_iwgi",
+  "zone",
+  "centre",
+  "sector",
+  "batch_id",
   "section_break_lzdo",
   "table_dpvf"
  ],
@@ -116,12 +118,28 @@
    "options": "Candidate",
    "read_only": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "sector",
+   "fieldtype": "Link",
+   "label": "Sector",
+   "options": "Sector",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_role",
+   "fieldtype": "Link",
+   "label": "Job Role",
+   "options": "Job Role",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-01 11:40:23.806519",
+ "modified": "2024-06-02 11:26:34.289009",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",
