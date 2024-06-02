@@ -8,9 +8,9 @@
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "name1",
-  "column_break_wqhk",
   "code",
+  "column_break_wqhk",
+  "name1",
   "status"
  ],
  "fields": [
@@ -51,7 +51,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:05:45.993130",
+ "modified": "2024-06-02 12:17:58.028204",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "State",

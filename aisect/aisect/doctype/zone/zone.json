@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "column_break_ediy",
   "status"
  ],
  "fields": [
@@ -26,12 +27,16 @@
    "label": "Status",
    "options": "Active\nInactive",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ediy",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:01:39.650808",
+ "modified": "2024-06-02 12:17:15.971524",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Zone",

@@ -7,9 +7,13 @@
 // });
 let mobilePattern = /^[6-9]\d{9}$/;
 frappe.ui.form.on("Placement Child", {
-    hr_contact_no: function (frm, cdt, cdn) {
+    // state: function (frm, cdt, cdn) {
+    //     let row = frappe.get_doc(cdt, cdn);
+
+    // },
+    contact_no: function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (!mobilePattern.test(row.hr_contact_no)) {
+        if (!mobilePattern.test(row.contact_no)) {
             frm.disable_save()
             frappe.msgprint({
                 title: __('Validation Error'),

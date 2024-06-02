@@ -8,9 +8,9 @@
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "state",
   "name1",
   "column_break_dmfk",
+  "state",
   "code",
   "status"
  ],
@@ -59,7 +59,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 10:07:33.979570",
+ "modified": "2024-06-02 12:18:21.490561",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Centre Location",

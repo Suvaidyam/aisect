@@ -4,6 +4,7 @@ frappe.ui.form.on("Batch", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'centre', 'state')
+        depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
     },
 
     zone: function (frm) {
@@ -13,6 +14,10 @@ frappe.ui.form.on("Batch", {
     state: function (frm) {
         depended_dropdown(frm, frm.doc.state, 'centre', 'state')
         frm.set_value('centre', '')
+    },
+    sector: function (frm) {
+        depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
+        frm.set_value('job_role', '')
     },
     setup: function (frm) {
         // Initialize the flags
