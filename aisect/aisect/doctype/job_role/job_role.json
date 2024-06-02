@@ -26,8 +26,7 @@
    "in_list_view": 1,
    "label": "Sector",
    "options": "Sector",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_lunx",
@@ -37,7 +36,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 15:07:45.826142",
+ "modified": "2024-06-02 15:26:10.898099",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",

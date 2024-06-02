@@ -9,6 +9,7 @@
  "field_order": [
   "details_section",
   "first_name",
+  "full_name",
   "candidate_id",
   "aadhar_number",
   "contact_no",
@@ -167,12 +168,18 @@
    "in_list_view": 1,
    "label": "First Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Full Name"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 11:40:19.549689",
+ "modified": "2024-06-02 15:53:19.593632",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
@@ -263,5 +270,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "first_name"
+ "title_field": "full_name"
 }
