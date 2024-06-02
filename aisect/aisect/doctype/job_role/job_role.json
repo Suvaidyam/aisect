@@ -6,20 +6,37 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "sector",
+  "column_break_lunx",
   "name1"
  ],
  "fields": [
   {
    "fieldname": "name1",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Name",
+   "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "sector",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sector",
+   "options": "Sector",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_lunx",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 09:45:21.461955",
+ "modified": "2024-06-02 10:56:06.122740",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",
