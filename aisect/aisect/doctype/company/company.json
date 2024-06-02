@@ -8,11 +8,11 @@
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "state",
   "sector",
-  "column_break_qolg",
-  "name1",
   "type",
+  "column_break_qolg",
+  "state",
+  "name1",
   "status"
  ],
  "fields": [
@@ -70,7 +70,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 17:02:41.069345",
+ "modified": "2024-06-02 12:15:42.230761",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",

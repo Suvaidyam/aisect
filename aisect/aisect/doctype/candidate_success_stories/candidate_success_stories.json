@@ -37,10 +37,12 @@
    "reqd": 1
   },
   {
+   "fetch_from": "name_of_the_candidate.job_role",
    "fieldname": "job_role",
    "fieldtype": "Link",
    "label": "Job Role",
    "options": "Job Role",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -85,17 +87,19 @@
    "reqd": 1
   },
   {
+   "fetch_from": "name_of_the_candidate.sector",
    "fieldname": "sector",
    "fieldtype": "Link",
    "label": "Sector",
    "options": "Sector",
+   "read_only": 1,
    "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 10:54:53.847720",
+ "modified": "2024-06-02 12:01:02.206893",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",

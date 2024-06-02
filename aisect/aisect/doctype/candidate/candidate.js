@@ -7,6 +7,7 @@ frappe.ui.form.on("Candidate", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'centre', 'state')
+        depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
     },
     validate(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
@@ -31,6 +32,10 @@ frappe.ui.form.on("Candidate", {
     state: function (frm) {
         depended_dropdown(frm, frm.doc.state, 'centre', 'state')
         frm.set_value('centre', '')
+    },
+    sector: function (frm) {
+        depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
+        frm.set_value('job_role', '')
     },
     aadhar_number: function (frm) {
         if (frm.doc.aadhar_number.length > 11) {
