@@ -6,14 +6,16 @@ from frappe.model.document import Document
 
 
 class Candidate(Document):
-	def after_insert(self): 
-		doc = frappe.get_doc({
-			"doctype":"Candiate Placement Details",
-			"candidate_name": self.name,
-			"zone" : self.zone,
-			"state" : self.state,
-			"centre" : self.centre,
-			"projects" : self.projects,
-			"batch_id" : self.batch_id
-		})
-		doc.save(ignore_permissions=True)
+    def after_insert(self):
+        doc = frappe.get_doc({
+            "doctype": "Candiate Placement Details",
+            "candidate_name": self.name,
+            "zone": self.zone,
+            "state": self.state,
+            "centre": self.centre,
+            "projects": self.projects,
+            "batch_id": self.batch_id,
+            "sector": self.sector,
+            "job_role": self.job_role,
+        })
+        doc.save(ignore_permissions=True)
