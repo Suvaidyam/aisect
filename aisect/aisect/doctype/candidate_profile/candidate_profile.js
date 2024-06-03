@@ -6,8 +6,7 @@ let mobilePattern = /^[6-9]\d{9}$/;
 frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
-        depended_dropdown(frm, frm.doc.state, 'centre', 'state')
-        depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
+        depended_dropdown(frm, frm.doc.state, 'centre', 'state') 
     },
     validate(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
@@ -32,10 +31,6 @@ frappe.ui.form.on("Candidate Profile", {
     state: function (frm) {
         depended_dropdown(frm, frm.doc.state, 'centre', 'state')
         frm.set_value('centre', '')
-    },
-    sector: function (frm) {
-        depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
-        frm.set_value('job_role', '')
     },
     aadhar_number: function (frm) {
         if (frm.doc.aadhar_number.length > 11) {

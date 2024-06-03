@@ -9,17 +9,19 @@
  "field_order": [
   "zone",
   "centre",
-  "sector",
-  "batch_id",
-  "end_date",
-  "actual_assessment_date",
   "column_break_tvpa",
   "state",
-  "project",
-  "job_role",
+  "section_break_dwgy",
+  "batch_id",
+  "sector",
   "start_date",
   "assessment_date",
-  "status"
+  "status",
+  "column_break_hhuj",
+  "project",
+  "job_role",
+  "end_date",
+  "actual_assessment_date"
  ],
  "fields": [
   {
@@ -95,8 +97,7 @@
    "in_list_view": 1,
    "label": "Job Role",
    "options": "Job Role",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "sector",
@@ -113,12 +114,20 @@
    "label": "Project",
    "options": "Project",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_dwgy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hhuj",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 15:51:48.695786",
+ "modified": "2024-06-03 17:08:08.192596",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
