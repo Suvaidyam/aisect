@@ -12,7 +12,7 @@
   "job_role",
   "achievement_after_training",
   "column_break_rkov",
-  "projects",
+  "project",
   "sector",
   "remarks_of_the_training",
   "candidate_image"
@@ -23,7 +23,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Name of the Candidate ",
-   "options": "Candidate",
+   "options": "Candidate Profile",
    "reqd": 1
   },
   {
@@ -67,15 +67,6 @@
    "reqd": 1
   },
   {
-   "fetch_from": "name_of_the_candidate.projects",
-   "fieldname": "projects",
-   "fieldtype": "Link",
-   "label": "Projects",
-   "options": "Projects",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
    "fetch_from": "name_of_the_candidate.sector",
    "fieldname": "sector",
    "fieldtype": "Link",
@@ -83,12 +74,21 @@
    "options": "Sector",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fetch_from": "name_of_the_candidate.projects",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:39:17.358709",
+ "modified": "2024-06-03 14:35:48.114207",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",

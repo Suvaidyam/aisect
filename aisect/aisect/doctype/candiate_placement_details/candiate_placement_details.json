@@ -11,7 +11,7 @@
   "candidate_details_section",
   "candidate_name",
   "state",
-  "projects",
+  "project",
   "job_role",
   "status",
   "column_break_iwgi",
@@ -65,7 +65,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Candidate Name",
-   "options": "Candidate",
+   "options": "Candidate Profile",
    "read_only": 1,
    "reqd": 1,
    "unique": 1
@@ -78,14 +78,6 @@
   {
    "fieldname": "column_break_iwgi",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "projects",
-   "fieldtype": "Link",
-   "label": "Projects",
-   "options": "Projects",
-   "read_only": 1,
-   "reqd": 1
   },
   {
    "fetch_from": ".",
@@ -122,12 +114,20 @@
    "options": "Job Role",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:38:35.229150",
+ "modified": "2024-06-03 14:35:48.621673",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",

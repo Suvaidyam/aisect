@@ -19,7 +19,7 @@
   "email",
   "gender",
   "qualification",
-  "batch_details_tab",
+  "section_break_wznz",
   "column_break_mbny",
   "zone",
   "centre",
@@ -27,7 +27,7 @@
   "batch_id",
   "column_break_cjyn",
   "state",
-  "projects",
+  "project",
   "job_role"
  ],
  "fields": [
@@ -102,13 +102,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "projects",
-   "fieldtype": "Link",
-   "label": "Projects",
-   "options": "Projects",
-   "reqd": 1
-  },
-  {
    "fieldname": "batch_id",
    "fieldtype": "Link",
    "label": "Batch ID",
@@ -125,7 +118,7 @@
   {
    "fieldname": "details_section",
    "fieldtype": "Section Break",
-   "label": "Details"
+   "label": "Candidate Details"
   },
   {
    "fieldname": "column_break_tmcc",
@@ -136,11 +129,6 @@
    "fieldtype": "Data",
    "label": "Last Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "batch_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Batch Details"
   },
   {
    "fieldname": "sector",
@@ -172,15 +160,27 @@
    "hidden": 1,
    "in_list_view": 1,
    "label": "Full Name"
+  },
+  {
+   "fieldname": "section_break_wznz",
+   "fieldtype": "Section Break",
+   "label": "Batch Details"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:46:03.649616",
+ "modified": "2024-06-03 14:35:14.284872",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Candidate",
+ "name": "Candidate Profile",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

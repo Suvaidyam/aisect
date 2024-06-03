@@ -10,22 +10,24 @@
   "date_swmd",
   "pin_code",
   "from_date",
-  "type_of_employment",
-  "join_job",
   "if_no_give_reason",
   "column_break_whki",
   "type_of_organization",
   "district",
   "organization_address",
   "end_date",
-  "designation",
   "hr_contact_section",
   "name1",
   "contact_no",
   "column_break_opep",
   "mail_id",
+  "section_break_reju",
+  "join_job",
+  "designation",
+  "column_break_bwsn",
+  "type_of_employment",
   "section_break_nonz",
-  "offer_latter",
+  "offer_letter",
   "monthly_income",
   "column_break_wiin",
   "upload_offer_letter",
@@ -97,13 +99,6 @@
    "mandatory_depends_on": "eval:(doc.offer_latter==='Yes')"
   },
   {
-   "fieldname": "offer_latter",
-   "fieldtype": "Select",
-   "label": "Offer Latter",
-   "mandatory_depends_on": "eval:doc.join_job==='Yes'",
-   "options": "\nYes\nNo"
-  },
-  {
    "fieldname": "column_break_whki",
    "fieldtype": "Column Break"
   },
@@ -122,7 +117,7 @@
   {
    "fieldname": "hr_contact_section",
    "fieldtype": "Section Break",
-   "label": "HR Contact"
+   "label": "HR Contact Details"
   },
   {
    "fieldname": "column_break_opep",
@@ -314,12 +309,27 @@
    "label": "Monthly Income",
    "mandatory_depends_on": "eval:doc.join_job==='Yes'",
    "precision": "1"
+  },
+  {
+   "fieldname": "offer_letter",
+   "fieldtype": "Select",
+   "label": "Offer Letter",
+   "mandatory_depends_on": "eval:doc.join_job==='Yes'",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_reju",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bwsn",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-02 13:32:25.513255",
+ "modified": "2024-06-03 14:41:08.969024",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",
