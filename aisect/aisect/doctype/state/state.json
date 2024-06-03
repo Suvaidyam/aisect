@@ -53,9 +53,13 @@
   {
    "link_doctype": "District",
    "link_fieldname": "state"
+  },
+  {
+   "link_doctype": "Candidate Profile",
+   "link_fieldname": "state"
   }
  ],
- "modified": "2024-06-03 16:58:39.605907",
+ "modified": "2024-06-03 18:03:55.188512",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "State",

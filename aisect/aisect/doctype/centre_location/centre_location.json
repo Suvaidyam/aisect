@@ -55,8 +55,17 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-06-03 16:58:13.001495",
+ "links": [
+  {
+   "link_doctype": "Candidate Profile",
+   "link_fieldname": "centre"
+  },
+  {
+   "link_doctype": "Batch",
+   "link_fieldname": "centre"
+  }
+ ],
+ "modified": "2024-06-03 18:04:31.782272",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Centre Location",
