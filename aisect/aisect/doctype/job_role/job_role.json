@@ -30,8 +30,17 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-06-03 15:45:08.920145",
+ "links": [
+  {
+   "link_doctype": "Job Role",
+   "link_fieldname": "sector"
+  },
+  {
+   "link_doctype": "Batch",
+   "link_fieldname": "sector"
+  }
+ ],
+ "modified": "2024-06-03 16:38:24.974503",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",

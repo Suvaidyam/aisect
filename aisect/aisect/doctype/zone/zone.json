@@ -29,8 +29,21 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-06-03 15:43:57.438418",
+ "links": [
+  {
+   "link_doctype": "State",
+   "link_fieldname": "zone"
+  },
+  {
+   "link_doctype": "District",
+   "link_fieldname": "zone"
+  },
+  {
+   "link_doctype": "Centre Location",
+   "link_fieldname": "zone"
+  }
+ ],
+ "modified": "2024-06-03 16:29:50.102019",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Zone",

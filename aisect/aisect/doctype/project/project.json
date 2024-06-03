@@ -38,8 +38,17 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-06-03 15:48:26.015724",
+ "links": [
+  {
+   "link_doctype": "Candidate Profile",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Candidate Success Stories",
+   "link_fieldname": "project"
+  }
+ ],
+ "modified": "2024-06-03 16:39:32.440191",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Project",
