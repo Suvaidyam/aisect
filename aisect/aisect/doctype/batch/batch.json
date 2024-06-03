@@ -15,7 +15,7 @@
   "actual_assessment_date",
   "column_break_tvpa",
   "state",
-  "projects",
+  "project",
   "job_role",
   "start_date",
   "assessment_date",
@@ -65,13 +65,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "projects",
-   "fieldtype": "Link",
-   "label": "Projects",
-   "options": "Projects",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_tvpa",
    "fieldtype": "Column Break"
   },
@@ -107,12 +100,19 @@
    "label": "Sector",
    "options": "Sector",
    "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:34:00.235780",
+ "modified": "2024-06-03 14:36:25.160302",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",

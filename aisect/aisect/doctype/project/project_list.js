@@ -1,4 +1,4 @@
-frappe.listview_settings['Projects'] = {
+frappe.listview_settings['Project'] = {
     onload: function (listview) {
         $('.layout-side-section').hide();
     },

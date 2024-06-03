@@ -3,7 +3,7 @@
 
 let aadharPattern = /^\d{4}\d{4}\d{4}$/;
 let mobilePattern = /^[6-9]\d{9}$/;
-frappe.ui.form.on("Candidate", {
+frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'centre', 'state')

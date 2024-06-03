@@ -36,7 +36,7 @@ doctype_js = {
     "Batch": "public/js/utils.js",
     "Centre Location": "public/js/utils.js",
     "Company": "public/js/utils.js",
-    "Candidate": "public/js/utils.js",
+    "Candidate Profile": "public/js/utils.js",
     "Candidate Enrollment": "public/js/utils.js",
     "Candiate Placement Details": "public/js/utils.js",
     "District": "public/js/utils.js",

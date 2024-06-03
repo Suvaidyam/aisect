@@ -5,15 +5,15 @@ import frappe
 from frappe.model.document import Document
 
 
-class Candidate(Document):
+class CandidateProfile(Document):
     def after_insert(self):
         doc = frappe.get_doc({
             "doctype": "Candiate Placement Details",
-            "candidate_name": self.name,
+            "candidate_profile_name": self.name,
             "zone": self.zone,
             "state": self.state,
             "centre": self.centre,
-            "projects": self.projects,
+            "project": self.project,
             "batch_id": self.batch_id,
             "sector": self.sector,
             "job_role": self.job_role,
