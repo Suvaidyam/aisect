@@ -25,12 +25,11 @@
  ],
  "fields": [
   {
-   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nInactive\nIn Progress\nTo Be Started\nCompleted"
+   "options": "\nIn Progress\nTo Be Started\nCompleted"
   },
   {
    "fieldname": "zone",
@@ -126,8 +125,17 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-06-03 17:08:08.192596",
+ "links": [
+  {
+   "link_doctype": "Candidate Profile",
+   "link_fieldname": "batch_id"
+  },
+  {
+   "link_doctype": "Candidate Success Stories",
+   "link_fieldname": "batch_id"
+  }
+ ],
+ "modified": "2024-06-03 18:07:12.949587",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",

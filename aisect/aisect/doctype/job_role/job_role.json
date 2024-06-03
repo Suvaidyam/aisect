@@ -32,15 +32,19 @@
  "index_web_pages_for_search": 1,
  "links": [
   {
-   "link_doctype": "Job Role",
-   "link_fieldname": "sector"
+   "link_doctype": "Batch",
+   "link_fieldname": "job_role"
   },
   {
-   "link_doctype": "Batch",
-   "link_fieldname": "sector"
+   "link_doctype": "Candidate Profile",
+   "link_fieldname": "job_role"
+  },
+  {
+   "link_doctype": "Candidate Success Stories",
+   "link_fieldname": "job_role"
   }
  ],
- "modified": "2024-06-03 16:59:22.307243",
+ "modified": "2024-06-03 18:16:28.685767",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",
