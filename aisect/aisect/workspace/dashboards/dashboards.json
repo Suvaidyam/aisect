@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"MXfUrWOYAe\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":4}},{\"id\":\"aSzIAKXGfY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":4}},{\"id\":\"3Vyndcr4HN\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":4}},{\"id\":\"AX-FHisl8L\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Leftbar List</b></span>\",\"col\":12}},{\"id\":\"JPfhkdIL_4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Candidate Profile\",\"col\":9}},{\"id\":\"fMaCNdjecg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Candiate Placement\",\"col\":9}},{\"id\":\"m09UCUgWly\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Success Stories\",\"col\":9}}]",
+ "content": "[{\"id\":\"MXfUrWOYAe\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":4}},{\"id\":\"aSzIAKXGfY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":4}},{\"id\":\"3Vyndcr4HN\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":4}}]",
  "creation": "2024-05-26 22:39:45.093101",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-02 12:22:25.525158",
+ "modified": "2024-06-03 11:55:15.613066",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
@@ -56,31 +56,6 @@
   }
  ],
  "sequence_id": 1.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Candidate Profile",
-   "link_to": "Candidate",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Candiate Placement",
-   "link_to": "Candiate Placement Details",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Success Stories",
-   "link_to": "Candidate Success Stories",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Dashboards"
 }

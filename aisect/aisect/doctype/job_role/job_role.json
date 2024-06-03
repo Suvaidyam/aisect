@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:{name1}",
  "creation": "2024-05-30 08:23:35.015913",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,7 +16,7 @@
    "fieldname": "name1",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name",
+   "label": "Job Role Name",
    "reqd": 1,
    "unique": 1
   },
@@ -36,11 +36,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 15:26:10.898099",
+ "modified": "2024-06-03 12:31:55.432219",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

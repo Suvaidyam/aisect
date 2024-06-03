@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:code",
+ "autoname": "format:{code}",
  "creation": "2024-05-26 22:22:50.285390",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,16 +10,10 @@
   "zone",
   "code",
   "column_break_wqhk",
-  "name1",
+  "state_name",
   "status"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name",
-   "reqd": 1
-  },
   {
    "fieldname": "code",
    "fieldtype": "Data",
@@ -46,16 +40,22 @@
   {
    "fieldname": "column_break_wqhk",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state_name",
+   "fieldtype": "Data",
+   "label": "State Name",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 12:17:58.028204",
+ "modified": "2024-06-03 12:40:34.733834",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "State",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -142,5 +142,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "state_name"
 }

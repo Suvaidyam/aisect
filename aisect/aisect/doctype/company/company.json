@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{name1}-{YY}-{###}",
+ "autoname": "format:{company_name}",
  "creation": "2024-05-26 22:54:42.133858",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,7 +12,7 @@
   "type",
   "column_break_qolg",
   "state",
-  "name1",
+  "company_name",
   "status"
  ],
  "fields": [
@@ -22,13 +22,6 @@
    "in_list_view": 1,
    "label": "State",
    "options": "State",
-   "reqd": 1
-  },
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name",
    "reqd": 1
   },
   {
@@ -65,12 +58,19 @@
   {
    "fieldname": "column_break_qolg",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Name",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 12:15:42.230761",
+ "modified": "2024-06-03 12:35:39.618981",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
@@ -161,5 +161,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "company_name"
 }

@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:code",
+ "autoname": "format:{candidate_name}",
  "creation": "2024-05-27 06:55:57.426456",
  "default_view": "List",
  "doctype": "DocType",
@@ -14,7 +14,6 @@
   "projects",
   "job_role",
   "status",
-  "code",
   "column_break_iwgi",
   "zone",
   "centre",
@@ -109,16 +108,6 @@
    "options": "Placement Child"
   },
   {
-   "fetch_from": "candidate_name.candidate_id",
-   "fieldname": "code",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Code",
-   "options": "Candidate",
-   "read_only": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "sector",
    "fieldtype": "Link",
    "label": "Sector",
@@ -138,11 +127,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 10:36:38.810445",
+ "modified": "2024-06-03 12:38:35.229150",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -218,7 +207,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "candidate_name"
 }

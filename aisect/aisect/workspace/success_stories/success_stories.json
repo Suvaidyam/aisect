@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Success Stories",
  "links": [],
- "modified": "2024-05-28 17:20:47.506286",
+ "modified": "2024-06-03 11:52:20.736807",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Success Stories",
@@ -48,7 +48,7 @@
    "role": "Centre Head"
   }
  ],
- "sequence_id": 4.0,
+ "sequence_id": 5.0,
  "shortcuts": [],
  "title": "Success Stories"
 }

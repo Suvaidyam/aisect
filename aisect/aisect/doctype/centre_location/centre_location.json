@@ -2,17 +2,17 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:code",
+ "autoname": "format:{code}",
  "creation": "2024-05-26 22:24:29.410956",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "name1",
+  "centre_name",
+  "status",
   "column_break_dmfk",
   "state",
-  "code",
-  "status"
+  "code"
  ],
  "fields": [
   {
@@ -20,12 +20,6 @@
    "fieldtype": "Link",
    "label": "State",
    "options": "State",
-   "reqd": 1
-  },
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name",
    "reqd": 1
   },
   {
@@ -54,16 +48,22 @@
   {
    "fieldname": "column_break_dmfk",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "centre_name",
+   "fieldtype": "Data",
+   "label": "Centre Name",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 12:18:21.490561",
+ "modified": "2024-06-03 12:41:53.156757",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Centre Location",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -150,5 +150,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "centre_name"
 }

@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-02 15:03:16.012012",
+ "modified": "2024-06-03 11:52:20.072449",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
@@ -30,7 +30,7 @@
    "role": "Administrator"
   }
  ],
- "sequence_id": 5.0,
+ "sequence_id": 2.0,
  "shortcuts": [
   {
    "color": "Grey",
