@@ -2,26 +2,19 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:code",
+ "autoname": "format:{code}",
  "creation": "2024-05-30 08:14:34.755790",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "name1",
+  "district_name",
+  "status",
   "column_break_mbil",
   "state",
-  "code",
-  "status"
+  "code"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name",
-   "reqd": 1
-  },
   {
    "fieldname": "code",
    "fieldtype": "Data",
@@ -56,16 +49,23 @@
   {
    "fieldname": "column_break_mbil",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "district_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "District Name",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 15:10:33.195858",
+ "modified": "2024-06-03 12:41:11.272907",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "District",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -152,5 +152,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "district_name"
 }

@@ -2,23 +2,16 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:{zone_name}",
  "creation": "2024-05-27 06:24:44.001820",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
+  "zone_name",
   "column_break_ediy",
   "status"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name",
-   "reqd": 1,
-   "unique": 1
-  },
   {
    "default": "Active",
    "fieldname": "status",
@@ -31,16 +24,23 @@
   {
    "fieldname": "column_break_ediy",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "zone_name",
+   "fieldtype": "Data",
+   "label": "Zone Name",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 12:17:15.971524",
+ "modified": "2024-06-03 12:34:42.548478",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Zone",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -127,5 +127,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "zone_name"
 }

@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:candidate_id",
+ "autoname": "format:{candidate_id}",
  "creation": "2024-05-26 22:58:48.777713",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -13,12 +13,12 @@
   "candidate_id",
   "aadhar_number",
   "contact_no",
-  "qualification",
+  "status",
   "column_break_tmcc",
   "last_name",
   "email",
   "gender",
-  "status",
+  "qualification",
   "batch_details_tab",
   "column_break_mbny",
   "zone",
@@ -118,14 +118,14 @@
   {
    "fieldname": "candidate_id",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Candidate ID",
    "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "details_section",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Details"
   },
   {
    "fieldname": "column_break_tmcc",
@@ -134,7 +134,6 @@
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Last Name",
    "reqd": 1
   },
@@ -164,7 +163,6 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "First Name",
    "reqd": 1
   },
@@ -172,17 +170,18 @@
    "fieldname": "full_name",
    "fieldtype": "Data",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "Full Name"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 15:53:19.593632",
+ "modified": "2024-06-03 12:46:03.649616",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
