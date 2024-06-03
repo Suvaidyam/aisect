@@ -7,12 +7,11 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "zone",
-  "sector",
-  "type",
-  "column_break_qolg",
-  "state",
   "company_name",
+  "company_type",
+  "zone",
+  "state",
+  "sector",
   "status"
  ],
  "fields": [
@@ -22,14 +21,6 @@
    "in_list_view": 1,
    "label": "State",
    "options": "State",
-   "reqd": 1
-  },
-  {
-   "fieldname": "type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Type",
-   "options": "\nPvt Ltd\nProprietor\nPrivate Company\nProprietor Ship\nComputer Centre",
    "reqd": 1
   },
   {
@@ -55,21 +46,25 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_qolg",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "company_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Company Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Company Type",
+   "options": "\nPvt Ltd\nProprietor\nPrivate Company\nProprietor Ship\nComputer Centre",
    "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 15:43:30.702114",
+ "modified": "2024-06-03 16:56:43.983568",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
