@@ -24,6 +24,7 @@
   {
    "fieldname": "project_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Project Name",
    "reqd": 1
   },
@@ -38,7 +39,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 15:08:40.541349",
+ "modified": "2024-06-03 15:48:26.015724",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Project",
@@ -62,6 +63,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,

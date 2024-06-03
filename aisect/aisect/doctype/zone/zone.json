@@ -17,8 +17,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
+   "options": "Active\nInactive"
   },
   {
    "fieldname": "zone_name",
@@ -31,7 +30,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 15:06:25.317528",
+ "modified": "2024-06-03 15:43:57.438418",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Zone",
@@ -55,6 +54,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,

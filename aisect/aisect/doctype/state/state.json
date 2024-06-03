@@ -19,8 +19,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
+   "options": "Active\nInactive"
   },
   {
    "fieldname": "zone",
@@ -32,6 +31,7 @@
   {
    "fieldname": "state_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "State Name",
    "reqd": 1
   },
@@ -46,7 +46,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 15:07:13.105703",
+ "modified": "2024-06-03 15:46:46.581955",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "State",
@@ -70,6 +70,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,

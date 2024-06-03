@@ -28,12 +28,12 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nInactive\nIn Progress\nTo Be Started\nCompleted",
-   "reqd": 1
+   "options": "Active\nInactive\nIn Progress\nTo Be Started\nCompleted"
   },
   {
    "fieldname": "zone",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Zone",
    "options": "Zone",
    "reqd": 1
@@ -41,6 +41,7 @@
   {
    "fieldname": "state",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -48,6 +49,7 @@
   {
    "fieldname": "centre",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Centre Location",
    "options": "Centre Location",
    "reqd": 1
@@ -82,6 +84,7 @@
   {
    "fieldname": "batch_id",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Batch ID",
    "reqd": 1,
    "unique": 1
@@ -89,6 +92,7 @@
   {
    "fieldname": "job_role",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Job Role",
    "options": "Job Role",
    "reqd": 1,
@@ -97,6 +101,7 @@
   {
    "fieldname": "sector",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Sector",
    "options": "Sector",
    "reqd": 1
@@ -104,6 +109,7 @@
   {
    "fieldname": "project",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Project",
    "options": "Project",
    "reqd": 1
@@ -112,7 +118,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 14:36:25.160302",
+ "modified": "2024-06-03 15:51:48.695786",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
