@@ -9,7 +9,6 @@
  "field_order": [
   "project_name",
   "project_code",
-  "column_break_htqj",
   "status"
  ],
  "fields": [
@@ -21,10 +20,6 @@
    "label": "Status",
    "options": "Active\nInactive",
    "reqd": 1
-  },
-  {
-   "fieldname": "column_break_htqj",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "project_name",
@@ -43,7 +38,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:51:39.278223",
+ "modified": "2024-06-03 15:08:40.541349",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Project",

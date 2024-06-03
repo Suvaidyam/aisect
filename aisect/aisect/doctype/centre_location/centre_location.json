@@ -8,11 +8,10 @@
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "centre_name",
-  "status",
-  "column_break_dmfk",
   "state",
-  "centre_code"
+  "centre_name",
+  "centre_code",
+  "status"
  ],
  "fields": [
   {
@@ -39,10 +38,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_dmfk",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "centre_name",
    "fieldtype": "Data",
    "label": "Centre Name",
@@ -59,7 +54,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:51:10.768606",
+ "modified": "2024-06-03 15:13:08.016071",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Centre Location",
