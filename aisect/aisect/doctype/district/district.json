@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{code}",
+ "autoname": "format:{district_code}",
  "creation": "2024-05-30 08:14:34.755790",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,17 +12,9 @@
   "status",
   "column_break_mbil",
   "state",
-  "code"
+  "district_code"
  ],
  "fields": [
-  {
-   "fieldname": "code",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Code",
-   "reqd": 1,
-   "unique": 1
-  },
   {
    "default": "Active",
    "fieldname": "status",
@@ -56,12 +48,20 @@
    "in_list_view": 1,
    "label": "District Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "district_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "District Code",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:41:11.272907",
+ "modified": "2024-06-03 12:53:25.034804",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "District",
