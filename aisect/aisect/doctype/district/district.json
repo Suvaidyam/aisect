@@ -21,12 +21,12 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
+   "options": "Active\nInactive"
   },
   {
    "fieldname": "zone",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Zone",
    "options": "Zone",
    "reqd": 1
@@ -34,6 +34,7 @@
   {
    "fieldname": "state",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -52,7 +53,6 @@
   {
    "fieldname": "district_code",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "District Code",
    "reqd": 1,
    "unique": 1
@@ -61,7 +61,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:53:25.034804",
+ "modified": "2024-06-03 15:49:44.910699",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "District",
@@ -85,6 +85,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,

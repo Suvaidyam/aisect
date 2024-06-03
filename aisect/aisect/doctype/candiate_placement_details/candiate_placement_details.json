@@ -47,14 +47,15 @@
    "default": "Assessed",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
-   "options": "Assessed\nCertified\nPlaced",
-   "reqd": 1
+   "options": "Assessed\nCertified\nPlaced"
   },
   {
    "fetch_from": "candiate_name.zone",
    "fieldname": "zone",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Zone",
    "options": "Zone",
    "read_only": 1,
@@ -83,6 +84,7 @@
    "fetch_from": ".",
    "fieldname": "batch_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Batch ID",
    "options": "Batch",
    "read_only": 1,
@@ -102,6 +104,7 @@
   {
    "fieldname": "sector",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Sector",
    "options": "Sector",
    "read_only": 1,
@@ -110,6 +113,7 @@
   {
    "fieldname": "job_role",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Job Role",
    "options": "Job Role",
    "read_only": 1,
@@ -118,6 +122,7 @@
   {
    "fieldname": "project",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Project",
    "options": "Project",
    "read_only": 1,
@@ -127,7 +132,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 14:35:48.621673",
+ "modified": "2024-06-03 15:51:02.111559",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",
