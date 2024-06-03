@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{code}",
+ "autoname": "format:{centre_code}",
  "creation": "2024-05-26 22:24:29.410956",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,7 +12,7 @@
   "status",
   "column_break_dmfk",
   "state",
-  "code"
+  "centre_code"
  ],
  "fields": [
   {
@@ -21,13 +21,6 @@
    "label": "State",
    "options": "State",
    "reqd": 1
-  },
-  {
-   "fieldname": "code",
-   "fieldtype": "Data",
-   "label": "Code",
-   "reqd": 1,
-   "unique": 1
   },
   {
    "default": "Active",
@@ -54,12 +47,19 @@
    "fieldtype": "Data",
    "label": "Centre Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "centre_code",
+   "fieldtype": "Data",
+   "label": "Centre Code",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:41:53.156757",
+ "modified": "2024-06-03 12:51:10.768606",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Centre Location",

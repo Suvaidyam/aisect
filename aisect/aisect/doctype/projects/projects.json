@@ -2,24 +2,17 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{code}",
+ "autoname": "format:{project_code}",
  "creation": "2024-05-26 22:28:24.336967",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "project_name",
-  "code",
+  "project_code",
   "column_break_htqj",
   "status"
  ],
  "fields": [
-  {
-   "fieldname": "code",
-   "fieldtype": "Data",
-   "label": "Code",
-   "reqd": 1,
-   "unique": 1
-  },
   {
    "default": "Active",
    "fieldname": "status",
@@ -38,12 +31,19 @@
    "fieldtype": "Data",
    "label": "Project Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Data",
+   "label": "Project Code",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:36:20.598040",
+ "modified": "2024-06-03 12:51:39.278223",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Projects",
