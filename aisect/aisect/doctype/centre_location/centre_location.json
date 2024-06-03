@@ -7,10 +7,10 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "zone",
-  "state",
   "centre_name",
   "centre_code",
+  "zone",
+  "state",
   "status"
  ],
  "fields": [
@@ -56,7 +56,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 15:47:24.440135",
+ "modified": "2024-06-03 16:58:13.001495",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Centre Location",

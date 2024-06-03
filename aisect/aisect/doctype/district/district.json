@@ -7,12 +7,11 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "zone",
   "district_name",
-  "status",
-  "column_break_mbil",
+  "district_code",
+  "zone",
   "state",
-  "district_code"
+  "status"
  ],
  "fields": [
   {
@@ -40,10 +39,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_mbil",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "district_name",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -61,7 +56,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 15:49:44.910699",
+ "modified": "2024-06-03 16:54:40.980810",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "District",

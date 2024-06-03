@@ -60,7 +60,7 @@
    "reqd": 1
   },
   {
-   "fetch_from": "name_of_organization.type",
+   "fetch_from": "name_of_organization.company_type",
    "fieldname": "type_of_organization",
    "fieldtype": "Data",
    "label": "Type of Organization",
@@ -329,7 +329,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-03 15:02:28.460253",
+ "modified": "2024-06-03 17:02:25.795252",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",

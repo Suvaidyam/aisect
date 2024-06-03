@@ -7,9 +7,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "zone",
   "state_name",
   "state_code",
+  "zone",
   "status"
  ],
  "fields": [
@@ -55,7 +55,7 @@
    "link_fieldname": "state"
   }
  ],
- "modified": "2024-06-03 16:33:01.154775",
+ "modified": "2024-06-03 16:58:39.605907",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "State",
