@@ -8,7 +8,6 @@
  "engine": "InnoDB",
  "field_order": [
   "sector",
-  "column_break_lunx",
   "name1"
  ],
  "fields": [
@@ -27,16 +26,12 @@
    "label": "Sector",
    "options": "Sector",
    "reqd": 1
-  },
-  {
-   "fieldname": "column_break_lunx",
-   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:31:55.432219",
+ "modified": "2024-06-03 15:05:47.934662",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",

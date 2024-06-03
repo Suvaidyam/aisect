@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"vyOiAuwryz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Masters</span>\",\"col\":12}},{\"id\":\"t4jziFCu28\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Zone\",\"col\":3}},{\"id\":\"RBGhszn4cs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"State\",\"col\":3}},{\"id\":\"8FWUj3_Fj3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"District\",\"col\":3}},{\"id\":\"G8CgPsuVz7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Centre Location\",\"col\":3}},{\"id\":\"gmbaIA-P0D\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Batch\",\"col\":3}},{\"id\":\"CBcvMZJuGH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Projects\",\"col\":3}},{\"id\":\"MdJ_5EmxnI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Company\",\"col\":3}},{\"id\":\"GlLQLqmQU3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sector\",\"col\":3}},{\"id\":\"Jd_VypLNsm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Role\",\"col\":3}}]",
+ "content": "[{\"id\":\"vyOiAuwryz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Masters</span>\",\"col\":12}},{\"id\":\"t4jziFCu28\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Zone\",\"col\":3}},{\"id\":\"RBGhszn4cs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"State\",\"col\":3}},{\"id\":\"8FWUj3_Fj3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"District\",\"col\":3}},{\"id\":\"G8CgPsuVz7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Centre Location\",\"col\":3}},{\"id\":\"gmbaIA-P0D\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Batch\",\"col\":3}},{\"id\":\"CBcvMZJuGH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"id\":\"MdJ_5EmxnI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Company\",\"col\":3}},{\"id\":\"GlLQLqmQU3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sector\",\"col\":3}},{\"id\":\"Jd_VypLNsm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Role\",\"col\":3}}]",
  "creation": "2024-05-28 15:55:56.576644",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-03 11:52:20.072449",
+ "modified": "2024-06-03 15:03:25.419075",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
@@ -32,6 +32,14 @@
  ],
  "sequence_id": 2.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project",
+   "link_to": "Project",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Grey",
    "doc_view": "List",
@@ -85,14 +93,6 @@
    "doc_view": "List",
    "label": "State",
    "link_to": "State",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Projects",
-   "link_to": "Projects",
    "stats_filter": "[]",
    "type": "DocType"
   },

@@ -9,7 +9,7 @@ class CandidateProfile(Document):
     def after_insert(self):
         doc = frappe.get_doc({
             "doctype": "Candiate Placement Details",
-            "candidate_profile_name": self.name,
+            "candidate_name": self.name,
             "zone": self.zone,
             "state": self.state,
             "centre": self.centre,

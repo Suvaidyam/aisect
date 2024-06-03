@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"c8QkUZXfOp\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Profile\",\"col\":12}}]",
+ "content": "[{\"id\":\"A-b5uXy_th\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Profile\",\"col\":12}}]",
  "creation": "2024-05-26 22:38:43.590523",
  "custom_blocks": [],
  "docstatus": 0,
@@ -9,21 +9,21 @@
  "hide_custom": 0,
  "icon": "share",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "Candidate Profile",
+ "label": "Candidates Profile",
  "links": [],
- "modified": "2024-06-03 11:52:20.233009",
+ "modified": "2024-06-03 14:56:57.439885",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Candidate Profile",
+ "name": "Candidates Profile",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
  "quick_lists": [
   {
-   "document_type": "Candidate",
+   "document_type": "Candidate Profile",
    "label": "Candidate Profile",
    "quick_list_filter": "[]"
   }
@@ -50,5 +50,5 @@
  ],
  "sequence_id": 3.0,
  "shortcuts": [],
- "title": "Candidate Profile"
+ "title": "Candidates Profile"
 }

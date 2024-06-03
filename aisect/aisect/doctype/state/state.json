@@ -8,9 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "state_code",
-  "column_break_wqhk",
   "state_name",
+  "state_code",
   "status"
  ],
  "fields": [
@@ -31,10 +30,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_wqhk",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "state_name",
    "fieldtype": "Data",
    "label": "State Name",
@@ -51,7 +46,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:50:18.569931",
+ "modified": "2024-06-03 15:07:13.105703",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "State",
