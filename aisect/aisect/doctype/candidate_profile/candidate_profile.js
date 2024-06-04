@@ -7,7 +7,7 @@ frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'centre', 'state') 
-        depended_dropdown(frm, frm.doc.centre, 'batch_id', 'centre')
+        // depended_dropdown(frm, frm.doc.centre, 'batch_id', 'centre')
     },
     validate(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
