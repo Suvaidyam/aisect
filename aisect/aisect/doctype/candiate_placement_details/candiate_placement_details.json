@@ -10,7 +10,6 @@
  "field_order": [
   "candidate_details_section",
   "candidate_name",
-  "full_name",
   "state",
   "project",
   "job_role",
@@ -128,20 +127,12 @@
    "options": "Project",
    "read_only": 1,
    "reqd": 1
-  },
-  {
-   "fieldname": "full_name",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "in_list_view": 1,
-   "label": "Full Name",
-   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 18:07:50.956588",
+ "modified": "2024-06-04 11:45:40.333071",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",
@@ -225,5 +216,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "full_name"
+ "title_field": "candidate_name"
 }

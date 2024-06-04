@@ -8,12 +8,12 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "share",
- "idx": 0,
+ "idx": 1,
  "indicator_color": "",
  "is_hidden": 0,
  "label": "Candidates Profile",
  "links": [],
- "modified": "2024-06-03 14:56:57.439885",
+ "modified": "2024-06-04 09:59:18.759078",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidates Profile",
@@ -48,7 +48,7 @@
    "role": "Centre Head"
   }
  ],
- "sequence_id": 3.0,
+ "sequence_id": 5.0,
  "shortcuts": [],
  "title": "Candidates Profile"
 }

@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Candidate Placement",
  "links": [],
- "modified": "2024-06-03 11:52:20.479886",
+ "modified": "2024-06-04 09:59:18.868003",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Placement",
@@ -48,7 +48,7 @@
    "role": "Centre Head"
   }
  ],
- "sequence_id": 4.0,
+ "sequence_id": 6.0,
  "shortcuts": [],
  "title": "Candidate Placement"
 }
