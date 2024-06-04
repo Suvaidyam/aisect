@@ -41,15 +41,6 @@
    "read_only": 1
   },
   {
-   "fetch_from": "batch_id.centre",
-   "fieldname": "centre",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Centre Location",
-   "options": "Centre Location",
-   "read_only": 1
-  },
-  {
    "fetch_from": "batch_id.zone",
    "fieldname": "zone",
    "fieldtype": "Link",
@@ -177,12 +168,21 @@
    "label": "Project",
    "options": "Project",
    "read_only": 1
+  },
+  {
+   "fetch_from": "batch_id.centre",
+   "fieldname": "centre",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Centre Location",
+   "options": "Centre Location",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-04 16:22:30.419147",
+ "modified": "2024-06-04 16:39:56.449431",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Profile",
