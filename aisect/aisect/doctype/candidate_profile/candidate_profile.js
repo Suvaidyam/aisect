@@ -7,6 +7,7 @@ frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'centre', 'state') 
+        depended_dropdown(frm, frm.doc.centre, 'batch_id', 'centre')
     },
     validate(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
@@ -31,6 +32,10 @@ frappe.ui.form.on("Candidate Profile", {
     state: function (frm) {
         depended_dropdown(frm, frm.doc.state, 'centre', 'state')
         frm.set_value('centre', '')
+    },
+    centre: function (frm) {
+        depended_dropdown(frm, frm.doc.centre, 'batch_id', 'centre')
+        frm.set_value('batch_id', '')
     },
     aadhar_number: function (frm) {
         if (frm.doc.aadhar_number.length > 11) {
