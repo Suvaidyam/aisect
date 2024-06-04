@@ -10,6 +10,7 @@ class CandidateProfile(Document):
         doc = frappe.get_doc({
             "doctype": "Candiate Placement Details",
             "candidate_name": self.name,
+            "full_name": self.first_name+' '+self.last_name,
             "zone": self.zone,
             "state": self.state,
             "centre": self.centre,
