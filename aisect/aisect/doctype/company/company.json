@@ -11,6 +11,7 @@
   "company_type",
   "zone",
   "state",
+  "district",
   "sector",
   "status"
  ],
@@ -59,12 +60,20 @@
    "label": "Company Type",
    "options": "\nPvt Ltd\nProprietor\nPrivate Company\nProprietor Ship\nComputer Centre",
    "reqd": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 18:11:15.253931",
+ "modified": "2024-06-04 16:24:11.783943",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
