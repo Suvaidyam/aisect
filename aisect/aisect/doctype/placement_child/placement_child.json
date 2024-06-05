@@ -80,7 +80,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:(doc.offer_letter==='Yes')",
+   "depends_on": "eval:(doc.offer_letter=='Yes')",
    "fieldname": "upload_offer_letter",
    "fieldtype": "Attach",
    "label": "Upload Offer Letter",
@@ -132,7 +132,7 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:(doc.offer_letter==='Yes')",
+   "depends_on": "eval:(doc.offer_letter=='Yes')",
    "fieldname": "first_month_section",
    "fieldtype": "Section Break",
    "label": "First Month"
@@ -145,11 +145,11 @@
    "fieldname": "salary_slip",
    "fieldtype": "Select",
    "label": "Salary Slip",
-   "options": "\nYes\nNo",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.offer_letter=='Yes')",
+   "options": "\nYes\nNo"
   },
   {
-   "depends_on": "eval:(doc.salary_slip==='Yes')",
+   "depends_on": "eval:(doc.salary_slip=='Yes')",
    "fieldname": "second_month_section",
    "fieldtype": "Section Break",
    "label": "Second Month"
@@ -159,7 +159,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:(doc.salary_slip_2==='Yes')",
+   "depends_on": "eval:(doc.salary_slip_2=='Yes')",
    "fieldname": "third_month_section",
    "fieldtype": "Section Break",
    "label": "Third Month"
@@ -172,8 +172,7 @@
    "fieldname": "bank_statement",
    "fieldtype": "Select",
    "label": "Bank Statement",
-   "options": "\nYes\nNo",
-   "reqd": 1
+   "options": "\nYes\nNo"
   },
   {
    "depends_on": "eval:(doc.salary_slip==='Yes')",
@@ -193,8 +192,8 @@
    "fieldname": "salary_slip_2",
    "fieldtype": "Select",
    "label": "Salary Slip",
-   "options": "\nYes\nNo",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.salary_slip=='Yes')",
+   "options": "\nYes\nNo"
   },
   {
    "depends_on": "eval:(doc.salary_slip_2==='Yes')",
@@ -214,15 +213,14 @@
    "fieldname": "salary_slip_3",
    "fieldtype": "Select",
    "label": "Salary Slip",
-   "options": "\nYes\nNo",
-   "reqd": 1
+   "mandatory_depends_on": "eval:(doc.salary_slip_2=='Yes')",
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "bank_statement_3",
    "fieldtype": "Select",
    "label": "Bank Statement",
-   "options": "\nYes\nNo",
-   "reqd": 1
+   "options": "\nYes\nNo"
   },
   {
    "depends_on": "eval:(doc.salary_slip_3==='Yes')",
@@ -271,8 +269,7 @@
    "fieldname": "bank_statement_2",
    "fieldtype": "Select",
    "label": "Bank Statement",
-   "options": "\nYes\nNo",
-   "reqd": 1
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "monthly_income",
@@ -323,7 +320,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-04 18:44:10.291828",
+ "modified": "2024-06-05 10:38:53.670309",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",
