@@ -1,0 +1,33 @@
+{
+ "chart_name": "Placement Status",
+ "chart_type": "Report",
+ "creation": "2024-06-05 15:25:55.566528",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2024-06-05 15:25:55.566528",
+ "modified_by": "Administrator",
+ "module": "Aisect",
+ "name": "Placement Status",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Placement Status",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "ps",
+ "y_axis": [
+  {
+   "color": "#449CF0",
+   "y_field": "count"
+  }
+ ]
+}

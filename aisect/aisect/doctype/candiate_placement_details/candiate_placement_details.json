@@ -14,7 +14,7 @@
   "state",
   "batch_id",
   "sector",
-  "status",
+  "placement_status",
   "column_break_iwgi",
   "zone",
   "centre",
@@ -43,14 +43,6 @@
    "options": "Centre Location",
    "read_only": 1,
    "reqd": 1
-  },
-  {
-   "default": "Assessed",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Status",
-   "options": "Assessed\nCertified\nPlaced"
   },
   {
    "fetch_from": "candiate_name.zone",
@@ -95,11 +87,11 @@
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:(doc.status==='Placed')",
+   "depends_on": "eval:(doc.placement_status==='Placed')",
    "fieldname": "table_dpvf",
    "fieldtype": "Table",
    "label": "Placement",
-   "mandatory_depends_on": "eval:(doc.status==='Placed')",
+   "mandatory_depends_on": "eval:(doc.placement_status==='Placed')",
    "options": "Placement Child"
   },
   {
@@ -132,12 +124,20 @@
    "hidden": 1,
    "in_list_view": 1,
    "label": "Full Name"
+  },
+  {
+   "default": "Assessed",
+   "fieldname": "placement_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Placement Status",
+   "options": "Assessed\nCertified\nPlaced"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-04 13:01:18.724787",
+ "modified": "2024-06-05 12:20:05.533132",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candiate Placement Details",
