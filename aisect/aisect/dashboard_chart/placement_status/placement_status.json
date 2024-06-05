@@ -10,14 +10,21 @@
  "idx": 0,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-05 15:25:55.566528",
+ "modified": "2024-06-05 15:48:44.166721",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Status",
  "number_of_groups": 0,
  "owner": "Administrator",
  "report_name": "Placement Status",
- "roles": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Head Office (PMU)"
+  }
+ ],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
