@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"vyOiAuwryz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Masters</span>\",\"col\":12}},{\"id\":\"t4jziFCu28\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Zone\",\"col\":3}},{\"id\":\"RBGhszn4cs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"State\",\"col\":3}},{\"id\":\"8FWUj3_Fj3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"District\",\"col\":3}},{\"id\":\"G8CgPsuVz7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Centre Location\",\"col\":3}},{\"id\":\"gmbaIA-P0D\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Batch\",\"col\":3}},{\"id\":\"CBcvMZJuGH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"id\":\"MdJ_5EmxnI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Company\",\"col\":3}},{\"id\":\"GlLQLqmQU3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sector\",\"col\":3}},{\"id\":\"Jd_VypLNsm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Role\",\"col\":3}}]",
+ "content": "[{\"id\":\"dKRqBecgQp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Zone\",\"col\":4}},{\"id\":\"kEGIoc_k-U\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"r_i0ozAa20\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"fTJG77lu0H\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Centre Location\",\"col\":4}},{\"id\":\"QbzEmG5Q8z\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Project\",\"col\":4}},{\"id\":\"l1MjX5ZIjI\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Batch\",\"col\":4}},{\"id\":\"ccxyoTp02x\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Company\",\"col\":4}},{\"id\":\"ALwl-HLprQ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sector\",\"col\":4}},{\"id\":\"XjMCvYOMxN\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Job Role\",\"col\":4}}]",
  "creation": "2024-05-28 15:55:56.576644",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,48 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-04 09:59:18.498112",
+ "modified": "2024-06-06 10:30:05.609333",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Zone",
+   "number_card_name": "Zone"
+  },
+  {
+   "label": "State",
+   "number_card_name": "State"
+  },
+  {
+   "label": "District",
+   "number_card_name": "District"
+  },
+  {
+   "label": "Centre Location",
+   "number_card_name": "Centre Location"
+  },
+  {
+   "label": "Project",
+   "number_card_name": "Project"
+  },
+  {
+   "label": "Batch",
+   "number_card_name": "Batch"
+  },
+  {
+   "label": "Sector",
+   "number_card_name": "Sector"
+  },
+  {
+   "label": "Company",
+   "number_card_name": "Company"
+  },
+  {
+   "label": "Job Role",
+   "number_card_name": "Job Role"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -31,79 +68,6 @@
   }
  ],
  "sequence_id": 3.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Project",
-   "link_to": "Project",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Zone",
-   "link_to": "Zone",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Job Role",
-   "link_to": "Job Role",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Sector",
-   "link_to": "Sector",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "District",
-   "link_to": "District",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Centre Location",
-   "link_to": "Centre Location",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Batch",
-   "link_to": "Batch",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "State",
-   "link_to": "State",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Company",
-   "link_to": "Company",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Masters"
 }
