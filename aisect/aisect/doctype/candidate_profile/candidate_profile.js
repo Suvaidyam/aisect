@@ -3,12 +3,28 @@
 
 let aadharPattern = /^\d{4}\d{4}\d{4}$/;
 let mobilePattern = /^[6-9]\d{9}$/;
+
 frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
         // depended_dropdown(frm, frm.doc.state, 'centre', 'state') 
         // depended_dropdown(frm, frm.doc.centre, 'batch_id', 'centre')
+        // 
+        // =============== setPlaceholders =============
+        setPlaceholders(frm, [
+            { fieldName: 'first_name', placeholderText: __("Enter your first name") },
+            { fieldName: 'last_name', placeholderText: __("Enter your last name") },
+            { fieldName: 'candidate_id', placeholderText: __("Enter your candidate id") },
+            { fieldName: 'contact_no', placeholderText: __("Enter your contact number") },
+            { fieldName: 'email', placeholderText: __("Enter your email address") },
+            { fieldName: 'aadhar_number', placeholderText: __("Enter your Aadhar number") },
+            { fieldName: 'qualification', placeholderText: __("Enter your qualification") },
+            { fieldName: 'project', placeholderText: __("Enter your project") },
+            { fieldName: 'batch_id', placeholderText: __("Enter your batch_id") }
+
+        ])
     },
+
     validate(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
             frappe.throw('Enter vaild aadhar number')
