@@ -5,7 +5,7 @@ let aadharPattern = /^\d{4}\d{4}\d{4}$/;
 let mobilePattern = /^[6-9]\d{9}$/;
 frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
-        // depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
+        depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
         // depended_dropdown(frm, frm.doc.state, 'centre', 'state') 
         // depended_dropdown(frm, frm.doc.centre, 'batch_id', 'centre')
     },
@@ -25,10 +25,10 @@ frappe.ui.form.on("Candidate Profile", {
             frappe.throw('Enter vaild contact number')
         }
     },
-    // zone: function (frm) {
-    //     depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
-    //     frm.set_value('state', '')
-    // },
+    project: function (frm) {
+        depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
+        frm.set_value('batch_id', '')
+    },
     // state: function (frm) {
     //     depended_dropdown(frm, frm.doc.state, 'centre', 'state')
     //     frm.set_value('centre', '')
