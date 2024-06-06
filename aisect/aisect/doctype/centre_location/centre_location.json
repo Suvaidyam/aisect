@@ -11,6 +11,7 @@
   "centre_code",
   "zone",
   "state",
+  "district",
   "status"
  ],
  "fields": [
@@ -51,6 +52,14 @@
    "label": "Centre Code",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
@@ -65,7 +74,7 @@
    "link_fieldname": "centre"
   }
  ],
- "modified": "2024-06-03 18:04:31.782272",
+ "modified": "2024-06-06 10:26:04.472328",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Centre Location",

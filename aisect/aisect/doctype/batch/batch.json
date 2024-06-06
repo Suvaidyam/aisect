@@ -8,14 +8,15 @@
  "engine": "InnoDB",
  "field_order": [
   "zone",
-  "centre",
+  "district",
   "column_break_tvpa",
   "state",
+  "centre",
   "section_break_dwgy",
   "batch_id",
   "sector",
   "start_date",
-  "assessment_date",
+  "expected_assessment_date",
   "status",
   "column_break_hhuj",
   "project",
@@ -72,12 +73,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "assessment_date",
-   "fieldtype": "Date",
-   "label": "Assessment Date",
-   "reqd": 1
-  },
-  {
    "fieldname": "actual_assessment_date",
    "fieldtype": "Date",
    "label": "Actual Assessment Date"
@@ -121,6 +116,20 @@
   {
    "fieldname": "column_break_hhuj",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_assessment_date",
+   "fieldtype": "Date",
+   "label": "Expected Assessment Date",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
@@ -135,7 +144,7 @@
    "link_fieldname": "batch_id"
   }
  ],
- "modified": "2024-06-03 18:07:12.949587",
+ "modified": "2024-06-06 12:13:42.956088",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",

@@ -13,6 +13,7 @@ class CandidateProfile(Document):
             "full_name": self.first_name+' '+self.last_name,
             "zone": self.zone,
             "state": self.state,
+            "district": self.district,
             "centre": self.centre,
             "project": self.project,
             "batch_id": self.batch_id,
