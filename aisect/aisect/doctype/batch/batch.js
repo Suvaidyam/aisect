@@ -3,7 +3,8 @@
 frappe.ui.form.on("Batch", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
-        depended_dropdown(frm, frm.doc.state, 'centre', 'state')
+        depended_dropdown(frm, frm.doc.state, 'district', 'state')
+        depended_dropdown(frm, frm.doc.district, 'centre', 'district')
         depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
     },
 
@@ -12,7 +13,11 @@ frappe.ui.form.on("Batch", {
         frm.set_value('state', '')
     },
     state: function (frm) {
-        depended_dropdown(frm, frm.doc.state, 'centre', 'state')
+        depended_dropdown(frm, frm.doc.state, 'district', 'state')
+        frm.set_value('district', '')
+    },
+    district: function (frm) {
+        depended_dropdown(frm, frm.doc.district, 'centre', 'district')
         frm.set_value('centre', '')
     },
     sector: function (frm) {
@@ -28,8 +33,8 @@ frappe.ui.form.on("Batch", {
     end_date: function (frm) {
         date_validation(frm, frm.doc.end_date, frm.doc.start_date, frm.is_end_date_being_set, 'end_date', 'Start Date', 'End Date')
     },
-    assessment_date: function (frm) {
-        date_validation(frm, frm.doc.assessment_date, frm.doc.end_date, frm.is_assessment_date_being_set, 'assessment_date', 'End Date', 'Assessment Date')
+    expected_assessment_date: function (frm) {
+        date_validation(frm, frm.doc.expected_assessment_date, frm.doc.end_date, frm.is_expected_assessment_date_being_set, 'expected_assessment_date', 'End Date', 'Expected Assessment Date')
     },
     actual_assessment_date: function (frm) {
         date_validation(frm, frm.doc.actual_assessment_date, frm.doc.assessment_date, frm.is_actual_assessment_date_being_set, 'actual_assessment_date', 'Assessment date', 'Actual assessment date')

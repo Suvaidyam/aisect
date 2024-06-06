@@ -10,7 +10,7 @@
  "idx": 0,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-05 16:01:32.540523",
+ "modified": "2024-06-06 15:25:35.885850",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Status",
@@ -33,7 +33,7 @@
  "x_field": "ps",
  "y_axis": [
   {
-   "color": "#449CF0",
+   "color": "#264796",
    "y_field": "count"
   }
  ]
