@@ -276,7 +276,6 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Monthly Income",
-   "mandatory_depends_on": "eval:doc.join_job==='Yes'",
    "precision": "1",
    "reqd": 1
   },
@@ -320,7 +319,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-05 10:38:53.670309",
+ "modified": "2024-06-06 12:59:12.181862",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",

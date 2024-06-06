@@ -21,14 +21,15 @@
   "qualification",
   "section_break_wznz",
   "column_break_mbny",
+  "project",
+  "zone",
+  "district",
+  "sector",
+  "column_break_cjyn",
   "batch_id",
   "state",
-  "project",
-  "job_role",
-  "column_break_cjyn",
-  "zone",
   "centre",
-  "sector"
+  "job_role"
  ],
  "fields": [
   {
@@ -162,12 +163,11 @@
    "label": "Batch Details"
   },
   {
-   "fetch_from": "batch_id.project",
    "fieldname": "project",
    "fieldtype": "Link",
    "label": "Project",
    "options": "Project",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fetch_from": "batch_id.centre",
@@ -177,12 +177,21 @@
    "label": "Centre Location",
    "options": "Centre Location",
    "read_only": 1
+  },
+  {
+   "fetch_from": "batch_id.district",
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-04 16:39:56.449431",
+ "modified": "2024-06-06 11:31:00.068214",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Profile",
