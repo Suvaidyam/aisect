@@ -36,6 +36,5 @@ def execute(filters=None):
 		GROUP BY
 			COALESCE(NULLIF(placement_status, ''), 'Unknown');
 	"""
-	print(sql_query,'=================================')
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
