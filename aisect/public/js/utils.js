@@ -41,3 +41,14 @@ function mobile_number_validation(frm, contact_number, field_name) {
         }
     }
 }
+
+function setPlaceholders(frm, fieldsPlaceholders) {
+    fieldsPlaceholders.forEach(function (item) {
+        var fieldName = item.fieldName;
+        var placeholderText = item.placeholderText;
+
+        if (frm.fields_dict[fieldName] && frm.fields_dict[fieldName].$input) {
+            frm.fields_dict[fieldName].$input.attr("placeholder", placeholderText);
+        }
+    });
+}

@@ -11,7 +11,6 @@ frappe.listview_settings['Candiate Placement Details'] = {
             elements.forEach(function (element) {
                 element.style.backgroundColor = bgColor;
                 element.style.color = textColor;
-                console.log(element);
             });
         }
 
