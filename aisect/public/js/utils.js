@@ -46,9 +46,14 @@ function setPlaceholders(frm, fieldsPlaceholders) {
     fieldsPlaceholders.forEach(function (item) {
         var fieldName = item.fieldName;
         var placeholderText = item.placeholderText;
+        var placeholderSize = item.placeholderSize;
+        var placeholderFontWeight = item.placeholderFontWeight;
 
         if (frm.fields_dict[fieldName] && frm.fields_dict[fieldName].$input) {
-            frm.fields_dict[fieldName].$input.attr("placeholder", placeholderText);
+            var $input = frm.fields_dict[fieldName].$input;
+            $input.attr("placeholder", placeholderText);
+            $input.attr("style", "font-weight: " + placeholderFontWeight + " !important");
+            $input.css("font-size", placeholderSize);
         }
     });
 }
