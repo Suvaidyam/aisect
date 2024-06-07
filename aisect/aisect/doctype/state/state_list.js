@@ -8,4 +8,4 @@ frappe.listview_settings['State'] = {
         $(".list-row-activity").hide();
         $("use.like-icon").hide();
     }
-};
+}; 
