@@ -1,22 +1,22 @@
 {
  "charts": [],
- "content": "[{\"id\":\"tA4G2DYOqF\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candiate Placement Details\",\"col\":12}}]",
- "creation": "2024-05-27 19:16:37.435868",
+ "content": "[{\"id\":\"h87Z7J8lKY\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candiates Placement Details\",\"col\":12}}]",
+ "creation": "2024-06-08 11:45:21.673617",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "branch",
- "idx": 2,
- "indicator_color": "",
+ "icon": "shortcut",
+ "idx": 0,
+ "indicator_color": "green",
  "is_hidden": 0,
- "label": "Candidate Placement",
+ "label": "Candidates Placement",
  "links": [],
- "modified": "2024-06-04 09:59:18.868003",
+ "modified": "2024-06-08 11:51:37.720400",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Candidate Placement",
+ "name": "Candidates Placement",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -24,11 +24,14 @@
  "quick_lists": [
   {
    "document_type": "Candiate Placement Details",
-   "label": "Candiate Placement Details",
+   "label": "Candiates Placement Details",
    "quick_list_filter": "[]"
   }
  ],
  "roles": [
+  {
+   "role": "Administrator"
+  },
   {
    "role": "Head Office (PMU)"
   },
@@ -48,7 +51,7 @@
    "role": "Centre Head"
   }
  ],
- "sequence_id": 6.0,
+ "sequence_id": 4.0,
  "shortcuts": [],
- "title": "Candidate Placement"
+ "title": "Candidates Placement"
 }
