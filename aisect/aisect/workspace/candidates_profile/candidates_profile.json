@@ -1,19 +1,19 @@
 {
  "charts": [],
- "content": "[{\"id\":\"A-b5uXy_th\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Profile\",\"col\":12}}]",
- "creation": "2024-05-26 22:38:43.590523",
+ "content": "[{\"id\":\"jz9IKhJymj\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Profile\",\"col\":12}}]",
+ "creation": "2024-06-08 11:41:16.497754",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "share",
- "idx": 1,
- "indicator_color": "",
+ "icon": "customer",
+ "idx": 0,
+ "indicator_color": "light-blue",
  "is_hidden": 0,
  "label": "Candidates Profile",
  "links": [],
- "modified": "2024-06-04 09:59:18.759078",
+ "modified": "2024-06-08 11:48:00.705115",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidates Profile",
@@ -29,6 +29,9 @@
   }
  ],
  "roles": [
+  {
+   "role": "Administrator"
+  },
   {
    "role": "Head Office (PMU)"
   },
@@ -48,7 +51,7 @@
    "role": "Centre Head"
   }
  ],
- "sequence_id": 5.0,
+ "sequence_id": 3.0,
  "shortcuts": [],
  "title": "Candidates Profile"
 }

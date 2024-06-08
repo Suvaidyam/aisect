@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\":\"QddFg6HF1n\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
- "creation": "2024-05-26 22:41:30.868061",
+ "content": "[{\"id\":\"OnsKhO_oaA\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
+ "creation": "2024-06-08 11:47:56.285952",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Success Stories",
  "links": [],
- "modified": "2024-06-04 09:59:18.970580",
+ "modified": "2024-06-08 11:49:42.883542",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Success Stories",
@@ -29,6 +29,9 @@
   }
  ],
  "roles": [
+  {
+   "role": "Administrator"
+  },
   {
    "role": "Head Office (PMU)"
   },
@@ -48,7 +51,7 @@
    "role": "Centre Head"
   }
  ],
- "sequence_id": 7.0,
+ "sequence_id": 5.0,
  "shortcuts": [],
  "title": "Success Stories"
 }
