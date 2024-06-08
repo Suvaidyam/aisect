@@ -2,23 +2,15 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{name1}",
+ "autoname": "format:{job_role_name}-{###}",
  "creation": "2024-05-30 08:23:35.015913",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
+  "job_role_name",
   "sector"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Job Role Name",
-   "reqd": 1,
-   "unique": 1
-  },
   {
    "fieldname": "sector",
    "fieldtype": "Link",
@@ -26,6 +18,14 @@
    "label": "Sector",
    "options": "Sector",
    "reqd": 1
+  },
+  {
+   "fieldname": "job_role_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Job Role Name",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
@@ -44,7 +44,7 @@
    "link_fieldname": "job_role"
   }
  ],
- "modified": "2024-06-03 18:16:28.685767",
+ "modified": "2024-06-08 13:14:14.025256",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",
@@ -136,5 +136,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "job_role_name"
 }
