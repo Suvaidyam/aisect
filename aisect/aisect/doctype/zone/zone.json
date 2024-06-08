@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{zone_name}",
+ "autoname": "format:{zone_name}-{##}",
  "creation": "2024-05-27 06:24:44.001820",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -47,7 +47,7 @@
    "link_fieldname": "zone"
   }
  ],
- "modified": "2024-06-07 15:38:07.958080",
+ "modified": "2024-06-08 13:16:38.269269",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Zone",
