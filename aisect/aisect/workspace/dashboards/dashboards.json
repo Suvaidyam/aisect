@@ -5,8 +5,8 @@
    "label": "Placement Status"
   }
  ],
- "content": "[{\"id\":\"cL6gnuhgXO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":4}},{\"id\":\"EAST0_Hr6e\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":4}},{\"id\":\"jN7rOwRPjk\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":4}},{\"id\":\"_-SHyD0a76\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement Status\",\"col\":7}}]",
- "creation": "2024-06-08 11:32:48.216889",
+ "content": "[{\"id\":\"RdCMhxHdVy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":4}},{\"id\":\"4Oh2X3cY17\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":4}},{\"id\":\"toAb-v5C_T\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":4}},{\"id\":\"27wkBOhaAL\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement Status\",\"col\":7}}]",
+ "creation": "2024-06-08 11:57:57.086913",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-08 11:48:00.346825",
+ "modified": "2024-06-08 12:09:19.157133",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",

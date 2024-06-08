@@ -1,19 +1,19 @@
 {
  "charts": [],
- "content": "[{\"id\":\"h87Z7J8lKY\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candiates Placement Details\",\"col\":12}}]",
- "creation": "2024-06-08 11:45:21.673617",
+ "content": "[{\"id\":\"Ucv-oKZohZ\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candiate Placement Details\",\"col\":12}}]",
+ "creation": "2024-06-08 12:07:12.511384",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "shortcut",
+ "icon": "permission",
  "idx": 0,
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Candidates Placement",
  "links": [],
- "modified": "2024-06-08 11:51:37.720400",
+ "modified": "2024-06-08 12:09:19.825799",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidates Placement",
@@ -24,7 +24,7 @@
  "quick_lists": [
   {
    "document_type": "Candiate Placement Details",
-   "label": "Candiates Placement Details",
+   "label": "Candiate Placement Details",
    "quick_list_filter": "[]"
   }
  ],
