@@ -6,21 +6,29 @@ from frappe.model.document import Document
 
 
 class CandidateProfile(Document):
-    def after_insert(self):
-        doc = frappe.get_doc({
-            "doctype": "Candiate Placement Details",
-            "candidate_name": self.name,
-            "full_name": self.first_name+' '+self.last_name,
-            "zone": self.zone,
-            "state": self.state,
-            "district": self.district,
-            "centre": self.centre,
-            "project": self.project,
-            "batch_id": self.batch_id,
-            "sector": self.sector,
-            "job_role": self.job_role,
-        })
+    def on_update(self):
+        existing_docs = frappe.get_all('Candiate Placement Details', filters={'candidate_name': self.name})
+        if existing_docs:
+            doc = frappe.get_doc('Candiate Placement Details', existing_docs[0].name)
+        else:
+            doc = frappe.get_doc({
+                'doctype': 'Candiate Placement Details',
+                'candidate_name': self.name
+            })
+
+        doc.full_name = self.first_name + ' ' + self.last_name
+        doc.zone = self.zone
+        doc.state = self.state
+        doc.district = self.district
+        doc.centre = self.centre
+        doc.project = self.project
+        doc.batch_id = self.batch_id
+        doc.sector = self.sector
+        doc.job_role = self.job_role
+
         doc.save(ignore_permissions=True)
 
     def before_save(self):
         self.full_name = self.first_name+' '+self.last_name
+
+  
