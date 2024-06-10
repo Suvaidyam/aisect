@@ -42,6 +42,11 @@ frappe.ui.form.on("Batch", {
         const today = new Date(frm.doc.start_date); 
         today.setDate(today.getDate() + 1);
         frm.fields_dict.end_date.$input.datepicker({minDate: today});
+        if(frm.doc.end_date < frm.doc.start_date){
+            frm.set_value('end_date','')
+            frm.set_value('expected_assessment_date','')
+            frm.set_value('actual_assessment_date','')
+        }
     },
     end_date: function (frm) {
         if (frm.doc.start_date == undefined) {
@@ -57,6 +62,10 @@ frappe.ui.form.on("Batch", {
         // today.setDate(today.getDate() + 1);
         frm.fields_dict.expected_assessment_date.$input.datepicker({minDate: today});
         date_validation(frm, frm.doc.end_date, frm.doc.start_date, frm.is_end_date_being_set, 'end_date', 'Start Date', 'End Date')
+        if(frm.doc.expected_assessment_date < frm.doc.end_date){ 
+            frm.set_value('expected_assessment_date','')
+            frm.set_value('actual_assessment_date','')
+        }
     },
     expected_assessment_date: function (frm) {
         if (frm.doc.end_date == undefined) {
@@ -72,6 +81,9 @@ frappe.ui.form.on("Batch", {
         today.setDate(today.getDate() + 1);
         frm.fields_dict.actual_assessment_date.$input.datepicker({minDate: today});
         date_validation(frm, frm.doc.expected_assessment_date, frm.doc.end_date, frm.is_expected_assessment_date_being_set, 'expected_assessment_date', 'End Date', 'Expected Assessment Date')
+        if(frm.doc.actual_assessment_date < frm.doc.expected_assessment_date){ 
+            frm.set_value('actual_assessment_date','')
+        }
     },
     actual_assessment_date: function (frm) {
         if (frm.doc.expected_assessment_date == undefined) {
