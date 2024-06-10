@@ -8,7 +8,7 @@ const truncate_child_table_field_value = async(row,frm,fields) => {
         frm.cur_grid.refresh()
     }
 }
-// frappe.ui.form.on("Candiate Placement Details", {
+// frappe.ui.form.on("Candidate Placement Details", {
 //     refresh(frm) {
 
 //     },

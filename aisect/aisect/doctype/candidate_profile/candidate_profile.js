@@ -7,8 +7,8 @@ let mobilePattern = /^[6-9]\d{9}$/;
 frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
-        // depended_dropdown(frm, frm.doc.state, 'centre', 'state') 
-        // depended_dropdown(frm, frm.doc.centre, 'batch_id', 'centre')
+        // depended_dropdown(frm, frm.doc.state, 'centre_location', 'state') 
+        // depended_dropdown(frm, frm.doc.centre_location, 'batch_id', 'centre_location')
         // 
         // =============== setPlaceholders =============
         setPlaceholders(frm, [
@@ -46,11 +46,11 @@ frappe.ui.form.on("Candidate Profile", {
         frm.set_value('batch_id', '')
     },
     // state: function (frm) {
-    //     depended_dropdown(frm, frm.doc.state, 'centre', 'state')
-    //     frm.set_value('centre', '')
+    //     depended_dropdown(frm, frm.doc.state, 'centre_location', 'state')
+    //     frm.set_value('centre_location', '')
     // },
-    // centre: function (frm) {
-    //     depended_dropdown(frm, frm.doc.centre, 'batch_id', 'centre')
+    // centre_location: function (frm) {
+    //     depended_dropdown(frm, frm.doc.centre_location, 'batch_id', 'centre_location')
     //     frm.set_value('batch_id', '')
     // },
     aadhar_number: function (frm) {

@@ -7,12 +7,12 @@ from frappe.model.document import Document
 
 class CandidateProfile(Document):
     def on_update(self):
-        existing_docs = frappe.get_all('Candiate Placement Details', filters={'candidate_name': self.name})
+        existing_docs = frappe.get_all('Candidate Placement Details', filters={'candidate_name': self.name})
         if existing_docs:
-            doc = frappe.get_doc('Candiate Placement Details', existing_docs[0].name)
+            doc = frappe.get_doc('Candidate Placement Details', existing_docs[0].name)
         else:
             doc = frappe.get_doc({
-                'doctype': 'Candiate Placement Details',
+                'doctype': 'Candidate Placement Details',
                 'candidate_name': self.name
             })
 
@@ -20,7 +20,7 @@ class CandidateProfile(Document):
         doc.zone = self.zone
         doc.state = self.state
         doc.district = self.district
-        doc.centre = self.centre
+        doc.centre_location = self.centre_location
         doc.project = self.project
         doc.batch_id = self.batch_id
         doc.sector = self.sector

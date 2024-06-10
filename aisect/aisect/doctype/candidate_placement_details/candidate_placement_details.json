@@ -12,7 +12,7 @@
   "candidate_name",
   "full_name",
   "state",
-  "centre",
+  "centre_location",
   "batch_id",
   "job_role",
   "column_break_iwgi",
@@ -26,7 +26,7 @@
  ],
  "fields": [
   {
-   "fetch_from": "candiate_name.state",
+   "fetch_from": "candidate_name.state",
    "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -36,17 +36,7 @@
    "reqd": 1
   },
   {
-   "fetch_from": "candiate_name.centre",
-   "fieldname": "centre",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Centre Location",
-   "options": "Centre Location",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
-   "fetch_from": "candiate_name.zone",
+   "fetch_from": "candidate_name.zone",
    "fieldname": "zone",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -74,7 +64,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": ".",
+   "fetch_from": "candidate_name.batch_id",
    "fieldname": "batch_id",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -96,6 +86,7 @@
    "options": "Placement Child"
   },
   {
+   "fetch_from": "candidate_name.sector",
    "fieldname": "sector",
    "fieldtype": "Link",
    "label": "Sector",
@@ -104,6 +95,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "candidate_name.job_role",
    "fieldname": "job_role",
    "fieldtype": "Link",
    "label": "Job Role",
@@ -112,6 +104,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "candidate_name.project",
    "fieldname": "project",
    "fieldtype": "Link",
    "label": "Project",
@@ -135,7 +128,7 @@
    "options": "Assessed\nCertified\nPlaced"
   },
   {
-   "fetch_from": "candiate_name.centre",
+   "fetch_from": "candidate_name.district",
    "fieldname": "district",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -143,15 +136,25 @@
    "options": "District",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fetch_from": "candidate_name.centre_location",
+   "fieldname": "centre_location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Centre Location",
+   "options": "Centre Location",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 11:42:06.666488",
+ "modified": "2024-06-10 13:52:45.787044",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Candiate Placement Details",
+ "name": "Candidate Placement Details",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
