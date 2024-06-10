@@ -30,7 +30,7 @@ def execute(filters=None):
 			COALESCE(NULLIF(placement_status, ''), 'Unknown') as ps,
 			COUNT(*) as count
 		FROM
-			`tabCandiate Placement Details`
+			`tabCandidate Placement Details`
 		WHERE
 			{str if str else "1=1"}
 		GROUP BY

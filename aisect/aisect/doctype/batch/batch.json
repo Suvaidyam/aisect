@@ -11,7 +11,7 @@
   "district",
   "column_break_tvpa",
   "state",
-  "centre",
+  "centre_location",
   "section_break_dwgy",
   "batch_id",
   "sector",
@@ -46,14 +46,6 @@
    "in_list_view": 1,
    "label": "State",
    "options": "State",
-   "reqd": 1
-  },
-  {
-   "fieldname": "centre",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Centre Location",
-   "options": "Centre Location",
    "reqd": 1
   },
   {
@@ -130,6 +122,14 @@
    "fieldtype": "Date",
    "label": "Expected Assessment Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "centre_location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Centre Location",
+   "options": "Centre Location",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
@@ -144,7 +144,7 @@
    "link_fieldname": "batch_id"
   }
  ],
- "modified": "2024-06-06 12:13:42.956088",
+ "modified": "2024-06-10 13:44:33.089744",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",

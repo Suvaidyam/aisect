@@ -7,7 +7,7 @@ frappe.ui.form.on("Batch", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'district', 'state')
-        depended_dropdown(frm, frm.doc.district, 'centre', 'district')
+        depended_dropdown(frm, frm.doc.district, 'centre_location', 'district')
         depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
         const today = new Date(); 
         frm.fields_dict.start_date.$input.datepicker({minDate: today});
@@ -25,8 +25,8 @@ frappe.ui.form.on("Batch", {
         frm.set_value('district', '')
     },
     district: function (frm) {
-        depended_dropdown(frm, frm.doc.district, 'centre', 'district')
-        frm.set_value('centre', '')
+        depended_dropdown(frm, frm.doc.district, 'centre_location', 'district')
+        frm.set_value('centre_location', '')
     },
     sector: function (frm) {
         depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
@@ -54,7 +54,7 @@ frappe.ui.form.on("Batch", {
             alert_end = false; 
         }
         const today = new Date(frm.doc.end_date);
-        today.setDate(today.getDate() + 1);
+        // today.setDate(today.getDate() + 1);
         frm.fields_dict.expected_assessment_date.$input.datepicker({minDate: today});
         date_validation(frm, frm.doc.end_date, frm.doc.start_date, frm.is_end_date_being_set, 'end_date', 'Start Date', 'End Date')
     },
