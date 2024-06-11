@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"L1lVicmTV5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Zone\",\"col\":4}},{\"id\":\"M3tFodn13P\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"bEM7OngRR9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"5rCwqMkF-d\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Center Location\",\"col\":4}},{\"id\":\"oa524p3eSg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Project\",\"col\":4}},{\"id\":\"ZcM7K16u5B\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Batch\",\"col\":4}},{\"id\":\"zyfkcaMA8v\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Company\",\"col\":4}},{\"id\":\"YE1CoNOpns\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sector\",\"col\":4}},{\"id\":\"z_sZL_VONK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Job Role\",\"col\":4}}]",
+ "content": "[{\"id\":\"tqw3C5MdtB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Zone\",\"col\":4}},{\"id\":\"6T8zJHe-HY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"0Jtzj31FpB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"-X2pY8hzCI\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Center Location\",\"col\":4}},{\"id\":\"7hmi5CdNol\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Project\",\"col\":4}},{\"id\":\"Lu2jpzqlLF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Batch\",\"col\":4}},{\"id\":\"3qUFii5Jxg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Company\",\"col\":4}},{\"id\":\"k5bCpPzioX\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sector\",\"col\":4}},{\"id\":\"IQfxvZNXcp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Job Role\",\"col\":4}}]",
  "creation": "2024-06-08 12:01:19.894370",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-11 11:01:51.474976",
+ "modified": "2024-06-11 11:12:46.127739",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
