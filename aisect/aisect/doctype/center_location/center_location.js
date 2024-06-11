@@ -9,11 +9,11 @@ frappe.ui.form.on("Center Location", {
             frm.set_df_property('center_location_code', 'read_only', 1)
         }
         setPlaceholders(frm, [
-            { fieldName: 'center_location_name', placeholderText: __("Enter your center location name"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'center_location_code', placeholderText: __("Enter your center location code"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'zone', placeholderText: __("Enter your zone"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'state', placeholderText: __("Enter your state"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'district', placeholderText: __("Enter your district"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'center_location_name', placeholderText: __("Enter your center location name") },
+            { fieldName: 'center_location_code', placeholderText: __("Enter your center location code") },
+            { fieldName: 'zone', placeholderText: __("Enter your zone") },
+            { fieldName: 'state', placeholderText: __("Enter your state") },
+            { fieldName: 'district', placeholderText: __("Enter your district") },
 
         ])
     },
