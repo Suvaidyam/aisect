@@ -4,7 +4,7 @@
 frappe.ui.form.on("Sector", {
     refresh(frm) {
         setPlaceholders(frm, [
-            { fieldName: 'sector_name', placeholderText: __("Enter your sector name"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'sector_name', placeholderText: __("Enter your sector name") },
         ])
     },
 });

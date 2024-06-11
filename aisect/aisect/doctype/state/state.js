@@ -7,9 +7,9 @@ frappe.ui.form.on("State", {
             frm.set_df_property('state_code', 'read_only', 1)
         }
         setPlaceholders(frm, [
-            { fieldName: 'state_name', placeholderText: __("Enter your state name"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'state_code', placeholderText: __("Enter your state code"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'zone', placeholderText: __("Enter your zone"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'state_name', placeholderText: __("Enter your state name") },
+            { fieldName: 'state_code', placeholderText: __("Enter your state code") },
+            { fieldName: 'zone', placeholderText: __("Enter your zone") },
         ])
     },
     after_save: function (frm) {
