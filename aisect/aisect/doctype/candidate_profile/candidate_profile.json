@@ -28,7 +28,7 @@
   "column_break_cjyn",
   "batch_id",
   "state",
-  "centre_location",
+  "center_location",
   "job_role"
  ],
  "fields": [
@@ -180,18 +180,18 @@
   },
   {
    "fetch_from": "batch_id.centre_location",
-   "fieldname": "centre_location",
+   "fieldname": "center_location",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Centre Location",
-   "options": "Centre Location",
+   "label": "Center Location",
+   "options": "Center Location",
    "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-10 13:54:53.264764",
+ "modified": "2024-06-11 09:32:45.478823",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Profile",

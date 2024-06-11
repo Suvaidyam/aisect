@@ -34,17 +34,9 @@
   {
    "link_doctype": "Batch",
    "link_fieldname": "job_role"
-  },
-  {
-   "link_doctype": "Candidate Profile",
-   "link_fieldname": "job_role"
-  },
-  {
-   "link_doctype": "Candidate Success Stories",
-   "link_fieldname": "job_role"
   }
  ],
- "modified": "2024-06-08 13:14:14.025256",
+ "modified": "2024-06-11 09:52:15.289159",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",

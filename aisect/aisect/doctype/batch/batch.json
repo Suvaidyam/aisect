@@ -11,7 +11,7 @@
   "district",
   "column_break_tvpa",
   "state",
-  "centre_location",
+  "center_location",
   "section_break_dwgy",
   "batch_id",
   "sector",
@@ -124,11 +124,11 @@
    "reqd": 1
   },
   {
-   "fieldname": "centre_location",
+   "fieldname": "center_location",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Centre Location",
-   "options": "Centre Location",
+   "label": "Center Location",
+   "options": "Center Location",
    "reqd": 1
   }
  ],
@@ -144,7 +144,7 @@
    "link_fieldname": "batch_id"
   }
  ],
- "modified": "2024-06-10 13:44:33.089744",
+ "modified": "2024-06-11 09:30:51.604790",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",

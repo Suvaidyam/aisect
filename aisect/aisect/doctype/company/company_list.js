@@ -3,6 +3,7 @@ frappe.listview_settings['Company'] = {
         $('.layout-side-section').hide();
         $('.sidebar-section.filter-section').hide();
         $('.sidebar-section.save-filter-section').hide();
+        $(".custom-actions").hide();
     },
     refresh: function (listview) {
         $(".list-row-activity").hide();

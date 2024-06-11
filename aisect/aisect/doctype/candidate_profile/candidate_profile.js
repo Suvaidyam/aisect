@@ -7,6 +7,9 @@ let mobilePattern = /^[6-9]\d{9}$/;
 frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
+        // if(frm.doc.candidate_id!=undefined){
+        //     frm.set_df_property('candidate_id','read_only',1)
+        // }
         // depended_dropdown(frm, frm.doc.state, 'centre_location', 'state') 
         // depended_dropdown(frm, frm.doc.centre_location, 'batch_id', 'centre_location')
         // 
@@ -62,5 +65,10 @@ frappe.ui.form.on("Candidate Profile", {
     },
     contact_no: function (frm) {
         mobile_number_validation(frm, frm.doc.contact_no, 'contact_no')
-    }
+    },
+    // after_save:function(frm){
+    //     if(frm.doc.candidate_id!=undefined){
+    //         frm.set_df_property('candidate_id','read_only',1)
+    //     }
+    // },
 });

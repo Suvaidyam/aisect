@@ -39,15 +39,15 @@
    "link_fieldname": "zone"
   },
   {
-   "link_doctype": "Centre Location",
+   "link_doctype": "Center Location",
    "link_fieldname": "zone"
   },
   {
-   "link_doctype": "Candidate Profile",
+   "link_doctype": "Batch",
    "link_fieldname": "zone"
   }
  ],
- "modified": "2024-06-08 13:16:38.269269",
+ "modified": "2024-06-11 09:52:39.000045",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Zone",

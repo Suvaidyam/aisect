@@ -3,6 +3,7 @@ frappe.listview_settings['Candidate Success Stories'] = {
         $('.layout-side-section').hide();
         $('.sidebar-section.filter-section').hide();
         $('.sidebar-section.save-filter-section').hide();
+        $(".custom-actions").hide();
     },
     refresh: function (listview) {
         $(".list-row-activity").hide();

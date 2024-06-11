@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"L1lVicmTV5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Zone\",\"col\":4}},{\"id\":\"M3tFodn13P\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"bEM7OngRR9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"xCN8IIH3iu\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Centre Location\",\"col\":4}},{\"id\":\"oa524p3eSg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Project\",\"col\":4}},{\"id\":\"ZcM7K16u5B\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Batch\",\"col\":4}},{\"id\":\"zyfkcaMA8v\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Company\",\"col\":4}},{\"id\":\"qjmXtp04qd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sector\",\"col\":4}},{\"id\":\"7_7TBvuqYE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Job Role\",\"col\":4}}]",
+ "content": "[{\"id\":\"L1lVicmTV5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Zone\",\"col\":4}},{\"id\":\"M3tFodn13P\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"bEM7OngRR9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"5rCwqMkF-d\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Center Location\",\"col\":4}},{\"id\":\"oa524p3eSg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Project\",\"col\":4}},{\"id\":\"ZcM7K16u5B\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Batch\",\"col\":4}},{\"id\":\"zyfkcaMA8v\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Company\",\"col\":4}},{\"id\":\"YE1CoNOpns\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sector\",\"col\":4}},{\"id\":\"z_sZL_VONK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Job Role\",\"col\":4}}]",
  "creation": "2024-06-08 12:01:19.894370",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-08 12:09:19.552394",
+ "modified": "2024-06-11 09:42:35.886214",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
@@ -23,16 +23,24 @@
    "number_card_name": "Zone"
   },
   {
+   "label": "Center Location",
+   "number_card_name": "Center Location"
+  },
+  {
+   "label": "Sector",
+   "number_card_name": "Sector"
+  },
+  {
    "label": "State",
    "number_card_name": "State"
   },
   {
-   "label": "District",
-   "number_card_name": "District"
+   "label": "Job Role",
+   "number_card_name": "Job Role"
   },
   {
-   "label": "Centre Location",
-   "number_card_name": "Centre Location"
+   "label": "District",
+   "number_card_name": "District"
   },
   {
    "label": "Project",
@@ -45,14 +53,6 @@
   {
    "label": "Company",
    "number_card_name": "Company"
-  },
-  {
-   "label": "Sector",
-   "number_card_name": "Sector"
-  },
-  {
-   "label": "Job Role",
-   "number_card_name": "Job Role"
   }
  ],
  "owner": "Administrator",
