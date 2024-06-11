@@ -15,15 +15,15 @@ frappe.ui.form.on("Candidate Profile", {
         // 
         // =============== setPlaceholders =============
         setPlaceholders(frm, [
-            { fieldName: 'first_name', placeholderText: __("Enter your first name"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'last_name', placeholderText: __("Enter your last name"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'candidate_id', placeholderText: __("Enter your candidate id"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'contact_no', placeholderText: __("Enter your contact number"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'email', placeholderText: __("Enter your email address"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'aadhar_number', placeholderText: __("Enter your Aadhar number"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'qualification', placeholderText: __("Enter your qualification"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'project', placeholderText: __("Enter your project"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'batch_id', placeholderText: __("Enter your batch_id"), placeholderSize: "12px", placeholderFontWeight: 400 }
+            { fieldName: 'first_name', placeholderText: __("Enter your first name") },
+            { fieldName: 'last_name', placeholderText: __("Enter your last name") },
+            { fieldName: 'candidate_id', placeholderText: __("Enter your candidate id") },
+            { fieldName: 'contact_no', placeholderText: __("Enter your contact number") },
+            { fieldName: 'email', placeholderText: __("Enter your email address") },
+            { fieldName: 'aadhar_number', placeholderText: __("Enter your Aadhar number") },
+            { fieldName: 'qualification', placeholderText: __("Enter your qualification") },
+            { fieldName: 'project', placeholderText: __("Enter your project") },
+            { fieldName: 'batch_id', placeholderText: __("Enter your batch_id") }
 
         ])
     },

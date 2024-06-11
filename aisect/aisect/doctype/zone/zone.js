@@ -4,7 +4,7 @@
 frappe.ui.form.on("Zone", {
     refresh(frm) {
         setPlaceholders(frm, [
-            { fieldName: 'zone_name', placeholderText: __("Enter your zone name"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'zone_name', placeholderText: __("Enter your zone name") },
         ])
     },
 });
