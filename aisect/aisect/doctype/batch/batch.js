@@ -9,11 +9,9 @@ frappe.ui.form.on("Batch", {
         depended_dropdown(frm, frm.doc.state, 'district', 'state')
         depended_dropdown(frm, frm.doc.district, 'center_location', 'district')
         depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
-        const today = new Date(); 
-        frm.fields_dict.start_date.$input.datepicker({minDate: today});
-        frm.fields_dict.end_date.$input.datepicker({minDate: today});
-        frm.fields_dict.expected_assessment_date.$input.datepicker({minDate: today});
-        frm.fields_dict.actual_assessment_date.$input.datepicker({minDate: today});
+        depened_date(frm.doc.start_date, frm.fields_dict.end_date)
+        depened_date(frm.doc.end_date, frm.fields_dict.expected_assessment_date)
+        depened_date(frm.doc.expected_assessment_date, frm.fields_dict.actual_assessment_date)
     },
 
     zone: function (frm) {
@@ -39,62 +37,56 @@ frappe.ui.form.on("Batch", {
         frm.is_actual_assessment_date_being_set = false;
     },
     start_date: function (frm) {
-        const today = new Date(frm.doc.start_date); 
-        today.setDate(today.getDate() + 1);
-        frm.fields_dict.end_date.$input.datepicker({minDate: today});
-        if(frm.doc.end_date < frm.doc.start_date){
-            frm.set_value('end_date','')
-            frm.set_value('expected_assessment_date','')
-            frm.set_value('actual_assessment_date','')
+        if (frm.doc.end_date < frm.doc.start_date) {
+            frm.set_value('end_date', '')
+            frm.set_value('expected_assessment_date', '')
+            frm.set_value('actual_assessment_date', '')
         }
+        depened_date(frm.doc.start_date, frm.fields_dict.end_date)
     },
     end_date: function (frm) {
         if (frm.doc.start_date == undefined) {
             frm.set_value('end_date', '');
             if (!alert_end) {
-                frappe.show_alert({ message: "Please select the start date", indicator: "yellow" });
+                frappe.show_alert({ message: "Please select the start date first.", indicator: "yellow" });
                 alert_end = true;
             }
         } else {
-            alert_end = false; 
+            alert_end = false;
         }
-        const today = new Date(frm.doc.end_date);
-        today.setDate(today.getDate() + 1);
-        frm.fields_dict.expected_assessment_date.$input.datepicker({minDate: today});
+        depened_date(frm.doc.end_date, frm.fields_dict.expected_assessment_date)
         date_validation(frm, frm.doc.end_date, frm.doc.start_date, frm.is_end_date_being_set, 'end_date', 'Start Date', 'End Date')
-        if(frm.doc.expected_assessment_date < frm.doc.end_date){ 
-            frm.set_value('expected_assessment_date','')
-            frm.set_value('actual_assessment_date','')
+        if (frm.doc.expected_assessment_date < frm.doc.end_date) {
+            frm.set_value('expected_assessment_date', '')
+            frm.set_value('actual_assessment_date', '')
         }
     },
     expected_assessment_date: function (frm) {
         if (frm.doc.end_date == undefined) {
-            frm.set_value('expected_assessment_date','')
+            frm.set_value('expected_assessment_date', '')
             if (!alert_expected) {
-                frappe.show_alert({ message: "Please select the end date", indicator: "yellow" });
+                frappe.show_alert({ message: "Please select the end date first.", indicator: "yellow" });
                 alert_expected = true;
             }
         } else {
-            alert_expected = false; 
+            alert_expected = false;
         }
-        const today = new Date(frm.doc.expected_assessment_date); 
-        today.setDate(today.getDate() + 1);
-        frm.fields_dict.actual_assessment_date.$input.datepicker({minDate: today});
+        depened_date(frm.doc.expected_assessment_date, frm.fields_dict.actual_assessment_date)
         date_validation(frm, frm.doc.expected_assessment_date, frm.doc.end_date, frm.is_expected_assessment_date_being_set, 'expected_assessment_date', 'End Date', 'Expected Assessment Date')
-        if(frm.doc.actual_assessment_date < frm.doc.expected_assessment_date){ 
-            frm.set_value('actual_assessment_date','')
+        if (frm.doc.actual_assessment_date < frm.doc.expected_assessment_date) {
+            frm.set_value('actual_assessment_date', '')
         }
     },
     actual_assessment_date: function (frm) {
         if (frm.doc.expected_assessment_date == undefined) {
             frm.set_value('actual_assessment_date', '');
             if (!alert_actual) {
-                frappe.show_alert({ message: "Please select the expected assessment date", indicator: "yellow" });
+                frappe.show_alert({ message: "Please select the expected assessment date first.", indicator: "yellow" });
                 alert_actual = true;
             }
         } else {
-            alert_actual = false; 
+            alert_actual = false;
         }
-       date_validation(frm, frm.doc.actual_assessment_date, frm.doc.assessment_date, frm.is_actual_assessment_date_being_set, 'actual_assessment_date', 'Assessment date', 'Actual assessment date')
+        date_validation(frm, frm.doc.actual_assessment_date, frm.doc.assessment_date, frm.is_actual_assessment_date_being_set, 'actual_assessment_date', 'Assessment date', 'Actual assessment date')
     }
 });
