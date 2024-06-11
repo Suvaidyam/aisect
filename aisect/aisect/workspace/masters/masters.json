@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-11 09:42:35.886214",
+ "modified": "2024-06-11 11:01:51.474976",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
@@ -23,24 +23,16 @@
    "number_card_name": "Zone"
   },
   {
-   "label": "Center Location",
-   "number_card_name": "Center Location"
-  },
-  {
-   "label": "Sector",
-   "number_card_name": "Sector"
-  },
-  {
    "label": "State",
    "number_card_name": "State"
   },
   {
-   "label": "Job Role",
-   "number_card_name": "Job Role"
-  },
-  {
    "label": "District",
    "number_card_name": "District"
+  },
+  {
+   "label": "Center Location",
+   "number_card_name": "Center Location"
   },
   {
    "label": "Project",
@@ -53,6 +45,14 @@
   {
    "label": "Company",
    "number_card_name": "Company"
+  },
+  {
+   "label": "Sector",
+   "number_card_name": "Sector"
+  },
+  {
+   "label": "Job Role",
+   "number_card_name": "Job Role"
   }
  ],
  "owner": "Administrator",
