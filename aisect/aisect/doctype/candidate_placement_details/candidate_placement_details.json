@@ -138,7 +138,7 @@
    "reqd": 1
   },
   {
-   "fetch_from": "candidate_name.centre_location",
+   "fetch_from": "candidate_name.center_location",
    "fieldname": "center_location",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -151,7 +151,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 09:33:27.218998",
+ "modified": "2024-06-11 12:49:44.100510",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Placement Details",

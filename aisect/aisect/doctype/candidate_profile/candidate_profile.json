@@ -179,7 +179,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "batch_id.centre_location",
+   "fetch_from": "batch_id.center_location",
    "fieldname": "center_location",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -191,7 +191,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 09:32:45.478823",
+ "modified": "2024-06-11 12:50:08.795829",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Profile",
