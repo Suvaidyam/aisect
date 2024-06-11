@@ -10,7 +10,16 @@ function depended_dropdown(frm, filters, child, parent) {
         }
     }
 }
-
+function depened_date(parent,child) {
+    const today = new Date(); 
+    if (parent == undefined) {
+        child.$input.datepicker({minDate: today});
+    } else {
+        const today = new Date(parent);
+        today.setDate(today.getDate() + 1);
+        child.$input.datepicker({minDate: today});
+    }
+}
 function date_validation(frm, child, parent, isset, is, pmess, cmess) {
     if (isset) {
         return;
