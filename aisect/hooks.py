@@ -34,7 +34,7 @@ app_include_js = "/assets/aisect/js/aisect.js"
 # include js in doctype views
 doctype_js = {
     "Batch": "public/js/utils.js",
-    "Centre Location": "public/js/utils.js",
+    "Center Location": "public/js/utils.js",
     "Company": "public/js/utils.js",
     "Candidate Profile": "public/js/utils.js",
     "Candidate Enrollment": "public/js/utils.js",

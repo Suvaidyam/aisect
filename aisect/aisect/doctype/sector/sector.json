@@ -29,8 +29,17 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-06-08 13:13:14.677157",
+ "links": [
+  {
+   "link_doctype": "Company",
+   "link_fieldname": "sector"
+  },
+  {
+   "link_doctype": "Batch",
+   "link_fieldname": "sector"
+  }
+ ],
+ "modified": "2024-06-11 09:51:23.354008",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Sector",

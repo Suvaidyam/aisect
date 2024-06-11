@@ -2,13 +2,13 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{centre_code}",
+ "autoname": "format:{center_location_code}",
  "creation": "2024-05-26 22:24:29.410956",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "centre_name",
-  "centre_code",
+  "center_location_name",
+  "center_location_code",
   "zone",
   "state",
   "district",
@@ -40,44 +40,40 @@
    "reqd": 1
   },
   {
-   "fieldname": "centre_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Centre Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "centre_code",
-   "fieldtype": "Data",
-   "label": "Centre Code",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "district",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "District",
    "options": "District",
    "reqd": 1
+  },
+  {
+   "fieldname": "center_location_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Center Location Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "center_location_code",
+   "fieldtype": "Data",
+   "label": "Center Location Code",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [
   {
-   "link_doctype": "Candidate Profile",
-   "link_fieldname": "centre"
-  },
-  {
    "link_doctype": "Batch",
-   "link_fieldname": "centre"
+   "link_fieldname": "center_location"
   }
  ],
- "modified": "2024-06-06 10:26:04.472328",
+ "modified": "2024-06-11 10:08:19.816309",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Centre Location",
+ "name": "Center Location",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -166,5 +162,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "centre_name"
+ "title_field": "center_location_name"
 }

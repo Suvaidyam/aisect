@@ -7,7 +7,7 @@ frappe.ui.form.on("Batch", {
     refresh(frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'district', 'state')
-        depended_dropdown(frm, frm.doc.district, 'centre_location', 'district')
+        depended_dropdown(frm, frm.doc.district, 'center_location', 'district')
         depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
         const today = new Date(); 
         frm.fields_dict.start_date.$input.datepicker({minDate: today});
@@ -25,8 +25,8 @@ frappe.ui.form.on("Batch", {
         frm.set_value('district', '')
     },
     district: function (frm) {
-        depended_dropdown(frm, frm.doc.district, 'centre_location', 'district')
-        frm.set_value('centre_location', '')
+        depended_dropdown(frm, frm.doc.district, 'center_location', 'district')
+        frm.set_value('center_location', '')
     },
     sector: function (frm) {
         depended_dropdown(frm, frm.doc.sector, 'job_role', 'sector')
@@ -52,14 +52,14 @@ frappe.ui.form.on("Batch", {
         if (frm.doc.start_date == undefined) {
             frm.set_value('end_date', '');
             if (!alert_end) {
-                frappe.show_alert({ message: "Please select first start date", indicator: "yellow" });
+                frappe.show_alert({ message: "Please select the start date", indicator: "yellow" });
                 alert_end = true;
             }
         } else {
             alert_end = false; 
         }
         const today = new Date(frm.doc.end_date);
-        // today.setDate(today.getDate() + 1);
+        today.setDate(today.getDate() + 1);
         frm.fields_dict.expected_assessment_date.$input.datepicker({minDate: today});
         date_validation(frm, frm.doc.end_date, frm.doc.start_date, frm.is_end_date_being_set, 'end_date', 'Start Date', 'End Date')
         if(frm.doc.expected_assessment_date < frm.doc.end_date){ 
@@ -71,7 +71,7 @@ frappe.ui.form.on("Batch", {
         if (frm.doc.end_date == undefined) {
             frm.set_value('expected_assessment_date','')
             if (!alert_expected) {
-                frappe.show_alert({ message: "Please select first end date", indicator: "yellow" });
+                frappe.show_alert({ message: "Please select the end date", indicator: "yellow" });
                 alert_expected = true;
             }
         } else {
@@ -89,7 +89,7 @@ frappe.ui.form.on("Batch", {
         if (frm.doc.expected_assessment_date == undefined) {
             frm.set_value('actual_assessment_date', '');
             if (!alert_actual) {
-                frappe.show_alert({ message: "Please select first expected assessment date", indicator: "yellow" });
+                frappe.show_alert({ message: "Please select the expected assessment date", indicator: "yellow" });
                 alert_actual = true;
             }
         } else {

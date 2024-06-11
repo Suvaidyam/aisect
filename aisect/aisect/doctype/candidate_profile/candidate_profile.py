@@ -20,7 +20,7 @@ class CandidateProfile(Document):
         doc.zone = self.zone
         doc.state = self.state
         doc.district = self.district
-        doc.centre_location = self.centre_location
+        doc.center_location = self.center_location
         doc.project = self.project
         doc.batch_id = self.batch_id
         doc.sector = self.sector

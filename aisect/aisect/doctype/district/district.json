@@ -55,8 +55,17 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-06-03 16:54:40.980810",
+ "links": [
+  {
+   "link_doctype": "Center Location",
+   "link_fieldname": "district"
+  },
+  {
+   "link_doctype": "Batch",
+   "link_fieldname": "district"
+  }
+ ],
+ "modified": "2024-06-11 09:53:29.113159",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "District",

@@ -12,7 +12,7 @@
   "candidate_name",
   "full_name",
   "state",
-  "centre_location",
+  "center_location",
   "batch_id",
   "job_role",
   "column_break_iwgi",
@@ -139,11 +139,11 @@
   },
   {
    "fetch_from": "candidate_name.centre_location",
-   "fieldname": "centre_location",
+   "fieldname": "center_location",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Centre Location",
-   "options": "Centre Location",
+   "label": "Center Location",
+   "options": "Center Location",
    "read_only": 1,
    "reqd": 1
   }
@@ -151,7 +151,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-10 13:52:45.787044",
+ "modified": "2024-06-11 09:33:27.218998",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Placement Details",
