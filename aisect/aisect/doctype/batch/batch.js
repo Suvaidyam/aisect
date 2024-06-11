@@ -12,6 +12,21 @@ frappe.ui.form.on("Batch", {
         depened_date(frm.doc.start_date, frm.fields_dict.end_date)
         depened_date(frm.doc.end_date, frm.fields_dict.expected_assessment_date)
         depened_date(frm.doc.expected_assessment_date, frm.fields_dict.actual_assessment_date)
+        setPlaceholders(frm, [
+            { fieldName: 'zone', placeholderText: __("Enter your zone"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'state', placeholderText: __("Enter your state"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'district', placeholderText: __("Enter your district"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'center_location', placeholderText: __("Enter your center location"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'batch_id', placeholderText: __("Enter your batch id"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'project', placeholderText: __("Enter your project"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'sector', placeholderText: __("Enter your sector"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'project', placeholderText: __("Enter your project"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'job_role', placeholderText: __("Enter your job role"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'start_date', placeholderText: __("Enter your start date"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'end_date', placeholderText: __("Enter your end date"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'expected_assessment_date', placeholderText: __("Enter your expected assessment date"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'actual_assessment_date', placeholderText: __("Enter your actual assessment date"), placeholderSize: "12px", placeholderFontWeight: 400 },
+        ])
     },
 
     zone: function (frm) {
