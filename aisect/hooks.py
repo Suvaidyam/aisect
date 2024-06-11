@@ -42,6 +42,13 @@ doctype_js = {
     "District": "public/js/utils.js",
     "Company Branches": "public/js/utils.js",
     "Placement Child": "public/js/utils.js",
+    "Candidate Success Stories":"public/js/utils.js",
+    "State": "public/js/utils.js",
+    "Zone": "public/js/utils.js",
+    "Company": "public/js/utils.js",
+    "Job Role": "public/js/utils.js",
+    "Project":"public/js/utils.js",
+    "Sector": "public/js/utils.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
