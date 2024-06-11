@@ -7,8 +7,8 @@ frappe.ui.form.on("Project", {
             frm.set_df_property('project_code', 'read_only', 1)
         }
         setPlaceholders(frm, [
-            { fieldName: 'project_name', placeholderText: __("Enter your cproject name"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'project_code', placeholderText: __("Enter your project_code"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'project_name', placeholderText: __("Enter your project name"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'project_code', placeholderText: __("Enter your project code"), placeholderSize: "12px", placeholderFontWeight: 400 },
         ])
     },
     after_save: function (frm) {

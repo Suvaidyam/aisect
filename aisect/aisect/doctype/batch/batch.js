@@ -21,12 +21,11 @@ frappe.ui.form.on("Batch", {
             { fieldName: 'project', placeholderText: __("Enter your project"), placeholderSize: "12px", placeholderFontWeight: 400 },
             { fieldName: 'sector', placeholderText: __("Enter your sector"), placeholderSize: "12px", placeholderFontWeight: 400 },
             { fieldName: 'project', placeholderText: __("Enter your project"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'job_role', placeholderText: __("Enter your job_role"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'job_role', placeholderText: __("Enter your job role"), placeholderSize: "12px", placeholderFontWeight: 400 },
             { fieldName: 'start_date', placeholderText: __("Enter your start date"), placeholderSize: "12px", placeholderFontWeight: 400 },
             { fieldName: 'end_date', placeholderText: __("Enter your end date"), placeholderSize: "12px", placeholderFontWeight: 400 },
             { fieldName: 'expected_assessment_date', placeholderText: __("Enter your expected assessment date"), placeholderSize: "12px", placeholderFontWeight: 400 },
             { fieldName: 'actual_assessment_date', placeholderText: __("Enter your actual assessment date"), placeholderSize: "12px", placeholderFontWeight: 400 },
-
         ])
     },
 
