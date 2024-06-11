@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\":\"tqw3C5MdtB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Zone\",\"col\":4}},{\"id\":\"6T8zJHe-HY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"0Jtzj31FpB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"-X2pY8hzCI\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Center Location\",\"col\":4}},{\"id\":\"7hmi5CdNol\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Project\",\"col\":4}},{\"id\":\"Lu2jpzqlLF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Batch\",\"col\":4}},{\"id\":\"3qUFii5Jxg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Company\",\"col\":4}},{\"id\":\"k5bCpPzioX\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sector\",\"col\":4}},{\"id\":\"IQfxvZNXcp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Job Role\",\"col\":4}}]",
- "creation": "2024-06-08 12:01:19.894370",
+ "content": "[{\"id\":\"COVgW27pCm\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Zone\",\"col\":4}},{\"id\":\"ag3LM9rem1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"IPwWipVvdS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"NJM3Tb26jj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Center Location\",\"col\":4}},{\"id\":\"h3pWQz53CO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Project\",\"col\":4}},{\"id\":\"EcEI9AMhrp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Batch\",\"col\":4}},{\"id\":\"R_1gcf8D-s\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Company\",\"col\":4}},{\"id\":\"drz5nxNIZL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sector\",\"col\":4}},{\"id\":\"f6UF2YlYT7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Job Role\",\"col\":4}}]",
+ "creation": "2024-06-11 12:00:51.591330",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-11 11:12:46.127739",
+ "modified": "2024-06-11 12:03:02.997165",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
