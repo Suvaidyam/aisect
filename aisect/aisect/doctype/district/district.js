@@ -8,10 +8,10 @@ frappe.ui.form.on("District", {
             frm.set_df_property('district_code', 'read_only', 1)
         }
         setPlaceholders(frm, [
-            { fieldName: 'district_name', placeholderText: __("Enter your district name"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'district_code', placeholderText: __("Enter your district code"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'zone', placeholderText: __("Enter your zone"), placeholderSize: "12px", placeholderFontWeight: 400 },
-            { fieldName: 'state', placeholderText: __("Enter your state"), placeholderSize: "12px", placeholderFontWeight: 400 },
+            { fieldName: 'district_name', placeholderText: __("Enter your district name") },
+            { fieldName: 'district_code', placeholderText: __("Enter your district code") },
+            { fieldName: 'zone', placeholderText: __("Enter your zone") },
+            { fieldName: 'state', placeholderText: __("Enter your state") },
 
         ])
     },
