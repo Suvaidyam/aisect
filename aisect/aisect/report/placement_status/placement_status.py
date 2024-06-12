@@ -27,14 +27,14 @@ def execute(filters=None):
 	]
 	sql_query = f"""
 		SELECT
-			COALESCE(NULLIF(placement_status, ''), 'Unknown') as ps,
+			COALESCE(NULLIF(current_status, ''), 'Unknown') as ps,
 			COUNT(*) as count
 		FROM
-			`tabCandidate Placement Details`
+			`tabCandidate Profile`
 		WHERE
 			{str if str else "1=1"}
 		GROUP BY
-			COALESCE(NULLIF(placement_status, ''), 'Unknown');
+			COALESCE(NULLIF(current_status, ''), 'Unknown');
 	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data

@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\":\"OasDMhQoKo\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Profile\",\"col\":12}}]",
- "creation": "2024-06-08 12:04:16.805910",
+ "content": "[{\"id\":\"mV7yB5zr7I\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Profile\",\"col\":12}}]",
+ "creation": "2024-06-12 17:54:49.618538",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Candidates Profile",
  "links": [],
- "modified": "2024-06-11 12:00:54.746827",
+ "modified": "2024-06-12 17:57:40.026136",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidates Profile",

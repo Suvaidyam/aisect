@@ -1,19 +1,19 @@
 {
  "charts": [],
- "content": "[{\"id\":\"oafF3EJk4j\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
- "creation": "2024-06-08 12:08:59.926500",
+ "content": "[{\"id\":\"nOm02QxnjE\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
+ "creation": "2024-06-12 17:57:35.928650",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
  "icon": "quality",
- "idx": 1,
- "indicator_color": "darkgrey",
+ "idx": 0,
+ "indicator_color": "green",
  "is_hidden": 0,
  "label": "Success Stories",
  "links": [],
- "modified": "2024-06-11 12:00:55.043589",
+ "modified": "2024-06-12 17:58:57.776476",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Success Stories",
@@ -51,7 +51,7 @@
    "role": "Centre Head"
   }
  ],
- "sequence_id": 5.0,
+ "sequence_id": 4.0,
  "shortcuts": [],
  "title": "Success Stories"
 }
