@@ -26,8 +26,17 @@ frappe.ui.form.on("Candidate Profile", {
             { fieldName: 'batch_id', placeholderText: __("Enter your batch_id") }
 
         ])
-    },
 
+    },
+    batch_id: function (frm) {
+        frm.refresh_field('zone');
+        frm.refresh_field('state');
+        frm.refresh_field('district');
+        frm.refresh_field('center_location');
+        frm.refresh_field('sector');
+        frm.refresh_field('job_role');
+
+    },
     validate(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {
             frappe.throw('Enter vaild aadhar number')
