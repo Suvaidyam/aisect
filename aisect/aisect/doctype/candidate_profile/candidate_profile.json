@@ -7,18 +7,23 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "details_section",
+  "candidate_details_tab",
+  "section_break_huiv",
   "first_name",
   "full_name",
   "candidate_id",
   "aadhar_number",
   "contact_no",
-  "status",
+  "assessment_status",
+  "certified_status",
   "column_break_tmcc",
   "last_name",
   "email",
   "gender",
   "qualification",
+  "status",
+  "placement_status",
+  "current_status",
   "section_break_wznz",
   "column_break_mbny",
   "project",
@@ -29,7 +34,9 @@
   "batch_id",
   "state",
   "center_location",
-  "job_role"
+  "job_role",
+  "placemet_details_tab",
+  "placement"
  ],
  "fields": [
   {
@@ -53,7 +60,6 @@
    "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Status",
    "options": "Active\nInactive"
   },
@@ -61,8 +67,7 @@
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email",
-   "options": "Email",
-   "reqd": 1
+   "options": "Email"
   },
   {
    "fieldname": "gender",
@@ -75,8 +80,7 @@
    "fieldname": "aadhar_number",
    "fieldtype": "Data",
    "label": "Aadhar Number",
-   "length": 12,
-   "reqd": 1
+   "length": 12
   },
   {
    "fieldname": "column_break_mbny",
@@ -108,11 +112,6 @@
    "label": "Candidate ID",
    "reqd": 1,
    "unique": 1
-  },
-  {
-   "fieldname": "details_section",
-   "fieldtype": "Section Break",
-   "label": "Candidate Details"
   },
   {
    "fieldname": "column_break_tmcc",
@@ -186,12 +185,64 @@
    "label": "Center Location",
    "options": "Center Location",
    "read_only": 1
+  },
+  {
+   "depends_on": "eval:(doc.placement_status==='Placed')",
+   "fieldname": "placemet_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Placemet Details"
+  },
+  {
+   "fieldname": "placement",
+   "fieldtype": "Table",
+   "label": "Placement",
+   "mandatory_depends_on": "eval:(doc.placement_status==='Placed')",
+   "options": "Placement Child"
+  },
+  {
+   "depends_on": "eval:(doc.certified_status==='Certified')",
+   "fieldname": "placement_status",
+   "fieldtype": "Select",
+   "label": "Placement Status",
+   "options": "\nPlaced\nNot Placed"
+  },
+  {
+   "fieldname": "candidate_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Candidate Details"
+  },
+  {
+   "fieldname": "section_break_huiv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Registered",
+   "fieldname": "assessment_status",
+   "fieldtype": "Select",
+   "label": "Assessment Status",
+   "options": "Registered\nAssessed"
+  },
+  {
+   "depends_on": "eval:(doc.assessment_status==='Assessed')",
+   "fieldname": "certified_status",
+   "fieldtype": "Select",
+   "label": "Certified Status",
+   "options": "\nCertified\nNot Certified"
+  },
+  {
+   "default": "Registered",
+   "fieldname": "current_status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Current Status",
+   "options": "Registered\nAssessed\nCertified\nNot Certified\nPlaced\nNot Placed"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 12:50:08.795829",
+ "modified": "2024-06-12 17:16:48.404698",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Profile",
