@@ -7,7 +7,7 @@ from frappe.model.document import Document
 
 
 class Batch(Document):
-	def on_update(self):
+	def before_save(self):
 		current_date = date.today()
 		
 		self.start_date = datetime.strptime(self.start_date, '%Y-%m-%d').date()
