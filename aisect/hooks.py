@@ -156,7 +156,7 @@ doctype_js = {
 
 scheduler_events = {
     "set_candidate_status":{
-        "daily": [
+        "0 0 * * *": [
             "aisect.api.set_candidate_status"
         ]
     }
