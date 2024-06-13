@@ -154,10 +154,13 @@ doctype_js = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"aisect.tasks.all"
-# 	],
+scheduler_events = {
+    "set_candidate_status":{
+        "* * * * *": [
+            "aisect.api.set_candidate_status"
+        ]
+    }
+}
 # 	"daily": [
 # 		"aisect.tasks.daily"
 # 	],

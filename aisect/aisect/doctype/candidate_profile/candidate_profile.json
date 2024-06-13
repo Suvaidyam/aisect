@@ -14,16 +14,11 @@
   "candidate_id",
   "aadhar_number",
   "contact_no",
-  "assessment_status",
-  "certified_status",
   "column_break_tmcc",
   "last_name",
   "email",
   "gender",
   "qualification",
-  "status",
-  "placement_status",
-  "current_status",
   "section_break_wznz",
   "column_break_mbny",
   "project",
@@ -35,6 +30,13 @@
   "state",
   "center_location",
   "job_role",
+  "assessment_placement_status",
+  "assessment_status",
+  "certified_status",
+  "column_break_rouf",
+  "status",
+  "placement_status",
+  "current_status",
   "placemet_details_tab",
   "placement"
  ],
@@ -89,8 +91,7 @@
   {
    "fieldname": "qualification",
    "fieldtype": "Data",
-   "label": "Qualification",
-   "reqd": 1
+   "label": "Qualification"
   },
   {
    "fieldname": "contact_no",
@@ -220,7 +221,8 @@
    "fieldname": "assessment_status",
    "fieldtype": "Select",
    "label": "Assessment Status",
-   "options": "Registered\nAssessed"
+   "options": "Registered\nAssessed",
+   "read_only": 1
   },
   {
    "depends_on": "eval:(doc.assessment_status==='Assessed')",
@@ -237,12 +239,21 @@
    "in_list_view": 1,
    "label": "Current Status",
    "options": "Registered\nAssessed\nCertified\nNot Certified\nPlaced\nNot Placed"
+  },
+  {
+   "fieldname": "assessment_placement_status",
+   "fieldtype": "Section Break",
+   "label": "Assessment & Placement Status"
+  },
+  {
+   "fieldname": "column_break_rouf",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-12 17:16:48.404698",
+ "modified": "2024-06-13 17:16:58.574005",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Profile",

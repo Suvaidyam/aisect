@@ -68,9 +68,10 @@ frappe.ui.form.on("Candidate Profile", {
             frm.set_value('placement_status', '')
         }
     },
-    // centre_location: function (frm) {
-    //     depended_dropdown(frm, frm.doc.centre_location, 'batch_id', 'centre_location')
-    //     frm.set_value('batch_id', '')
+    // placement_status: function (frm) {
+    //    if(frm.doc.placement_status=='Placed'){
+    //        frappe.set_route('candidate-profile/ANNA97#', 'placemet_details_tab');
+    //    }
     // },
     aadhar_number: function (frm) {
         if (frm.doc.aadhar_number.length > 11) {
