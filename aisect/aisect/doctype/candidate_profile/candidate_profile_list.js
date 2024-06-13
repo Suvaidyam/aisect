@@ -18,6 +18,9 @@ frappe.listview_settings['Candidate Profile'] = {
 
         // Apply styles for different statuses
         applyStyles("Certified", "#E4F5E9", "#4C8266");
-        applyStyles("Placed", "#ccdceb", "#3186d6");
+        applyStyles("Placed", "#E4F5E9", "#4C8266");
+        applyStyles("Not Certified", "#f0dfdf", "#CB2929");
+        applyStyles("Not Placed", "#f0dfdf", "#CB2929");
+        applyStyles("Assessed", "#f0e6d5", "#db8904");
     }
 };

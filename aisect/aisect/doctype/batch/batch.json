@@ -30,7 +30,8 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "\nIn Progress\nTo Be Started\nCompleted"
+   "options": "\nIn Progress\nTo Be Started\nCompleted",
+   "read_only": 1
   },
   {
    "fieldname": "zone",
@@ -144,7 +145,7 @@
    "link_fieldname": "batch_id"
   }
  ],
- "modified": "2024-06-11 12:34:54.491816",
+ "modified": "2024-06-13 17:16:07.314626",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
