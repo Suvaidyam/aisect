@@ -1,7 +1,6 @@
 // Copyright (c) 2024, Rahul Sah and contributors
 // For license information, please see license.txt
 
-let aadharPattern = /^\d{4}\d{4}\d{4}$/;
 let mobilePattern = /^[6-9]\d{9}$/;
 
 frappe.ui.form.on("Candidate Details", {
@@ -53,7 +52,7 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     validate(frm) {
-        if (!aadharPattern.test(frm.doc.aadhar_number) && frm.doc.aadhar_number) {
+        if (!isValidAadhaar(frm.doc.aadhar_number) && frm.doc.aadhar_number) {
             frappe.throw('Enter vaild aadhar number')
         }
         if (!mobilePattern.test(frm.doc.mobile_number) && frm.doc.mobile_number) {
@@ -61,7 +60,7 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     after_save(frm) {
-        if (!aadharPattern.test(frm.doc.aadhar_number) && frm.doc.aadhar_number) {
+        if (!isValidAadhaar(frm.doc.aadhar_number) && frm.doc.aadhar_number) {
             frappe.throw('Enter vaild aadhar number')
         }
         if (!mobilePattern.test(frm.doc.mobile_number) && frm.doc.mobile_number) {
@@ -69,7 +68,15 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     project: function (frm) {
-        depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
+        frm.fields_dict['batch_id'].get_query = function () {
+            return {
+                filters: {
+                    project:frm.doc.project,
+                    end_date: ['>=', frappe.datetime.now_date()]
+                },
+                page_length: 1000
+            };
+        };
         frm.set_value('batch_id', '')
     },
     assessment_status: function (frm) {
@@ -81,11 +88,13 @@ frappe.ui.form.on("Candidate Details", {
     certified_status: function (frm) {
         if(frm.doc.certified_status=='Not Certified'){
             frm.set_value('placement_status', '')
+            // frm.set_value('certification_date', '')
+            frm.set_value('placement_date', '')
         }
     },
     aadhar_number: function (frm) {
         if (frm.doc.aadhar_number.length > 11) {
-            if (!aadharPattern.test(frm.doc.aadhar_number)) {
+            if (!isValidAadhaar(frm.doc.aadhar_number)) {
                 frappe.throw('Enter vaild aadhar number')
             }
         }

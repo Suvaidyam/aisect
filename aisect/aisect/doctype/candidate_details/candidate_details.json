@@ -34,11 +34,18 @@
   "assessment_certification_status_tab",
   "section_break_uvgw",
   "assessment_status",
-  "certified_status",
-  "column_break_rouf",
   "current_status",
+  "column_break_rouf",
+  "assessment_date",
+  "section_break_hrxh",
+  "certified_status",
+  "column_break_qdzo",
+  "certification_date",
   "placement_details_tab",
   "placement_status",
+  "column_break_wrhl",
+  "placement_date",
+  "section_break_uwne",
   "placement"
  ],
  "fields": [
@@ -261,12 +268,46 @@
    "fieldname": "candidate_profile_tab",
    "fieldtype": "Tab Break",
    "label": "Candidate Profile"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "label": "Assessment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "certification_date",
+   "fieldtype": "Date",
+   "label": "Certification Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wrhl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "placement_date",
+   "fieldtype": "Date",
+   "label": "Placement Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_uwne",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_hrxh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qdzo",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 15:42:08.826450",
+ "modified": "2024-06-14 15:58:20.480032",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
