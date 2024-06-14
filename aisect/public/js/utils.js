@@ -66,3 +66,8 @@ function setPlaceholders(frm, fieldsPlaceholders) {
         }
     });
 }
+const hide_advance_search = (frm, list) => {
+    for (item of list) {
+        frm.set_df_property(item, 'only_select', true);
+    }
+};
