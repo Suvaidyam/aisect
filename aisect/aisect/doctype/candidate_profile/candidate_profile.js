@@ -67,7 +67,7 @@ frappe.ui.form.on("Candidate Profile", {
     },
     placement_status: function (frm) {
        if(frm.doc.placement_status=='Placed'){
-        frm.layout.select_tab('Placemet Details')
+        frm.layout.select_tab('Placement Details')
        }
     },
     aadhar_number: function (frm) {
