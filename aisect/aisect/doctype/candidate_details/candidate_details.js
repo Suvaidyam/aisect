@@ -52,16 +52,20 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     validate(frm) {
-        if (!isValidAadhaar(frm.doc.aadhar_number) && frm.doc.aadhar_number) {
-            frappe.throw('Enter vaild aadhar number')
+        if (frm.doc.aadhar_number) {
+            if(!isValidAadhaar(frm.doc.aadhar_number)){
+                frappe.throw('Enter vaild aadhar number')
+            }
         }
         if (!mobilePattern.test(frm.doc.mobile_number) && frm.doc.mobile_number) {
             frappe.throw('Enter vaild mobile number')
         }
     },
     after_save(frm) {
-        if (!isValidAadhaar(frm.doc.aadhar_number) && frm.doc.aadhar_number) {
-            frappe.throw('Enter vaild aadhar number')
+        if (frm.doc.aadhar_number) {
+            if(!isValidAadhaar(frm.doc.aadhar_number)){
+                frappe.throw('Enter vaild aadhar number')
+            }
         }
         if (!mobilePattern.test(frm.doc.mobile_number) && frm.doc.mobile_number) {
             frappe.throw('Enter vaild mobile number')
@@ -93,7 +97,7 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     aadhar_number: function (frm) {
-        if (frm.doc.aadhar_number.length > 11) {
+        if (frm.doc.aadhar_number && frm.doc.aadhar_number.length > 11) {
             if (!isValidAadhaar(frm.doc.aadhar_number)) {
                 frappe.throw('Enter vaild aadhar number')
             }

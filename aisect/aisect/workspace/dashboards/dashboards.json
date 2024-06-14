@@ -5,8 +5,8 @@
    "label": "Placement Status"
   }
  ],
- "content": "[{\"id\":\"AGys1mk-Gp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"FFCzjpUR0K\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"dzz7YSNFab\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"X1TH9KN-A1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":3}},{\"id\":\"gV6oeNBu5H\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":6}},{\"id\":\"1ToFAB1SN9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":6}},{\"id\":\"zvI36J4Isi\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement Status\",\"col\":12}}]",
- "creation": "2024-06-12 17:43:40.265591",
+ "content": "[{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":6}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":6}},{\"id\":\"TJUspBdaQu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement Status\",\"col\":12}}]",
+ "creation": "2024-06-14 17:40:37.410864",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-14 17:23:34.623938",
+ "modified": "2024-06-14 17:57:45.916037",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
