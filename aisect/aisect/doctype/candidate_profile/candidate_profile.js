@@ -29,12 +29,9 @@ frappe.ui.form.on("Candidate Profile", {
 
     },
     batch_id: function (frm) {
-        frm.refresh_field('zone');
-        frm.refresh_field('state');
-        frm.refresh_field('district');
-        frm.refresh_field('center_location');
-        frm.refresh_field('sector');
-        frm.refresh_field('job_role');
+        setTimeout(() => {
+            frm.refresh()
+        }, 1000);
 
     },
     validate(frm) {
@@ -68,11 +65,11 @@ frappe.ui.form.on("Candidate Profile", {
             frm.set_value('placement_status', '')
         }
     },
-    // placement_status: function (frm) {
-    //    if(frm.doc.placement_status=='Placed'){
-    //        frappe.set_route('candidate-profile/ANNA97#', 'placemet_details_tab');
-    //    }
-    // },
+    placement_status: function (frm) {
+       if(frm.doc.placement_status=='Placed'){
+        frm.layout.select_tab('Placemet Details')
+       }
+    },
     aadhar_number: function (frm) {
         if (frm.doc.aadhar_number.length > 11) {
             if (!aadharPattern.test(frm.doc.aadhar_number)) {
