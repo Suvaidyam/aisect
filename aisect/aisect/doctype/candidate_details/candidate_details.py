@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class CandidateProfile(Document):
+class CandidateDetails(Document):
     def before_save(self):
         self.full_name = self.first_name+' '+self.last_name
         if(self.assessment_status and self.certified_status and self.placement_status):

@@ -7,13 +7,14 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "candidate_details_tab",
+  "candidate_profile_tab",
   "section_break_huiv",
   "first_name",
   "full_name",
   "candidate_id",
   "aadhar_number",
-  "contact_no",
+  "mobile_number",
+  "status",
   "column_break_tmcc",
   "last_name",
   "email",
@@ -30,14 +31,14 @@
   "state",
   "center_location",
   "job_role",
-  "assessment_placement_status",
+  "assessment_certification_status_tab",
+  "section_break_uvgw",
   "assessment_status",
   "certified_status",
   "column_break_rouf",
-  "status",
-  "placement_status",
   "current_status",
   "placement_details_tab",
+  "placement_status",
   "placement"
  ],
  "fields": [
@@ -55,6 +56,7 @@
    "fetch_from": "batch_id.zone",
    "fieldname": "zone",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Zone",
    "link_filters": "[[\"Zone\",\"zone_name\",\"=\",\"Please select batch_id\"]]",
    "options": "Zone",
@@ -83,7 +85,7 @@
   {
    "fieldname": "aadhar_number",
    "fieldtype": "Data",
-   "label": "Aadhar Number",
+   "label": "Aadhaar Number",
    "length": 12
   },
   {
@@ -96,15 +98,9 @@
    "label": "Qualification"
   },
   {
-   "fieldname": "contact_no",
-   "fieldtype": "Data",
-   "label": "Contact No",
-   "length": 10,
-   "reqd": 1
-  },
-  {
    "fieldname": "batch_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Batch ID",
    "options": "Batch",
    "reqd": 1
@@ -169,6 +165,7 @@
   {
    "fieldname": "project",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Project",
    "options": "Project",
    "reqd": 1
@@ -194,6 +191,7 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:(doc.placement_status==='Placed')",
    "fieldname": "placement",
    "fieldtype": "Table",
    "label": "Placement",
@@ -201,16 +199,10 @@
    "options": "Placement Child"
   },
   {
-   "depends_on": "eval:(doc.certified_status==='Certified')",
    "fieldname": "placement_status",
    "fieldtype": "Select",
    "label": "Placement Status",
    "options": "\nPlaced\nNot Placed"
-  },
-  {
-   "fieldname": "candidate_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Candidate Details"
   },
   {
    "fieldname": "section_break_huiv",
@@ -220,7 +212,7 @@
    "default": "Registered",
    "fieldname": "assessment_status",
    "fieldtype": "Select",
-   "label": "Assessment Status",
+   "label": "Assessment",
    "options": "Registered\nAssessed",
    "read_only": 1
   },
@@ -228,7 +220,7 @@
    "depends_on": "eval:(doc.assessment_status==='Assessed')",
    "fieldname": "certified_status",
    "fieldtype": "Select",
-   "label": "Certified Status",
+   "label": "Certification",
    "options": "\nCertified\nNot Certified"
   },
   {
@@ -241,28 +233,43 @@
    "options": "Registered\nAssessed\nCertified\nNot Certified\nPlaced\nNot Placed"
   },
   {
-   "fieldname": "assessment_placement_status",
-   "fieldtype": "Section Break",
-   "label": "Assessment & Placement Status"
-  },
-  {
    "fieldname": "column_break_rouf",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:(doc.placement_status==='Placed')",
    "fieldname": "placement_details_tab",
    "fieldtype": "Tab Break",
    "label": "Placement Details"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "length": 10,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_uvgw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assessment_certification_status_tab",
+   "fieldtype": "Tab Break",
+   "label": "Assessment & Certification Status"
+  },
+  {
+   "fieldname": "candidate_profile_tab",
+   "fieldtype": "Tab Break",
+   "label": "Candidate Profile"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 11:22:35.212439",
+ "modified": "2024-06-14 15:42:08.826450",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Candidate Profile",
+ "name": "Candidate Details",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

@@ -37,15 +37,15 @@ function date_validation(frm, child, parent, isset, is, pmess, cmess) {
     }
 }
 
-function mobile_number_validation(frm, contact_number, field_name) {
+function mobile_number_validation(frm, mobile_number, field_name) {
     let mobilePattern = /^[6-9]\d{9}$/;
-    if (contact_number.length > 9) {
-        if (!mobilePattern.test(contact_number)) {
+    if (mobile_number.length > 9) {
+        if (!mobilePattern.test(mobile_number)) {
             frm.set_value(field_name, '')
             frappe.msgprint({
                 title: __('Validation Error'),
                 indicator: 'red',
-                message: __('Enter vaild contact number')
+                message: __('Enter vaild mobile number')
             });
         }
     }

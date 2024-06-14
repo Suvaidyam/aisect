@@ -1,4 +1,4 @@
-frappe.listview_settings['Candidate Profile'] = {
+frappe.listview_settings['Candidate Details'] = {
     onload: function (listview) {
         $('.layout-side-section').hide();
         $('.sidebar-section.filter-section').hide();
