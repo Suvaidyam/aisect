@@ -23,7 +23,7 @@
    "fieldname": "name_of_the_candidate",
    "fieldtype": "Link",
    "label": "Name of the Candidate ",
-   "options": "Candidate Profile",
+   "options": "Candidate Details",
    "reqd": 1
   },
   {
@@ -99,7 +99,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 11:16:16.094996",
+ "modified": "2024-06-14 15:25:51.540507",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",

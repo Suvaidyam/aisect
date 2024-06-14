@@ -4,7 +4,7 @@
 let aadharPattern = /^\d{4}\d{4}\d{4}$/;
 let mobilePattern = /^[6-9]\d{9}$/;
 
-frappe.ui.form.on("Candidate Profile", {
+frappe.ui.form.on("Candidate Details", {
     refresh(frm) {
         hide_advance_search(frm,['project','batch_id','zone','state','district','center_location','sector','job_role'])
         if(frm.doc.batch_id){
@@ -24,7 +24,7 @@ frappe.ui.form.on("Candidate Profile", {
             { fieldName: 'first_name', placeholderText: __("Enter your first name") },
             { fieldName: 'last_name', placeholderText: __("Enter your last name") },
             { fieldName: 'candidate_id', placeholderText: __("Enter your candidate id") },
-            { fieldName: 'contact_no', placeholderText: __("Enter your contact number") },
+            { fieldName: 'mobile_number', placeholderText: __("Enter your contact number") },
             { fieldName: 'email', placeholderText: __("Enter your email address") },
             { fieldName: 'aadhar_number', placeholderText: __("Enter your Aadhar number") },
             { fieldName: 'qualification', placeholderText: __("Enter your qualification") },
@@ -53,19 +53,19 @@ frappe.ui.form.on("Candidate Profile", {
         }
     },
     validate(frm) {
-        if (!aadharPattern.test(frm.doc.aadhar_number)) {
+        if (!aadharPattern.test(frm.doc.aadhar_number) && frm.doc.aadhar_number) {
             frappe.throw('Enter vaild aadhar number')
         }
-        if (!mobilePattern.test(frm.doc.contact_no)) {
-            frappe.throw('Enter vaild contact number')
+        if (!mobilePattern.test(frm.doc.mobile_number) && frm.doc.mobile_number) {
+            frappe.throw('Enter vaild mobile number')
         }
     },
     after_save(frm) {
-        if (!aadharPattern.test(frm.doc.aadhar_number)) {
+        if (!aadharPattern.test(frm.doc.aadhar_number) && frm.doc.aadhar_number) {
             frappe.throw('Enter vaild aadhar number')
         }
-        if (!mobilePattern.test(frm.doc.contact_no)) {
-            frappe.throw('Enter vaild contact number')
+        if (!mobilePattern.test(frm.doc.mobile_number) && frm.doc.mobile_number) {
+            frappe.throw('Enter vaild mobile number')
         }
     },
     project: function (frm) {
@@ -83,11 +83,6 @@ frappe.ui.form.on("Candidate Profile", {
             frm.set_value('placement_status', '')
         }
     },
-    placement_status: function (frm) {
-       if(frm.doc.placement_status=='Placed'){
-        frm.layout.select_tab('Placement Details')
-       }
-    },
     aadhar_number: function (frm) {
         if (frm.doc.aadhar_number.length > 11) {
             if (!aadharPattern.test(frm.doc.aadhar_number)) {
@@ -95,8 +90,8 @@ frappe.ui.form.on("Candidate Profile", {
             }
         }
     },
-    contact_no: function (frm) {
-        mobile_number_validation(frm, frm.doc.contact_no, 'contact_no')
+    mobile_number: function (frm) {
+        mobile_number_validation(frm, frm.doc.mobile_number, 'mobile_number')
     },
     // after_save:function(frm){
     //     if(frm.doc.candidate_id!=undefined){
@@ -131,19 +126,23 @@ frappe.ui.form.on("Placement Child", {
         }
 
     },
-    contact_no: function (frm, cdt, cdn) {
+    mobile_number: function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (!mobilePattern.test(row.contact_no)) {
+        if (!mobilePattern.test(row.mobile_number)) {
             frm.disable_save()
             frappe.msgprint({
                 title: __('Validation Error'),
                 indicator: 'red',
-                message: __(`Enter vaild contact number in row ${row.idx} `)
+                message: __(`Enter vaild mobile number in row ${row.idx} `)
             });
         } else {
             frm.enable_save()
         }
 
+    },
+    employment_start_date:function(frm,cdt,cdn){
+        let row = frappe.get_doc(cdt,cdn)
+        frm.fields_dict.employment_end_date.$input.datepicker({ minDate: row.employment_start_date })
     },
     job_joined: function (frm,cdt,cdn) {
         let row = frappe.get_doc(cdt,cdn)
