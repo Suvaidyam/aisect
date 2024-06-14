@@ -6,13 +6,19 @@ let mobilePattern = /^[6-9]\d{9}$/;
 
 frappe.ui.form.on("Candidate Profile", {
     refresh(frm) {
+        hide_advance_search(frm,['project','batch_id','zone','state','district','center_location','sector','job_role'])
+        if(frm.doc.batch_id){
+            setTimeout(() => {
+                frm.set_df_property('zone','read_only',1)
+                frm.set_df_property('state','read_only',1)
+                frm.set_df_property('district','read_only',1)
+                frm.set_df_property('center_location','read_only',1)
+                frm.set_df_property('sector','read_only',1)
+                frm.set_df_property('job_role','read_only',1)
+            }, 500);
+        }
         depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
-        // if(frm.doc.candidate_id!=undefined){
-        //     frm.set_df_property('candidate_id','read_only',1)
-        // }
-        // depended_dropdown(frm, frm.doc.state, 'centre_location', 'state') 
-        // depended_dropdown(frm, frm.doc.centre_location, 'batch_id', 'centre_location')
-        // 
+
         // =============== setPlaceholders =============
         setPlaceholders(frm, [
             { fieldName: 'first_name', placeholderText: __("Enter your first name") },
@@ -23,16 +29,28 @@ frappe.ui.form.on("Candidate Profile", {
             { fieldName: 'aadhar_number', placeholderText: __("Enter your Aadhar number") },
             { fieldName: 'qualification', placeholderText: __("Enter your qualification") },
             { fieldName: 'project', placeholderText: __("Enter your project") },
-            { fieldName: 'batch_id', placeholderText: __("Enter your batch_id") }
+            { fieldName: 'batch_id', placeholderText: __("Enter your batch id") },
+            { fieldName: 'zone', placeholderText: __("Enter your zone") },
+            { fieldName: 'state', placeholderText: __("Enter your state") },
+            { fieldName: 'district', placeholderText: __("Enter your district") },
+            { fieldName: 'center_location', placeholderText: __("Enter your center location") },
+            { fieldName: 'sector', placeholderText: __("Enter your sector") },
+            { fieldName: 'job_role', placeholderText: __("Enter your job role") },
 
         ])
 
     },
     batch_id: function (frm) {
-        setTimeout(() => {
-            frm.refresh()
-        }, 1000);
-
+        if(frm.doc.batch_id){
+            setTimeout(() => {
+                frm.set_df_property('zone','read_only',1)
+                frm.set_df_property('state','read_only',1)
+                frm.set_df_property('district','read_only',1)
+                frm.set_df_property('center_location','read_only',1)
+                frm.set_df_property('sector','read_only',1)
+                frm.set_df_property('job_role','read_only',1)
+            }, 500);
+        }
     },
     validate(frm) {
         if (!aadharPattern.test(frm.doc.aadhar_number)) {

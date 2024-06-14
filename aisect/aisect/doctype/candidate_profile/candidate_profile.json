@@ -47,16 +47,18 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "State",
+   "link_filters": "[[\"State\",\"state_name\",\"=\",\"Please select batch_id\"]]",
    "options": "State",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fetch_from": "batch_id.zone",
    "fieldname": "zone",
    "fieldtype": "Link",
    "label": "Zone",
+   "link_filters": "[[\"Zone\",\"zone_name\",\"=\",\"Please select batch_id\"]]",
    "options": "Zone",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "default": "Active",
@@ -129,8 +131,9 @@
    "fieldname": "sector",
    "fieldtype": "Link",
    "label": "Sector",
+   "link_filters": "[[\"Sector\",\"sector_name\",\"=\",\"Please select batch_id\"]]",
    "options": "Sector",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_cjyn",
@@ -141,8 +144,9 @@
    "fieldname": "job_role",
    "fieldtype": "Link",
    "label": "Job Role",
+   "link_filters": "[[\"Job Role\",\"job_role_name\",\"=\",\"Please select batch_id\"]]",
    "options": "Job Role",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fieldname": "first_name",
@@ -175,8 +179,9 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "District",
+   "link_filters": "[[\"District\",\"district_name\",\"=\",\"Please select batch_id\"]]",
    "options": "District",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fetch_from": "batch_id.center_location",
@@ -184,8 +189,9 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Center Location",
+   "link_filters": "[[\"Center Location\",\"center_location_name\",\"=\",\"Please select batch_id\"]]",
    "options": "Center Location",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fieldname": "placement",
@@ -253,7 +259,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 10:01:07.367728",
+ "modified": "2024-06-14 11:22:35.212439",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Profile",

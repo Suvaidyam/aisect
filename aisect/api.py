@@ -26,8 +26,8 @@ def set_candidate_status():
             
             for candidate in candidates:
                 try:
+                    print('candidate.name//////////////////////////////',candidate.name)
                     frappe.db.set_value('Candidate Profile', candidate.name,{'current_status':'Assessed','assessment_status':'Assessed'})
                 except Exception as e:
                     print(f"Error updating candidate {candidate['name']}: {e}")
-    frappe.clear_cache()
     frappe.db.commit()
