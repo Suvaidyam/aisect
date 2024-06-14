@@ -12,13 +12,12 @@
   "first_name",
   "full_name",
   "candidate_id",
-  "aadhar_number",
   "mobile_number",
-  "status",
+  "aadhar_number",
   "column_break_tmcc",
   "last_name",
-  "email",
   "gender",
+  "email",
   "qualification",
   "section_break_wznz",
   "column_break_mbny",
@@ -43,6 +42,7 @@
   "certification_date",
   "placement_details_tab",
   "placement_status",
+  "placement_due_date",
   "column_break_wrhl",
   "placement_date",
   "section_break_uwne",
@@ -68,16 +68,9 @@
    "options": "Zone"
   },
   {
-   "default": "Active",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nInactive"
-  },
-  {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email",
+   "label": "Email Address",
    "options": "Email"
   },
   {
@@ -200,10 +193,11 @@
    "options": "Placement Child"
   },
   {
+   "default": "N/A",
    "fieldname": "placement_status",
    "fieldtype": "Select",
    "label": "Placement Status",
-   "options": "\nPlaced\nNot Placed"
+   "options": "\nPlaced\nNot Placed\nN/A"
   },
   {
    "fieldname": "section_break_huiv",
@@ -213,15 +207,16 @@
    "default": "Registered",
    "fieldname": "assessment_status",
    "fieldtype": "Select",
-   "label": "Assessment",
+   "label": "Assessment Status",
    "options": "Registered\nAssessed",
    "read_only": 1
   },
   {
+   "default": "N/A",
    "fieldname": "certified_status",
    "fieldtype": "Select",
-   "label": "Certification",
-   "options": "\nCertified\nNot Certified"
+   "label": "Certification Status",
+   "options": "\nCertified\nNot Certified\nN/A"
   },
   {
    "default": "Registered",
@@ -255,7 +250,7 @@
   {
    "fieldname": "assessment_certification_status_tab",
    "fieldtype": "Tab Break",
-   "label": "Assessment & Certification Status"
+   "label": "Assessment & Certification"
   },
   {
    "fieldname": "candidate_profile_tab",
@@ -295,12 +290,18 @@
   {
    "fieldname": "column_break_qdzo",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "placement_due_date",
+   "fieldtype": "Date",
+   "label": "Placement Due Date",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 17:19:15.610389",
+ "modified": "2024-06-14 20:30:33.757501",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
