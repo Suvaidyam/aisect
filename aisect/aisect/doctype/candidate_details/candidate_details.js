@@ -16,6 +16,12 @@ frappe.ui.form.on("Candidate Details", {
                 frm.set_df_property('job_role','read_only',1)
             }, 500);
         }
+        if(frm.doc.assessment_status!='Assessed'){
+            frm.set_df_property('certified_status','read_only',1)
+        }
+        if(frm.doc.certified_status!='Certified'){
+            frm.set_df_property('placement_status','read_only',1)
+        }
         depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
 
         // =============== setPlaceholders =============
@@ -84,15 +90,24 @@ frappe.ui.form.on("Candidate Details", {
         frm.set_value('batch_id', '')
     },
     assessment_status: function (frm) {
-        if(frm.doc.assessment_status=='Registered'){
-            frm.set_value('certified_status', '')
-            frm.set_value('placement_status', '')
+        if(frm.doc.assessment_status=='Assessed'){
+            frm.set_df_property('certified_status','read_only',0)
         }
     },
     certified_status: function (frm) {
-        if(frm.doc.certified_status=='Not Certified'){
-            frm.set_value('placement_status', '')
-            // frm.set_value('certification_date', '')
+        if(frm.doc.certified_status!=='Certified'){
+            frm.set_value('placement_status', 'N/A')
+            frm.set_value('certification_date', '')
+            frm.set_value('placement_date', '')
+        }
+        if(frm.doc.certified_status=='Certified'){
+            frm.set_df_property('placement_status','read_only',0)
+        }else{
+            frm.set_df_property('placement_status','read_only',1)
+        }
+    },
+    placement_status: function (frm) {
+        if(frm.doc.placement_status!=='Placed'){
             frm.set_value('placement_date', '')
         }
     },
