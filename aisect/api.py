@@ -22,8 +22,7 @@ def set_candidate_status():
 
         # candidate status
         if item.expected_assessment_date == current_date:
-            frappe.msgprint('///////////////////****')
-            candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name})
+            candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name,'assessment_status':'Registered'})
             
             for candidate in candidates:
                 date_90_days = current_date + timedelta(days=90)
