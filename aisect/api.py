@@ -22,18 +22,19 @@ def set_candidate_status():
 
         # candidate status
         if item.expected_assessment_date == current_date:
-            candidates = frappe.db.get_list('Candidate Profile', fields=['name'], filters={'batch_id': item.name})
+            frappe.msgprint('///////////////////****')
+            candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name})
             
             for candidate in candidates:
                 date_90_days = current_date + timedelta(days=90)
                 try:
-                    frappe.db.set_value('Candidate Profile', candidate.name,
-                                        {
-                                            'current_status':'Assessed',
-                                            'assessment_status':'Assessed',
-                                            'assessment_date':current_date,
-                                            'placement_due_date':date_90_days
-                                        })
+                    frappe.db.set_value('Candidate Details', candidate.name,
+                        {
+                            'current_status':'Assessed',
+                            'assessment_status':'Assessed',
+                            'assessment_date':current_date,
+                            'placement_due_date':date_90_days
+                        })
                 except Exception as e:
                     print(f"Error updating candidate {candidate['name']}: {e}")
     frappe.db.commit()
