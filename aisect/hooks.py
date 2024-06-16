@@ -155,12 +155,12 @@ doctype_js = {
 # ---------------
 
 scheduler_events = {
-#   "all": [
-#      "aisect.api.all"
-#   ]
 	"daily": [
 		"aisect.api.set_candidate_status"
 	],
+#   "all": [
+#      "aisect.api.all"
+#   ]
 # 	"hourly": [
 # 		"aisect.tasks.hourly"
 # 	],
