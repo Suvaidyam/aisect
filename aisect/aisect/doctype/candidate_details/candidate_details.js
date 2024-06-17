@@ -170,7 +170,8 @@ frappe.ui.form.on("Placement Child", {
     },
     employment_start_date:function(frm,cdt,cdn){
         let row = frappe.get_doc(cdt,cdn)
-        frm.fields_dict.employment_end_date.$input.datepicker({ minDate: row.employment_start_date })
+        let sd = new Date(row.employment_start_date);
+        frm.cur_grid.grid_form.fields_dict.employment_end_date.$input.datepicker({ minDate: sd })
     },
     job_joined: function (frm,cdt,cdn) {
         let row = frappe.get_doc(cdt,cdn)
