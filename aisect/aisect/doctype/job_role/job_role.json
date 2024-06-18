@@ -36,7 +36,7 @@
    "link_fieldname": "job_role"
   }
  ],
- "modified": "2024-06-11 09:52:15.289159",
+ "modified": "2024-06-18 10:54:49.220570",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",
@@ -80,48 +80,40 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "State Placement Coordinator",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "State Head",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Centre Placement Coordinator",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Centre Head",
-   "share": 1,
-   "write": 1
+   "share": 1
   }
  ],
  "show_title_field_in_link": 1,
