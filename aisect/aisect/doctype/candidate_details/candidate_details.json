@@ -163,6 +163,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Project",
+   "link_filters": "[[\"Project\",\"status\",\"=\",\"Active\"]]",
    "options": "Project",
    "reqd": 1
   },
@@ -301,7 +302,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-17 10:56:51.203669",
+ "modified": "2024-06-18 17:41:47.295679",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
