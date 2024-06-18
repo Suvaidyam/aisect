@@ -16,6 +16,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Sector",
+   "link_filters": "[[\"Sector\",\"status\",\"=\",\"Active\"]]",
    "options": "Sector",
    "reqd": 1
   },
@@ -36,7 +37,7 @@
    "link_fieldname": "job_role"
   }
  ],
- "modified": "2024-06-18 10:54:49.220570",
+ "modified": "2024-06-18 17:53:04.124490",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",
