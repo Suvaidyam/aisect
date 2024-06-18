@@ -1,30 +1,30 @@
 {
  "charts": [],
- "content": "[{\"id\":\"nOm02QxnjE\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
- "creation": "2024-06-12 17:57:35.928650",
+ "content": "[{\"id\":\"zSB9ILBCwB\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Batch\",\"col\":12}}]",
+ "creation": "2024-06-18 16:31:18.029371",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "quality",
+ "icon": "table_2",
  "idx": 0,
  "indicator_color": "green",
  "is_hidden": 0,
- "label": "Success Stories",
+ "label": "Batches",
  "links": [],
- "modified": "2024-06-18 16:31:25.170625",
+ "modified": "2024-06-18 16:32:39.174096",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Success Stories",
+ "name": "Batches",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
  "quick_lists": [
   {
-   "document_type": "Candidate Success Stories",
-   "label": "Candidate Success Stories",
+   "document_type": "Batch",
+   "label": "Batch",
    "quick_list_filter": "[]"
   }
  ],
@@ -39,19 +39,19 @@
    "role": "Zonal Head"
   },
   {
-   "role": "State Placement Coordinator"
-  },
-  {
    "role": "State Head"
   },
   {
-   "role": "Centre Placement Coordinator"
+   "role": "State Placement Coordinator"
   },
   {
    "role": "Centre Head"
+  },
+  {
+   "role": "Centre Placement Coordinator"
   }
  ],
- "sequence_id": 5.0,
+ "sequence_id": 3.0,
  "shortcuts": [],
- "title": "Success Stories"
+ "title": "Batches"
 }

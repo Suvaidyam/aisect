@@ -1,0 +1,42 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"xmO9BvJ_kN\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Aisect User\",\"col\":12}}]",
+ "creation": "2024-06-18 13:11:23.756811",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Aisect User",
+ "links": [],
+ "modified": "2024-06-18 16:31:25.327945",
+ "modified_by": "Administrator",
+ "module": "Aisect",
+ "name": "Aisect User",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "SVA User",
+   "label": "Aisect User",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Head Office (PMU)"
+  }
+ ],
+ "sequence_id": 6.0,
+ "shortcuts": [],
+ "title": "Aisect User"
+}

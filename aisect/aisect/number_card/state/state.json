@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2024-06-06 10:03:32.585395",
+ "creation": "2024-06-18 16:27:37.550441",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "State",
@@ -11,7 +11,7 @@
  "is_public": 0,
  "is_standard": 1,
  "label": "State",
- "modified": "2024-06-06 10:03:32.585395",
+ "modified": "2024-06-18 16:27:37.550441",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "State",
