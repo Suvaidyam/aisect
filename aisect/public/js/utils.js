@@ -1,11 +1,16 @@
-function depended_dropdown(frm, filters, child, parent) {
+function depended_dropdown(frm, filter_value, child, parent,activeFilter=true) {
     frm.fields_dict[child].get_query = function () {
-        if (filters) {
+        if (filter_value && activeFilter) {
             return {
-                filters: { [parent]: filters },
+                filters: { [parent]: filter_value,'status':'Active' },
                 page_length: 1000
             };
-        } else {
+        } else if(filter_value){
+            return {
+                filters: { [parent]: filter_value},
+                page_length: 1000
+            };
+        }else{
             return { filters: { [parent]: `Please select ${[parent]}` } };
         }
     }
