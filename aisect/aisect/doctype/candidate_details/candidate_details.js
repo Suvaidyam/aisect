@@ -5,6 +5,43 @@ let mobilePattern = /^[6-9]\d{9}$/;
 
 frappe.ui.form.on("Candidate Details", {
     refresh(frm) {
+        check_active(frm,'project')
+        frm.fields_dict['zone'].get_query = function () {
+            return {
+                filters: {'zone_name':'Please select batch id'},
+                page_length: 1000
+            };
+        }
+        frm.fields_dict['state'].get_query = function () {
+            return {
+                filters: {'state_name':'Please select batch id'},
+                page_length: 1000
+            };
+        }
+        frm.fields_dict['district'].get_query = function () {
+            return {
+                filters: {'district_name':'Please select batch id'},
+                page_length: 1000
+            };
+        }
+        frm.fields_dict['center_location'].get_query = function () {
+            return {
+                filters: {'center_location_name':'Please select batch id'},
+                page_length: 1000
+            };
+        }
+        frm.fields_dict['sector'].get_query = function () {
+            return {
+                filters: {'sector_name':'Please select batch id'},
+                page_length: 1000
+            };
+        }
+        frm.fields_dict['job_role'].get_query = function () {
+            return {
+                filters: {'job_role_name':'Please select batch id'},
+                page_length: 1000
+            };
+        }
         hide_advance_search(frm,['project','batch_id','zone','state','district','center_location','sector','job_role'])
         if(frm.doc.batch_id){
             setTimeout(() => {

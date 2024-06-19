@@ -3,6 +3,7 @@
 
 frappe.ui.form.on("Center Location", {
     refresh(frm) {
+        check_active(frm,'zone')
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone');
         depended_dropdown(frm, frm.doc.state, 'district', 'state')
         if (frm.doc.center_location_code != undefined) {

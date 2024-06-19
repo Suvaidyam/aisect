@@ -15,6 +15,14 @@ function depended_dropdown(frm, filter_value, child, parent,activeFilter=true) {
         }
     }
 }
+function check_active(frm, child) {
+    frm.fields_dict[child].get_query = function () {
+            return {
+                filters: {'status':'Active'},
+                page_length: 1000
+            };
+    }
+}
 function depened_date(parent, child) {
     const today = new Date();
     if (parent == undefined) {

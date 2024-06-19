@@ -21,7 +21,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "State",
-   "link_filters": "[[\"State\",\"status\",\"=\",\"Active\"]]",
    "options": "State",
    "reqd": 1
   },
@@ -37,7 +36,6 @@
    "fieldname": "zone",
    "fieldtype": "Link",
    "label": "Zone",
-   "link_filters": "[[\"Zone\",\"status\",\"=\",\"Active\"]]",
    "options": "Zone",
    "reqd": 1
   },
@@ -45,7 +43,6 @@
    "fieldname": "sector",
    "fieldtype": "Link",
    "label": "Sector",
-   "link_filters": "[[\"Sector\",\"status\",\"=\",\"Active\"]]",
    "options": "Sector",
    "reqd": 1
   },
@@ -69,7 +66,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "District",
-   "link_filters": "[[\"District\",\"status\",\"=\",\"Active\"]]",
    "options": "District",
    "reqd": 1
   }
@@ -77,7 +73,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 17:52:41.357123",
+ "modified": "2024-06-19 11:09:38.327612",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
