@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-18 16:37:33.832343",
+ "modified": "2024-06-19 15:12:54.781892",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
@@ -65,6 +65,21 @@
   },
   {
    "role": "Head Office (PMU)"
+  },
+  {
+   "role": "Zonal Head"
+  },
+  {
+   "role": "State Head"
+  },
+  {
+   "role": "State Placement Coordinator"
+  },
+  {
+   "role": "Centre Head"
+  },
+  {
+   "role": "Centre Placement Coordinator"
   }
  ],
  "sequence_id": 2.0,

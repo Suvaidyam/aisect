@@ -4,7 +4,11 @@ let alert_end = false;
 let alert_expected = false;
 let alert_actual = false;
 frappe.ui.form.on("Batch", {
-    refresh(frm) {
+   async refresh (frm) {
+    // role by permission
+    let res = await get_user_permission()
+    set_value_by_role(frm,frappe,res)
+    // filter
         check_active(frm,'zone')
         check_active(frm,'project')
         check_active(frm,'sector')
@@ -15,6 +19,7 @@ frappe.ui.form.on("Batch", {
         depened_date(frm.doc.start_date, frm.fields_dict.end_date)
         depened_date(frm.doc.end_date, frm.fields_dict.expected_assessment_date)
         depened_date(frm.doc.expected_assessment_date, frm.fields_dict.actual_assessment_date)
+        // add placeholder in input
         setPlaceholders(frm, [
             { fieldName: 'zone', placeholderText: __("Enter your zone") },
             { fieldName: 'state', placeholderText: __("Enter your state") },
@@ -31,7 +36,7 @@ frappe.ui.form.on("Batch", {
             { fieldName: 'actual_assessment_date', placeholderText: __("Enter your actual assessment date") },
         ])
     },
-
+    // depened on filter
     zone: function (frm) {
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         frm.set_value('state', '')
