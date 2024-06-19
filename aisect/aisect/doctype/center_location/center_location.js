@@ -2,7 +2,11 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Center Location", {
-    refresh(frm) {
+   async refresh(frm) {
+        // role by permission
+        let res = await get_user_permission()
+        set_value_by_role(frm,frappe,res)
+        // 
         check_active(frm,'zone')
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone');
         depended_dropdown(frm, frm.doc.state, 'district', 'state')
