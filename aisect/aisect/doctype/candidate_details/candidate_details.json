@@ -55,7 +55,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "State",
-   "link_filters": "[[\"State\",\"state_name\",\"=\",\"Please select batch_id\"]]",
+   "link_filters": "[]",
    "options": "State"
   },
   {
@@ -64,7 +64,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Zone",
-   "link_filters": "[[\"Zone\",\"zone_name\",\"=\",\"Please select batch_id\"]]",
+   "link_filters": "[]",
    "options": "Zone"
   },
   {
@@ -100,6 +100,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Batch ID",
+   "link_filters": "[]",
    "options": "Batch",
    "reqd": 1
   },
@@ -125,7 +126,7 @@
    "fieldname": "sector",
    "fieldtype": "Link",
    "label": "Sector",
-   "link_filters": "[[\"Sector\",\"sector_name\",\"=\",\"Please select batch_id\"]]",
+   "link_filters": "[]",
    "options": "Sector"
   },
   {
@@ -137,7 +138,7 @@
    "fieldname": "job_role",
    "fieldtype": "Link",
    "label": "Job Role",
-   "link_filters": "[[\"Job Role\",\"job_role_name\",\"=\",\"Please select batch_id\"]]",
+   "link_filters": "[]",
    "options": "Job Role"
   },
   {
@@ -163,7 +164,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Project",
-   "link_filters": "[[\"Project\",\"status\",\"=\",\"Active\"]]",
+   "link_filters": "[]",
    "options": "Project",
    "reqd": 1
   },
@@ -173,7 +174,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "District",
-   "link_filters": "[[\"District\",\"district_name\",\"=\",\"Please select batch_id\"]]",
+   "link_filters": "[]",
    "options": "District"
   },
   {
@@ -182,7 +183,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Center Location",
-   "link_filters": "[[\"Center Location\",\"center_location_name\",\"=\",\"Please select batch_id\"]]",
+   "link_filters": "[]",
    "options": "Center Location"
   },
   {
@@ -302,7 +303,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 17:41:47.295679",
+ "modified": "2024-06-19 10:02:28.097242",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
