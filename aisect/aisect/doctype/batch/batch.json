@@ -36,18 +36,14 @@
   {
    "fieldname": "zone",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Zone ",
-   "link_filters": "[]",
+   "label": "Zone",
    "options": "Zone",
    "reqd": 1
   },
   {
    "fieldname": "state",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "State",
-   "link_filters": "[]",
    "options": "State",
    "reqd": 1
   },
@@ -85,7 +81,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Job Role",
-   "link_filters": "[]",
    "options": "Job Role",
    "reqd": 1
   },
@@ -94,7 +89,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Sector",
-   "link_filters": "[]",
    "options": "Sector",
    "reqd": 1
   },
@@ -103,7 +97,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Project",
-   "link_filters": "[]",
    "options": "Project",
    "reqd": 1
   },
@@ -118,9 +111,7 @@
   {
    "fieldname": "district",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "District",
-   "link_filters": "[]",
    "options": "District",
    "reqd": 1
   },
@@ -133,9 +124,7 @@
   {
    "fieldname": "center_location",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Center Location",
-   "link_filters": "[]",
    "options": "Center Location",
    "reqd": 1
   }
@@ -152,7 +141,7 @@
    "link_fieldname": "batch_id"
   }
  ],
- "modified": "2024-06-19 10:01:22.258832",
+ "modified": "2024-06-19 11:00:14.283250",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
