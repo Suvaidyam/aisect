@@ -37,15 +37,21 @@ async function set_value_by_role(frm) {
     let response = await get_user_permission()
     if(response['Zone']){
         await frm.set_value('zone', response['Zone'])
-        await   frm.set_df_property('zone','read_only',1)
+        setTimeout(async() => {
+            await   frm.set_df_property('zone','read_only',1)
+        }, 200);
     }
     if(response['State']){
         await frm.set_value('state', response['State'])
-        await   frm.set_df_property('state','read_only',1)
+        setTimeout(async() => {
+            await   frm.set_df_property('state','read_only',1)
+        }, 200);
     }
     if(response['District']){
         await frm.set_value('district', response['District'])
-        await   frm.set_df_property('district','read_only',1)
+        setTimeout(async() => {
+            await   frm.set_df_property('district','read_only',1)
+        }, 200);
     }
     if(response['Center Location']){
         await frm.set_value('center_location', response['Center Location'])
