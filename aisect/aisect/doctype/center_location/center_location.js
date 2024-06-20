@@ -4,8 +4,7 @@
 frappe.ui.form.on("Center Location", {
    async refresh(frm) {
         // role by permission
-        let res = await get_user_permission()
-        set_value_by_role(frm,frappe,res)
+        set_value_by_role(frm)
         // 
         check_active(frm,'zone')
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone');

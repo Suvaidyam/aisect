@@ -2,7 +2,10 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Company", {
-    refresh(frm) {
+   async refresh(frm) {
+        // role by permission
+        set_value_by_role(frm)
+        // filter
         check_active(frm,'zone')
         check_active(frm,'sector')
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
