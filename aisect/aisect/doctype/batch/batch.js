@@ -5,10 +5,8 @@ let alert_expected = false;
 let alert_actual = false;
 frappe.ui.form.on("Batch", {
    async refresh (frm) {
-    // role by permission
-    let res = await get_user_permission()
-    set_value_by_role(frm,frappe,res)
-    // filter
+        set_value_by_role(frm)
+        // filter
         check_active(frm,'zone')
         check_active(frm,'project')
         check_active(frm,'sector')

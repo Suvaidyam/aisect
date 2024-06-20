@@ -33,30 +33,25 @@ function depened_date(parent, child) {
         child.$input.datepicker({ minDate: today });
     }
 }
-async function set_value_by_role(frm,frappe,response) {
-    if(frappe.user.has_role('Zonal Head') && !frappe.user.has_role('Administrator')){
+async function set_value_by_role(frm) {
+    let response = await get_user_permission()
+    if(response['Zone']){
         await frm.set_value('zone', response['Zone'])
-          setTimeout(async()=>{
-              await   frm.set_df_property('zone','read_only',1)
-          },200)
-    }else if((frappe.user.has_role('State Placement Coordinator') || frappe.user.has_role('State Head')) && !frappe.user.has_role('Administrator')){
-        await frm.set_value('zone', response['Zone'])
-        await frm.set_value('state', response['State']) 
-          setTimeout(async()=>{
-              await   frm.set_df_property('zone','read_only',1)
-              await   frm.set_df_property('state','read_only',1) 
-          },200)
-    }else if((frappe.user.has_role('Centre Placement Coordinator') || frappe.user.has_role('Centre Head')) && !frappe.user.has_role('Administrator')){
-      await frm.set_value('zone', response['Zone'])
-      await frm.set_value('state', response['State'])
-      await frm.set_value('district', response['District'])
-      await frm.set_value('center_location', response['Center Location'])
-        setTimeout(async()=>{
-            await   frm.set_df_property('zone','read_only',1)
-            await   frm.set_df_property('state','read_only',1)
-            await   frm.set_df_property('district','read_only',1)
+        await   frm.set_df_property('zone','read_only',1)
+    }
+    if(response['State']){
+        await frm.set_value('state', response['State'])
+        await   frm.set_df_property('state','read_only',1)
+    }
+    if(response['District']){
+        await frm.set_value('district', response['District'])
+        await   frm.set_df_property('district','read_only',1)
+    }
+    if(response['Center Location']){
+        await frm.set_value('center_location', response['Center Location'])
+        setTimeout(async() => {
             await   frm.set_df_property('center_location','read_only',1)
-        },200)
+        }, 200);
     }
 }
 function date_validation(frm, child, parent, isset, is, pmess, cmess) {
@@ -113,7 +108,7 @@ const hide_advance_search = (frm, list) => {
 const get_user_permission=async()=>{
     try {
         let list = await callAPI({
-            method: 'aisect.api.get_user_role_permission',
+            method: 'sva_frappe.apis.user.get_user_role_permission',
             freeze: true,
             freeze_message: __("Getting Permissions"),
         })
