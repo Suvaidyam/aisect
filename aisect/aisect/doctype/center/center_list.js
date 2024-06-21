@@ -1,4 +1,4 @@
-frappe.listview_settings['Center Location'] = {
+frappe.listview_settings['Center'] = {
     onload: function (listview) {
         $('.layout-side-section').hide();
         $('.sidebar-section.filter-section').hide();

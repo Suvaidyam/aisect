@@ -175,8 +175,8 @@
    "fieldname": "center_location",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Center Location",
-   "options": "Center Location"
+   "label": "Center",
+   "options": "Center"
   },
   {
    "depends_on": "eval:(doc.placement_status==='Placed')",
@@ -295,7 +295,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-19 11:04:21.589589",
+ "modified": "2024-06-21 17:23:43.475216",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",

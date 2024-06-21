@@ -51,13 +51,13 @@
    "fieldname": "center_location_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Center Location Name",
+   "label": "Center Name",
    "reqd": 1
   },
   {
    "fieldname": "center_location_code",
    "fieldtype": "Data",
-   "label": "Center Location Code",
+   "label": "Center Code",
    "reqd": 1,
    "unique": 1
   }
@@ -70,10 +70,10 @@
    "link_fieldname": "center_location"
   }
  ],
- "modified": "2024-06-19 15:45:27.309316",
+ "modified": "2024-06-21 17:20:19.041131",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Center Location",
+ "name": "Center",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

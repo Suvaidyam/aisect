@@ -124,8 +124,8 @@
   {
    "fieldname": "center_location",
    "fieldtype": "Link",
-   "label": "Center Location",
-   "options": "Center Location",
+   "label": "Center",
+   "options": "Center",
    "reqd": 1
   }
  ],
@@ -141,7 +141,7 @@
    "link_fieldname": "batch_id"
   }
  ],
- "modified": "2024-06-19 11:00:14.283250",
+ "modified": "2024-06-21 17:21:58.001086",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
