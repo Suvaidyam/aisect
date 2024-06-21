@@ -1,25 +1,28 @@
 {
- "chart_name": "Placement Status",
+ "chart_name": "Placement by sector",
  "chart_type": "Report",
- "creation": "2024-06-05 15:25:55.566528",
+ "creation": "2024-06-21 06:51:43.885302",
  "docstatus": 0,
  "doctype": "Dashboard Chart",
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 11,
+ "idx": 3,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-21 08:26:10.729250",
+ "modified": "2024-06-21 08:24:05.800763",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Placement Status",
+ "name": "Placement by sector",
  "number_of_groups": 0,
  "owner": "Administrator",
- "report_name": "Placement Status",
+ "report_name": "Sector wise candidate",
  "roles": [
   {
    "role": "Administrator"
+  },
+  {
+   "role": "Head Office (PMU)"
   },
   {
    "role": "Zonal Head"
@@ -40,12 +43,11 @@
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
- "type": "Bar",
+ "type": "Donut",
  "use_report_chart": 0,
- "x_field": "ps",
+ "x_field": "sector",
  "y_axis": [
   {
-   "color": "#264796",
    "y_field": "count"
   }
  ]

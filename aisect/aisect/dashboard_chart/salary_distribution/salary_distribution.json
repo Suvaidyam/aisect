@@ -1,25 +1,28 @@
 {
- "chart_name": "Placement Status",
+ "chart_name": "Salary distribution",
  "chart_type": "Report",
- "creation": "2024-06-05 15:25:55.566528",
+ "creation": "2024-06-21 08:10:15.857374",
  "docstatus": 0,
  "doctype": "Dashboard Chart",
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 11,
+ "idx": 0,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-21 08:26:10.729250",
+ "modified": "2024-06-21 08:23:02.273608",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Placement Status",
+ "name": "Salary distribution",
  "number_of_groups": 0,
  "owner": "Administrator",
- "report_name": "Placement Status",
+ "report_name": "Salary distribution",
  "roles": [
   {
    "role": "Administrator"
+  },
+  {
+   "role": "Head Office (PMU)"
   },
   {
    "role": "Zonal Head"
@@ -42,10 +45,9 @@
  "timespan": "Last Year",
  "type": "Bar",
  "use_report_chart": 0,
- "x_field": "ps",
+ "x_field": "salary_category",
  "y_axis": [
   {
-   "color": "#264796",
    "y_field": "count"
   }
  ]
