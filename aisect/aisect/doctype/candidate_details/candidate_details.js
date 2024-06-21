@@ -146,6 +146,7 @@ frappe.ui.form.on("Candidate Details", {
     placement_status: function (frm) {
         if (frm.doc.placement_status !== 'Placed') {
             frm.set_value('placement_date', '')
+            frm.set_value('placement', [])
         }
     },
     aadhar_number: function (frm) {

@@ -6,7 +6,7 @@ from aisect.api import get_user_role_permission
 def execute(filters=None):
 	user_role_permission=get_user_role_permission()
 	str = ""
-	# if user_role_permission['Zone'] and user_role_permission['State'] and user_role_permission['Center Location']:
+	# if user_role_permission['Zone'] and user_role_permission['State'] and user_role_permission['Center']:
 	# 	str = f" AND zone = '{user_role_permission['Zone']}' AND state = '{user_role_permission['State']}'"
 	# elif user_role_permission['Zone'] and user_role_permission['State']:
 	# 	str = f" AND zone = '{user_role_permission['Zone']}'"
