@@ -21,23 +21,16 @@ def execute(filters=None):
 		}
 	]
 	sql_query = f"""
-			SELECT
-				jr.job_role_name as job_role,
-				COUNT(ca.candidate_id) as count
-				
-			FROM
-				`tabCandidate Details` AS ca
-			INNER JOIN
-				`tabPlacement Child` AS pc ON ca.candidate_id = pc.parent
-			INNER JOIN
-				`tabCompany` AS cm ON pc.name_of_organization = cm.name
-			INNER JOIN
-				`tabSector` AS st ON cm.sector = st.name
-			INNER JOIN
-				`tabJob Role` AS jr ON st.name = jr.sector
-			WHERE ca.current_status='Placed'
-				{str}
-			GROUP BY jr.job_role_name;
-	"""
+				SELECT
+					COUNT(cd.candidate_id) AS count,
+					jr.job_role_name AS job_role
+				FROM
+					`tabCandidate Details` cd
+				INNER JOIN
+					`tabJob Role` jr on cd.job_role = jr.name
+				WHERE cd.current_status='Placed'
+				GROUP BY
+					job_role;
+				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
