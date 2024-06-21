@@ -14,14 +14,14 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Center Location",
-   "options": "Center Location",
+   "options": "Center",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-19 13:08:13.743002",
+ "modified": "2024-06-21 17:19:25.666272",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Center Location Child",

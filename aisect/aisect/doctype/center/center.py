@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class CenterLocation(Document):
+class Center(Document):
 	pass

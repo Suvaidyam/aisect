@@ -5,7 +5,7 @@ import frappe
 def execute(filters=None):
 	str = ""
 	if filters.gender:
-		str = f"WHERE gender = '{filters.gender}'"
+		str = f"AND gender = '{filters.gender}'"
 	columns = [
 		{
 		"fieldname":"job_role",
@@ -35,6 +35,7 @@ def execute(filters=None):
 				`tabSector` AS st ON cm.sector = st.name
 			INNER JOIN
 				`tabJob Role` AS jr ON st.name = jr.sector
+			WHERE ca.current_status='Placed'
 				{str}
 			GROUP BY jr.job_role_name;
 	"""

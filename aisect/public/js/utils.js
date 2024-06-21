@@ -53,8 +53,8 @@ async function set_value_by_role(frm) {
             await   frm.set_df_property('district','read_only',1)
         }, 200);
     }
-    if(response['Center Location']){
-        await frm.set_value('center_location', response['Center Location'])
+    if(response['Center']){
+        await frm.set_value('center_location', response['Center'])
         setTimeout(async() => {
             await   frm.set_df_property('center_location','read_only',1)
         }, 200);
