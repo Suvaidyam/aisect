@@ -4,13 +4,15 @@
 import frappe
 def execute(filters=None):
 	str = ""
-	date_column = 'creation'
-	if filters.from_date and filters.to_date:
-		str = f"({date_column} between '{filters.from_date}' AND '{filters.to_date}')"
-	elif filters.from_date:
-		str = f"{date_column} >='{filters.from_date}'"
-	elif filters.to_date:
-		str = f"{date_column}<='{filters.to_date}'"
+	if filters.current_status:
+		str = f" current_status = '{filters.current_status}'"
+	# date_column = 'creation'
+	# if filters.from_date and filters.to_date:
+	# 	str = f"({date_column} between '{filters.from_date}' AND '{filters.to_date}')"
+	# elif filters.from_date:
+	# 	str = f"{date_column} >='{filters.from_date}'"
+	# elif filters.to_date:
+	# 	str = f"{date_column}<='{filters.to_date}'"
 	columns = [
 		{
 		"fieldname":"ps",
@@ -30,8 +32,9 @@ def execute(filters=None):
 			COALESCE(NULLIF(current_status, ''), 'Unknown') as ps,
 			COUNT(*) as count
 		FROM
-			`tabCandidate Details`
+			`tabCandidate Details` as ca
 		WHERE
+			ca.current_status IN ('Certified','Placed') AND
 			{str if str else "1=1"}
 		GROUP BY
 			COALESCE(NULLIF(current_status, ''), 'Unknown');
