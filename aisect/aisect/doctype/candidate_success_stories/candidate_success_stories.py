@@ -7,5 +7,5 @@ from frappe.model.document import Document
 
 class CandidateSuccessStories(Document):
 	def before_save(self):
-		u = frappe.get_doc('Candidate Profile',self.name_of_the_candidate)
+		u = frappe.get_doc('Candidate Details',self.name_of_the_candidate)
 		self.full_name = u.full_name

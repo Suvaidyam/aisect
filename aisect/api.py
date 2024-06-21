@@ -7,6 +7,15 @@ def get_user_role():
     return user
 
 @frappe.whitelist()
+def get_user_role_permission():
+    user = frappe.session.user
+    user_permissions = frappe.get_list('User Permission',filters={"user":user},fields=['allow','for_value'])
+    result = {}
+    for item in user_permissions:
+        result[item["allow"]] = item["for_value"]
+    return result
+
+@frappe.whitelist()
 def set_candidate_status():
     current_date = date.today()
     items = frappe.db.get_list('Batch', fields=['name','start_date','end_date', 'expected_assessment_date','actual_assessment_date'])
