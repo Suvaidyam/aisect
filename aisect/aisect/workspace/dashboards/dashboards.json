@@ -25,7 +25,7 @@
    "label": "Placement by sector"
   }
  ],
- "content": "[{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":6}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":6}},{\"id\":\"TJUspBdaQu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placed & Certified\",\"col\":6}},{\"id\":\"MVDHCwNq3X\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Salary distribution\",\"col\":6}},{\"id\":\"L_reS5fdYW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of certified candidate as per aging range\",\"col\":12}},{\"id\":\"nqZVJtlcJ9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Ratio\",\"col\":6}},{\"id\":\"vJ42WVugYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by job role\",\"col\":6}},{\"id\":\"aCuX_XQkaV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by sector\",\"col\":6}}]",
+ "content": "[{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":6}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":6}},{\"id\":\"TJUspBdaQu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placed & Certified\",\"col\":6}},{\"id\":\"MVDHCwNq3X\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Salary distribution\",\"col\":6}},{\"id\":\"L_reS5fdYW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of certified candidate as per aging range\",\"col\":12}},{\"id\":\"aCuX_XQkaV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by sector\",\"col\":6}},{\"id\":\"vJ42WVugYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by job role\",\"col\":6}},{\"id\":\"nqZVJtlcJ9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Ratio\",\"col\":6}}]",
  "creation": "2024-06-14 17:40:37.410864",
  "custom_blocks": [],
  "docstatus": 0,
@@ -38,7 +38,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-21 08:15:10.411291",
+ "modified": "2024-06-21 08:39:38.075130",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",

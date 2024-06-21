@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 11,
+ "idx": 14,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-21 08:26:10.729250",
+ "modified": "2024-06-21 12:05:33.729258",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Status",
@@ -20,6 +20,9 @@
  "roles": [
   {
    "role": "Administrator"
+  },
+  {
+   "role": "Head Office (PMU)"
   },
   {
    "role": "Zonal Head"
