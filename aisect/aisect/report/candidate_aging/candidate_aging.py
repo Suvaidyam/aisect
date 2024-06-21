@@ -2,15 +2,16 @@
 # For license information, please see license.txt
 
 import frappe
+from aisect.api import get_user_role_permission
 def execute(filters=None):
-	# str = ""
-	# date_column = 'creation'
-	# if filters.from_date and filters.to_date:
-	# 	str = f"({date_column} between '{filters.from_date}' AND '{filters.to_date}')"
-	# elif filters.from_date:
-	# 	str = f"{date_column} >='{filters.from_date}'"
-	# elif filters.to_date:
-	# 	str = f"{date_column}<='{filters.to_date}'"
+	user_role_permission=get_user_role_permission()
+	str = ""
+	# if user_role_permission['Zone'] and user_role_permission['State'] and user_role_permission['Center Location']:
+	# 	str = f" AND zone = '{user_role_permission['Zone']}' AND state = '{user_role_permission['State']}'"
+	# elif user_role_permission['Zone'] and user_role_permission['State']:
+	# 	str = f" AND zone = '{user_role_permission['Zone']}'"
+	# elif user_role_permission['Zone']:
+	# 	str = f" AND zone = '{user_role_permission['Zone']}'"
 	columns = [
 		{
 		"fieldname":"aging",
@@ -33,6 +34,7 @@ def execute(filters=None):
 					`tabCandidate Details` AS ca
 				WHERE 
 					DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY) <= ca.assessment_date AND ca.assessment_date <= CURRENT_DATE()
+					AND ca.current_status IN ('Assessed','Certified')
 				UNION ALL
 				SELECT 
 					'31-60 days' AS aging,
@@ -41,7 +43,7 @@ def execute(filters=None):
 					`tabCandidate Details` AS ca
 				WHERE 
 					DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY) <= ca.assessment_date AND ca.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)
-
+					AND ca.current_status IN ('Assessed','Certified')
 				UNION ALL
 				SELECT 
 					'61-90 days' AS aging,
@@ -50,7 +52,7 @@ def execute(filters=None):
 					`tabCandidate Details` AS ca
 				WHERE 
 					DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY) <= ca.assessment_date AND ca.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY)
-
+					AND ca.current_status IN ('Assessed','Certified')
 				UNION ALL
 				SELECT 
 					'More than 90 days' AS aging,
@@ -58,7 +60,8 @@ def execute(filters=None):
 				FROM 
 					`tabCandidate Details` AS ca
 				WHERE 
-					ca.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY);
+					ca.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)
+					AND ca.current_status IN ('Assessed','Certified');
 	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
