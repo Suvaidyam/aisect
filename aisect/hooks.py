@@ -34,7 +34,7 @@ app_include_js = "/assets/aisect/js/aisect.js"
 # include js in doctype views
 doctype_js = {
     "Batch": "public/js/utils.js",
-    "Center Location": "public/js/utils.js",
+    "Center": "public/js/utils.js",
     "Company": "public/js/utils.js",
     "Candidate Details": "public/js/utils.js",
     "Candidate Enrollment": "public/js/utils.js",
@@ -42,12 +42,12 @@ doctype_js = {
     # "District": "public/js/utils.js",
     "Company Branches": "public/js/utils.js",
     "Placement Child": "public/js/utils.js",
-    "Candidate Success Stories":"public/js/utils.js",
+    "Candidate Success Stories": "public/js/utils.js",
     # "State": "public/js/utils.js",
     # "Zone": "public/js/utils.js",
     "Company": "public/js/utils.js",
     "Job Role": "public/js/utils.js",
-    "Project":"public/js/utils.js",
+    "Project": "public/js/utils.js",
     "Sector": "public/js/utils.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -155,21 +155,21 @@ doctype_js = {
 # ---------------
 
 scheduler_events = {
-	"daily": [
-		"aisect.api.set_candidate_status"
-	],
-#   "all": [
-#      "aisect.api.all"
-#   ]
-# 	"hourly": [
-# 		"aisect.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"aisect.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"aisect.tasks.monthly"
-# 	],
+    "daily": [
+        "aisect.api.set_candidate_status"
+    ],
+    #   "all": [
+    #      "aisect.api.all"
+    #   ]
+    # 	"hourly": [
+    # 		"aisect.tasks.hourly"
+    # 	],
+    # 	"weekly": [
+    # 		"aisect.tasks.weekly"
+    # 	],
+    # 	"monthly": [
+    # 		"aisect.tasks.monthly"
+    # 	],
 }
 
 # Testing
