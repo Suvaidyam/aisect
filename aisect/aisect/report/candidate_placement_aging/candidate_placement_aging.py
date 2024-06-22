@@ -71,7 +71,7 @@ def execute(filters=None):
 		"fieldname":"current_status",
 		"label":"Status",
 		"fieldtype":"int",
-		"width":70
+		"width":120
 		}
 	]
 	sql_query = f"""
@@ -94,7 +94,7 @@ def execute(filters=None):
 				INNER JOIN 
 					`tabCenter` ct ON cd.center_location = ct.name
 				WHERE 
-					cd.current_status = 'Placed'
+					cd.current_status IN ('Assessed','Certified')
 					{str};
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"paXW6f7jCa\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Details\",\"col\":12}}]",
+ "content": "[{\"id\":\"paXW6f7jCa\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Details\",\"col\":12}},{\"id\":\"QHX5eXWfHf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Candidate Placement Aging\",\"col\":3}}]",
  "creation": "2024-06-12 17:54:49.618538",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Candidates Details",
  "links": [],
- "modified": "2024-06-22 17:01:07.579908",
+ "modified": "2024-06-22 17:23:10.463532",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidates Details",
@@ -52,6 +52,14 @@
   }
  ],
  "sequence_id": 4.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Candidate Placement Aging",
+   "link_to": "Candidate Placement Aging",
+   "type": "Report"
+  }
+ ],
  "title": "Candidates Details"
 }
