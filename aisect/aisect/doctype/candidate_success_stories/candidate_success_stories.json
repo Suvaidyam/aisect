@@ -16,7 +16,10 @@
   "column_break_rkov",
   "achievement_after_training",
   "remarks_of_the_training",
-  "candidate_image"
+  "candidate_image",
+  "zone",
+  "state",
+  "center"
  ],
  "fields": [
   {
@@ -24,7 +27,8 @@
    "fieldtype": "Link",
    "label": "Name of the Candidate ",
    "options": "Candidate Details",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fetch_from": "name_of_the_candidate.batch_id",
@@ -64,7 +68,7 @@
   },
   {
    "fieldname": "candidate_image",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Candidate Image",
    "reqd": 1
   },
@@ -94,12 +98,36 @@
    "hidden": 1,
    "in_list_view": 1,
    "label": "Full Name"
+  },
+  {
+   "fetch_from": "name_of_the_candidate.zone",
+   "fieldname": "zone",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Zone",
+   "options": "Zone"
+  },
+  {
+   "fetch_from": "name_of_the_candidate.state",
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fetch_from": "name_of_the_candidate.center_location",
+   "fieldname": "center",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Center",
+   "options": "Center"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 15:25:51.540507",
+ "modified": "2024-06-22 12:18:46.953955",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",
