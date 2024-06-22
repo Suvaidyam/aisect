@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 14,
+ "idx": 16,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-21 12:05:33.729258",
+ "modified": "2024-06-22 16:14:28.388874",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Status",
@@ -20,24 +20,6 @@
  "roles": [
   {
    "role": "Administrator"
-  },
-  {
-   "role": "Head Office (PMU)"
-  },
-  {
-   "role": "Zonal Head"
-  },
-  {
-   "role": "State Head"
-  },
-  {
-   "role": "State Placement Coordinator"
-  },
-  {
-   "role": "Centre Head"
-  },
-  {
-   "role": "Centre Placement Coordinator"
   }
  ],
  "time_interval": "Yearly",
