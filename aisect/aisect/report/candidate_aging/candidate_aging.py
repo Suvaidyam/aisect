@@ -6,12 +6,18 @@ from aisect.api import get_user_role_permission
 def execute(filters=None):
 	user_role_permission=get_user_role_permission()
 	str = ""
-	# if user_role_permission['Zone'] and user_role_permission['State'] and user_role_permission['Center']:
-	# 	str = f" AND zone = '{user_role_permission['Zone']}' AND state = '{user_role_permission['State']}'"
-	# elif user_role_permission['Zone'] and user_role_permission['State']:
-	# 	str = f" AND zone = '{user_role_permission['Zone']}'"
-	# elif user_role_permission['Zone']:
-	# 	str = f" AND zone = '{user_role_permission['Zone']}'"
+	zone = user_role_permission.get('Zone')
+	state = user_role_permission.get('State')
+	center = user_role_permission.get('Center')
+
+	if zone:
+		str += f" AND cd.zone = '{zone}'"
+	if state:
+		str += f" AND cd.state = '{state}'"
+	if center:
+		str += f" AND cd.center_location = '{center}'"
+	# if filters and filters.get('gender'):
+	# 	str += f" AND cd.gender = '{filters.get('gender')}'"
 	columns = [
 		{
 		"fieldname":"aging",

@@ -2,10 +2,22 @@
 # For license information, please see license.txt
 
 import frappe
+from aisect.api import get_user_role_permission
 def execute(filters=None):
+	user_role_permission=get_user_role_permission()
 	str = ""
-	if filters.gender:
-		str = f"AND gender = '{filters.gender}'"
+	zone = user_role_permission.get('Zone')
+	state = user_role_permission.get('State')
+	center = user_role_permission.get('Center')
+
+	if zone:
+		str += f" AND cd.zone = '{zone}'"
+	if state:
+		str += f" AND cd.state = '{state}'"
+	if center:
+		str += f" AND cd.center_location = '{center}'"
+	if filters and filters.get('gender'):
+		str += f" AND cd.gender = '{filters.get('gender')}'"
 	columns = [
 		{
 		"fieldname":"job_role",
@@ -29,6 +41,7 @@ def execute(filters=None):
 				INNER JOIN
 					`tabJob Role` jr on cd.job_role = jr.name
 				WHERE cd.current_status='Placed'
+				{str}
 				GROUP BY
 					job_role;
 				"""
