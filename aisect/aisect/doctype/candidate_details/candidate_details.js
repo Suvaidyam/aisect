@@ -178,6 +178,17 @@ const truncate_child_table_field_value = async (row, frm, fields) => {
 }
 let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
+    form_render:async function(frm){
+        let list = await callAPI({
+            method: 'aisect.api.get_batch_assessed_date',
+            freeze: true,
+            args:{id:frm.doc.batch_id},
+            freeze_message: __("Getting Permissions"),
+        })
+        let today = new Date(list.expected_assessment_date);
+        today.setDate(today.getDate() + 1);
+        frm.cur_grid.grid_form.fields_dict.employment_start_date.$input.datepicker({ minDate: today })
+    },
     pin_code: function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
         if (!pin_codePattern.test(row.pin_code)) {
@@ -206,6 +217,7 @@ frappe.ui.form.on("Placement Child", {
         }
 
     },
+    
     employment_start_date: function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn)
         let sd = new Date(row.employment_start_date);

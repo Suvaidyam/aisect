@@ -81,6 +81,7 @@
   },
   {
    "depends_on": "eval:(doc.offer_letter=='Yes')",
+   "description": "Only PDF files are allowed",
    "fieldname": "upload_offer_letter",
    "fieldtype": "Attach",
    "label": "Upload Offer Letter",
@@ -176,6 +177,7 @@
   },
   {
    "depends_on": "eval:(doc.salary_slip==='Yes')",
+   "description": "Only PDF files are allowed",
    "fieldname": "upload_salary_slip",
    "fieldtype": "Attach",
    "label": "Upload Salary Slip",
@@ -183,6 +185,7 @@
   },
   {
    "depends_on": "eval:(doc.bank_statement==='Yes')",
+   "description": "Only PDF files are allowed",
    "fieldname": "upload_bank_statement",
    "fieldtype": "Attach",
    "label": "Upload Bank Statement",
@@ -197,6 +200,7 @@
   },
   {
    "depends_on": "eval:(doc.salary_slip_2==='Yes')",
+   "description": "Only PDF files are allowed",
    "fieldname": "upload_salary_slip_2",
    "fieldtype": "Attach",
    "label": "Upload  Salary Slip",
@@ -204,6 +208,7 @@
   },
   {
    "depends_on": "eval:(doc.bank_statement_2==='Yes')",
+   "description": "Only PDF files are allowed",
    "fieldname": "upload_bank_statement_2",
    "fieldtype": "Attach",
    "label": "Upload Bank Statement",
@@ -224,6 +229,7 @@
   },
   {
    "depends_on": "eval:(doc.salary_slip_3==='Yes')",
+   "description": "Only PDF files are allowed",
    "fieldname": "upload_salary_slip_3",
    "fieldtype": "Attach",
    "label": "Upload Salary Slip",
@@ -231,6 +237,7 @@
   },
   {
    "depends_on": "eval:(doc.bank_statement_3==='Yes')",
+   "description": "Only PDF files are allowed",
    "fieldname": "upload_bank_statement_3",
    "fieldtype": "Attach",
    "label": "Upload Bank Statement",
@@ -321,7 +328,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-21 17:23:20.974711",
+ "modified": "2024-06-22 12:27:49.648658",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",
