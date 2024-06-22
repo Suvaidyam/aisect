@@ -11,11 +11,11 @@ def execute(filters=None):
 	center = user_role_permission.get('Center')
 
 	if zone:
-		str += f" AND cd.zone = '{zone}'"
+		str += f" AND ca.zone = '{zone}'"
 	if state:
-		str += f" AND cd.state = '{state}'"
+		str += f" AND ca.state = '{state}'"
 	if center:
-		str += f" AND cd.center_location = '{center}'"
+		str += f" AND ca.center_location = '{center}'"
 	# if filters and filters.get('gender'):
 	# 	str += f" AND cd.gender = '{filters.get('gender')}'"
 	columns = [
@@ -41,6 +41,7 @@ def execute(filters=None):
 				WHERE 
 					DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY) <= ca.assessment_date AND ca.assessment_date <= CURRENT_DATE()
 					AND ca.current_status IN ('Assessed','Certified')
+					{str}
 				UNION ALL
 				SELECT 
 					'31-60 days' AS aging,
@@ -49,7 +50,7 @@ def execute(filters=None):
 					`tabCandidate Details` AS ca
 				WHERE 
 					DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY) <= ca.assessment_date AND ca.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)
-					AND ca.current_status IN ('Assessed','Certified')
+					AND ca.current_status IN ('Assessed','Certified'){str}
 				UNION ALL
 				SELECT 
 					'61-90 days' AS aging,
@@ -58,7 +59,7 @@ def execute(filters=None):
 					`tabCandidate Details` AS ca
 				WHERE 
 					DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY) <= ca.assessment_date AND ca.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY)
-					AND ca.current_status IN ('Assessed','Certified')
+					AND ca.current_status IN ('Assessed','Certified'){str}
 				UNION ALL
 				SELECT 
 					'More than 90 days' AS aging,
@@ -67,7 +68,7 @@ def execute(filters=None):
 					`tabCandidate Details` AS ca
 				WHERE 
 					ca.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)
-					AND ca.current_status IN ('Assessed','Certified');
+					AND ca.current_status IN ('Assessed','Certified'){str}
 	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
