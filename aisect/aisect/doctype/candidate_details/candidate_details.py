@@ -19,7 +19,7 @@ class CandidateDetails(Document):
         current_date = date.today()
         if self.certified_status == 'Certified':
             self.certification_date = current_date
-        elif self.placement_status == 'Placed':
+        if self.placement_status == 'Placed':
             self.placement_date = current_date
 
   

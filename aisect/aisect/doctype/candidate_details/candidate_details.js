@@ -335,4 +335,18 @@ frappe.ui.form.on("Placement Child", {
             ]);
         }
     },
+    upload_offer_letter:function(frm,cdt, cdn){
+        let row = frappe.get_doc(cdt, cdn)
+        if(!(row.upload_offer_letter.split('.').pop().toLowerCase()=='pdf')){
+            frappe.show_alert({message:'Only PDF files are allowed',indicator:'yellow'})
+            console.log(frm.attachments)
+            frm.attachments.attachment_uploaded = () => {
+                console.log('first')
+                return
+            }
+            // truncate_child_table_field_value(row, frm, [
+            //     'upload_offer_letter'
+            // ]);
+        }
+    }
 });
