@@ -2,10 +2,22 @@
 # For license information, please see license.txt
 
 import frappe
+from aisect.api import get_user_role_permission
 def execute(filters=None):
+	user_role_permission=get_user_role_permission()
 	str = ""
+	zone = user_role_permission.get('Zone')
+	state = user_role_permission.get('State')
+	center = user_role_permission.get('Center')
+
+	if zone:
+		str += f" AND cd.zone = '{zone}'"
+	if state:
+		str += f" AND cd.state = '{state}'"
+	if center:
+		str += f" AND cd.center_location = '{center}'"
 	if filters.current_status:
-		str = f" current_status = '{filters.current_status}'"
+		str += f" AND cd.current_status = '{filters.current_status}'"
 	# date_column = 'creation'
 	# if filters.from_date and filters.to_date:
 	# 	str = f"({date_column} between '{filters.from_date}' AND '{filters.to_date}')"
@@ -29,15 +41,15 @@ def execute(filters=None):
 	]
 	sql_query = f"""
 		SELECT
-			COALESCE(NULLIF(current_status, ''), 'Unknown') as ps,
-			COUNT(*) as count
+			COALESCE(NULLIF(cd.current_status, ''), 'Unknown') AS ps,
+			COUNT(*) AS count
 		FROM
-			`tabCandidate Details` as ca
+			`tabCandidate Details` AS cd
 		WHERE
-			ca.current_status IN ('Certified','Placed') AND
-			{str if str else "1=1"}
+			cd.current_status IN ('Certified', 'Placed')
+			{str}
 		GROUP BY
-			COALESCE(NULLIF(current_status, ''), 'Unknown');
+			COALESCE(NULLIF(cd.current_status, ''), 'Unknown');
 	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data

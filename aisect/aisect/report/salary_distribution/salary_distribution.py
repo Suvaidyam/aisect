@@ -2,10 +2,22 @@
 # For license information, please see license.txt
 
 import frappe
+from aisect.api import get_user_role_permission
 def execute(filters=None):
+	user_role_permission=get_user_role_permission()
 	str = ""
-	if filters.gender:
-		str = f"WHERE gender = '{filters.gender}'"
+	zone = user_role_permission.get('Zone')
+	state = user_role_permission.get('State')
+	center = user_role_permission.get('Center')
+
+	if zone:
+		str += f" AND ca.zone = '{zone}'"
+	if state:
+		str += f" AND ca.state = '{state}'"
+	if center:
+		str += f" AND ca.center_location = '{center}'"
+	# if filters.gender:
+	# 	str = f" AND ca.gender = '{filters.gender}'"
 	columns = [
 		{
 		"fieldname":"salary_category",
@@ -21,59 +33,61 @@ def execute(filters=None):
 		}
 	]
 	sql_query = f"""
-			WITH ranked_salaries AS (
-				SELECT 
-					pc.monthly_income,
-					ROW_NUMBER() OVER (ORDER BY pc.monthly_income) AS row_num,
-					COUNT(*) OVER () AS total_rows
-				FROM 
-					`tabPlacement Child` AS pc
-				INNER JOIN 
-					`tabCandidate Details` AS ca ON ca.candidate_id = pc.parent
-			),
-			statistics AS (
-				SELECT
-					MIN(pc.monthly_income) AS min_income,
-					MAX(pc.monthly_income) AS max_income,
-					AVG(ranked_salaries.monthly_income) AS median_income
-				FROM 
-					`tabPlacement Child` AS pc
-				INNER JOIN 
-					`tabCandidate Details` AS ca ON ca.candidate_id = pc.parent,
-					ranked_salaries
-				WHERE 
-					ranked_salaries.row_num IN (FLOOR((ranked_salaries.total_rows + 1) / 2), CEIL((ranked_salaries.total_rows + 1) / 2))
-			)
-			SELECT 
-				'Min Salary' AS salary_category, 
-				COUNT(*) AS count
-			FROM 
-				`tabPlacement Child` AS pc
-			INNER JOIN 
-				`tabCandidate Details` AS ca ON ca.candidate_id = pc.parent
-			WHERE 
-				pc.monthly_income = (SELECT min_income FROM statistics)
-			UNION ALL
-			SELECT 
-				'Median Salary' AS salary_category, 
-				COUNT(*) AS count
-			FROM 
-				`tabPlacement Child` AS pc
-			INNER JOIN 
-				`tabCandidate Details` AS ca ON ca.candidate_id = pc.parent
-			WHERE 
-				pc.monthly_income = (SELECT median_income FROM statistics)
-			UNION ALL
-			SELECT 
-				'Max Salary' AS salary_category, 
-				COUNT(*) AS count
-			FROM 
-				`tabPlacement Child` AS pc
-			INNER JOIN 
-				`tabCandidate Details` AS ca ON ca.candidate_id = pc.parent
-			WHERE 
-				pc.monthly_income = (SELECT max_income FROM statistics);
-
+			 WITH ranked_salaries AS (
+            SELECT 
+                pc.monthly_income,
+                ROW_NUMBER() OVER (ORDER BY pc.monthly_income) AS row_num,
+                COUNT(*) OVER () AS total_rows
+            FROM 
+                `tabPlacement Child` AS pc
+            INNER JOIN 
+                `tabCandidate Details` AS ca ON ca.candidate_id = pc.parent
+            WHERE
+                1 = 1 {str}
+        ),
+        statistics AS (
+            SELECT
+                MIN(pc.monthly_income) AS min_income,
+                MAX(pc.monthly_income) AS max_income,
+                AVG(ranked_salaries.monthly_income) AS median_income
+            FROM 
+                `tabPlacement Child` AS pc
+            INNER JOIN 
+                `tabCandidate Details` AS ca ON ca.candidate_id = pc.parent,
+                ranked_salaries
+            WHERE
+                1 = 1 {str} AND
+                ranked_salaries.row_num IN (FLOOR((ranked_salaries.total_rows + 1) / 2), CEIL((ranked_salaries.total_rows + 1) / 2))
+        )
+        SELECT 
+            'Min Salary' AS salary_category, 
+            COUNT(*) AS count
+        FROM 
+            `tabPlacement Child` AS pc
+        INNER JOIN 
+            `tabCandidate Details` AS ca ON ca.candidate_id = pc.parent
+        WHERE 
+            pc.monthly_income = (SELECT min_income FROM statistics) AND 1 = 1 {str}
+        UNION ALL
+        SELECT 
+            'Median Salary' AS salary_category, 
+            COUNT(*) AS count
+        FROM 
+            `tabPlacement Child` AS pc
+        INNER JOIN 
+            `tabCandidate Details` AS ca ON ca.candidate_id = pc.parent
+        WHERE 
+            pc.monthly_income = (SELECT median_income FROM statistics) AND 1 = 1 {str}
+        UNION ALL
+        SELECT 
+            'Max Salary' AS salary_category, 
+            COUNT(*) AS count
+        FROM 
+            `tabPlacement Child` AS pc
+        INNER JOIN 
+            `tabCandidate Details` AS ca ON ca.candidate_id = pc.parent
+        WHERE 
+            pc.monthly_income = (SELECT max_income FROM statistics) AND 1 = 1 {str};
 	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data

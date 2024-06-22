@@ -2,10 +2,22 @@
 # For license information, please see license.txt
 
 import frappe
+from aisect.api import get_user_role_permission
 def execute(filters=None):
+	user_role_permission=get_user_role_permission()
 	str = ""
-	if filters.gender:
-		str = f"AND gender = '{filters.gender}'"
+	zone = user_role_permission.get('Zone')
+	state = user_role_permission.get('State')
+	center = user_role_permission.get('Center')
+
+	if zone:
+		str += f" AND cd.zone = '{zone}'"
+	if state:
+		str += f" AND cd.state = '{state}'"
+	if center:
+		str += f" AND cd.center_location = '{center}'"
+	if filters and filters.get('gender'):
+		str += f" AND cd.gender = '{filters.get('gender')}'"
 	columns = [
 		{
 		"fieldname":"sector",
@@ -23,16 +35,12 @@ def execute(filters=None):
 	sql_query = f"""
 			SELECT
 				st.sector_name as sector,
-				COUNT(ca.candidate_id) as count
+				COUNT(cd.candidate_id) as count
 			FROM
-				`tabCandidate Details` AS ca
+				`tabCandidate Details` AS cd
 			INNER JOIN
-				`tabPlacement Child` AS pc ON ca.candidate_id = pc.parent
-			INNER JOIN
-				`tabCompany` AS cm ON pc.name_of_organization = cm.name
-			INNER JOIN
-				`tabSector` AS st ON cm.sector = st.name
-			WHERE ca.current_status='Placed'
+				`tabSector` AS st ON cd.sector = st.name
+			WHERE cd.current_status='Placed'
 			{str}
 			GROUP BY st.sector_name;
 	"""
