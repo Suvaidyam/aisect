@@ -17,7 +17,7 @@
   "column_break_tmcc",
   "last_name",
   "gender",
-  "email",
+  "email_id",
   "qualification",
   "section_break_wznz",
   "column_break_mbny",
@@ -64,12 +64,6 @@
    "in_list_view": 1,
    "label": "Zone",
    "options": "Zone"
-  },
-  {
-   "fieldname": "email",
-   "fieldtype": "Data",
-   "label": "Email Address",
-   "options": "Email"
   },
   {
    "fieldname": "gender",
@@ -290,12 +284,18 @@
    "fieldtype": "Date",
    "label": "Placement Due Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 17:23:43.475216",
+ "modified": "2024-06-23 13:43:00.486347",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",

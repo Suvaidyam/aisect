@@ -5,10 +5,6 @@ from datetime import date ,timedelta
 def get_user_role():
     user = frappe.session.user
     return user
-@frappe.whitelist()
-def get_batch_assessed_date(id):
-    items = frappe.db.get_list('Batch',filters={'name':id}, fields=['name', 'expected_assessment_date'])
-    return items[0]
 
 @frappe.whitelist()
 def get_user_role_permission():
