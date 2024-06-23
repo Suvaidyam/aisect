@@ -16,8 +16,8 @@ def execute(filters=None):
 		str += f" AND ca.state = '{state}'"
 	if center:
 		str += f" AND ca.center_location = '{center}'"
-	# if filters.gender:
-	# 	str = f" AND ca.gender = '{filters.gender}'"
+	if filters.batch_id:
+		str = f" AND ca.batch_id = '{filters.batch_id}'"
 	columns = [
 		{
 		"fieldname":"salary_category",

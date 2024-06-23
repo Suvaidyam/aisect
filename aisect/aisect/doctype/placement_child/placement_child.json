@@ -17,7 +17,7 @@
   "name1",
   "contact_no",
   "column_break_opep",
-  "mail_id",
+  "email_id",
   "section_break_nonz",
   "designation",
   "monthly_income",
@@ -111,12 +111,6 @@
   {
    "fieldname": "column_break_opep",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "mail_id",
-   "fieldtype": "Data",
-   "label": "Email ID",
-   "reqd": 1
   },
   {
    "fieldname": "contact_no",
@@ -323,12 +317,18 @@
    "link_filters": "[[\"State\",\"state_name\",\"=\",\"Please select name of organization\"]]",
    "options": "State",
    "read_only": 1
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-22 12:27:49.648658",
+ "modified": "2024-06-23 13:42:29.455607",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",
