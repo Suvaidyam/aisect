@@ -15,19 +15,19 @@ var filters = [
         "options": "\n1-30\n30-60\n60-90\nMore than 90"
     }
 ]
-let state = {
+var state = {
     "fieldname": "state",
     "fieldtype": "Link",
     "label": "State",
     "options": "State"
 }
-let zone =  {
+var zone =  {
     "fieldname": "zone",
     "fieldtype": "Link",
     "label": "Zone",
     "options": "Zone"
 }
-let center = {
+var center = {
     "fieldname": "center",
     "fieldtype": "Link",
     "label": "Center",

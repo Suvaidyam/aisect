@@ -8,19 +8,19 @@ var filters = [
     "options": "Batch"
   },
 ]
-let state = {
+var state = {
     "fieldname": "state",
     "fieldtype": "Link",
     "label": "State",
     "options": "State"
 }
-let zone =  {
+var zone =  {
     "fieldname": "zone",
     "fieldtype": "Link",
     "label": "Zone",
     "options": "Zone"
 }
-let center = {
+var center = {
     "fieldname": "center",
     "fieldtype": "Link",
     "label": "Center",
