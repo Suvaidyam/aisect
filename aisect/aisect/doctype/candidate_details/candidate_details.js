@@ -59,6 +59,9 @@ frappe.ui.form.on("Candidate Details", {
         if (frm.doc.certified_status != 'Certified') {
             frm.set_df_property('placement_status', 'read_only', 1)
         }
+        if(frm.doc.placement_status=='Placed'){
+            frm.set_df_property('certified_status','read_only',1)
+        }
         depended_dropdown(frm, frm.doc.project, 'batch_id', 'project')
 
         // =============== setPlaceholders =============
@@ -113,6 +116,9 @@ frappe.ui.form.on("Candidate Details", {
         if (!mobilePattern.test(frm.doc.mobile_number) && frm.doc.mobile_number) {
             frappe.throw('Enter vaild mobile number')
         }
+        if(frm.doc.placement_status=='Placed'){
+            frm.set_df_property('certified_status','read_only',1)
+        }
     },
     project: function (frm) {
         frm.fields_dict['batch_id'].get_query = function () {
@@ -147,6 +153,9 @@ frappe.ui.form.on("Candidate Details", {
         if (frm.doc.placement_status !== 'Placed') {
             frm.set_value('placement_date', '')
             frm.set_value('placement', [])
+            frm.set_df_property('certified_status','read_only',0)
+        }else{
+            frm.set_df_property('certified_status','read_only',1)
         }
     },
     aadhar_number: function (frm) {
@@ -159,11 +168,6 @@ frappe.ui.form.on("Candidate Details", {
     mobile_number: function (frm) {
         mobile_number_validation(frm, frm.doc.mobile_number, 'mobile_number')
     },
-    // after_save:function(frm){
-    //     if(frm.doc.candidate_id!=undefined){
-    //         frm.set_df_property('candidate_id','read_only',1)
-    //     }
-    // },
 });
 
 
@@ -179,13 +183,9 @@ const truncate_child_table_field_value = async (row, frm, fields) => {
 let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
     form_render:async function(frm){
-        let list = await callAPI({
-            method: 'aisect.api.get_batch_assessed_date',
-            freeze: true,
-            args:{id:frm.doc.batch_id},
-            freeze_message: __("Getting Permissions"),
-        })
-        let today = new Date(list.expected_assessment_date);
+        console.log(frm.cur_grid)
+        frm.cur_grid.grid.grid_custom_buttons.add('jhjhgjh')
+        let today = new Date(frm.doc.certification_date);
         today.setDate(today.getDate() + 1);
         frm.cur_grid.grid_form.fields_dict.employment_start_date.$input.datepicker({ minDate: today })
     },
@@ -335,18 +335,18 @@ frappe.ui.form.on("Placement Child", {
             ]);
         }
     },
-    upload_offer_letter:function(frm,cdt, cdn){
-        let row = frappe.get_doc(cdt, cdn)
-        if(!(row.upload_offer_letter.split('.').pop().toLowerCase()=='pdf')){
-            frappe.show_alert({message:'Only PDF files are allowed',indicator:'yellow'})
-            console.log(frm.attachments)
-            frm.attachments.attachment_uploaded = () => {
-                console.log('first')
-                return
-            }
+    // upload_offer_letter:function(frm,cdt, cdn){
+    //     let row = frappe.get_doc(cdt, cdn)
+    //     if(!(row.upload_offer_letter.split('.').pop().toLowerCase()=='pdf')){
+    //         frappe.show_alert({message:'Only PDF files are allowed',indicator:'yellow'})
+    //         console.log(frm.attachments)
+    //         frm.attachments.attachment_uploaded = () => {
+    //             console.log('first')
+    //             return
+    //         }
             // truncate_child_table_field_value(row, frm, [
             //     'upload_offer_letter'
             // ]);
-        }
-    }
+    //     }
+    // }
 });
