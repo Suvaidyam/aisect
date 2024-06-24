@@ -9,12 +9,6 @@ frappe.query_reports["Placement by job role"] = {
         //     "options":"\n1-30\n30-60\n60-90\nMore than 90"
         // },
         {
-            "fieldname": "gender",
-            "fieldtype": "Select",
-            "label": "Gender",
-            "options": "\nMale\nFemale",
-        },
-        {
             "fieldname": "batch_id",
             "fieldtype": "Link",
             "label": "Batch",
@@ -37,6 +31,12 @@ frappe.query_reports["Placement by job role"] = {
             "fieldtype": "Link",
             "label": "Center",
             "options": "Center"
+        },
+        {
+            "fieldname": "gender",
+            "fieldtype": "Select",
+            "label": "Gender",
+            "options": "\nMale\nFemale",
         },
     ]
 };

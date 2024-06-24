@@ -3,12 +3,6 @@
 frappe.query_reports["Candidate Placement Aging"] = {
 	filters: [
         {
-            "fieldname": "current_status",
-            "fieldtype": "Select",
-            "label": "Aging",
-            "options":"\n1-30\n30-60\n60-90\nMore than 90"
-        },
-        {
             "fieldname": "batch_id",
             "fieldtype": "Link",
             "label": "Batch",
@@ -31,6 +25,12 @@ frappe.query_reports["Candidate Placement Aging"] = {
             "fieldtype": "Link",
             "label": "Center",
             "options":"Center"
+        },
+        {
+            "fieldname": "current_status",
+            "fieldtype": "Select",
+            "label": "Remaining days",
+            "options":"\n1-30\n30-60\n60-90\nMore than 90"
         }
     ]
 };
