@@ -8,6 +8,24 @@ var filters = [
       "options": "Batch"
     },
   ]
+  let state = {
+      "fieldname": "state",
+      "fieldtype": "Link",
+      "label": "State",
+      "options": "State"
+  }
+  let zone =  {
+      "fieldname": "zone",
+      "fieldtype": "Link",
+      "label": "Zone",
+      "options": "Zone"
+  }
+  let center = {
+      "fieldname": "center",
+      "fieldtype": "Link",
+      "label": "Center",
+      "options": "Center"
+  }
   if (frappe.user_roles.includes('Head Office (PMU)')) {
     filters.splice(1,0,zone,state,center)
   }
