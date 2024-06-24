@@ -10,6 +10,13 @@ const getRole = async () => {
             }
         }
     });
-    
 }
 getRole()
+frappe.router.on('change', async () => {
+    let cur_router = await frappe.get_route()
+    if(['Batch','Zone','State','District','Center','Project','Company','Sector','Job Role','Candidate Details','SVA User','Candidate Success Stories'].includes(cur_router[1])){
+        $('.sidebar-toggle-btn').hide() 
+    }else{
+        $('.sidebar-toggle-btn').show() 
+    }
+});
