@@ -10,14 +10,16 @@ def execute(filters=None):
 	state = user_role_permission.get('State')
 	center = user_role_permission.get('Center')
 
-	if zone:
-		str += f" AND cd.zone = '{zone}'"
-	if state:
-		str += f" AND cd.state = '{state}'"
-	if center:
-		str += f" AND cd.center_location = '{center}'"
-	if filters and filters.get('gender'):
-		str += f" AND cd.gender = '{filters.get('gender')}'"
+	if zone or filters.zone:
+		str += f" AND cd.zone = '{zone or filters.zone}'"
+	if state or filters.state:
+		str += f" AND cd.state = '{state or filters.state}'"
+	if center or filters.center:
+		str += f" AND cd.center_location = '{center or filters.center}'"
+	if filters and filters.batch_id:
+		str += f" AND cd.batch_id = '{filters.batch_id}'"
+	if filters and filters.gender:
+		str += f" AND cd.gender = '{filters.gender}'"
 	columns = [
 		{
 		"fieldname":"job_role",

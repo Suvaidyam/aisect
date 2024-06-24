@@ -36,5 +36,4 @@ frappe.router.on('change', async () => {
     } else {
         $('.sidebar-toggle-btn').show()
     }
-    console.log(cur_router)
 });
