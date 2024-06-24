@@ -17,6 +17,7 @@ window.setTimeout(()=>{
     frappe.app.logout = async () => {
         var me = this;
         me.logged_out = true;
+        localStorage.removeItem('current_page')
         await frappe.call({
             method: "logout",
             callback: function (r) {
