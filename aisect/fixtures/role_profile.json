@@ -62,9 +62,9 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2024-05-29 12:01:47.482399",
+  "modified": "2024-06-24 18:36:13.008293",
   "name": "Centre Placement Coordinator",
-  "role_profile": "Centre Placement Coordinator",
+  "role_profile": "Center Placement Coordinator",
   "roles": [
    {
     "parent": "Centre Placement Coordinator",
@@ -77,9 +77,9 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2024-05-29 12:02:09.535091",
+  "modified": "2024-06-24 18:35:39.958970",
   "name": "Centre Head",
-  "role_profile": " Centre Head",
+  "role_profile": " Center Head",
   "roles": [
    {
     "parent": "Centre Head",
