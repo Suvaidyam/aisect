@@ -2,12 +2,7 @@
 // For license information, please see license.txt
 frappe.query_reports["Sector wise candidate"] = {
     filters: [
-        {
-            "fieldname": "gender",
-            "fieldtype": "Select",
-            "label": "Gender",
-            "options": "\nMale\nFemale",
-        },
+        
         {
             "fieldname": "batch_id",
             "fieldtype": "Link",
@@ -31,6 +26,12 @@ frappe.query_reports["Sector wise candidate"] = {
             "fieldtype": "Link",
             "label": "Center",
             "options": "Center"
-        }
+        },
+        {
+            "fieldname": "gender",
+            "fieldtype": "Select",
+            "label": "Gender",
+            "options": "\nMale\nFemale",
+        },
     ]
 };

@@ -1,9 +1,6 @@
 a[data-action="action-edit"] {
     display: none;
 }
-.search-bar{
-    display: none !important;
-}
 .dropdown-notifications{
     display: none !important;
 }
