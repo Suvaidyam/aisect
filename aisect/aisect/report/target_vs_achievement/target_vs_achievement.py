@@ -18,21 +18,7 @@ def execute(filters=None):
 		str += f" AND cd.center_location = '{center or filters.center}'"
 	if filters and filters.batch_id:
 		str += f" AND cd.batch_id = '{filters.batch_id}'"
-	# if filters and filters.gender:
-	# 	str += f" AND cd.gender = '{filters.gender}'"
 	columns = [
-		{
-		"fieldname":"full_name",
-		"label":"Full Name",
-		"fieldtype":"Data",
-		"width":180
-		},
-		{
-		"fieldname":"candidate_id",
-		"label":"Candidate ID",
-		"fieldtype":"Data",
-		"width":200
-		},
 		{
 		"fieldname":"batch_id",
 		"label":"Batch ID",
@@ -58,35 +44,44 @@ def execute(filters=None):
 		"width":150
 		},
 		{
-		"fieldname":"due_date",
-		"label":"Placement Due Date",
+		"fieldname":"candidate_count",
+		"label":"Candidate Count",
 		"fieldtype":"Data",
 		"width":160
 		},
 		{
-		"fieldname":"remaining_days",
-		"label":"Remaining Days",
+		"fieldname":"target",
+		"label":"Target",
+		"fieldtype":"Data",
+		"width":160
+		},
+		{
+		"fieldname":"achievement",
+		"label":"Achievement",
 		"fieldtype":"Data",
 		"width":135
 		},
 		{
-		"fieldname":"current_status",
-		"label":"Status",
+		"fieldname":"achievements_status",
+		"label":"Achievement Status",
 		"fieldtype":"int",
-		"width":120
+		"width":180
 		}
 	]
 	sql_query = f"""
-				SELECT
-					cd.full_name,
-					cd.candidate_id,
+				SELECT 
 					cd.batch_id,
 					zn.zone_name,
 					st.state_name,
 					ct.center_location_name,
-					cd.current_status,
-					cd.placement_due_date AS due_date,
-					DATEDIFF(cd.placement_due_date, CURRENT_DATE) AS remaining_days
+					COUNT(*) AS candidate_count,
+					ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
+					ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) AS achievement,
+					CASE 
+						WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END))
+						THEN 'Achieved'
+						ELSE 'In Progress'
+					END AS achievements_status
 				FROM
 					`tabCandidate Details` cd
 				INNER JOIN 
@@ -94,10 +89,12 @@ def execute(filters=None):
 				INNER JOIN 
 					`tabState` st ON cd.state = st.name
 				INNER JOIN 
-					`tabCenter` ct ON cd.center_location = ct.name
-				WHERE 
-					cd.current_status IN ('Assessed','Certified')
-					{str};
-				"""
+					`tabCenter` ct ON cd.center_location = ct.name 
+				 WHERE 1 = 1 {str}
+				GROUP BY 
+					cd.batch_id
+				ORDER BY 
+					candidate_count DESC;
+	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data

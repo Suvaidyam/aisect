@@ -10,14 +10,14 @@ def execute(filters=None):
 	state = user_role_permission.get('State')
 	center = user_role_permission.get('Center')
 
-	if zone:
-		str += f" AND ca.zone = '{zone}'"
-	if state:
-		str += f" AND ca.state = '{state}'"
-	if center:
-		str += f" AND ca.center_location = '{center}'"
-	if filters.batch_id:
-		str = f" AND ca.batch_id = '{filters.batch_id}'"
+	if zone or filters.zone:
+		str += f" AND ca.zone = '{zone or filters.zone}'"
+	if state or filters.state:
+		str += f" AND ca.state = '{state or filters.state}'"
+	if center or filters.center:
+		str += f" AND ca.center_location = '{center or filters.center}'"
+	if filters and filters.batch_id:
+		str += f" AND ca.batch_id = '{filters.batch_id}'"
 	columns = [
 		{
 		"fieldname":"salary_category",

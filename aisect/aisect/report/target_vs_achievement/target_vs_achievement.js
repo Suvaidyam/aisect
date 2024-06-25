@@ -7,12 +7,6 @@ var filters = [
       "label": "Batch",
       "options": "Batch"
     },
-    {
-        "fieldname": "gender",
-        "fieldtype": "Select",
-        "label": "Gender",
-        "options": "\nMale\nFemale",
-    },
   ]
   var state = {
       "fieldname": "state",
@@ -44,6 +38,6 @@ var filters = [
   if (frappe.user_roles.includes('Centre Placement Coordinator') || frappe.user_roles.includes('Centre Head')) {
     filters.splice(1,0,center)
   }
-frappe.query_reports["Placement by job role"] = {
-    filters: filters
+frappe.query_reports["Target VS Achievement"] = {
+	filters: filters
 };

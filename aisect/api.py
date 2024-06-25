@@ -1,7 +1,7 @@
 import frappe
 from datetime import date ,timedelta
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_user_role():
     user = frappe.session.user
     return user

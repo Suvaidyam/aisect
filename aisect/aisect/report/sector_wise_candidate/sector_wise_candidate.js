@@ -1,39 +1,49 @@
 // Copyright (c) 2024, Rahul Sah and contributors
 // For license information, please see license.txt
-
-const filters = [
+var filters = [
+    {
+      "fieldname": "batch_id",
+      "fieldtype": "Link",
+      "label": "Batch",
+      "options": "Batch"
+    },
     {
         "fieldname": "gender",
         "fieldtype": "Select",
         "label": "Gender",
         "options": "\nMale\nFemale",
     },
-    {
-        "fieldname": "batch_id",
-        "fieldtype": "Link",
-        "label": "Batch",
-        "options": "Batch"
-    },
-    {
-        "fieldname": "zone",
-        "fieldtype": "Link",
-        "label": "Zone",
-        "options": "Zone"
-    },
-    {
-        "fieldname": "state",
-        "fieldtype": "Link",
-        "label": "State",
-        "options": "State"
-    },
-    {
-        "fieldname": "center",
-        "fieldtype": "Link",
-        "label": "Center",
-        "options": "Center"
-    }
-];
-
+  ]
+  var state = {
+      "fieldname": "state",
+      "fieldtype": "Link",
+      "label": "State",
+      "options": "State"
+  }
+  var zone =  {
+      "fieldname": "zone",
+      "fieldtype": "Link",
+      "label": "Zone",
+      "options": "Zone"
+  }
+  var center = {
+      "fieldname": "center",
+      "fieldtype": "Link",
+      "label": "Center",
+      "options": "Center"
+  }
+  if (frappe.user_roles.includes('Head Office (PMU)')) {
+    filters.splice(1,0,zone,state,center)
+  }
+  if (frappe.user_roles.includes('Zonal Head')) {
+    filters.splice(1,0,state,center)
+  }
+  if (frappe.user_roles.includes('State Placement Coordinator') || frappe.user_roles.includes('State Head')) {
+    filters.splice(1,0,center)
+  }
+  if (frappe.user_roles.includes('Centre Placement Coordinator') || frappe.user_roles.includes('Centre Head')) {
+    filters.splice(1,0,center)
+  }
 frappe.query_reports["Sector wise candidate"] = {
     filters: filters
 };

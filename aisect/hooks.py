@@ -19,7 +19,7 @@ app_include_js = "/assets/aisect/js/aisect.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/aisect/css/aisect.css"
-# web_include_js = "/assets/aisect/js/aisect.js"
+web_include_js = "/assets/aisect/js/aisect.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "aisect/public/scss/website"
@@ -67,7 +67,7 @@ doctype_js = {
 
 # website user home page (by Role)
 # role_home_page = {
-# 	"Role": "home_page"
+# 	"Guest": "/login"
 # }
 
 # Generators
