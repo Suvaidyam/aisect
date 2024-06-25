@@ -1,3 +1,12 @@
+let is_login_page = sessionStorage.getItem('is_login_page') ?? false;
+setTimeout(() => {
+    if(!frappe.is_user_logged_in()){
+        if(is_login_page == false){
+            sessionStorage.setItem('is_login_page',true)
+            document.location.href = "/login";
+        }
+    }
+}, 500);
 const getRole = async () => {
     frappe.call({
         method: 'aisect.api.get_user_role',
@@ -33,7 +42,9 @@ frappe.router.on('change', async () => {
     let cur_router = await frappe.get_route()
     if (['Batch', 'Zone', 'State', 'District', 'Center', 'Project', 'Company', 'Sector', 'Job Role', 'Candidate Details', 'SVA User', 'Candidate Success Stories'].includes(cur_router[1])) {
         $('.sidebar-toggle-btn').hide()
+        $('.layout-side-section').hide();
     } else {
         $('.sidebar-toggle-btn').show()
+        $('.layout-side-section').show();
     }
 });
