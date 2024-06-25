@@ -8,43 +8,38 @@ var filters = [
         "label": "Batch",
         "options": "Batch"
     },
-    {
-        "fieldname": "current_status",
-        "fieldtype": "Select",
-        "label": "Remaining days",
-        "options": "\n1-30\n30-60\n60-90\nMore than 90"
-    }
 ]
-var state = {
-    "fieldname": "state",
-    "fieldtype": "Link",
-    "label": "State",
-    "options": "State"
-}
-var zone =  {
-    "fieldname": "zone",
-    "fieldtype": "Link",
-    "label": "Zone",
-    "options": "Zone"
-}
-var center = {
-    "fieldname": "center",
-    "fieldtype": "Link",
-    "label": "Center",
-    "options": "Center"
-}
+
 if (frappe.user_roles.includes('Head Office (PMU)')) {
-    filters.splice(1,0,zone,state,center)
+    filters.push({
+        "fieldname": "zone",
+        "fieldtype": "Link",
+        "label": "Zone",
+        "options": "Zone"
+    })
 }
-if (frappe.user_roles.includes('Zonal Head')) {
-    filters.splice(1,0,state,center)
+if (frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head Office (PMU)')) {
+    filters.push({
+        "fieldname": "state",
+        "fieldtype": "Link",
+        "label": "State",
+        "options": "State"
+    })
 }
-if (frappe.user_roles.includes('State Placement Coordinator') || frappe.user_roles.includes('State Head')) {
-    filters.splice(1,0,center)
+if (frappe.user_roles.includes('Head Office (PMU)') || frappe.user_roles.includes('State Placement Coordinator') || frappe.user_roles.includes('State Head') || frappe.user_roles.includes('Zonal Head')) {
+    filters.push({
+        "fieldname": "center",
+        "fieldtype": "Link",
+        "label": "Center",
+        "options": "Center"
+    })
 }
-if (frappe.user_roles.includes('Centre Placement Coordinator') || frappe.user_roles.includes('Centre Head')) {
-    filters.splice(1,0,center)
-}
+filters.push({
+    "fieldname": "current_status",
+    "fieldtype": "Select",
+    "label": "Remaining days",
+    "options": "\n1-30\n30-60\n60-90\nMore than 90"
+})
 frappe.query_reports["Candidate Placement Aging"] = {
     filters: filters
 };
