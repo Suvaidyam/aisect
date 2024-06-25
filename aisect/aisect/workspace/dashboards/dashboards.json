@@ -38,7 +38,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-22 17:01:06.959155",
+ "modified": "2024-06-25 17:16:15.020914",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
@@ -95,7 +95,7 @@
    "role": "Centre Head"
   }
  ],
- "sequence_id": 1.0,
+ "sequence_id": 2.0,
  "shortcuts": [],
  "title": "Dashboards"
 }
