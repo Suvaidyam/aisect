@@ -9,6 +9,8 @@
  "field_order": [
   "project_name",
   "project_code",
+  "project_type",
+  "state",
   "status"
  ],
  "fields": [
@@ -34,6 +36,22 @@
    "label": "Project Code",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "default": "Central",
+   "fieldname": "project_type",
+   "fieldtype": "Select",
+   "label": "Project Type",
+   "options": "\nCentral\nState",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.project_type==='State'",
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "mandatory_depends_on": "eval:doc.project_type==='State'",
+   "options": "State"
   }
  ],
  "hide_toolbar": 1,
@@ -44,7 +62,7 @@
    "link_fieldname": "project"
   }
  ],
- "modified": "2024-06-18 10:55:18.581862",
+ "modified": "2024-06-25 17:14:19.901510",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Project",

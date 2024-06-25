@@ -16,4 +16,8 @@ frappe.ui.form.on("Project", {
             frm.set_df_property('project_code', 'read_only', 1)
         }
     },
+    project_type:function(frm){
+        if(frm.doc.project_type!='State')
+        frm.set_value('state', '')
+    }
 });

@@ -7,8 +7,16 @@ frappe.ui.form.on("Batch", {
     async refresh(frm) {
         set_value_by_role(frm)
         // filter
+        frm.fields_dict['project'].get_query = function () {
+            return {
+                filters: [
+                    ['Project','state', 'IN', [frm.doc.state,'']],
+                    ['Project','status', '=', 'Active']
+                ],
+                page_length: 1000
+            };
+        }
         check_active(frm, 'zone')
-        check_active(frm, 'project')
         check_active(frm, 'sector')
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
         depended_dropdown(frm, frm.doc.state, 'district', 'state')
@@ -41,6 +49,15 @@ frappe.ui.form.on("Batch", {
     },
     state: function (frm) {
         depended_dropdown(frm, frm.doc.state, 'district', 'state')
+        frm.fields_dict['project'].get_query = function () {
+            return {
+                filters: [
+                    ['Project','state', 'IN', [frm.doc.state,'']],
+                    ['Project','status', '=', 'Active']
+                ],
+                page_length: 1000
+            };
+        }
         frm.set_value('district', '')
     },
     district: function (frm) {
