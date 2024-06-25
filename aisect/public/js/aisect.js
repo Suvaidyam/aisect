@@ -1,8 +1,6 @@
-let is_login_page = sessionStorage.getItem('is_login_page') ?? false;
 setTimeout(() => {
-    if(!frappe.is_user_logged_in()){
-        if(is_login_page == false){
-            sessionStorage.setItem('is_login_page',true)
+    if (!frappe.is_user_logged_in()) {
+        if (window.location.pathname != '/login') {
             document.location.href = "/login";
         }
     }
@@ -22,7 +20,7 @@ const getRole = async () => {
     });
 }
 getRole()
-window.setTimeout(()=>{
+window.setTimeout(() => {
     frappe.app.logout = async () => {
         var me = this;
         me.logged_out = true;
@@ -37,7 +35,7 @@ window.setTimeout(()=>{
             },
         });
     };
-},3000)
+}, 3000)
 frappe.router.on('change', async () => {
     let cur_router = await frappe.get_route()
     if (['Batch', 'Zone', 'State', 'District', 'Center', 'Project', 'Company', 'Sector', 'Job Role', 'Candidate Details', 'SVA User', 'Candidate Success Stories'].includes(cur_router[1])) {
