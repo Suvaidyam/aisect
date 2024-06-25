@@ -67,7 +67,7 @@ doctype_js = {
 
 # website user home page (by Role)
 # role_home_page = {
-# 	"Role": "home_page"
+# 	"Guest": "/login"
 # }
 
 # Generators
