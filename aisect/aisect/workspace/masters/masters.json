@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-25 17:16:15.335280",
+ "modified": "2024-06-26 13:32:02.075782",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
@@ -82,7 +82,7 @@
    "role": "Centre Placement Coordinator"
   }
  ],
- "sequence_id": 3.0,
+ "sequence_id": 5.0,
  "shortcuts": [],
  "title": "Masters"
 }
