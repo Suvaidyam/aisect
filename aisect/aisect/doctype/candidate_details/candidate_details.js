@@ -153,9 +153,6 @@ frappe.ui.form.on("Candidate Details", {
         if (frm.doc.placement_status !== 'Placed') {
             frm.set_value('placement_date', '')
             frm.set_value('placement', [])
-            frm.set_df_property('certified_status','read_only',0)
-        }else{
-            frm.set_df_property('certified_status','read_only',1)
         }
     },
     aadhar_number: function (frm) {

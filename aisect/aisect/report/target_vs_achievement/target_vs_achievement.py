@@ -18,6 +18,10 @@ def execute(filters=None):
 		str += f" AND cd.center_location = '{center or filters.center}'"
 	if filters and filters.batch_id:
 		str += f" AND cd.batch_id = '{filters.batch_id}'"
+	if filters and filters.job_role:
+		str += f" AND cd.job_role = '{filters.job_role}'"
+	if filters and filters.project:
+		str += f" AND cd.project = '{filters.project}'"
 	columns = [
 		{
 		"fieldname":"batch_id",

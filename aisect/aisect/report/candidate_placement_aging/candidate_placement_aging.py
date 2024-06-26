@@ -18,8 +18,18 @@ def execute(filters=None):
 		str += f" AND cd.center_location = '{center or filters.center}'"
 	if filters and filters.batch_id:
 		str += f" AND cd.batch_id = '{filters.batch_id}'"
-	# if filters and filters.gender:
-	# 	str += f" AND cd.gender = '{filters.gender}'"
+	if filters and filters.job_role:
+		str += f" AND cd.job_role = '{filters.job_role}'"
+	if filters and filters.project:
+		str += f" AND cd.project = '{filters.project}'"
+	if filters and filters.remaining_day =='1-30':
+		str += f" AND DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY) <= cd.assessment_date AND cd.assessment_date <= CURRENT_DATE()"
+	elif filters and filters.remaining_day =='30-60':
+		str += f" AND DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY) <= cd.assessment_date AND cd.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)"
+	elif filters and filters.remaining_day =='60-90':
+		str += f" AND DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY) <= cd.assessment_date AND cd.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY)"
+	elif filters and filters.remaining_day =='More than 90':
+		str += f" AND cd.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)"
 	columns = [
 		{
 		"fieldname":"full_name",
