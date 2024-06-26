@@ -212,7 +212,7 @@
    "fieldtype": "Select",
    "hidden": 1,
    "in_list_view": 1,
-   "label": "Current Status",
+   "label": "Candidate Status",
    "options": "Registered\nAssessed\nCertified\nNot Certified\nPlaced\nNot Placed"
   },
   {
@@ -295,7 +295,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 07:13:38.541366",
+ "modified": "2024-06-26 13:35:10.380589",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",

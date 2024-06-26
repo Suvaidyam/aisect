@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\":\"nOm02QxnjE\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
- "creation": "2024-06-12 17:57:35.928650",
+ "content": "[{\"id\":\"5JBAwkuntO\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
+ "creation": "2024-06-26 13:20:52.177797",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Success Stories",
  "links": [],
- "modified": "2024-06-22 17:01:07.727136",
+ "modified": "2024-06-26 13:32:01.653593",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Success Stories",
@@ -28,30 +28,8 @@
    "quick_list_filter": "[]"
   }
  ],
- "roles": [
-  {
-   "role": "Administrator"
-  },
-  {
-   "role": "Head Office (PMU)"
-  },
-  {
-   "role": "Zonal Head"
-  },
-  {
-   "role": "State Placement Coordinator"
-  },
-  {
-   "role": "State Head"
-  },
-  {
-   "role": "Centre Placement Coordinator"
-  },
-  {
-   "role": "Centre Head"
-  }
- ],
- "sequence_id": 5.0,
+ "roles": [],
+ "sequence_id": 3.0,
  "shortcuts": [],
  "title": "Success Stories"
 }
