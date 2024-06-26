@@ -26,20 +26,32 @@ def execute(filters=None):
 		"width":150
 		},
 		{
-		"fieldname":"zone_name",
-		"label":"Zone",
-		"fieldtype":"Data",
-		"width":100
-		},
-		{
 		"fieldname":"state_name",
 		"label":"State",
 		"fieldtype":"Data",
 		"width":100
 		},
 		{
+		"fieldname":"project_name",
+		"label":"Project",
+		"fieldtype":"Data",
+		"width":100
+		},
+		{
+		"fieldname":"district_name",
+		"label":"District",
+		"fieldtype":"Data",
+		"width":150
+		},
+		{
 		"fieldname":"center_location_name",
 		"label":"Center",
+		"fieldtype":"Data",
+		"width":150
+		},
+		{
+		"fieldname":"job_role_name",
+		"label":"Job Role",
 		"fieldtype":"Data",
 		"width":150
 		},
@@ -72,6 +84,9 @@ def execute(filters=None):
 				SELECT 
 					cd.batch_id,
 					zn.zone_name,
+					pr.project_name,
+					dt.district_name,
+					jb.job_role_name,
 					st.state_name,
 					ct.center_location_name,
 					COUNT(*) AS candidate_count,
@@ -90,7 +105,13 @@ def execute(filters=None):
 					`tabState` st ON cd.state = st.name
 				INNER JOIN 
 					`tabCenter` ct ON cd.center_location = ct.name 
-				 WHERE 1 = 1 {str}
+				INNER JOIN 
+					`tabDistrict` dt ON cd.district = dt.name
+				INNER JOIN 
+					`tabProject` pr ON cd.project = pr.name
+				INNER JOIN 
+					`tabJob Role` jb ON cd.job_role = jb.name
+				WHERE 1 = 1 {str}
 				GROUP BY 
 					cd.batch_id
 				ORDER BY 

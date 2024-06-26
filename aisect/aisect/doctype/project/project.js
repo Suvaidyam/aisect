@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("Project", {
     refresh(frm) {
-        if (frm.doc.project_code != undefined) {
+        if (frm.doc.project_code != undefined && frm.doc.__unsaved!=1) {
             frm.set_df_property('project_code', 'read_only', 1)
         }
         setPlaceholders(frm, [
@@ -12,8 +12,12 @@ frappe.ui.form.on("Project", {
         ])
     },
     after_save: function (frm) {
-        if (frm.doc.project_code != undefined) {
+        if (frm.doc.project_code != undefined && frm.doc.__unsaved!=1) {
             frm.set_df_property('project_code', 'read_only', 1)
         }
     },
+    project_type:function(frm){
+        if(frm.doc.project_type!='State')
+        frm.set_value('state', '')
+    }
 });

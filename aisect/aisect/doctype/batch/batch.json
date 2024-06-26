@@ -29,7 +29,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Status",
+   "label": "Batch Status",
    "options": "\nIn Progress\nTo Be Started\nCompleted",
    "read_only": 1
   },
@@ -43,6 +43,7 @@
   {
    "fieldname": "state",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -87,7 +88,6 @@
   {
    "fieldname": "sector",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Sector",
    "options": "Sector",
    "reqd": 1
@@ -111,6 +111,7 @@
   {
    "fieldname": "district",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "District",
    "options": "District",
    "reqd": 1
@@ -124,6 +125,7 @@
   {
    "fieldname": "center_location",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Center",
    "options": "Center",
    "reqd": 1
@@ -141,7 +143,7 @@
    "link_fieldname": "batch_id"
   }
  ],
- "modified": "2024-06-21 17:21:58.001086",
+ "modified": "2024-06-26 13:35:31.362833",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
