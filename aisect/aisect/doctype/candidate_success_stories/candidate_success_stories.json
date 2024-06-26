@@ -19,6 +19,7 @@
   "candidate_image",
   "zone",
   "state",
+  "district",
   "center"
  ],
  "fields": [
@@ -76,7 +77,6 @@
    "fetch_from": "name_of_the_candidate.sector",
    "fieldname": "sector",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Sector",
    "options": "Sector",
    "read_only": 1,
@@ -112,6 +112,7 @@
    "fieldname": "state",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "State",
    "options": "State"
   },
@@ -120,14 +121,24 @@
    "fieldname": "center",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "Center",
    "options": "Center"
+  },
+  {
+   "fetch_from": "name_of_the_candidate.district",
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-22 12:18:46.953955",
+ "modified": "2024-06-26 07:08:40.492302",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",
