@@ -34,26 +34,38 @@ def execute(filters=None):
 		"width":200
 		},
 		{
-		"fieldname":"batch_id",
-		"label":"Batch ID",
-		"fieldtype":"Data",
-		"width":150
-		},
-		{
-		"fieldname":"zone_name",
-		"label":"Zone",
-		"fieldtype":"Data",
-		"width":100
-		},
-		{
 		"fieldname":"state_name",
 		"label":"State",
 		"fieldtype":"Data",
 		"width":100
 		},
 		{
+		"fieldname":"project_name",
+		"label":"Project",
+		"fieldtype":"Data",
+		"width":100
+		},
+		{
+		"fieldname":"district_name",
+		"label":"District",
+		"fieldtype":"Data",
+		"width":150
+		},
+		{
 		"fieldname":"center_location_name",
 		"label":"Center",
+		"fieldtype":"Data",
+		"width":150
+		},
+		{
+		"fieldname":"job_role_name",
+		"label":"Job Role",
+		"fieldtype":"Data",
+		"width":150
+		},
+		{
+		"fieldname":"batch_id",
+		"label":"Batch ID",
 		"fieldtype":"Data",
 		"width":150
 		},
@@ -80,8 +92,10 @@ def execute(filters=None):
 				SELECT
 					cd.full_name,
 					cd.candidate_id,
+					pr.project_name,
+					dt.district_name,
+					jb.job_role_name,
 					cd.batch_id,
-					zn.zone_name,
 					st.state_name,
 					ct.center_location_name,
 					cd.current_status,
@@ -89,12 +103,16 @@ def execute(filters=None):
 					DATEDIFF(cd.placement_due_date, CURRENT_DATE) AS remaining_days
 				FROM
 					`tabCandidate Details` cd
-				INNER JOIN 
-					`tabZone` zn ON cd.zone = zn.name
-				INNER JOIN 
+				 INNER JOIN 
 					`tabState` st ON cd.state = st.name
 				INNER JOIN 
 					`tabCenter` ct ON cd.center_location = ct.name
+				INNER JOIN 
+					`tabDistrict` dt ON cd.district = dt.name
+				INNER JOIN 
+					`tabProject` pr ON cd.project = pr.name
+				INNER JOIN 
+					`tabJob Role` jb ON cd.job_role = jb.name
 				WHERE 
 					cd.current_status IN ('Assessed','Certified')
 					{str};

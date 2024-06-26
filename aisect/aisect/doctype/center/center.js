@@ -9,7 +9,7 @@ frappe.ui.form.on("Center", {
         check_active(frm, 'zone')
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone');
         depended_dropdown(frm, frm.doc.state, 'district', 'state')
-        if (frm.doc.center_location_code != undefined) {
+        if (frm.doc.center_location_code != undefined && frm.doc.__unsaved!=1) {
             frm.set_df_property('center_location_code', 'read_only', 1)
         }
         setPlaceholders(frm, [
@@ -31,7 +31,7 @@ frappe.ui.form.on("Center", {
         frm.set_value('district', '')
     },
     after_save: function (frm) {
-        if (frm.doc.center_location_code != undefined) {
+        if (frm.doc.center_location_code != undefined && frm.doc.__unsaved!=1) {
             frm.set_df_property('center_location_code', 'read_only', 1)
         }
     },
