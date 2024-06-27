@@ -38,7 +38,7 @@ window.setTimeout(() => {
 }, 3000)
 frappe.router.on('change', async () => {
     let cur_router = await frappe.get_route()
-    if (['Batch', 'Zone', 'State', 'District', 'Center', 'Project', 'Company', 'Sector', 'Job Role', 'Candidate Details', 'SVA User', 'Candidate Success Stories'].includes(cur_router[1])) {
+    if (cur_router[0]!='Workspaces') {
         $('.sidebar-toggle-btn').hide()
         $('.layout-side-section').hide();
     } else {
