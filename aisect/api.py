@@ -16,6 +16,12 @@ def get_user_role_permission():
     return result
 
 @frappe.whitelist()
+def get_one_time_success_story():
+    data = frappe.get_list('Candidate Success Stories',fields=['name'])
+    one_time_success_story = [item["name"] for item in data]
+    return one_time_success_story
+
+@frappe.whitelist()
 def set_candidate_status():
     current_date = date.today()
     items = frappe.db.get_list('Batch', fields=['name','start_date','end_date', 'expected_assessment_date','actual_assessment_date'])

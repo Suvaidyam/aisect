@@ -1,14 +1,7 @@
 // Copyright (c) 2024, Rahul Sah and contributors
 // For license information, please see license.txt
 
-var filters = [
-    {
-        "fieldname": "batch_id",
-        "fieldtype": "Link",
-        "label": "Batch",
-        "options": "Batch"
-    },
-]
+var filters = []
 
 if (frappe.user_roles.includes('Head Office (PMU)')) {
     filters.push({
@@ -26,6 +19,12 @@ if (frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head
         "options": "State"
     })
 }
+filters.push({
+    "fieldname": "project",
+    "fieldtype": "Link",
+    "label": "Project",
+    "options": "Project"
+  })
 if (frappe.user_roles.includes('Head Office (PMU)') || frappe.user_roles.includes('State Placement Coordinator') || frappe.user_roles.includes('State Head') || frappe.user_roles.includes('Zonal Head')) {
     filters.push({
         "fieldname": "center",
@@ -35,7 +34,19 @@ if (frappe.user_roles.includes('Head Office (PMU)') || frappe.user_roles.include
     })
 }
 filters.push({
-    "fieldname": "current_status",
+    "fieldname": "batch_id",
+    "fieldtype": "Link",
+    "label": "Batch",
+    "options": "Batch"
+},
+{
+    "fieldname": "job_role",
+    "fieldtype": "Link",
+    "label": "Job Role",
+    "options": "Job Role"
+},
+{
+    "fieldname": "remaining_day",
     "fieldtype": "Select",
     "label": "Remaining days",
     "options": "\n1-30\n30-60\n60-90\nMore than 90"
