@@ -59,6 +59,8 @@ frappe.ui.form.on("Candidate Details", {
         }
         if (frm.doc.certified_status != 'Certified') {
             frm.set_df_property('placement_status', 'read_only', 1);
+        }else {
+            frm.set_df_property('placement_status', 'read_only', 0);
         }
         if (frm.doc.placement_status == 'Placed') {
             frm.set_df_property('certified_status', 'read_only', 1);
