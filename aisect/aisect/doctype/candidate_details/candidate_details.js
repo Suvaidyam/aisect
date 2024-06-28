@@ -166,35 +166,9 @@ frappe.ui.form.on("Candidate Details", {
 });
 
 // Child Table
-const truncate_child_table_field_value = async (row, frm, fields) => {
-    if (fields.length > 0) {
-        for (let field of fields) {
-            row[field] = '';
-        }
-        frm.cur_grid.refresh();
-    }
-};
-const pdf_file_condition = (frm, child_row) => {
-    if (child_row) {
-        const file_url = child_row;
-        const file_extension = file_url.split('.').pop().toLowerCase();
-
-        if (file_extension !== 'pdf') {
-            frappe.throw('Only PDF files are allowed for Offer Letter upload.');
-            // frappe.model.set_value(cdt, cdn, "upload_offer_letter", '', () => {
-            //     frm.refresh_field('upload_offer_letter'); // Refresh after value is set
-            // });
-            return;
-        }
-
-        frm.image_uploaded = true;
-        frappe.validated = false;
-    }
-};
 let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
     form_render(frm) {
-        console.log(frm.image_uploaded);
         let today = new Date(frm.doc.certification_date);
         today.setDate(today.getDate() + 1);
         frm.cur_grid.grid_form.fields_dict.employment_start_date.$input.datepicker({ minDate: today });
@@ -337,36 +311,36 @@ frappe.ui.form.on("Placement Child", {
     upload_offer_letter(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_offer_letter;
-        pdf_file_condition(frm, child_row)
+        pdf_file_condition(frm, child_row,row,'upload_offer_letter')
     },
     upload_salary_slip(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_salary_slip;
-        pdf_file_condition(frm, child_row)
+        pdf_file_condition(frm, child_row,row,'upload_salary_slip')
     },
     upload_bank_statement(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_bank_statement;
-        pdf_file_condition(frm, child_row)
+        pdf_file_condition(frm, child_row,row,'upload_bank_statement')
     },
     upload_salary_slip_2(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_salary_slip_2;
-        pdf_file_condition(frm, child_row)
+        pdf_file_condition(frm, child_row,row,'upload_salary_slip_2')
     },
     upload_bank_statement_2(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_bank_statement_2;
-        pdf_file_condition(frm, child_row)
+        pdf_file_condition(frm, child_row,row,'upload_bank_statement_2')
     },
     upload_salary_slip_3(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_salary_slip_3;
-        pdf_file_condition(frm, child_row)
+        pdf_file_condition(frm, child_row,row,'upload_salary_slip_3')
     },
     upload_bank_statement_3(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_bank_statement_3;
-        pdf_file_condition(frm, child_row)
+        pdf_file_condition(frm, child_row,row,'upload_bank_statement_3')
     },
 });

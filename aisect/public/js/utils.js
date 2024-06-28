@@ -174,3 +174,26 @@ function isValidAadhaar(aadhaarNumber) {
 
     return Verhoeff.check(aadhaarNumber);
 }
+const truncate_child_table_field_value = async (row, frm, fields) => {
+    if (fields.length > 0) {
+        for (let field of fields) {
+            row[field] = '';
+        }
+        if(frm.cur_grid){
+            frm.cur_grid.refresh();
+        }
+    }
+};
+const pdf_file_condition = (frm, child_row,row,cur_file) => {
+    frm.image_uploaded = true;
+    if (child_row) {
+        const file_url = child_row;
+        const file_extension = file_url.split('.').pop().toLowerCase();
+
+        if (file_extension !== 'pdf') {
+            truncate_child_table_field_value(row, frm, [cur_file]);
+            frappe.show_alert({ message: "Only PDF files are allowed", indicator: "yellow" });
+            return;
+        }
+    }
+};
