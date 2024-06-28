@@ -2,6 +2,9 @@ let mobilePattern = /^[6-9]\d{9}$/;
 
 frappe.ui.form.on("Candidate Details", {
     refresh(frm) {
+        if (cur_frm.is_new()) {
+            frm.set_value('batch_id', '')
+        }
         frm.image_uploaded = false;
         check_active(frm, 'project');
         frm.fields_dict['zone'].get_query = function () {
@@ -309,38 +312,39 @@ frappe.ui.form.on("Placement Child", {
         }
     },
     upload_offer_letter(frm, cdt, cdn) {
+        // let cg = frm.cur_grid
         const row = locals[cdt][cdn];
         const child_row = row.upload_offer_letter;
-        pdf_file_condition(frm, child_row,row,'upload_offer_letter')
+        pdf_file_condition(frm, child_row, row, 'upload_offer_letter')
     },
     upload_salary_slip(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_salary_slip;
-        pdf_file_condition(frm, child_row,row,'upload_salary_slip')
+        pdf_file_condition(frm, child_row, row, 'upload_salary_slip')
     },
     upload_bank_statement(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_bank_statement;
-        pdf_file_condition(frm, child_row,row,'upload_bank_statement')
+        pdf_file_condition(frm, child_row, row, 'upload_bank_statement')
     },
     upload_salary_slip_2(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_salary_slip_2;
-        pdf_file_condition(frm, child_row,row,'upload_salary_slip_2')
+        pdf_file_condition(frm, child_row, row, 'upload_salary_slip_2')
     },
     upload_bank_statement_2(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_bank_statement_2;
-        pdf_file_condition(frm, child_row,row,'upload_bank_statement_2')
+        pdf_file_condition(frm, child_row, row, 'upload_bank_statement_2')
     },
     upload_salary_slip_3(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_salary_slip_3;
-        pdf_file_condition(frm, child_row,row,'upload_salary_slip_3')
+        pdf_file_condition(frm, child_row, row, 'upload_salary_slip_3')
     },
     upload_bank_statement_3(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
         const child_row = row.upload_bank_statement_3;
-        pdf_file_condition(frm, child_row,row,'upload_bank_statement_3')
+        pdf_file_condition(frm, child_row, row, 'upload_bank_statement_3')
     },
 });
