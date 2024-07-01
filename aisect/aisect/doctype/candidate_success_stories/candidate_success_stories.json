@@ -138,7 +138,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 07:08:40.492302",
+ "modified": "2024-07-01 12:34:52.260785",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",
@@ -171,15 +171,13 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Zonal Head",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
    "create": 1,

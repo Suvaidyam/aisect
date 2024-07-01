@@ -13,7 +13,6 @@
   "type_of_organization",
   "district",
   "organization_address",
-  "keep_open",
   "hr_contact_section",
   "name1",
   "contact_no",
@@ -324,19 +323,12 @@
    "fieldtype": "Data",
    "label": "Email ID",
    "reqd": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "keep_open",
-   "fieldtype": "Check",
-   "hidden": 1,
-   "label": "keep_open"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-27 22:42:46.992881",
+ "modified": "2024-07-01 13:07:15.039723",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",
