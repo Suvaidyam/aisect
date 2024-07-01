@@ -1,19 +1,24 @@
 {
  "charts": [],
- "content": "[{\"id\":\"l8Nb4kn5U5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports List</span>\",\"col\":12}},{\"id\":\"ZalQOjKpLy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Candidate Placement Aging\",\"col\":3}},{\"id\":\"tB8Lw3Yi-U\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Target Vs Achievement\",\"col\":3}}]",
+ "content": "[{\"id\":\"l8Nb4kn5U5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports List</span>\",\"col\":12}},{\"id\":\"4R48EXf7UB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Candidate Placement Aging\",\"col\":12}}]",
  "creation": "2024-06-26 13:30:54.961663",
- "custom_blocks": [],
+ "custom_blocks": [
+  {
+   "custom_block_name": "Candidate Placement Aging",
+   "label": "Candidate Placement Aging"
+  }
+ ],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
  "icon": "projects",
- "idx": 0,
+ "idx": 1,
  "indicator_color": "grey",
  "is_hidden": 0,
  "label": "Reports",
  "links": [],
- "modified": "2024-06-26 13:33:16.880055",
+ "modified": "2024-07-01 13:36:27.197074",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Reports",
@@ -23,22 +28,7 @@
  "public": 1,
  "quick_lists": [],
  "roles": [],
- "sequence_id": 6.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Candidate Placement Aging",
-   "link_to": "Candidate Placement Aging",
-   "type": "Report"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Target Vs Achievement",
-   "link_to": "Target VS Achievement",
-   "type": "Report"
-  }
- ],
+ "sequence_id": 5.0,
+ "shortcuts": [],
  "title": "Reports"
 }

@@ -28,6 +28,71 @@ def is_batch_completed(batch_id):
     return is_completed
 
 @frappe.whitelist()
+def candidate_placement_ging():
+    sql = f"""
+        SELECT
+            COUNT(*) AS candidate_count
+        FROM
+            `tabCandidate Details` cd
+        INNER JOIN 
+            `tabState` st ON cd.state = st.name
+        INNER JOIN 
+            `tabCenter` ct ON cd.center_location = ct.name
+        INNER JOIN 
+            `tabDistrict` dt ON cd.district = dt.name
+        INNER JOIN 
+            `tabProject` pr ON cd.project = pr.name
+        INNER JOIN 
+            `tabJob Role` jb ON cd.job_role = jb.name
+        WHERE 
+            cd.current_status IN ('Assessed', 'Certified')
+    """
+    return frappe.db.sql(sql,as_dict=True)
+
+@frappe.whitelist()
+def target_vs_chievement():
+    sql = f"""
+        SELECT 
+            COUNT(*) AS record_count
+        FROM (
+            SELECT 
+                cd.batch_id,
+                zn.zone_name,
+                pr.project_name,
+                dt.district_name,
+                jb.job_role_name,
+                st.state_name,
+                ct.center_location_name,
+                COUNT(*) AS candidate_count,
+                ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
+                ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) AS achievement,
+                CASE 
+                    WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END))
+                    THEN 'Achieved'
+                    ELSE 'In Progress'
+                END AS achievements_status
+            FROM
+                `tabCandidate Details` cd
+            INNER JOIN 
+                `tabZone` zn ON cd.zone = zn.name
+            INNER JOIN 
+                `tabState` st ON cd.state = st.name
+            INNER JOIN 
+                `tabCenter` ct ON cd.center_location = ct.name 
+            INNER JOIN 
+                `tabDistrict` dt ON cd.district = dt.name
+            INNER JOIN 
+                `tabProject` pr ON cd.project = pr.name
+            INNER JOIN 
+                `tabJob Role` jb ON cd.job_role = jb.name
+            GROUP BY 
+                cd.batch_id
+        ) AS subquery;
+
+    """
+    return frappe.db.sql(sql,as_dict=True)
+
+@frappe.whitelist()
 def set_candidate_status():
     current_date = date.today()
     items = frappe.db.get_list('Batch', fields=['name','start_date','end_date', 'expected_assessment_date','actual_assessment_date'])
