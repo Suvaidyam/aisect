@@ -296,7 +296,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-28 09:21:15.954391",
+ "modified": "2024-07-01 12:15:04.937865",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
@@ -329,15 +329,14 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Zonal Head",
-   "share": 1,
-   "write": 1
+   "select": 1,
+   "share": 1
   },
   {
    "create": 1,
