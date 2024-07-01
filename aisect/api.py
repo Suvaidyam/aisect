@@ -29,6 +29,18 @@ def is_batch_completed(batch_id):
 
 @frappe.whitelist()
 def candidate_placement_ging():
+    user_role_permission=get_user_role_permission()
+    str = ""
+    zone = user_role_permission.get('Zone')
+    state = user_role_permission.get('State')
+    center = user_role_permission.get('Center')
+
+    if zone:
+        str += f" AND cd.zone = '{zone}'"
+    if state:
+        str += f" AND cd.state = '{state}'"
+    if center:
+        str += f" AND cd.center_location = '{center}'"
     sql = f"""
         SELECT
             COUNT(*) AS candidate_count
@@ -46,11 +58,25 @@ def candidate_placement_ging():
             `tabJob Role` jb ON cd.job_role = jb.name
         WHERE 
             cd.current_status IN ('Assessed', 'Certified')
+            {str};
     """
     return frappe.db.sql(sql,as_dict=True)
 
 @frappe.whitelist()
 def target_vs_chievement():
+    user_role_permission=get_user_role_permission()
+    str = ""
+    zone = user_role_permission.get('Zone')
+    state = user_role_permission.get('State')
+    center = user_role_permission.get('Center')
+
+    if zone:
+        str += f" AND cd.zone = '{zone}'"
+    if state:
+        str += f" AND cd.state = '{state}'"
+    if center:
+        str += f" AND cd.center_location = '{center}'"
+
     sql = f"""
         SELECT 
             COUNT(*) AS record_count
@@ -85,6 +111,7 @@ def target_vs_chievement():
                 `tabProject` pr ON cd.project = pr.name
             INNER JOIN 
                 `tabJob Role` jb ON cd.job_role = jb.name
+            WHERE 1 = 1 {str}
             GROUP BY 
                 cd.batch_id
         ) AS subquery;
