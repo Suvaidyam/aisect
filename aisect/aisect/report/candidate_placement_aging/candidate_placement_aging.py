@@ -93,9 +93,9 @@ def execute(filters=None):
 		},
 		{
 		"fieldname":"current_status",
-		"label":"Status",
+		"label":"Candidate Status",
 		"fieldtype":"int",
-		"width":120
+		"width":140
 		}
 	]
 	sql_query = f"""

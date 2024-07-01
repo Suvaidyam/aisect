@@ -185,7 +185,8 @@
    "fieldname": "placement_status",
    "fieldtype": "Select",
    "label": "Placement Status",
-   "options": "\nPlaced\nNot Placed\nN/A"
+   "options": "\nPlaced\nNot Placed\nN/A",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_huiv",
@@ -295,7 +296,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 13:35:10.380589",
+ "modified": "2024-06-28 09:21:15.954391",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",

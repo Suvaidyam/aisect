@@ -1,26 +1,26 @@
-function depended_dropdown(frm, filter_value, child, parent,activeFilter=true) {
+function depended_dropdown(frm, filter_value, child, parent, activeFilter = true) {
     frm.fields_dict[child].get_query = function () {
         if (filter_value && activeFilter) {
             return {
-                filters: { [parent]: filter_value,'status':'Active' },
+                filters: { [parent]: filter_value, 'status': 'Active' },
                 page_length: 1000
             };
-        } else if(filter_value){
+        } else if (filter_value) {
             return {
-                filters: { [parent]: filter_value},
+                filters: { [parent]: filter_value },
                 page_length: 1000
             };
-        }else{
+        } else {
             return { filters: { [parent]: `Please select ${[parent]}` } };
         }
     }
 }
 function check_active(frm, child) {
     frm.fields_dict[child].get_query = function () {
-            return {
-                filters: {'status':'Active'},
-                page_length: 1000
-            };
+        return {
+            filters: { 'status': 'Active' },
+            page_length: 1000
+        };
     }
 }
 function depened_date(parent, child) {
@@ -35,28 +35,28 @@ function depened_date(parent, child) {
 }
 async function set_value_by_role(frm) {
     let response = await get_user_permission()
-    if(response['Zone']){
+    if (response['Zone']) {
         await frm.set_value('zone', response['Zone'])
-        setTimeout(async() => {
-            await   frm.set_df_property('zone','read_only',1)
+        setTimeout(async () => {
+            await frm.set_df_property('zone', 'read_only', 1)
         }, 200);
     }
-    if(response['State']){
+    if (response['State']) {
         await frm.set_value('state', response['State'])
-        setTimeout(async() => {
-            await   frm.set_df_property('state','read_only',1)
+        setTimeout(async () => {
+            await frm.set_df_property('state', 'read_only', 1)
         }, 200);
     }
-    if(response['District']){
+    if (response['District']) {
         await frm.set_value('district', response['District'])
-        setTimeout(async() => {
-            await   frm.set_df_property('district','read_only',1)
+        setTimeout(async () => {
+            await frm.set_df_property('district', 'read_only', 1)
         }, 200);
     }
-    if(response['Center']){
+    if (response['Center']) {
         await frm.set_value('center_location', response['Center'])
-        setTimeout(async() => {
-            await   frm.set_df_property('center_location','read_only',1)
+        setTimeout(async () => {
+            await frm.set_df_property('center_location', 'read_only', 1)
         }, 200);
     }
 }
@@ -111,7 +111,7 @@ const hide_advance_search = (frm, list) => {
         frm.set_df_property(item, 'only_select', true);
     }
 };
-const get_user_permission=async()=>{
+const get_user_permission = async () => {
     try {
         let list = await callAPI({
             method: 'sva_frappe.apis.user.get_user_role_permission',
@@ -174,3 +174,26 @@ function isValidAadhaar(aadhaarNumber) {
 
     return Verhoeff.check(aadhaarNumber);
 }
+const truncate_child_table_field_value = async (row, frm, fields) => {
+    if (fields.length > 0) {
+        for (let field of fields) {
+            row[field] = '';
+        }
+        if (frm.cur_grid) {
+            frm.cur_grid.refresh();
+        }
+    }
+};
+const pdf_file_condition = (frm, child_row, row, cur_file) => {
+    frm.image_uploaded = true;
+    console.log(frm)
+    if (child_row) {
+        const file_url = child_row;
+        const file_extension = file_url.split('.').pop().toLowerCase();
+        if (file_extension !== 'pdf') {
+            truncate_child_table_field_value(row, frm, [cur_file]);
+            frappe.show_alert({ message: "Only PDF files are allowed", indicator: "yellow" });
+            return;
+        }
+    }
+};
