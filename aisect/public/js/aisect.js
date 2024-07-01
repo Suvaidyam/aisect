@@ -5,21 +5,7 @@ setTimeout(() => {
         }
     }
 }, 500);
-const getRole = async () => {
-    frappe.call({
-        method: 'aisect.api.get_user_role',
-        callback: function (response) {
-            if (response.message !== 'Administrator') {
-                $('.standard-actions').hide()
-                $('.custom-actions').hide()
-                $('.search-bar').hide()
-            } else {
-                console.error("Failed to fetch user roles");
-            }
-        }
-    });
-}
-getRole()
+
 window.setTimeout(() => {
     frappe.app.logout = async () => {
         var me = this;
@@ -36,6 +22,7 @@ window.setTimeout(() => {
         });
     };
 }, 3000)
+
 frappe.router.on('change', async () => {
     let cur_router = await frappe.get_route()
     if (cur_router[0]!='Workspaces') {
@@ -45,5 +32,12 @@ frappe.router.on('change', async () => {
     } else {
         $('.sidebar-toggle-btn').show()
         $('.layout-side-section').show();
+        // search bar and create workspace
+        if (!frappe.user_roles.includes('Administrator')) {
+            $('.standard-actions').hide();
+            $('.custom-actions').hide();
+            $('.search-bar').hide()
+        }
+        
     }
 });
