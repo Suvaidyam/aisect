@@ -8,7 +8,6 @@ from frappe.model.document import Document
 class Batch(Document):
     def before_save(self):
         current_date = date.today()
-        print('///////////////////********************',current_date,'###',self.expected_assessment_date)   
 
         self.start_date = datetime.strptime(str(self.start_date).split()[0], '%Y-%m-%d').date()
         self.end_date = datetime.strptime(str(self.end_date).split()[0], '%Y-%m-%d').date()
