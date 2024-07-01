@@ -22,6 +22,12 @@ def get_one_time_success_story():
     return one_time_success_story
 
 @frappe.whitelist()
+def is_batch_completed(batch_id):
+    data = frappe.get_list('Batch',fields=['name'],filters={'name':batch_id,'status':'Completed'})
+    is_completed = bool(data)
+    return is_completed
+
+@frappe.whitelist()
 def set_candidate_status():
     current_date = date.today()
     items = frappe.db.get_list('Batch', fields=['name','start_date','end_date', 'expected_assessment_date','actual_assessment_date'])
