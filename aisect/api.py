@@ -134,7 +134,6 @@ def set_candidate_status():
             frappe.db.set_value('Batch', item.name,'status','In Progress')
 
         # candidate status
-        print('///////////////////********************',current_date)
         if item.expected_assessment_date <= current_date:
             candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name,'assessment_status':'Registered'})
             
