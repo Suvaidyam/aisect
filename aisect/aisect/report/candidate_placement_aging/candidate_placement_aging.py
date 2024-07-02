@@ -24,27 +24,15 @@ def execute(filters=None):
 		str += f" AND cd.job_role = '{filters.job_role}'"
 	if filters and filters.project:
 		str += f" AND cd.project = '{filters.project}'"
-	if filters and filters.remaining_day =='1-30':
+	if filters and filters.remaining_day =='1-30 days':
 		having_str += f" HAVING remaining_days <= 30"
-	elif filters and filters.remaining_day =='30-60':
+	elif filters and filters.remaining_day =='30-60 days':
 		having_str += f" HAVING remaining_days > 30 AND remaining_days <= 60"
-	elif filters and filters.remaining_day =='60-90':
+	elif filters and filters.remaining_day =='60-90 days':
 		having_str += f" HAVING remaining_days > 60 AND remaining_days <= 90"
-	elif filters and filters.remaining_day =='More than 90':
-		having_str += f" HAVING remaining_days > 90"
+	elif filters and filters.remaining_day =='0 day':
+		having_str += f" HAVING remaining_days = 0"
 	columns = [
-		{
-		"fieldname":"full_name",
-		"label":"Full Name",
-		"fieldtype":"Data",
-		"width":180
-		},
-		{
-		"fieldname":"candidate_id",
-		"label":"Candidate ID",
-		"fieldtype":"Data",
-		"width":200
-		},
 		{
 		"fieldname":"state_name",
 		"label":"State",
@@ -82,6 +70,12 @@ def execute(filters=None):
 		"width":150
 		},
 		{
+		"fieldname":"candidate_count",
+		"label":"Candidate count",
+		"fieldtype":"Data",
+		"width":160
+		},
+		{
 		"fieldname":"due_date",
 		"label":"Placement Due Date",
 		"fieldtype":"Data",
@@ -93,24 +87,16 @@ def execute(filters=None):
 		"fieldtype":"Data",
 		"width":135
 		},
-		{
-		"fieldname":"current_status",
-		"label":"Candidate Status",
-		"fieldtype":"int",
-		"width":140
-		}
 	]
 	sql_query = f"""
 				SELECT
-					cd.full_name,
-					cd.candidate_id,
 					pr.project_name,
 					dt.district_name,
 					jb.job_role_name,
 					cd.batch_id,
 					st.state_name,
 					ct.center_location_name,
-					cd.current_status,
+					COUNT(cd.candidate_id) as candidate_count,
 					cd.placement_due_date AS due_date,
 					DATEDIFF(cd.placement_due_date, CURRENT_DATE) AS remaining_days
 				FROM
@@ -128,6 +114,10 @@ def execute(filters=None):
 				WHERE 
 					cd.current_status IN ('Assessed','Certified')
 					{str}
+				GROUP BY 
+					cd.batch_id
+				ORDER BY 
+					remaining_days ASC
 				{having_str};
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
