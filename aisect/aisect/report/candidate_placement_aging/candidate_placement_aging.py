@@ -10,8 +10,10 @@ def execute(filters=None):
 	state = user_role_permission.get('State')
 	center = user_role_permission.get('Center')
 
-	if zone or filters.zone:
-		str += f" AND cd.zone = '{zone or filters.zone}'"
+	if zone:
+		str += f" AND cd.zone = '{zone}'"
+	if filters.district:
+		str += f" AND cd.district = '{filters.district}'"
 	if state or filters.state:
 		str += f" AND cd.state = '{state or filters.state}'"
 	if center or filters.center:

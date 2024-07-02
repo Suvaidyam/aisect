@@ -1,14 +1,14 @@
 // Copyright (c) 2024, Rahul Sah and contributors
 // For license information, please see license.txt
 var filters = []
-if (frappe.user_roles.includes('Head Office (PMU)')) {
-  filters.push({
-    "fieldname": "zone",
-    "fieldtype": "Link",
-    "label": "Zone",
-    "options": "Zone"
-  })
-}
+// if (frappe.user_roles.includes('Head Office (PMU)')) {
+//   filters.push({
+//     "fieldname": "zone",
+//     "fieldtype": "Link",
+//     "label": "Zone",
+//     "options": "Zone"
+//   })
+// }
 if (frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head Office (PMU)')) {
   filters.push({
     "fieldname": "state",
@@ -25,6 +25,12 @@ filters.push({
 })
 if (frappe.user_roles.includes('Head Office (PMU)') || frappe.user_roles.includes('State Placement Coordinator') || frappe.user_roles.includes('State Head') || frappe.user_roles.includes('Zonal Head')) {
   filters.push(
+    {
+          "fieldname": "district",
+          "fieldtype": "Link",
+          "label": "District",
+          "options": "District"
+    },
     {
       "fieldname": "center",
       "fieldtype": "Link",

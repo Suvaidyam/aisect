@@ -10,8 +10,10 @@ def execute(filters=None):
 	state = user_role_permission.get('State')
 	center = user_role_permission.get('Center')
 
-	if zone or filters.zone:
-		str += f" AND cd.zone = '{zone or filters.zone}'"
+	if zone:
+		str += f" AND cd.zone = '{zone}'"
+	if filters.district:
+		str += f" AND cd.district = '{filters.district}'"
 	if state or filters.state:
 		str += f" AND cd.state = '{state or filters.state}'"
 	if center or filters.center:
@@ -97,6 +99,9 @@ def execute(filters=None):
 					ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
 					ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) AS achievement,
 					CASE 
+						WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) = 0 
+							AND ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) = 0
+						THEN 'N/A'
 						WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END))
 						THEN 'Achieved'
 						ELSE 'In Progress'
@@ -120,6 +125,6 @@ def execute(filters=None):
 					cd.batch_id
 				ORDER BY 
 					candidate_count DESC;
-	"""
+			"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
