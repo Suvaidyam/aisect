@@ -9,7 +9,7 @@ def execute(filters=None):
 	zone = user_role_permission.get('Zone')
 	state = user_role_permission.get('State')
 	center = user_role_permission.get('Center')
-
+	having_str = ""
 	if zone:
 		str += f" AND cd.zone = '{zone}'"
 	if filters.district:
@@ -25,13 +25,13 @@ def execute(filters=None):
 	if filters and filters.project:
 		str += f" AND cd.project = '{filters.project}'"
 	if filters and filters.remaining_day =='1-30':
-		str += f" AND DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY) <= cd.assessment_date AND cd.assessment_date <= CURRENT_DATE()"
+		having_str += f" HAVING remaining_days <= 30"
 	elif filters and filters.remaining_day =='30-60':
-		str += f" AND DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY) <= cd.assessment_date AND cd.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)"
+		having_str += f" HAVING remaining_days > 30 AND remaining_days <= 60"
 	elif filters and filters.remaining_day =='60-90':
-		str += f" AND DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY) <= cd.assessment_date AND cd.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY)"
+		having_str += f" HAVING remaining_days > 60 AND remaining_days <= 90"
 	elif filters and filters.remaining_day =='More than 90':
-		str += f" AND cd.assessment_date < DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)"
+		having_str += f" HAVING remaining_days > 90"
 	columns = [
 		{
 		"fieldname":"full_name",
@@ -127,7 +127,8 @@ def execute(filters=None):
 					`tabJob Role` jb ON cd.job_role = jb.name
 				WHERE 
 					cd.current_status IN ('Assessed','Certified')
-					{str};
+					{str}
+				{having_str};
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
