@@ -56,7 +56,7 @@ filters.push({
         "fieldname": "remaining_day",
         "fieldtype": "Select",
         "label": "Remaining days",
-        "options": "\n1-30\n30-60\n60-90\nMore than 90"
+        "options": "\n0 day\n1-30 days\n30-60 days\n60-90 days"
     })
 frappe.query_reports["Candidate Placement Aging"] = {
     filters: filters

@@ -5,7 +5,8 @@ let alert_expected = false;
 let alert_actual = false;
 frappe.ui.form.on("Batch", {
     async refresh(frm) {
-        set_value_by_role(frm)
+        set_value_by_role(frm,
+            [{fieldname:"zone",allow:"Zone"},{fieldname:"state",allow:"State"},{fieldname:"district",allow:"District"},{fieldname:"center_location",allow:"Center"}])
         // filter
         frm.fields_dict['project'].get_query = function () {
             return {

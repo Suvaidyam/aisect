@@ -33,31 +33,15 @@ function depened_date(parent, child) {
         child.$input.datepicker({ minDate: today });
     }
 }
-async function set_value_by_role(frm) {
+async function set_value_by_role(frm,mapper) {
     let response = await get_user_permission()
-    if (response['Zone']) {
-        await frm.set_value('zone', response['Zone'])
-        setTimeout(async () => {
-            await frm.set_df_property('zone', 'read_only', 1)
-        }, 200);
-    }
-    if (response['State']) {
-        await frm.set_value('state', response['State'])
-        setTimeout(async () => {
-            await frm.set_df_property('state', 'read_only', 1)
-        }, 200);
-    }
-    if (response['District']) {
-        await frm.set_value('district', response['District'])
-        setTimeout(async () => {
-            await frm.set_df_property('district', 'read_only', 1)
-        }, 200);
-    }
-    if (response['Center']) {
-        await frm.set_value('center_location', response['Center'])
-        setTimeout(async () => {
-            await frm.set_df_property('center_location', 'read_only', 1)
-        }, 200);
+    for(let item of mapper){
+        if(response[item['allow']]){
+            await frm.set_value(item.fieldname, response[item['allow']])
+            setTimeout(async() => {
+                await frm.set_df_property(item.fieldname,'read_only',1)
+            }, 200);
+        }
     }
 }
 function date_validation(frm, child, parent, isset, is, pmess, cmess) {
