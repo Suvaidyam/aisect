@@ -4,7 +4,7 @@
 frappe.ui.form.on("Center", {
     async refresh(frm) {
         // role by permission
-        set_value_by_role(frm)
+        set_value_by_role(frm,[{fieldname:"zone",allow:"Zone"},{fieldname:"state",allow:"State"}])
         // 
         check_active(frm, 'zone')
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone');

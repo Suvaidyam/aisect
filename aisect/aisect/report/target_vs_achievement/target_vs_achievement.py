@@ -26,12 +26,6 @@ def execute(filters=None):
 		str += f" AND cd.project = '{filters.project}'"
 	columns = [
 		{
-		"fieldname":"batch_id",
-		"label":"Batch ID",
-		"fieldtype":"Data",
-		"width":150
-		},
-		{
 		"fieldname":"state_name",
 		"label":"State",
 		"fieldtype":"Data",
@@ -58,6 +52,12 @@ def execute(filters=None):
 		{
 		"fieldname":"job_role_name",
 		"label":"Job Role",
+		"fieldtype":"Data",
+		"width":150
+		},
+		{
+		"fieldname":"batch_id",
+		"label":"Batch ID",
 		"fieldtype":"Data",
 		"width":150
 		},
