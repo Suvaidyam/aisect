@@ -29,19 +29,19 @@ def execute(filters=None):
 		"fieldname":"state_name",
 		"label":"State",
 		"fieldtype":"Data",
-		"width":100
+		"width":160
 		},
 		{
 		"fieldname":"project_name",
 		"label":"Project",
 		"fieldtype":"Data",
-		"width":100
+		"width":160
 		},
 		{
 		"fieldname":"district_name",
 		"label":"District",
 		"fieldtype":"Data",
-		"width":150
+		"width":160
 		},
 		{
 		"fieldname":"center_location_name",
@@ -53,13 +53,13 @@ def execute(filters=None):
 		"fieldname":"job_role_name",
 		"label":"Job Role",
 		"fieldtype":"Data",
-		"width":150
+		"width":160
 		},
 		{
 		"fieldname":"batch_id",
 		"label":"Batch ID",
 		"fieldtype":"Data",
-		"width":150
+		"width":250
 		},
 		{
 		"fieldname":"candidate_count",
