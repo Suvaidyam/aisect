@@ -45,22 +45,26 @@ def candidate_placement_ging():
         SELECT
             COUNT(*) AS candidate_count
         FROM
-            `tabCandidate Details` cd
-        INNER JOIN 
-            `tabState` st ON cd.state = st.name
-        INNER JOIN 
-            `tabCenter` ct ON cd.center_location = ct.name
-        INNER JOIN 
-            `tabDistrict` dt ON cd.district = dt.name
-        INNER JOIN 
-            `tabProject` pr ON cd.project = pr.name
-        INNER JOIN 
-            `tabJob Role` jb ON cd.job_role = jb.name
-        WHERE 
-            cd.current_status IN ('Assessed', 'Certified')
-            {str}
-        GROUP BY 
-                cd.batch_id;
+            (
+            SELECT
+                COUNT(*) AS candidate_count
+            FROM
+                `tabCandidate Details` cd
+            INNER JOIN 
+                `tabState` st ON cd.state = st.name
+            INNER JOIN 
+                `tabCenter` ct ON cd.center_location = ct.name
+            INNER JOIN 
+                `tabDistrict` dt ON cd.district = dt.name
+            INNER JOIN 
+                `tabProject` pr ON cd.project = pr.name
+            INNER JOIN 
+                `tabJob Role` jb ON cd.job_role = jb.name
+            WHERE 
+                cd.current_status IN ('Assessed', 'Certified')
+                {str}
+            GROUP BY 
+                    cd.batch_id) AS query;
     """
     return frappe.db.sql(sql,as_dict=True)
 
