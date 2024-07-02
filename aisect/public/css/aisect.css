@@ -4,3 +4,6 @@ a[data-action="action-edit"] {
 .dropdown-notifications{
     display: none !important;
 }
+/* .widget-control{
+    display: none !important;
+} */
