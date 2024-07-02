@@ -58,7 +58,9 @@ def candidate_placement_ging():
             `tabJob Role` jb ON cd.job_role = jb.name
         WHERE 
             cd.current_status IN ('Assessed', 'Certified')
-            {str};
+            {str}
+        GROUP BY 
+                cd.batch_id;
     """
     return frappe.db.sql(sql,as_dict=True)
 
