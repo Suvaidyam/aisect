@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:{name_of_the_candidate}",
  "creation": "2024-05-26 22:51:05.401160",
  "doctype": "DocType",
@@ -138,7 +137,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 12:29:28.342327",
+ "modified": "2024-07-03 15:49:20.422073",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",

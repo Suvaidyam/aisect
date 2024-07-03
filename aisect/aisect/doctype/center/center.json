@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:{center_location_code}",
  "creation": "2024-05-26 22:24:29.410956",
  "doctype": "DocType",
@@ -70,7 +69,7 @@
    "link_fieldname": "center_location"
   }
  ],
- "modified": "2024-07-03 12:22:21.490887",
+ "modified": "2024-07-03 15:48:37.554500",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Center",

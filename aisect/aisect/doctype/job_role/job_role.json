@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:{job_role_name}-{###}",
  "creation": "2024-05-30 08:23:35.015913",
  "doctype": "DocType",
@@ -36,7 +35,7 @@
    "link_fieldname": "job_role"
   }
  ],
- "modified": "2024-07-03 12:25:26.898462",
+ "modified": "2024-07-03 15:47:58.167016",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",

@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:{batch_id}",
  "creation": "2024-05-27 06:37:06.878356",
  "doctype": "DocType",
@@ -146,7 +145,7 @@
    "link_fieldname": "batch_id"
   }
  ],
- "modified": "2024-07-03 12:23:14.861051",
+ "modified": "2024-07-03 15:46:45.147135",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch",
