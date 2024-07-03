@@ -66,7 +66,8 @@ def execute(filters=None):
 		{
 		"fieldname":"batch_id",
 		"label":"Batch ID",
-		"fieldtype":"Data",
+		"fieldtype":"Link",
+		"options":"Batch",
 		"width":250
 		},
 		{
