@@ -2,7 +2,6 @@ let mobilePattern = /^[6-9]\d{9}$/;
 
 frappe.ui.form.on("Candidate Details", {
     refresh(frm) {
-        console.log()
         if (frappe.user_roles.includes('certified') && !frappe.user_roles.includes('Administrator')) {
             frm.set_df_property('project', 'read_only', 1);
             frm.set_df_property('batch_id', 'read_only', 1);
