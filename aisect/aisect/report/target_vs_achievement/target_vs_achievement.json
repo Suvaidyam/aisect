@@ -9,7 +9,7 @@
  "idx": 5,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-07-02 10:16:04.993936",
+ "modified": "2024-07-03 12:45:25.612795",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Target VS Achievement",
@@ -39,6 +39,9 @@
   },
   {
    "role": "Centre Head"
+  },
+  {
+   "role": "Head Office - Assessment Officer"
   }
  ]
 }

@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 3,
+ "idx": 10,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-21 16:41:10.607314",
+ "modified": "2024-07-03 12:43:31.078138",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Salary distribution",
@@ -38,6 +38,9 @@
   },
   {
    "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "Head Office - Assessment Officer"
   }
  ],
  "time_interval": "Yearly",

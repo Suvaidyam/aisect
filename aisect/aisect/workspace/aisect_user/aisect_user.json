@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Aisect User",
  "links": [],
- "modified": "2024-07-01 13:36:20.704097",
+ "modified": "2024-07-03 12:42:19.688620",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Aisect User",
@@ -34,6 +34,9 @@
   },
   {
    "role": "Head Office (PMU)"
+  },
+  {
+   "role": "Head Office - Assessment Officer"
   }
  ],
  "sequence_id": 7.0,
