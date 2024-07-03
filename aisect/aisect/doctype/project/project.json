@@ -63,7 +63,7 @@
    "link_fieldname": "project"
   }
  ],
- "modified": "2024-07-03 15:45:46.452575",
+ "modified": "2024-07-03 20:24:14.354420",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Project",
@@ -85,72 +85,54 @@
   {
    "create": 1,
    "delete": 1,
-   "email": 1,
    "export": 1,
    "import": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Head Office (PMU)",
-   "share": 1,
    "write": 1
   },
   {
-   "create": 1,
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Zonal Head",
-   "share": 1,
-   "write": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "State Placement Coordinator",
-   "share": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "State Head",
-   "share": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Centre Placement Coordinator",
-   "share": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Centre Head",
-   "share": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Head Office - Assessment Officer",
-   "select": 1,
-   "share": 1
+   "select": 1
   }
  ],
  "show_title_field_in_link": 1,

@@ -72,7 +72,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 15:46:26.472505",
+ "modified": "2024-07-03 20:26:34.119472",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
@@ -94,76 +94,54 @@
   {
    "create": 1,
    "delete": 1,
-   "email": 1,
    "export": 1,
    "import": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Head Office (PMU)",
-   "share": 1,
    "write": 1
   },
   {
-   "create": 1,
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Zonal Head",
-   "share": 1,
-   "write": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "State Placement Coordinator",
-   "select": 1,
-   "share": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "State Head",
-   "select": 1,
-   "share": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Centre Placement Coordinator",
-   "select": 1,
-   "share": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Centre Head",
-   "select": 1,
-   "share": 1
+   "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Head Office - Assessment Officer",
-   "select": 1,
-   "share": 1
+   "select": 1
   }
  ],
  "show_title_field_in_link": 1,
