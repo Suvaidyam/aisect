@@ -2,21 +2,6 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2024-07-02 17:38:36.296357",
-  "name": "Head Office (PMU)",
-  "role_profile": "Head Office (PMU)",
-  "roles": [
-   {
-    "parent": "Head Office (PMU)",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Head Office (PMU)"
-   }
-  ]
- },
- {
-  "docstatus": 0,
-  "doctype": "Role Profile",
   "modified": "2024-07-02 17:38:53.100494",
   "name": "Zonal Head",
   "role_profile": "Zonal Head",
@@ -77,21 +62,6 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2024-07-02 17:39:53.803259",
-  "name": "Center Head",
-  "role_profile": "Center Head",
-  "roles": [
-   {
-    "parent": "Center Head",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Centre Head"
-   }
-  ]
- },
- {
-  "docstatus": 0,
-  "doctype": "Role Profile",
   "modified": "2024-07-03 13:45:31.470381",
   "name": "Head Office - Assessment Officer",
   "role_profile": "Head Office - Assessment Officer",
@@ -101,6 +71,36 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "Head Office - Assessment Officer"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-07-02 17:38:36.296357",
+  "name": "Head Office (PMU)",
+  "role_profile": "Head Office (PMU)",
+  "roles": [
+   {
+    "parent": "Head Office (PMU)",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Head Office (PMU)"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-07-02 17:39:53.803259",
+  "name": "Center Head",
+  "role_profile": "Center Head",
+  "roles": [
+   {
+    "parent": "Center Head",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Centre Head"
    }
   ]
  }
