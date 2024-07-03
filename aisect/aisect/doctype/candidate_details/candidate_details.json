@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:{candidate_id}",
  "creation": "2024-05-26 22:58:48.777713",
  "doctype": "DocType",
@@ -296,7 +295,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 12:29:09.854134",
+ "modified": "2024-07-03 15:49:04.654719",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",

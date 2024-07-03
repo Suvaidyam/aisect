@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:{sector_name}-{###}",
  "creation": "2024-05-30 00:55:10.794192",
  "doctype": "DocType",
@@ -39,7 +38,7 @@
    "link_fieldname": "sector"
   }
  ],
- "modified": "2024-07-03 12:26:20.445576",
+ "modified": "2024-07-03 15:48:09.877436",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Sector",
