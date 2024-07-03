@@ -59,5 +59,12 @@ filters.push({
         "options": "\n0 day\n1-30 days\n30-60 days\n60-90 days"
     })
 frappe.query_reports["Candidate Placement Aging"] = {
-    filters: filters
+    filters: filters,
+    formatter:function(value,k,column){
+        if(column.fieldname=="batch_id"){
+            return `<a href="/app/candidate-details/view/list?batch_id=${value}">${value}</a>`
+        }else{
+            return value
+        }
+    }
 };

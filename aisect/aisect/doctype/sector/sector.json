@@ -39,7 +39,7 @@
    "link_fieldname": "sector"
   }
  ],
- "modified": "2024-06-18 10:56:20.875103",
+ "modified": "2024-07-03 12:26:20.445576",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Sector",
@@ -89,6 +89,7 @@
    "read": 1,
    "report": 1,
    "role": "State Placement Coordinator",
+   "select": 1,
    "share": 1
   },
   {
@@ -98,6 +99,7 @@
    "read": 1,
    "report": 1,
    "role": "State Head",
+   "select": 1,
    "share": 1
   },
   {
@@ -107,6 +109,7 @@
    "read": 1,
    "report": 1,
    "role": "Centre Placement Coordinator",
+   "select": 1,
    "share": 1
   },
   {
@@ -116,6 +119,17 @@
    "read": 1,
    "report": 1,
    "role": "Centre Head",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Office - Assessment Officer",
+   "select": 1,
    "share": 1
   }
  ],

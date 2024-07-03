@@ -8,12 +8,12 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "small-file",
- "idx": 0,
- "indicator_color": "green",
+ "idx": 1,
+ "indicator_color": "",
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-07-01 13:36:20.501936",
+ "modified": "2024-07-03 12:41:45.651098",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Masters",
@@ -80,6 +80,9 @@
   },
   {
    "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "Head Office - Assessment Officer"
   }
  ],
  "sequence_id": 6.0,
