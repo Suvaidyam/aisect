@@ -64,7 +64,7 @@
    "link_fieldname": "project"
   }
  ],
- "modified": "2024-06-26 07:02:26.616928",
+ "modified": "2024-07-03 12:23:58.142411",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Project",
@@ -141,6 +141,16 @@
    "read": 1,
    "report": 1,
    "role": "Centre Head",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Office - Assessment Officer",
+   "select": 1,
    "share": 1
   }
  ],

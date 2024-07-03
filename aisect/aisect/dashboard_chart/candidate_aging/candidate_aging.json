@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 6,
+ "idx": 16,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-21 08:24:38.155080",
+ "modified": "2024-07-03 12:44:48.472487",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Aging",
@@ -38,6 +38,9 @@
   },
   {
    "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "Head Office - Assessment Officer"
   }
  ],
  "time_interval": "Yearly",

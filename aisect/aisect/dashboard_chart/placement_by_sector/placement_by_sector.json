@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 3,
+ "idx": 13,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-21 08:24:05.800763",
+ "modified": "2024-07-03 12:44:15.856180",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement by sector",
@@ -38,6 +38,9 @@
   },
   {
    "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "Head Office - Assessment Officer"
   }
  ],
  "time_interval": "Yearly",

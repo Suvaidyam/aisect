@@ -36,7 +36,7 @@
    "link_fieldname": "job_role"
   }
  ],
- "modified": "2024-06-19 11:05:12.684545",
+ "modified": "2024-07-03 12:25:26.898462",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Job Role",
@@ -86,6 +86,7 @@
    "read": 1,
    "report": 1,
    "role": "State Placement Coordinator",
+   "select": 1,
    "share": 1
   },
   {
@@ -95,6 +96,7 @@
    "read": 1,
    "report": 1,
    "role": "State Head",
+   "select": 1,
    "share": 1
   },
   {
@@ -104,6 +106,7 @@
    "read": 1,
    "report": 1,
    "role": "Centre Placement Coordinator",
+   "select": 1,
    "share": 1
   },
   {
@@ -113,6 +116,17 @@
    "read": 1,
    "report": 1,
    "role": "Centre Head",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Office - Assessment Officer",
+   "select": 1,
    "share": 1
   }
  ],
