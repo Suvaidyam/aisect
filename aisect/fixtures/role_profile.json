@@ -88,5 +88,20 @@
     "role": "Centre Head"
    }
   ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-07-03 12:19:13.080096",
+  "name": "Head Office - Assessment Officer",
+  "role_profile": "Head Office - Assessment Officer",
+  "roles": [
+   {
+    "parent": "Head Office - Assessment Officer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Head Office - Assessment Officer"
+   }
+  ]
  }
 ]
