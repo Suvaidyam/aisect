@@ -136,7 +136,7 @@ def set_candidate_status():
 
         # candidate status
         if item.expected_assessment_date <= current_date:
-            candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name,'assessment_status':'Registered'})
+            candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name})
             
             for candidate in candidates:
                 try:
