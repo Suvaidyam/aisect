@@ -51,5 +51,12 @@ filters.push({
   "options": "Job Role"
 },)
 frappe.query_reports["Target VS Achievement"] = {
-  filters: filters
+  filters: filters,
+  formatter:function(value,k,column){
+    if(column.fieldname=="batch_id"){
+        return `<a href="/app/candidate-details/view/list?batch_id=${value}">${value}</a>`
+    }else{
+        return value
+    }
+}
 };
