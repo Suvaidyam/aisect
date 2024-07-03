@@ -296,7 +296,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-01 12:15:04.937865",
+ "modified": "2024-07-03 11:15:45.003675",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
@@ -379,6 +379,17 @@
    "read": 1,
    "report": 1,
    "role": "Centre Head",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "certified",
+   "select": 1,
    "share": 1,
    "write": 1
   }
