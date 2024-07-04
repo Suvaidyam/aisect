@@ -42,6 +42,7 @@ frappe.ui.form.on("Batch", {
             { fieldName: 'expected_assessment_date', placeholderText: __("Enter your expected assessment date") },
             { fieldName: 'actual_assessment_date', placeholderText: __("Enter your actual assessment date") },
         ])
+        hide_advance_search(frm, ['zone','state','district','center_location','project','sector','job_role']);
     },
     // depened on filter
     zone: function (frm) {
