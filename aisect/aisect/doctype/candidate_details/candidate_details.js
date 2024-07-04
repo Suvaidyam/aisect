@@ -7,7 +7,10 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_df_property('batch_id', 'read_only', 1); 
             frm.set_df_property('placement', 'read_only', 1); 
         }
-
+        if(frm.doc.assessment_status =='Assessed'){
+            frm.set_df_property('project', 'read_only', 1);
+            frm.set_df_property('batch_id', 'read_only', 1); 
+        }
         if (cur_frm.is_new()) {
             frm.set_value('batch_id', '')
         }
