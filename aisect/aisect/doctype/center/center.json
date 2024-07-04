@@ -69,7 +69,7 @@
    "link_fieldname": "center_location"
   }
  ],
- "modified": "2024-07-03 20:20:46.944278",
+ "modified": "2024-07-04 07:42:34.929415",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Center",
@@ -128,14 +128,11 @@
    "select": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
    "read": 1,
    "report": 1,
    "role": "Centre Head",
-   "select": 1,
-   "share": 1
+   "select": 1
   },
   {
    "export": 1,
