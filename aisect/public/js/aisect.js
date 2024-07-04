@@ -29,6 +29,9 @@ frappe.router.on('change', async () => {
         $('.layout-side-section').hide();
         $('.custom-actions').hide()
         $('.standard-actions').show();
+        if (!frappe.user_roles.includes('Administrator')) {
+            $('.search-bar').hide()
+        }
     } else {
         $('.sidebar-toggle-btn').show()
         $('.layout-side-section').show();
