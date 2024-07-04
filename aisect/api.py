@@ -1,5 +1,7 @@
 import frappe
-from datetime import date ,timedelta
+from datetime import date ,timedelta,datetime
+import time
+import pytz
 
 @frappe.whitelist()
 def get_user_role_permission():
@@ -122,6 +124,13 @@ def target_vs_chievement():
 
 @frappe.whitelist()
 def set_candidate_status():
+    current_time = time.time()
+    inactive_datetime = datetime.fromtimestamp(current_time,pytz.timezone('Asia/Kolkata')).strftime("%Y-%m-%d %I:%M:%S %p")
+    doc = frappe.new_doc('Cron Logs') 
+    doc.running_time= datetime.strptime(inactive_datetime, "%Y-%m-%d %I:%M:%S %p").strftime("%Y-%m-%d %H:%M:%S.%f")
+        
+    doc.insert() 
+    # cron form batch and candidate
     current_date = date.today()
     items = frappe.db.get_list('Batch', fields=['name','start_date','end_date'])
     
