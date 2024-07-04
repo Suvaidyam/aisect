@@ -88,6 +88,24 @@ def execute(filters=None):
 		"fieldtype":"Data",
 		"width":135
 		},
+		{
+		"fieldname":"target",
+		"label":"Target",
+		"fieldtype":"Data",
+		"width":160
+		},
+		{
+		"fieldname":"achievement",
+		"label":"Achievement",
+		"fieldtype":"Data",
+		"width":135
+		},
+		{
+		"fieldname":"achievements_status",
+		"label":"Achievement Status",
+		"fieldtype":"int",
+		"width":180
+		}
 	]
 	sql_query = f"""
 				SELECT
@@ -99,7 +117,17 @@ def execute(filters=None):
 					ct.center_location_name,
 					COUNT(cd.candidate_id) as candidate_count,
 					cd.placement_due_date AS due_date,
-					DATEDIFF(cd.placement_due_date, CURRENT_DATE) AS remaining_days
+					DATEDIFF(cd.placement_due_date, CURRENT_DATE) AS remaining_days,
+					ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
+					ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) AS achievement,
+					CASE 
+						WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) = 0 
+							AND ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) = 0
+						THEN 'N/A'
+						WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END))
+						THEN 'Achieved'
+						ELSE 'In Progress'
+					END AS achievements_status
 				FROM
 					`tabCandidate Details` cd
 				 INNER JOIN 
@@ -113,13 +141,14 @@ def execute(filters=None):
 				INNER JOIN 
 					`tabJob Role` jb ON cd.job_role = jb.name
 				WHERE 
-					cd.current_status IN ('Assessed','Certified')
+					cd.current_status IN ('Assessed','Certified','Placed')
 					{str}
 				GROUP BY 
 					cd.batch_id
+				{having_str}
 				ORDER BY 
-					remaining_days ASC
-				{having_str};
+					target DESC,
+					remaining_days ASC;
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data

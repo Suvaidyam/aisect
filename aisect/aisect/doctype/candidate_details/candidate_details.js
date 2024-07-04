@@ -4,8 +4,8 @@ frappe.ui.form.on("Candidate Details", {
     refresh(frm) {
         if (frappe.user_roles.includes('Head Office - Assessment Officer') && !frappe.user_roles.includes('Administrator')) {
             frm.set_df_property('project', 'read_only', 1);
-            frm.set_df_property('batch_id', 'read_only', 1); 
-            frm.set_df_property('placement', 'read_only', 1); 
+            frm.set_df_property('batch_id', 'read_only', 1);
+            frm.set_df_property('placement', 'read_only', 1);
         }
         // if(frm.doc.assessment_status =='Assessed'){
         //     frm.set_df_property('project', 'read_only', 1);
@@ -200,6 +200,10 @@ frappe.ui.form.on("Placement Child", {
             frm.enable_save();
         }
     },
+    // name_of_organization: function (frm) {
+    //     frm.cur_grid.grid_form.fields_dict.district.read_only = 1;
+    //     frm.cur_grid.refresh();
+    // },
     mobile_number(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
         if (!mobilePattern.test(row.mobile_number)) {
