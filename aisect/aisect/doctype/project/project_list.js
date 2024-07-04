@@ -6,6 +6,7 @@ frappe.listview_settings['Project'] = {
         $(".custom-actions").hide();
     },
     refresh: function (listview) {
+        listview.clear_checked_items()
         $(".list-row-activity").hide();
         $("use.like-icon").hide();
     }

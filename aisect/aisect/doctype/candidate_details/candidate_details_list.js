@@ -6,6 +6,7 @@ frappe.listview_settings['Candidate Details'] = {
         $(".custom-actions").hide();
     },
     refresh: function (listview) {
+        listview.clear_checked_items()
         $(".list-row-activity").hide();
         $("use.like-icon").hide();
         function applyStyles(status, bgColor, textColor) {

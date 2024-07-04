@@ -14,9 +14,7 @@ def get_user_role_permission():
 
 @frappe.whitelist()
 def get_one_time_success_story():
-    data = frappe.get_list('Candidate Success Stories',fields=['name'])
-    one_time_success_story = [item["name"] for item in data]
-    return one_time_success_story
+    return frappe.get_list('Candidate Success Stories',pluck='name')
 
 @frappe.whitelist()
 def is_batch_completed(batch_id):
