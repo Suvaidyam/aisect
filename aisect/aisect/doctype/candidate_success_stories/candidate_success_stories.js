@@ -21,18 +21,64 @@ frappe.ui.form.on("Candidate Success Stories", {
                 }
             }
         });
-
+        if (frm.doc.name_of_the_candidate) {
+            setTimeout(() => {
+                frm.set_df_property('project', 'read_only', 1);
+                frm.set_df_property('batch_id', 'read_only', 1);
+                frm.set_df_property('sector', 'read_only', 1);
+                frm.set_df_property('job_role', 'read_only', 1);
+            }, 500);
+        }
+        frm.fields_dict['project'].get_query = function () {
+            return {
+                filters: { 'project_name': 'Please select name of the candidate' },
+                page_length: 1000
+            };
+        };
+        frm.fields_dict['batch_id'].get_query = function () {
+            return {
+                filters: { 'batch_id': 'Please select name of the candidate' },
+                page_length: 1000
+            };
+        };
+        frm.fields_dict['sector'].get_query = function () {
+            return {
+                filters: { 'sector_name': 'Please select name of the candidate' },
+                page_length: 1000
+            };
+        };
+        frm.fields_dict['job_role'].get_query = function () {
+            return {
+                filters: { 'job_role_name': 'Please select name of the candidate' },
+                page_length: 1000
+            };
+        };
+       
         setPlaceholders(frm, [
+            { fieldName: 'project', placeholderText: __("Enter your project") },
+            { fieldName: 'batch_id', placeholderText: __("Enter your batch id") },
+            { fieldName: 'sector', placeholderText: __("Enter your sector") },
+            { fieldName: 'job_role', placeholderText: __("Enter your job role") },
             { fieldName: 'name_of_the_candidate', placeholderText: __("Enter your name of the candidate") },
             { fieldName: 'achievement_after_training', placeholderText: __("Enter your achievement after training") },
             { fieldName: 'remarks_of_the_training', placeholderText: __("Enter your remarks of the training") },
         ]);
 
-        hide_advance_search(frm, ['name_of_the_candidate']);
+        hide_advance_search(frm, ['name_of_the_candidate','project','batch_id','sector','job_role']);
     },
 
     candidate_image: function (frm) {
         frm.image_uploaded = true;
+    },
+    name_of_the_candidate: function (frm) {
+        if (frm.doc.name_of_the_candidate) {
+            setTimeout(() => {
+                frm.set_df_property('project', 'read_only', 1);
+                frm.set_df_property('batch_id', 'read_only', 1);
+                frm.set_df_property('sector', 'read_only', 1);
+                frm.set_df_property('job_role', 'read_only', 1);
+            }, 500);
+        }
     },
 
     validate: function (frm) {
