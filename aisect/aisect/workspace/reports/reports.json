@@ -1,10 +1,10 @@
 {
  "charts": [],
- "content": "[{\"id\":\"l8Nb4kn5U5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports List</span>\",\"col\":12}},{\"id\":\"4R48EXf7UB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Candidate Placement Aging\",\"col\":12}}]",
+ "content": "[{\"id\":\"l8Nb4kn5U5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports List</span>\",\"col\":12}},{\"id\":\"4R48EXf7UB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Candidate Placement Aging\",\"col\":12}},{\"id\":\"XoRlnEV_MJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Candidate Placement Aging\",\"col\":3}}]",
  "creation": "2024-06-26 13:30:54.961663",
  "custom_blocks": [
   {
-   "custom_block_name": "Candidate Placement Aging",
+   "custom_block_name": "Report List",
    "label": "Candidate Placement Aging"
   }
  ],
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "Reports",
  "links": [],
- "modified": "2024-07-01 13:36:27.197074",
+ "modified": "2024-07-04 18:16:04.119871",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Reports",

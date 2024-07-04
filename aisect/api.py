@@ -56,67 +56,10 @@ def candidate_placement_ging():
             INNER JOIN 
                 `tabJob Role` jb ON cd.job_role = jb.name
             WHERE 
-                cd.current_status IN ('Assessed', 'Certified')
+                cd.current_status IN ('Assessed', 'Certified','Placed')
                 {str}
             GROUP BY 
                     cd.batch_id) AS query;
-    """
-    return frappe.db.sql(sql,as_dict=True)
-
-@frappe.whitelist()
-def target_vs_chievement():
-    user_role_permission=get_user_role_permission()
-    str = ""
-    zone = user_role_permission.get('Zone')
-    state = user_role_permission.get('State')
-    center = user_role_permission.get('Center')
-
-    if zone:
-        str += f" AND cd.zone = '{zone}'"
-    if state:
-        str += f" AND cd.state = '{state}'"
-    if center:
-        str += f" AND cd.center_location = '{center}'"
-
-    sql = f"""
-        SELECT 
-            COUNT(*) AS record_count
-        FROM (
-            SELECT 
-                cd.batch_id,
-                zn.zone_name,
-                pr.project_name,
-                dt.district_name,
-                jb.job_role_name,
-                st.state_name,
-                ct.center_location_name,
-                COUNT(*) AS candidate_count,
-                ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
-                ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) AS achievement,
-                CASE 
-                    WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END))
-                    THEN 'Achieved'
-                    ELSE 'In Progress'
-                END AS achievements_status
-            FROM
-                `tabCandidate Details` cd
-            INNER JOIN 
-                `tabZone` zn ON cd.zone = zn.name
-            INNER JOIN 
-                `tabState` st ON cd.state = st.name
-            INNER JOIN 
-                `tabCenter` ct ON cd.center_location = ct.name 
-            INNER JOIN 
-                `tabDistrict` dt ON cd.district = dt.name
-            INNER JOIN 
-                `tabProject` pr ON cd.project = pr.name
-            INNER JOIN 
-                `tabJob Role` jb ON cd.job_role = jb.name
-            WHERE 1 = 1 {str}
-            GROUP BY 
-                cd.batch_id
-        ) AS subquery;
-
     """
     return frappe.db.sql(sql,as_dict=True)
 
@@ -130,7 +73,7 @@ def set_candidate_status():
     doc.insert() 
     # cron form batch and candidate
     current_date = date.today()
-    items = frappe.db.get_list('Batch', fields=['name','start_date','end_date'])
+    items = frappe.db.get_list('Batch', fields=['name','start_date','end_date', 'expected_assessment_date'])
     
     for item in items:
         # batch status
@@ -146,15 +89,17 @@ def set_candidate_status():
             candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name,'assessment_status':'Registered'})
             
             for candidate in candidates:
-                try:
+                try: 
                     date_90_days = current_date + timedelta(days=90)
-                    frappe.db.set_value('Candidate Details', candidate.name,
-                    {
-                        'current_status':'Assessed',
-                        'assessment_status':'Assessed',
-                        'assessment_date':current_date,
-                        'placement_due_date':date_90_days
-                    })
+                    frappe.db.set_value('Candidate Details', candidate.name,{'placement_due_date':date_90_days})
+                    
+                    if item.expected_assessment_date <= current_date:
+                         frappe.db.set_value('Candidate Details', candidate.name,
+                            {
+                                'current_status':'Assessed',
+                                'assessment_status':'Assessed',
+                                'assessment_date':current_date
+                            })
                 except Exception as e:
                     print(f"Error updating candidate {candidate['name']}: {e}")
     frappe.db.commit()
