@@ -4,6 +4,6 @@ a[data-action="action-edit"] {
 .dropdown-notifications{
     display: none !important;
 }
-.widget-control{
+.widget-control .add-new{
     display: none !important;
 }
