@@ -161,7 +161,7 @@ doctype_list_js = {
 
 scheduler_events = {
     "daily": [
-        "aisect.api.set_candidate_status"
+        "aisect.services.cron.set_candidate_status"
     ],
     #   "all": [
     #      "aisect.api.all"

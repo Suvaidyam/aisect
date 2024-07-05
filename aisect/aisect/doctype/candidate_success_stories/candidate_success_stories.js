@@ -5,7 +5,7 @@ frappe.ui.form.on("Candidate Success Stories", {
     refresh(frm) {
         frm.image_uploaded = false;
         frappe.call({
-            method: "aisect.api.get_one_time_success_story",
+            method: "aisect.services.api.get_one_time_success_story",
             args: {},
             callback: function (r) {
                 if (r.message) {

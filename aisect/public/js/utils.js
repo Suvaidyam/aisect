@@ -98,7 +98,7 @@ const hide_advance_search = (frm, list) => {
 const get_user_permission = async () => {
     try {
         let list = await callAPI({
-            method: 'sva_frappe.apis.user.get_user_role_permission',
+            method: 'aisect.services.api.get_user_role_permission',
             freeze: true,
             freeze_message: __("Getting Permissions"),
         })
