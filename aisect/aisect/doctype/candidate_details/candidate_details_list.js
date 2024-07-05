@@ -1,5 +1,8 @@
 frappe.listview_settings['Candidate Details'] = {
     onload: function (listview) {
+        if(!frappe.user_roles.includes('Administrator')){
+            action_items(listview, ['Export', 'Delete'])
+        }
         $('.layout-side-section').hide();
         $('.sidebar-section.filter-section').hide();
         $('.sidebar-section.save-filter-section').hide();
@@ -25,3 +28,16 @@ frappe.listview_settings['Candidate Details'] = {
         applyStyles("Assessed", "#f0e6d5", "#db8904");
     }
 };
+function action_items(listview, action) { 
+    listview.page.clear_actions_menu()
+    action.map((e) => {
+        const actionItem = listview.actions_menu_items.find((item) => item?.label == e);
+        if (actionItem) {
+            listview.page.add_actions_menu_item(
+                actionItem.label,
+                actionItem.action,
+                actionItem.standard
+            );
+        }
+    })
+}
