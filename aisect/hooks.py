@@ -38,9 +38,6 @@ doctype_js = {
     "Center": "public/js/utils.js",
     "Company": "public/js/utils.js",
     "Candidate Details": "public/js/utils.js",
-    "Candidate Enrollment": "public/js/utils.js",
-    "Candiate Placement Details": "public/js/utils.js", 
-    "Company Branches": "public/js/utils.js",
     "Placement Child": "public/js/utils.js",
     "Candidate Success Stories": "public/js/utils.js", 
     "Company": "public/js/utils.js",
@@ -48,7 +45,17 @@ doctype_js = {
     "Project": "public/js/utils.js",
     "Sector": "public/js/utils.js",
 }
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+doctype_list_js = {
+     "Batch": "public/js/list_utils.js",
+    "Center": "public/js/list_utils.js",
+    "Company": "public/js/list_utils.js",
+    "Candidate Details": "public/js/list_utils.js",
+    "Candidate Success Stories": "public/js/list_utils.js", 
+    "Company": "public/js/list_utils.js",
+    "Job Role": "public/js/list_utils.js",
+    "Project": "public/js/list_utils.js",
+    "Sector": "public/js/list_utils.js",
+    }
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
