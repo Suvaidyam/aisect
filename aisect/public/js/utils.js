@@ -199,16 +199,16 @@ const pdf_file_condition = (frm, child_row, row, cur_field) => {
 
                 const file_size = response.message.file_size;
                 if (cur_field === 'upload_offer_letter') {
-                    const maxFileSize = 2 * 1024 * 1024;
-                    if (file_size > maxFileSize) {
-                        truncate_child_table_field_value(row, frm, [cur_field]);
-                        frappe.show_alert({ message: "File size must be less than 2 MB", indicator: "yellow" });
-                    }
-                } else {
                     const maxFileSize = 5 * 1024 * 1024;
                     if (file_size > maxFileSize) {
                         truncate_child_table_field_value(row, frm, [cur_field]);
                         frappe.show_alert({ message: "File size must be less than 5 MB", indicator: "yellow" });
+                    }
+                } else {
+                    const maxFileSize = 2 * 1024 * 1024;
+                    if (file_size > maxFileSize) {
+                        truncate_child_table_field_value(row, frm, [cur_field]);
+                        frappe.show_alert({ message: "File size must be less than 2 MB", indicator: "yellow" });
                     }
                 }
 
