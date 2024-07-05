@@ -182,9 +182,9 @@ frappe.ui.form.on("Candidate Details", {
 // Child Table
 let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
-    form_render(frm,cdt,cdn) {
+    form_render(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if(row.name_of_organization){
+        if (row.name_of_organization) {
             frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
             frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
             frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
@@ -208,16 +208,18 @@ frappe.ui.form.on("Placement Child", {
             frm.enable_save();
         }
     },
-    name_of_organization: function (frm,cdt,cdn) {
+    name_of_organization: function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
         console.log(row.name_of_organization)
         console.log(frm.cur_grid)
-        if(row.name_of_organization){
-            frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
-            frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
-            frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
-            frm.cur_grid.refresh();
-        }else{
+        if (row.name_of_organization) {
+            setTimeout(() => {
+                frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
+                frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
+                frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
+                frm.cur_grid.refresh();
+            }, 500);
+        } else {
             frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 0;
             frm.cur_grid.grid_form.fields_dict.state.df.read_only = 0;
             frm.cur_grid.grid_form.fields_dict.district.df.read_only = 0;
