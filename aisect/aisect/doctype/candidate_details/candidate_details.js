@@ -11,6 +11,9 @@ frappe.ui.form.on("Candidate Details", {
         //     frm.set_df_property('project', 'read_only', 1);
         //     frm.set_df_property('batch_id', 'read_only', 1); 
         // }
+        if (frm.doc.candidate_id != undefined && frm.doc.__unsaved!=1) {
+            frm.set_df_property('candidate_id', 'read_only', 1)
+        }
         if (cur_frm.is_new()) {
             frm.set_value('batch_id', '')
         }
@@ -120,6 +123,9 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     after_save(frm) {
+        if (frm.doc.center_location_code != undefined && frm.doc.__unsaved!=1) {
+            frm.set_df_property('center_location_code', 'read_only', 1)
+        }
         if (frm.doc.aadhar_number) {
             if (!isValidAadhaar(frm.doc.aadhar_number)) {
                 frappe.throw('Enter valid aadhar number');
@@ -184,7 +190,16 @@ let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
     form_render(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.name_of_organization) {
+        
+        if (row.employment_start_date && frm.doc.__unsaved!=1) {
+            frm.cur_grid.grid_form.fields_dict.employment_start_date.df.read_only = 1;
+            frm.cur_grid.refresh();
+        }
+        if (row.employment_end_date && frm.doc.__unsaved!=1) {
+            frm.cur_grid.grid_form.fields_dict.employment_end_date.df.read_only = 1;
+            frm.cur_grid.refresh();
+        }
+        if (row.name_of_organization && frm.doc.__unsaved!=1) {
             frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
             frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
             frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
@@ -241,8 +256,9 @@ frappe.ui.form.on("Placement Child", {
     },
     employment_start_date(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        let sd = new Date(row.employment_start_date);
-        frm.cur_grid.grid_form.fields_dict.employment_end_date.$input.datepicker({ minDate: sd });
+        let today = new Date(row.employment_start_date);
+        today.setDate(today.getDate() + 1);
+        frm.cur_grid.grid_form.fields_dict.employment_end_date.$input.datepicker({ minDate: today });
     },
     job_joined(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
