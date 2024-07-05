@@ -4,7 +4,7 @@
 import frappe
 from datetime import date
 from frappe.model.document import Document
-from aisect.api import is_batch_completed
+from aisect.services.api import is_batch_completed
 
 class CandidateDetails(Document):
     def validate(self):

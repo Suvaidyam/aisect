@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
-from aisect.api import get_user_role_permission
+from aisect.services.api import get_user_role_permission
 def execute(filters=None):
 	user_role_permission=get_user_role_permission()
 	str = ""
