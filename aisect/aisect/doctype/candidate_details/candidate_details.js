@@ -7,6 +7,7 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_df_property('batch_id', 'read_only', 1);
             frm.set_df_property('placement', 'read_only', 1);
         }
+       
         // if(frm.doc.assessment_status =='Assessed'){
         //     frm.set_df_property('project', 'read_only', 1);
         //     frm.set_df_property('batch_id', 'read_only', 1); 
@@ -71,7 +72,7 @@ frappe.ui.form.on("Candidate Details", {
         }
         if (frm.doc.certified_status != 'Certified' || frappe.user_roles.includes('Head Office - Assessment Officer') && !frappe.user_roles.includes('Administrator')) {
             frm.set_df_property('placement_status', 'read_only', 1);
-        } else {
+        } else if(frm.doc.placement_status != 'Placed') {
             frm.set_df_property('placement_status', 'read_only', 0);
         }
         if (frm.doc.placement_status == 'Placed') {
@@ -137,9 +138,9 @@ frappe.ui.form.on("Candidate Details", {
         if (frm.doc.placement_status == 'Placed') {
             frm.set_df_property('certified_status', 'read_only', 1);
         }
-        if (frm.doc.certified_status == 'Certified') {
+        if (frm.doc.certified_status == 'Certified' && frm.doc.placement_status != 'Placed') {
             frm.set_df_property('placement_status', 'read_only', 0);
-        } else {
+        } else if(frm.doc.placement_status = 'Placed') {
             frm.set_df_property('placement_status', 'read_only', 1);
         }
     },
