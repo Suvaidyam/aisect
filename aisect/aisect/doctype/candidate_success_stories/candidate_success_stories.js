@@ -69,7 +69,35 @@ frappe.ui.form.on("Candidate Success Stories", {
 
     candidate_image: function (frm) {
         frm.image_uploaded = true;
+        const file_url = frm.doc.candidate_image;
+        const maxFileSize = 2 * 1024 * 1024;
+
+        if (file_url) {
+            frappe.call({
+                method: "frappe.client.get_value",
+                args: {
+                    doctype: "File",
+                    filters: { file_url: file_url },
+                    fieldname: ["file_size"]
+                },
+                callback: function (response) {
+                    if (!response.message) {
+                        frappe.show_alert({ message: "File not found", indicator: "red" });
+                        frm.set_value('candidate_image', '');
+                        return;
+                    }
+                    const file_size = response.message.file_size;
+                    if (file_size > maxFileSize) {
+                        frm.set_value('candidate_image', '');
+                        frappe.show_alert({ message: "File size must be less than 2 MB", indicator: "yellow" });
+                    }
+                }
+            });
+        }
     },
+
+
+
     name_of_the_candidate: function (frm) {
         if (frm.doc.name_of_the_candidate) {
             setTimeout(() => {
