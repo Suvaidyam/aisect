@@ -11,7 +11,7 @@ frappe.ui.form.on("Candidate Details", {
         //     frm.set_df_property('project', 'read_only', 1);
         //     frm.set_df_property('batch_id', 'read_only', 1); 
         // }
-        if (frm.doc.candidate_id != undefined && frm.doc.__unsaved!=1) {
+        if (frm.doc.candidate_id != undefined && frm.doc.__unsaved != 1) {
             frm.set_df_property('candidate_id', 'read_only', 1)
         }
         if (cur_frm.is_new()) {
@@ -123,7 +123,7 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     after_save(frm) {
-        if (frm.doc.center_location_code != undefined && frm.doc.__unsaved!=1) {
+        if (frm.doc.center_location_code != undefined && frm.doc.__unsaved != 1) {
             frm.set_df_property('center_location_code', 'read_only', 1)
         }
         if (frm.doc.aadhar_number) {
@@ -190,16 +190,16 @@ let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
     form_render(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        
-        if (row.employment_start_date && frm.doc.__unsaved!=1) {
+
+        if (row.employment_start_date && frm.doc.__unsaved != 1) {
             frm.cur_grid.grid_form.fields_dict.employment_start_date.df.read_only = 1;
             frm.cur_grid.refresh();
         }
-        if (row.employment_end_date && frm.doc.__unsaved!=1) {
+        if (row.employment_end_date && frm.doc.__unsaved != 1) {
             frm.cur_grid.grid_form.fields_dict.employment_end_date.df.read_only = 1;
             frm.cur_grid.refresh();
         }
-        if (row.name_of_organization && frm.doc.__unsaved!=1) {
+        if (row.name_of_organization && frm.doc.__unsaved != 1) {
             frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
             frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
             frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
@@ -223,10 +223,18 @@ frappe.ui.form.on("Placement Child", {
             frm.enable_save();
         }
     },
+    monthly_income: function (frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn);
+        if (row.monthly_income > 50000 || row.monthly_income < 1) {
+            frm.disable_save();
+            truncate_child_table_field_value(row, frm, ['monthly_income']);
+            frappe.show_alert({ message: "Monthly income should not exceed Rs 50,000.00", indicator: "yellow" });
+        } else {
+            frm.enable_save();
+        }
+    },
     name_of_organization: function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        console.log(row.name_of_organization)
-        console.log(frm.cur_grid)
         if (row.name_of_organization) {
             setTimeout(() => {
                 frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
