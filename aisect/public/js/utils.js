@@ -33,13 +33,13 @@ function depened_date(parent, child) {
         child.$input.datepicker({ minDate: today });
     }
 }
-async function set_value_by_role(frm,mapper) {
+async function set_value_by_role(frm, mapper) {
     let response = await get_user_permission()
-    for(let item of mapper){
-        if(response[item['allow']]){
+    for (let item of mapper) {
+        if (response[item['allow']]) {
             await frm.set_value(item.fieldname, response[item['allow']])
-            setTimeout(async() => {
-                await frm.set_df_property(item.fieldname,'read_only',1)
+            setTimeout(async () => {
+                await frm.set_df_property(item.fieldname, 'read_only', 1)
             }, 200);
         }
     }
@@ -168,16 +168,52 @@ const truncate_child_table_field_value = async (row, frm, fields) => {
         }
     }
 };
-const pdf_file_condition = (frm, child_row, row, cur_file) => {
+const pdf_file_condition = (frm, child_row, row, cur_field) => {
     frm.image_uploaded = true;
-    console.log(frm)
     if (child_row) {
         const file_url = child_row;
         const file_extension = file_url.split('.').pop().toLowerCase();
+
+        // Check if the file is a PDF
         if (file_extension !== 'pdf') {
-            truncate_child_table_field_value(row, frm, [cur_file]);
+            truncate_child_table_field_value(row, frm, [cur_field]);
             frappe.show_alert({ message: "Only PDF files are allowed", indicator: "yellow" });
             return;
         }
+
+        // Fetch file details using Frappe API
+        frappe.call({
+            method: "frappe.client.get_value",
+            args: {
+                doctype: "File",
+                filters: { file_url: file_url },
+                fieldname: ["file_size"]
+            },
+            callback: function (response) {
+                console.log(response)
+                if (!response.message) {
+                    frappe.show_alert({ message: "File not found", indicator: "red" });
+                    truncate_child_table_field_value(row, frm, [cur_field]);
+                    return;
+                }
+
+                const file_size = response.message.file_size;
+                if (cur_field === 'upload_offer_letter') {
+                    const maxFileSize = 2 * 1024 * 1024;
+                    if (file_size > maxFileSize) {
+                        truncate_child_table_field_value(row, frm, [cur_field]);
+                        frappe.show_alert({ message: "File size must be less than 2 MB", indicator: "yellow" });
+                    }
+                } else {
+                    const maxFileSize = 5 * 1024 * 1024;
+                    if (file_size > maxFileSize) {
+                        truncate_child_table_field_value(row, frm, [cur_field]);
+                        frappe.show_alert({ message: "File size must be less than 5 MB", indicator: "yellow" });
+                    }
+                }
+
+
+            }
+        });
     }
 };
