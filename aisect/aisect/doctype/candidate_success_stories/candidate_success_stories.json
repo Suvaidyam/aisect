@@ -65,6 +65,7 @@
    "reqd": 1
   },
   {
+   "description": "File size must be less than 2 MB",
    "fieldname": "candidate_image",
    "fieldtype": "Attach Image",
    "label": "Candidate Image",
@@ -133,7 +134,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-04 15:24:40.945344",
+ "modified": "2024-07-05 13:27:42.476379",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",
