@@ -53,7 +53,7 @@ frappe.ui.form.on("Candidate Success Stories", {
                 page_length: 1000
             };
         };
-       
+
         setPlaceholders(frm, [
             { fieldName: 'project', placeholderText: __("Enter your project") },
             { fieldName: 'batch_id', placeholderText: __("Enter your batch id") },
@@ -64,7 +64,7 @@ frappe.ui.form.on("Candidate Success Stories", {
             { fieldName: 'remarks_of_the_training', placeholderText: __("Enter your remarks of the training") },
         ]);
 
-        hide_advance_search(frm, ['name_of_the_candidate','project','batch_id','sector','job_role']);
+        hide_advance_search(frm, ['name_of_the_candidate', 'project', 'batch_id', 'sector', 'job_role']);
     },
 
     candidate_image: function (frm) {
@@ -78,6 +78,11 @@ frappe.ui.form.on("Candidate Success Stories", {
                 frm.set_df_property('sector', 'read_only', 1);
                 frm.set_df_property('job_role', 'read_only', 1);
             }, 500);
+        } else {
+            frm.set_df_property('project', 'read_only', 0);
+            frm.set_df_property('batch_id', 'read_only', 0);
+            frm.set_df_property('sector', 'read_only', 0);
+            frm.set_df_property('job_role', 'read_only', 0);
         }
     },
 
