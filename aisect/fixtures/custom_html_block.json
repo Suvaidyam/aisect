@@ -2,6 +2,17 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
+  "html": "<div class=\"scroll-container-success\">\n    <div id=\"success_card_body\" class=\"d-flex\">\n    \n    </div>\n</div>",
+  "modified": "2024-07-06 11:22:24.855328",
+  "name": "Success Story Live",
+  "private": 0,
+  "roles": [],
+  "script": "\n    async function callAPI(options) {\n        return new Promise((resolve, reject) => {\n            frappe.call({\n                ...options,\n                callback: async function (response) {\n                    resolve(response?.message || response?.value)\n                }\n            });\n        });\n    }\n    \n    callAPI({\n        method: 'aisect.services.api.success_story_data',\n        freeze: true,\n        freeze_message: __(\"Getting\"),\n    }).then(forms_lists => {\n        console.log(forms_lists);\n        var card_titles = ``;\n        forms_lists.forEach((item) => {\n            card_titles += `\n                <div>\n                    <div class=\"card\" style=\"min-width: 540px; width:540px; min-height:200px;\">\n                  <div class=\"card-body no-gutters\">\n                    <div class=\"d-flex  align-items-center\" style=\"gap:20px;\">\n                        <div class=\"\">\n                      <img src=\"${item?.candidate_image}\" class=\"img\" alt=\"...\">      \n                        </div>\n                      <div class=\"\">\n                          <h5 class=\"card-title\">${item?.full_name}</h5>\n                        <h6 class=\"card-subtitle mb-2 text-muted\">${item?.achievement_after_training}</h6>\n                      </div>\n                    </div>\n                    <div class=\"mt-3\">\n                        <p style=\"font-size: 25px;\">\"</p>\n                        <p class=\"card-text\">${item?.remarks_of_the_training}</p>\n                    </div>\n                  </div>\n                </div>\n                </div>\n            `;\n        });\n       \n       root_element.getElementById('success_card_body').innerHTML = card_titles;\n    });\n",
+  "style": "#success_card_body{\n    gap:15px;\n    animation: scroll 15s linear infinite;\n  \n}\n\n.img{\n    width: 4rem;\n  height: 4rem;\n  border-radius: 9999px;\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n  object-fit: contain;\n}\n\n.scroll-container-success{\n    position: relative;\n     overflow: hidden;\n}\n\n@keyframes scroll {\n    0% {\n        transform: translateX(0);\n    }\n    100% {\n        transform: translateX(-100%);\n    }\n}\n\n/* Repeat the content to make the scroll effect continuous */\n#success_card_body::after {\n    content: attr(data-content);\n    display: block;\n}\n\n.scroll-container-success:hover #success_card_body {\n    animation-play-state: paused;\n}\n "
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
   "html": "\n    <div class=\"main-container\" style=\"display: flex; gap: 10px; width:40%\">\n\n  <a href=\"/app/query-report/Candidate%20Placement%20Aging\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n\n    <div class=\"p-3\">\n\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Candidate Placement Aging</div>\n\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\">2</div>\n\n    </div>\n\n  </a>\n\n</div>\n\n ",
   "modified": "2024-07-05 17:43:58.012804",
   "name": "Report List",
