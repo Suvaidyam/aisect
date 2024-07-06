@@ -3,11 +3,11 @@
   "docstatus": 0,
   "doctype": "Custom HTML Block",
   "html": "\n    <div class=\"main-container\" style=\"display: flex; gap: 10px; width:40%\">\n\n  <a href=\"/app/query-report/Candidate%20Placement%20Aging\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n\n    <div class=\"p-3\">\n\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Candidate Placement Aging</div>\n\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\">2</div>\n\n    </div>\n\n  </a>\n\n</div>\n\n ",
-  "modified": "2024-07-04 18:17:23.676418",
+  "modified": "2024-07-05 17:43:58.012804",
   "name": "Report List",
   "private": 0,
   "roles": [],
-  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.api.candidate_placement_ging',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    \n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists[0].candidate_count : 0; \n});",
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.services.api.candidate_placement_ging',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    \n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists[0].candidate_count : 0; \n});",
   "style": null
  }
 ]
