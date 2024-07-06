@@ -11,22 +11,18 @@
  "filters_json": "[]",
  "group_by_based_on": "gender",
  "group_by_type": "Count",
- "idx": 19,
+ "idx": 23,
  "is_public": 0,
  "is_standard": 1,
- "last_synced_on": "2024-06-24 16:04:02.981083",
- "modified": "2024-06-24 16:04:16.191490",
+ "last_synced_on": "2024-07-06 13:48:09.606205",
+ "modified": "2024-07-06 13:48:49.088822",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Gender Ratio",
  "number_of_groups": 0,
  "owner": "Administrator",
  "parent_document_type": "",
- "roles": [
-  {
-   "role": "Administrator"
-  }
- ],
+ "roles": [],
  "source": "",
  "time_interval": "Yearly",
  "timeseries": 0,
