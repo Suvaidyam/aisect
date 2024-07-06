@@ -1,27 +1,38 @@
 import frappe
 
+
 @frappe.whitelist()
 def get_user_role_permission():
     user = frappe.session.user
-    user_permissions = frappe.get_list('User Permission',filters={"user":user},fields=['allow','for_value'])
+    user_permissions = frappe.get_list('User Permission', filters={
+                                       "user": user}, fields=['allow', 'for_value'])
     result = {}
     for item in user_permissions:
         result[item["allow"]] = item["for_value"]
     return result
 
+
 @frappe.whitelist()
 def get_one_time_success_story():
-    return frappe.get_list('Candidate Success Stories',pluck='name')
+    return frappe.get_list('Candidate Success Stories', pluck='name')
+
+
+@frappe.whitelist()
+def success_story_data():
+    return frappe.get_all('Candidate Success Stories', fields=['*'])
+
 
 @frappe.whitelist()
 def is_batch_completed(batch_id):
-    data = frappe.get_list('Batch',fields=['name'],filters={'name':batch_id,'status':'Completed'})
+    data = frappe.get_list('Batch', fields=['name'], filters={
+                           'name': batch_id, 'status': 'Completed'})
     is_completed = bool(data)
     return is_completed
 
+
 @frappe.whitelist()
 def candidate_placement_ging():
-    user_role_permission=get_user_role_permission()
+    user_role_permission = get_user_role_permission()
     str = ""
     zone = user_role_permission.get('Zone')
     state = user_role_permission.get('State')
@@ -42,20 +53,20 @@ def candidate_placement_ging():
                 COUNT(*) AS candidate_count
             FROM
                 `tabCandidate Details` cd
-            INNER JOIN 
+            INNER JOIN
                 `tabState` st ON cd.state = st.name
-            INNER JOIN 
+            INNER JOIN
                 `tabCenter` ct ON cd.center_location = ct.name
-            INNER JOIN 
+            INNER JOIN
                 `tabDistrict` dt ON cd.district = dt.name
-            INNER JOIN 
+            INNER JOIN
                 `tabProject` pr ON cd.project = pr.name
-            INNER JOIN 
+            INNER JOIN
                 `tabJob Role` jb ON cd.job_role = jb.name
-            WHERE 
+            WHERE
                 cd.current_status IN ('Assessed', 'Certified','Placed')
                 {str}
-            GROUP BY 
+            GROUP BY
                     cd.batch_id) AS query;
     """
-    return frappe.db.sql(sql,as_dict=True)
+    return frappe.db.sql(sql, as_dict=True)
