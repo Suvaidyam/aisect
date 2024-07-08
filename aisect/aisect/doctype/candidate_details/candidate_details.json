@@ -67,7 +67,7 @@
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
-   "options": "\nMale\nFemale",
+   "options": "\nMale\nFemale\nTransgender\nPrefer not to respond",
    "reqd": 1
   },
   {
@@ -295,7 +295,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-04 18:08:26.104270",
+ "modified": "2024-07-08 15:14:14.913183",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",

@@ -11,6 +11,7 @@
   "zone",
   "state",
   "district",
+  "project",
   "status"
  ],
  "fields": [
@@ -59,6 +60,12 @@
    "label": "Center Code",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Table MultiSelect",
+   "label": "Project",
+   "options": "Project Child"
   }
  ],
  "hide_toolbar": 1,
@@ -69,7 +76,7 @@
    "link_fieldname": "center_location"
   }
  ],
- "modified": "2024-07-04 07:42:34.929415",
+ "modified": "2024-07-08 15:10:07.155516",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Center",
