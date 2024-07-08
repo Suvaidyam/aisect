@@ -17,15 +17,11 @@
    "label": "Gender ratio"
   },
   {
-   "chart_name": "Placement Status",
-   "label": "Placed & Certified"
-  },
-  {
    "chart_name": "Placement by sector",
    "label": "Placement by sector"
   }
  ],
- "content": "[{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":6}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":6}},{\"id\":\"aCuX_XQkaV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by sector\",\"col\":6}},{\"id\":\"vJ42WVugYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by job role\",\"col\":6}},{\"id\":\"L_reS5fdYW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of certified candidate as per aging range\",\"col\":12}},{\"id\":\"MVDHCwNq3X\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Salary distribution\",\"col\":6}},{\"id\":\"nqZVJtlcJ9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender ratio\",\"col\":6}},{\"id\":\"WeeluJFoDU\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>Candidates Success Story</b></span>\",\"col\":12}},{\"id\":\"EyHk-z6XrN\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Success Story Live\",\"col\":12}},{\"id\":\"TJUspBdaQu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placed & Certified\",\"col\":6}}]",
+ "content": "[{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":6}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":6}},{\"id\":\"aCuX_XQkaV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by sector\",\"col\":6}},{\"id\":\"vJ42WVugYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by job role\",\"col\":6}},{\"id\":\"L_reS5fdYW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of certified candidate as per aging range\",\"col\":6}},{\"id\":\"MVDHCwNq3X\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Salary distribution\",\"col\":6}},{\"id\":\"nqZVJtlcJ9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender ratio\",\"col\":6}},{\"id\":\"WeeluJFoDU\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Candidates Success Story</b></span>\",\"col\":12}},{\"id\":\"EyHk-z6XrN\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Success Story Live\",\"col\":12}}]",
  "creation": "2024-06-14 17:40:37.410864",
  "custom_blocks": [
   {
@@ -43,7 +39,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-07-06 14:01:52.857725",
+ "modified": "2024-07-08 14:59:05.577522",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
@@ -103,7 +99,7 @@
    "role": "Head Office - Assessment Officer"
   }
  ],
- "sequence_id": 4.0,
+ "sequence_id": 1.0,
  "shortcuts": [],
  "title": "Dashboards"
 }
