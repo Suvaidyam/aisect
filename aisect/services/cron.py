@@ -17,9 +17,9 @@ def set_candidate_status():
     
     for item in items:
         # batch status
-        if item.end_date < current_date:
+        if item.end_date <= current_date:
                 frappe.db.set_value('Batch', item.name,'status','Completed')
-        elif item.start_date > current_date:
+        elif item.start_date >= current_date:
                 frappe.db.set_value('Batch', item.name,'status','To Be Started')
         elif item.start_date <= current_date <= item.end_date:
             frappe.db.set_value('Batch', item.name,'status','In Progress')
