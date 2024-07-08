@@ -42,16 +42,16 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Project Type",
-   "options": "\nCentral\nState",
+   "options": "\nCentral\nState\nCSR",
    "reqd": 1
   },
   {
-   "depends_on": "eval:doc.project_type==='State'",
+   "depends_on": "eval:doc.project_type==='State' || doc.project_type==='CSR'",
    "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "State",
-   "mandatory_depends_on": "eval:doc.project_type==='State'",
+   "mandatory_depends_on": "eval:doc.project_type==='State' || doc.project_type==='CSR'",
    "options": "State"
   }
  ],
@@ -63,7 +63,7 @@
    "link_fieldname": "project"
   }
  ],
- "modified": "2024-07-03 20:24:14.354420",
+ "modified": "2024-07-08 14:32:15.956358",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Project",
