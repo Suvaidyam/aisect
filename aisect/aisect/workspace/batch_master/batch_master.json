@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Batch Master",
  "links": [],
- "modified": "2024-07-04 16:39:58.187020",
+ "modified": "2024-07-08 14:19:04.601672",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch Master",
@@ -29,7 +29,7 @@
   }
  ],
  "roles": [],
- "sequence_id": 1.0,
+ "sequence_id": 2.0,
  "shortcuts": [],
  "title": "Batch Master"
 }

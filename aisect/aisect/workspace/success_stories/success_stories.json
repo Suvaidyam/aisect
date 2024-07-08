@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Success Stories",
  "links": [],
- "modified": "2024-07-04 16:39:58.360471",
+ "modified": "2024-07-08 14:19:04.751791",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Success Stories",
@@ -29,7 +29,7 @@
   }
  ],
  "roles": [],
- "sequence_id": 3.0,
+ "sequence_id": 4.0,
  "shortcuts": [],
  "title": "Success Stories"
 }
