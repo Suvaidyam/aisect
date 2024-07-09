@@ -71,22 +71,6 @@ def candidate_placement_ging():
     """
     return frappe.db.sql(sql, as_dict=True)
 
-
-@frappe.whitelist()
-def Avg_monthly_salary():
-    sql = f"""
-        SELECT
-            ROUND(AVG(pc.monthly_income)) as average_income
-        FROM
-            `tabCandidate Details` AS ca
-        INNER JOIN
-            `tabPlacement Child` AS pc ON pc.parent = ca.candidate_id
-        WHERE
-            ca.current_status='Placed';
-    """
-    return frappe.db.sql(sql, as_dict=True)
-
-
 @frappe.whitelist()
 def user_assign_geography(user, join_con=[]):
     sql_query = f"""

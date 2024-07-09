@@ -1,0 +1,48 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-07-09 10:05:27.466031",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-07-09 10:27:27.777311",
+ "modified_by": "Administrator",
+ "module": "Aisect",
+ "name": "AVG Monthly Salary Offered",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "\nSELECT\n    ROUND(AVG(pc.monthly_income)) AS average_income\nFROM\n    `tabCandidate Details` AS ca\nINNER JOIN\n    `tabPlacement Child` AS pc ON pc.parent = ca.candidate_id\nWHERE\n    ca.current_status = 'Placed'\n    AND pc.creation >= DATE_ADD(LAST_DAY(DATE_SUB(CURDATE(), INTERVAL 2 MONTH)), INTERVAL 1 DAY)\n    AND pc.creation < LAST_DAY(DATE_SUB(CURDATE(), INTERVAL 1 MONTH))\n",
+ "ref_doctype": "Candidate Details",
+ "report_name": "AVG Monthly Salary Offered",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Head Office (PMU)"
+  },
+  {
+   "role": "Zonal Head"
+  },
+  {
+   "role": "State Placement Coordinator"
+  },
+  {
+   "role": "State Head"
+  },
+  {
+   "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "Centre Head"
+  },
+  {
+   "role": "Head Office - Assessment Officer"
+  }
+ ]
+}
