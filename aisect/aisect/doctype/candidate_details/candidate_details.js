@@ -191,11 +191,7 @@ let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
     form_render(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-
-        if (row.employment_start_date && frm.doc.__unsaved != 1) {
-            frm.cur_grid.grid_form.fields_dict.employment_start_date.df.read_only = 1;
-            frm.cur_grid.refresh();
-        }
+       
         if (row.employment_end_date && frm.doc.__unsaved != 1) {
             frm.cur_grid.grid_form.fields_dict.employment_end_date.df.read_only = 1;
             frm.cur_grid.refresh();
@@ -210,6 +206,8 @@ frappe.ui.form.on("Placement Child", {
         let today = new Date(frm.doc.certification_date);
         today.setDate(today.getDate() + 1);
         frm.cur_grid.grid_form.fields_dict.employment_start_date.$input.datepicker({ minDate: today });
+
+        frm.cur_grid.grid_form.fields_dict.employment_end_date.$input.datepicker({ minDate: today });
     },
     pin_code(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
@@ -268,6 +266,10 @@ frappe.ui.form.on("Placement Child", {
         let today = new Date(row.employment_start_date);
         today.setDate(today.getDate() + 1);
         frm.cur_grid.grid_form.fields_dict.employment_end_date.$input.datepicker({ minDate: today });
+        if(row.employment_start_date >= row.employment_end_date){
+            truncate_child_table_field_value(row,frm,['employment_end_date'])
+            frappe.show_alert({message:'Employment end date must be greater than Employment start date',indicator:'yellow'})
+        }
     },
     job_joined(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
