@@ -14,10 +14,41 @@
   "docstatus": 0,
   "doctype": "Custom HTML Block",
   "html": "<div id=\"geo_data\"></div>",
-  "modified": "2024-07-09 09:49:25.589593",
+  "modified": "2024-07-09 10:56:39.759756",
   "name": "User Assigned Geography",
   "private": 0,
-  "roles": [],
+  "roles": [
+   {
+    "parent": "User Assigned Geography",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Zonal Head"
+   },
+   {
+    "parent": "User Assigned Geography",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "State Head"
+   },
+   {
+    "parent": "User Assigned Geography",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "State Placement Coordinator"
+   },
+   {
+    "parent": "User Assigned Geography",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Centre Head"
+   },
+   {
+    "parent": "User Assigned Geography",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Centre Placement Coordinator"
+   }
+  ],
   "script": "const get_permission = async (user) => {\n    let list = await callAPI({\n        method: 'aisect.services.api.user_assign_geography',\n        freeze: true,\n        args: {\n            doctype: \"User Permission\",\n            user: user,\n            view: \"List\",\n            order_by: \"\",\n            group_by: '',\n        },\n\n        freeze_message: __(\"Getting Permissions\"),\n    });\n    return list;\n};\n\nconst rander_html = async ()=>{\n    let user=frappe.user.name;\n    let list = await get_permission(user);\n    let blocks = `<nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\" >`;\n    for (let i = 0; i < list?.length; i++) {\n        blocks = blocks +\n       ` <li class=\"breadcrumb-item active\" aria-current=\"page\">${list?.[i].allow}-${list?.[i].name_value}</li> `\n    }\n    blocks = blocks + `</ol></nav>`;\n    root_element.getElementById('geo_data').innerHTML = list?.length ? blocks : '';\n};\n\nrander_html();",
   "style": ".breadcrumb-item + .breadcrumb-item::before {\n            content: '→';\n        }\n        .breadcrumb {\n           \n            background-color: transparent;\n        }"
  },
