@@ -1,0 +1,23 @@
+{
+ "creation": "2024-07-09 10:06:42.227741",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "AVG MONTHLY SALARY OFFERED",
+ "modified": "2024-07-09 10:45:18.035657",
+ "modified_by": "Administrator",
+ "module": "Aisect",
+ "name": "AVG MONTHLY SALARY OFFERED",
+ "owner": "Administrator",
+ "report_field": "average_income",
+ "report_function": "Sum",
+ "report_name": "AVG Monthly Salary Offered",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}
