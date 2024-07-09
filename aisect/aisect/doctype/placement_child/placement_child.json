@@ -144,7 +144,7 @@
    "options": "\nYes\nNo"
   },
   {
-   "depends_on": "eval:(doc.salary_slip=='Yes')",
+   "depends_on": "eval:(doc.salary_slip=='Yes' || doc.bank_statement=='Yes')",
    "fieldname": "second_month_section",
    "fieldtype": "Section Break",
    "label": "Second Month"
@@ -154,7 +154,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:(doc.salary_slip_2=='Yes')",
+   "depends_on": "eval:(doc.salary_slip_2=='Yes' || doc.bank_statement_2=='Yes')",
    "fieldname": "third_month_section",
    "fieldtype": "Section Break",
    "label": "Third Month"
@@ -328,7 +328,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-07 11:28:17.813012",
+ "modified": "2024-07-09 12:48:12.219887",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",
