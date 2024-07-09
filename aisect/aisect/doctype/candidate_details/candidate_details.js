@@ -218,10 +218,6 @@ frappe.ui.form.on("Placement Child", {
             let today = new Date(frm.doc.placement[row.idx-2].employment_end_date);
             today.setDate(today.getDate() + 1);
             frm.cur_grid.grid_form.fields_dict.employment_start_date.$input.datepicker({ minDate: today });
-        }else if(frm.doc.placement[row.idx-2]?.employment_start_date && frm.doc.placement.length >1){
-            let today = new Date(frm.doc.placement[row.idx-2].employment_start_date);
-            today.setDate(today.getDate() + 1);
-            frm.cur_grid.grid_form.fields_dict.employment_start_date.$input.datepicker({ minDate: today });
         }else{
             let today = new Date(frm.doc.certification_date);
             today.setDate(today.getDate() + 1);
