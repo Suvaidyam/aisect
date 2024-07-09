@@ -189,14 +189,26 @@ frappe.ui.form.on("Candidate Details", {
 // Child Table
 let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
+    placement_add(frm, cdt, cdn){
+        let row = frappe.get_doc(cdt, cdn);
+        if(!frm.doc.placement[row.idx-2]?.employment_end_date){
+            frappe.show_alert({message:'Please select employement end date in previous row.',indicator:'red'})
+            frm.cur_grid.remove()
+        }
+
+    },
     form_render(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
        
-        if (row.employment_end_date && frm.doc.__unsaved != 1) {
+        if (row.employment_start_date) {
+            frm.cur_grid.grid_form.fields_dict.employment_start_date.df.read_only = 1;
+            frm.cur_grid.refresh();
+        }
+        if (row.employment_end_date) {
             frm.cur_grid.grid_form.fields_dict.employment_end_date.df.read_only = 1;
             frm.cur_grid.refresh();
         }
-        if (row.name_of_organization && frm.doc.__unsaved != 1) {
+        if (row.name_of_organization) {
             frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
             frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
             frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
@@ -325,7 +337,7 @@ frappe.ui.form.on("Placement Child", {
     },
     salary_slip(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.salary_slip !== "Yes") {
+        if (row.salary_slip !== "Yes" && row.bank_statement !== "Yes") {
             truncate_child_table_field_value(row, frm, [
                 'upload_salary_slip',
                 'bank_statement',
@@ -343,13 +355,23 @@ frappe.ui.form.on("Placement Child", {
     },
     bank_statement(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.bank_statement !== "Yes") {
-            truncate_child_table_field_value(row, frm, ['upload_bank_statement']);
+        if (row.salary_slip !== "Yes" && row.bank_statement !== "Yes") {
+            truncate_child_table_field_value(row, frm, [
+                'upload_bank_statement',
+                'salary_slip_2',
+                'upload_salary_slip_2',
+                'bank_statement_2',
+                'upload_bank_statement_2',
+                'salary_slip_3',
+                'upload_salary_slip_3',
+                'bank_statement_3',
+                'upload_bank_statement_3'
+            ]);
         }
     },
     salary_slip_2(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.salary_slip_2 !== "Yes") {
+        if (row.salary_slip_2 !== "Yes" && row.bank_statement_2 !== "Yes") {
             truncate_child_table_field_value(row, frm, [
                 'upload_salary_slip_2',
                 'bank_statement_2',
@@ -363,8 +385,14 @@ frappe.ui.form.on("Placement Child", {
     },
     bank_statement_2(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.bank_statement_2 !== "Yes") {
-            truncate_child_table_field_value(row, frm, ['upload_bank_statement_2']);
+        if (row.salary_slip_2 !== "Yes" && row.bank_statement_2 !== "Yes") {
+            truncate_child_table_field_value(row, frm, [
+                'upload_salary_slip_2',
+                'salary_slip_3',
+                'upload_salary_slip_3',
+                'bank_statement_3',
+                'upload_bank_statement_3'
+            ]);
         }
     },
     salary_slip_3(frm, cdt, cdn) {
