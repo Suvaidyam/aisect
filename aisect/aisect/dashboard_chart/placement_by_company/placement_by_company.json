@@ -1,36 +1,31 @@
 {
- "chart_name": "Placement Status",
+ "chart_name": "Placement by company",
  "chart_type": "Report",
- "creation": "2024-06-05 15:25:55.566528",
+ "creation": "2024-07-08 18:26:37.912944",
  "docstatus": 0,
  "doctype": "Dashboard Chart",
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 16,
+ "idx": 0,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-22 16:14:28.388874",
+ "modified": "2024-07-08 18:27:57.845591",
  "modified_by": "Administrator",
  "module": "Aisect",
- "name": "Placement Status",
+ "name": "Placement by company",
  "number_of_groups": 0,
  "owner": "Administrator",
- "report_name": "Placement Status",
- "roles": [
-  {
-   "role": "Administrator"
-  }
- ],
+ "report_name": "Placement By Comapny",
+ "roles": [],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
  "type": "Bar",
  "use_report_chart": 0,
- "x_field": "ps",
+ "x_field": "company_name",
  "y_axis": [
   {
-   "color": "#264796",
    "y_field": "count"
   }
  ]

@@ -44,7 +44,7 @@ frappe.router.on('change', async () => {
             $('.search-bar').hide()
         }
         if (cur_router[1] == "Dashboards") {
-            // $('.sidebar-toggle-btn').hide()
+            $('.sidebar-toggle-btn').show()
             $('.layout-side-section').hide();
         } else {
             $('.sidebar-toggle-btn').show()
