@@ -8,10 +8,10 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_df_property('placement', 'read_only', 1);
         }
        
-        // if(frm.doc.assessment_status =='Assessed'){
-        //     frm.set_df_property('project', 'read_only', 1);
-        //     frm.set_df_property('batch_id', 'read_only', 1); 
-        // }
+        if(frm.doc.assessment_status =='Assessed'){
+            frm.set_df_property('project', 'read_only', 1);
+            frm.set_df_property('batch_id', 'read_only', 1); 
+        }
         if (frm.doc.candidate_id != undefined && frm.doc.__unsaved != 1) {
             frm.set_df_property('candidate_id', 'read_only', 1)
         }
@@ -164,8 +164,11 @@ frappe.ui.form.on("Candidate Details", {
     certified_status(frm) {
         if (frm.doc.certified_status !== 'Certified') {
             frm.set_value('placement_status', 'N/A');
+            frm.set_df_property('placement_status', 'read_only', 1);
             frm.set_value('certification_date', '');
             frm.set_value('placement_date', '');
+        }else{
+            frm.set_df_property('placement_status', 'read_only', 0);
         }
     },
     placement_status(frm) {
@@ -243,7 +246,7 @@ frappe.ui.form.on("Placement Child", {
         if (row.monthly_income > 50000 || row.monthly_income < 1) {
             frm.disable_save();
             truncate_child_table_field_value(row, frm, ['monthly_income']);
-            frappe.show_alert({ message: "Monthly income should not exceed Rs 50,000.00", indicator: "yellow" });
+            frappe.show_alert({ message: "Monthly income should be less than 50000.00", indicator: "yellow" });
         } else {
             frm.enable_save();
         }
