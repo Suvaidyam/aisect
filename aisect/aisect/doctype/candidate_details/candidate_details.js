@@ -7,10 +7,10 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_df_property('batch_id', 'read_only', 1);
             frm.set_df_property('placement', 'read_only', 1);
         }
-       
-        if(frm.doc.assessment_status =='Assessed'){
+
+        if (frm.doc.assessment_status == 'Assessed') {
             frm.set_df_property('project', 'read_only', 1);
-            frm.set_df_property('batch_id', 'read_only', 1); 
+            frm.set_df_property('batch_id', 'read_only', 1);
         }
         if (frm.doc.candidate_id != undefined && frm.doc.__unsaved != 1) {
             frm.set_df_property('candidate_id', 'read_only', 1)
@@ -72,7 +72,7 @@ frappe.ui.form.on("Candidate Details", {
         }
         if (frm.doc.certified_status != 'Certified' || frappe.user_roles.includes('Head Office - Assessment Officer') && !frappe.user_roles.includes('Administrator')) {
             frm.set_df_property('placement_status', 'read_only', 1);
-        } else if(frm.doc.placement_status != 'Placed') {
+        } else if (frm.doc.placement_status != 'Placed') {
             frm.set_df_property('placement_status', 'read_only', 0);
         }
         if (frm.doc.placement_status == 'Placed') {
@@ -140,7 +140,7 @@ frappe.ui.form.on("Candidate Details", {
         }
         if (frm.doc.certified_status == 'Certified' && frm.doc.placement_status != 'Placed') {
             frm.set_df_property('placement_status', 'read_only', 0);
-        } else if(frm.doc.placement_status = 'Placed') {
+        } else if (frm.doc.placement_status = 'Placed') {
             frm.set_df_property('placement_status', 'read_only', 1);
         }
     },
@@ -167,7 +167,7 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_df_property('placement_status', 'read_only', 1);
             frm.set_value('certification_date', '');
             frm.set_value('placement_date', '');
-        }else{
+        } else {
             frm.set_df_property('placement_status', 'read_only', 0);
         }
     },
@@ -192,17 +192,17 @@ frappe.ui.form.on("Candidate Details", {
 // Child Table
 let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
-    placement_add(frm, cdt, cdn){
+    placement_add(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if(!frm.doc.placement[row.idx-2]?.employment_end_date && frm.doc.placement.length>1){
-            frappe.show_alert({message:'Please select employement end date in previous row.',indicator:'red'})
+        if (!frm.doc.placement[row.idx - 2]?.employment_end_date && frm.doc.placement.length > 1) {
+            frappe.show_alert({ message: 'Please select employement end date in previous row.', indicator: 'red' })
             frm.cur_grid.remove()
         }
 
     },
     form_render(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-       
+
         if (row.employment_start_date) {
             frm.cur_grid.grid_form.fields_dict.employment_start_date.df.read_only = 1;
             frm.cur_grid.refresh();
@@ -217,11 +217,11 @@ frappe.ui.form.on("Placement Child", {
             frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
             frm.cur_grid.refresh();
         }
-        if(frm.doc.placement[row.idx-2]?.employment_end_date && frm.doc.placement.length >1){
-            let today = new Date(frm.doc.placement[row.idx-2].employment_end_date);
+        if (frm.doc.placement[row.idx - 2]?.employment_end_date && frm.doc.placement.length > 1) {
+            let today = new Date(frm.doc.placement[row.idx - 2].employment_end_date);
             today.setDate(today.getDate() + 1);
             frm.cur_grid.grid_form.fields_dict.employment_start_date.$input.datepicker({ minDate: today });
-        }else{
+        } else {
             let today = new Date(frm.doc.certification_date);
             today.setDate(today.getDate() + 1);
             frm.cur_grid.grid_form.fields_dict.employment_start_date.$input.datepicker({ minDate: today });
@@ -285,9 +285,9 @@ frappe.ui.form.on("Placement Child", {
         let today = new Date(row.employment_start_date);
         today.setDate(today.getDate() + 1);
         frm.cur_grid.grid_form.fields_dict.employment_end_date.$input.datepicker({ minDate: today });
-        if(row.employment_start_date >= row.employment_end_date){
-            truncate_child_table_field_value(row,frm,['employment_end_date'])
-            frappe.show_alert({message:'Employment end date must be greater than Employment start date',indicator:'yellow'})
+        if (row.employment_start_date >= row.employment_end_date) {
+            truncate_child_table_field_value(row, frm, ['employment_end_date'])
+            frappe.show_alert({ message: 'Employment end date must be greater than Employment start date', indicator: 'yellow' })
         }
     },
     job_joined(frm, cdt, cdn) {
@@ -445,5 +445,28 @@ frappe.ui.form.on("Placement Child", {
         const row = locals[cdt][cdn];
         const child_row = row.upload_bank_statement_3;
         pdf_file_condition(frm, child_row, row, 'upload_bank_statement_3')
+    },
+    organization_address: function (frm, cdt, cdn) {
+        const row = frappe.get_doc(cdt, cdn);
+        const data = row.organization_address;
+        if (data && data.length > 50) {
+            frappe.show_alert({ message: `Organization address cannot exceed 50 characters`, indicator: "yellow" });
+            row['organization_address'] = data.slice(0, 50);
+            if (frm.cur_grid) {
+                frm.cur_grid.refresh();
+            }
+        }
+    },
+
+    if_no_give_reason: function (frm, cdt, cdn) {
+        const row = frappe.get_doc(cdt, cdn);
+        const data = row.if_no_give_reason;
+        if (data && data.length > 100) {
+            frappe.show_alert({ message: `Reasons cannot exceed 100 characters`, indicator: "yellow" });
+            row['if_no_give_reason'] = data.slice(0, 100);
+            if (frm.cur_grid) {
+                frm.cur_grid.refresh();
+            }
+        }
     },
 });
