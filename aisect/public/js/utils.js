@@ -216,3 +216,11 @@ const pdf_file_condition = (frm, child_row, row, cur_field) => {
         });
     }
 };
+
+const word_length_validation = (frm, data, field_name, length) => {
+    msg = field_name.replace(/_/g, ' ');
+    if (data && data.length > length) {
+        frappe.show_alert({ message: `${msg} cannot exceed ${length} characters`, indicator: "yellow" });
+        frm.set_value(field_name, data.slice(0, length));
+    }
+}

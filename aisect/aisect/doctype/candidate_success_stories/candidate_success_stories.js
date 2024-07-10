@@ -70,6 +70,7 @@ frappe.ui.form.on("Candidate Success Stories", {
     candidate_image: function (frm) {
         frm.image_uploaded = true;
         const file_url = frm.doc.candidate_image;
+
         const maxFileSize = 2 * 1024 * 1024;
 
         if (file_url) {
@@ -78,23 +79,32 @@ frappe.ui.form.on("Candidate Success Stories", {
                 args: {
                     doctype: "File",
                     filters: { file_url: file_url },
-                    fieldname: ["file_size"]
+                    fieldname: "file_size"
                 },
                 callback: function (response) {
-                    if (!response.message) {
+                    const file_size = response.message?.file_size;
+
+                    if (!file_size) {
                         frappe.show_alert({ message: "File not found", indicator: "red" });
                         frm.set_value('candidate_image', '');
-                        return;
-                    }
-                    const file_size = response.message.file_size;
-                    if (file_size > maxFileSize) {
-                        frm.set_value('candidate_image', '');
+                    } else if (file_size > maxFileSize) {
                         frappe.show_alert({ message: "File size must be less than 2 MB", indicator: "yellow" });
+                        frm.set_value('candidate_image', '');
                     }
                 }
             });
         }
+        const file_extension = file_url.split('.').pop().toLowerCase();
+        const allowed_extensions = ['jpg', 'jpeg', 'png'];
+
+        if (!allowed_extensions.includes(file_extension)) {
+            frappe.show_alert({ message: "Only JPG, JPEG and PNG files are allowed", indicator: "yellow" });
+            frm.set_value('candidate_image', '');
+            return;
+        }
     },
+
+
 
 
 
@@ -119,5 +129,15 @@ frappe.ui.form.on("Candidate Success Stories", {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
-    }
+    },
+
+    achievement_after_training: function (frm) {
+        let data = frm.doc.achievement_after_training;
+        word_length_validation(frm, data, 'achievement_after_training', 500)
+    },
+    remarks_of_the_training: function (frm) {
+        let data = frm.doc.achievement_after_training;
+        word_length_validation(frm, data, 'remarks_of_the_training', 500)
+    },
+
 });

@@ -98,7 +98,7 @@
   {
    "depends_on": "eval:doc.job_joined==='No'",
    "fieldname": "if_no_give_reason",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "If No give Reason",
    "length": 100,
    "mandatory_depends_on": "eval:doc.job_joined==='No'"
@@ -262,7 +262,7 @@
   },
   {
    "fieldname": "organization_address",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Organization Address",
    "length": 50,
    "reqd": 1
@@ -328,7 +328,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-09 21:27:36.921823",
+ "modified": "2024-07-10 17:38:09.366256",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",
