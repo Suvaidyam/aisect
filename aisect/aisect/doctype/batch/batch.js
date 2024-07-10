@@ -17,6 +17,19 @@ frappe.ui.form.on("Batch", {
                 page_length: 1000
             };
         }
+        if(frm.doc.status=='Completed'){
+            frm.set_df_property('zone', 'read_only', 1);
+            frm.set_df_property('state', 'read_only', 1);
+            frm.set_df_property('district', 'read_only', 1);
+            frm.set_df_property('center_location', 'read_only', 1);
+            frm.set_df_property('batch_id', 'read_only', 1);
+            frm.set_df_property('project', 'read_only', 1);
+            frm.set_df_property('sector', 'read_only', 1);
+            frm.set_df_property('job_role', 'read_only', 1);
+            frm.set_df_property('start_date', 'read_only', 1);
+            frm.set_df_property('end_date', 'read_only', 1);
+            frm.set_df_property('expected_assessment_date', 'read_only', 1);
+        }
         check_active(frm, 'zone')
         check_active(frm, 'sector')
         depended_dropdown(frm, frm.doc.zone, 'state', 'zone')
