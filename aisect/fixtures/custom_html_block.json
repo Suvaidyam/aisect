@@ -1,77 +1,77 @@
 [
- {
-  "docstatus": 0,
-  "doctype": "Custom HTML Block",
-  "html": "\n    <div class=\"main-container\" style=\"display: flex; gap: 10px; width:40%\">\n\n  <a href=\"/app/query-report/Candidate%20Placement%20Aging\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n\n    <div class=\"p-3\">\n\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Candidate Placement Aging</div>\n\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\">2</div>\n\n    </div>\n\n  </a>\n\n</div>\n\n ",
-  "modified": "2024-07-05 17:43:58.012804",
-  "name": "Report List",
-  "private": 0,
-  "roles": [],
-  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.services.api.candidate_placement_ging',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    \n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists[0].candidate_count : 0; \n});",
-  "style": null
- },
- {
-  "docstatus": 0,
-  "doctype": "Custom HTML Block",
-  "html": "<div id=\"geo_data\"></div>",
-  "modified": "2024-07-09 10:56:39.759756",
-  "name": "User Assigned Geography",
-  "private": 0,
-  "roles": [
-   {
-    "parent": "User Assigned Geography",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "Zonal Head"
-   },
-   {
-    "parent": "User Assigned Geography",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "State Head"
-   },
-   {
-    "parent": "User Assigned Geography",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "State Placement Coordinator"
-   },
-   {
-    "parent": "User Assigned Geography",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "Centre Head"
-   },
-   {
-    "parent": "User Assigned Geography",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "Centre Placement Coordinator"
-   }
-  ],
-  "script": "const get_permission = async (user) => {\n    let list = await callAPI({\n        method: 'aisect.services.api.user_assign_geography',\n        freeze: true,\n        args: {\n            doctype: \"User Permission\",\n            user: user,\n            view: \"List\",\n            order_by: \"\",\n            group_by: '',\n        },\n\n        freeze_message: __(\"Getting Permissions\"),\n    });\n    return list;\n};\n\nconst rander_html = async ()=>{\n    let user=frappe.user.name;\n    let list = await get_permission(user);\n    let blocks = `<nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\" >`;\n    for (let i = 0; i < list?.length; i++) {\n        blocks = blocks +\n       ` <li class=\"breadcrumb-item active\" aria-current=\"page\">${list?.[i].allow}-${list?.[i].name_value}</li> `\n    }\n    blocks = blocks + `</ol></nav>`;\n    root_element.getElementById('geo_data').innerHTML = list?.length ? blocks : '';\n};\n\nrander_html();",
-  "style": ".breadcrumb-item + .breadcrumb-item::before {\n            content: '→';\n        }\n        .breadcrumb {\n           \n            background-color: transparent;\n        }"
- },
- {
-  "docstatus": 0,
-  "doctype": "Custom HTML Block",
-  "html": "<div class=\"scroll-container-success d-flex\">\n    <div class=\"d-flex success_card_body\">\n    \n    </div>\n    <div aria-hideen=\"true\" class=\"d-flex success_card_body\">\n    \n    </div>\n</div>",
-  "modified": "2024-07-10 13:45:37.266581",
-  "name": "Success Story Live",
-  "private": 0,
-  "roles": [],
-  "script": "\n    async function callAPI(options) {\n        return new Promise((resolve, reject) => {\n            frappe.call({\n                ...options,\n                callback: async function (response) {\n                    resolve(response?.message || response?.value)\n                }\n            });\n        });\n    }\n    \n    callAPI({\n        method: 'aisect.services.api.success_story_data',\n        freeze: true,\n        freeze_message: __(\"Getting\"),\n    }).then(forms_lists => {\n        var card_titles = ``;\n        forms_lists.forEach((item) => {\n            card_titles += `\n                <div>\n                    <div class=\"card\" style=\"min-width: 380px; width:380px; min-height:180px;\">\n                    <div class=\"card-body no-gutters\">\n                        <div class=\"d-flex align-items-center\" style=\"gap:20px;\">\n                            <div class=\"\">\n                          <img src=\"${item?.candidate_image}\" class=\"img\" alt=\"...\">\n                            </div>\n                          <div class=\"\">\n                            <a href=\"/app/candidate-success-stories/${item.name}\">\n                                <h5 class=\"card-title\">${item?.full_name}</h5>\n                            </a>\n                            <h6 class=\"card-subtitle mb-2 text-muted\">${item?.achievement_after_training}</h6>\n                          </div>\n                        </div>\n                    <div class=\"mt-4\">\n                        <span style=\"font-size: 25px;display:block;line-height:0px;color:#264796;\">&#x275D;</span>\n                        <span class=\"card-text\">${item?.remarks_of_the_training}</span>\n                    </div>\n                  </div>\n                </div>\n                </div>\n            `;\n        });\n       \n       root_element.querySelectorAll('.success_card_body').forEach((element)=>{\n           element.innerHTML = card_titles\n       });\n    });\n",
-  "style": ".success_card_body{\n    gap:15px;\n    animation: scroll 14s linear infinite;\n}\n\n.img{\n  width: 3rem;\n  height: 3rem;\n  border-radius: 9999px;\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n  object-fit: cover;\n}\n\n.scroll-container-success{\n    position: relative;\n    overflow: hidden;\n    gap:15px;\n    scroll-behavior: smooth;\n  /*  mask-image: linear-gradient(*/\n  /*      var(--mask-direction, to right),*/\n  /*      hsl(0 0% 0% / 0),*/\n  /*      hsl(0 0% 0% / 1) 2%,*/\n  /*      hsl(0 0% 0% / 1) 98%,*/\n  /*      hsl(0 0% 0% / 0)*/\n  /*);*/\n}\n\n@keyframes scroll {\n    0% {\n        transform: translateX(0);\n    }\n    100% {\n        transform: translateX(calc(-100% - 15px));\n    }\n}\n\n/* Repeat the content to make the scroll effect continuous */\n#success_card_body::after {\n    content: attr(data-content);\n    display: block;\n}\n\n.scroll-container-success:hover .success_card_body {\n    animation-play-state: paused;\n}\n @keyframes fade {\n  to {\n    opacity: 0;\n    visibility: hidden;\n  }\n}"
- },
- {
-  "docstatus": 0,
-  "doctype": "Custom HTML Block",
-  "html": "<div class=\"main-container\" style=\"display: flex; gap: 15px; width: 100%; border: 1px solid #f0f0f0; border-radius: 10px; padding:10px;\">\n  <div class=\"p-2\">\n    <div style=\"font-size: 11.5px; font-weight: 550; margin-bottom: 5px;\">AVG SALARY OFFERED</div>\n    <div class=\"data\" id=\"avg_salary\" style=\"font-size: 20px; font-weight: bold; letter-spacing: 2px;\">₹</div>\n  </div>\n</div>\n",
-  "modified": "2024-07-10 19:41:46.567384",
-  "name": "Avg monthly salary",
-  "private": 0,
-  "roles": [],
-  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.services.api.Avg_monthly_salary',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    console.log(forms_lists)\n    var avg_salary = root_element.getElementById('avg_salary');\n    avg_salary.innerHTML = `<span>₹ ${forms_lists !== undefined ? forms_lists[0].average_income : 0}</span>`; \n});",
-  "style": null
- }
+  {
+    "docstatus": 0,
+    "doctype": "Custom HTML Block",
+    "html": "\n    <div class=\"main-container\" style=\"display: flex; gap: 10px; width:40%\">\n\n  <a href=\"/app/query-report/Candidate%20Placement%20Aging\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n\n    <div class=\"p-3\">\n\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Candidate Placement Aging</div>\n\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\">2</div>\n\n    </div>\n\n  </a>\n\n</div>\n\n ",
+    "modified": "2024-07-05 17:43:58.012804",
+    "name": "Report List",
+    "private": 0,
+    "roles": [],
+    "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.services.api.candidate_placement_ging',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    \n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists[0].candidate_count : 0; \n});",
+    "style": null
+  },
+  {
+    "docstatus": 0,
+    "doctype": "Custom HTML Block",
+    "html": "<div id=\"geo_data\"></div>",
+    "modified": "2024-07-10 23:03:39.525052",
+    "name": "User Assigned Geography",
+    "private": 0,
+    "roles": [
+      {
+        "parent": "User Assigned Geography",
+        "parentfield": "roles",
+        "parenttype": "Custom HTML Block",
+        "role": "Zonal Head"
+      },
+      {
+        "parent": "User Assigned Geography",
+        "parentfield": "roles",
+        "parenttype": "Custom HTML Block",
+        "role": "State Head"
+      },
+      {
+        "parent": "User Assigned Geography",
+        "parentfield": "roles",
+        "parenttype": "Custom HTML Block",
+        "role": "State Placement Coordinator"
+      },
+      {
+        "parent": "User Assigned Geography",
+        "parentfield": "roles",
+        "parenttype": "Custom HTML Block",
+        "role": "Centre Head"
+      },
+      {
+        "parent": "User Assigned Geography",
+        "parentfield": "roles",
+        "parenttype": "Custom HTML Block",
+        "role": "Centre Placement Coordinator"
+      }
+    ],
+    "script": "const get_permission = async (user) => {\n    let list = await callAPI({\n        method: 'aisect.services.api.user_assign_geography',\n        freeze: true,\n        args: {\n            doctype: \"User Permission\",\n            user: user,\n            view: \"List\",\n            order_by: \"\",\n            group_by: '',\n        },\n\n        freeze_message: __(\"Getting Permissions\"),\n    });\n    return list;\n};\n\nconst rander_html = async ()=>{\n    let user=frappe.user.name;\n    let list = await get_permission(user);\n    let blocks = `<nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\" >`;\n    for (let i = 0; i < list?.length; i++) {\n        blocks = blocks +\n       ` <li class=\"breadcrumb-item active\" aria-current=\"page\">${list?.[i].allow}-${list?.[i].name_value}</li> `\n    }\n    blocks = blocks + `</ol></nav>`;\n    root_element.getElementById('geo_data').innerHTML = list?.length ? blocks : '';\n};\n\nrander_html();",
+    "style": ".breadcrumb-item + .breadcrumb-item::before {\n            content: '→';\n            color: rgb(0, 0, 255) !important;\n        }\n        .breadcrumb {\n           \n            background-color: transparent;\n        }\n.breadcrumb-item{\n color: rgb(0, 0, 255) !important;\n    font-size:15px;\n}        "
+  },
+  {
+    "docstatus": 0,
+    "doctype": "Custom HTML Block",
+    "html": "<div class=\"scroll-container-success d-flex\">\n    <div class=\"d-flex success_card_body\">\n    \n    </div>\n    <div aria-hideen=\"true\" class=\"d-flex success_card_body\">\n    \n    </div>\n</div>",
+    "modified": "2024-07-10 13:45:37.266581",
+    "name": "Success Story Live",
+    "private": 0,
+    "roles": [],
+    "script": "\n    async function callAPI(options) {\n        return new Promise((resolve, reject) => {\n            frappe.call({\n                ...options,\n                callback: async function (response) {\n                    resolve(response?.message || response?.value)\n                }\n            });\n        });\n    }\n    \n    callAPI({\n        method: 'aisect.services.api.success_story_data',\n        freeze: true,\n        freeze_message: __(\"Getting\"),\n    }).then(forms_lists => {\n        var card_titles = ``;\n        forms_lists.forEach((item) => {\n            card_titles += `\n                <div>\n                    <div class=\"card\" style=\"min-width: 380px; width:380px; min-height:180px;\">\n                    <div class=\"card-body no-gutters\">\n                        <div class=\"d-flex align-items-center\" style=\"gap:20px;\">\n                            <div class=\"\">\n                          <img src=\"${item?.candidate_image}\" class=\"img\" alt=\"...\">\n                            </div>\n                          <div class=\"\">\n                            <a href=\"/app/candidate-success-stories/${item.name}\">\n                                <h5 class=\"card-title\">${item?.full_name}</h5>\n                            </a>\n                            <h6 class=\"card-subtitle mb-2 text-muted\">${item?.achievement_after_training}</h6>\n                          </div>\n                        </div>\n                    <div class=\"mt-4\">\n                        <span style=\"font-size: 25px;display:block;line-height:0px;color:#264796;\">&#x275D;</span>\n                        <span class=\"card-text\">${item?.remarks_of_the_training}</span>\n                    </div>\n                  </div>\n                </div>\n                </div>\n            `;\n        });\n       \n       root_element.querySelectorAll('.success_card_body').forEach((element)=>{\n           element.innerHTML = card_titles\n       });\n    });\n",
+    "style": ".success_card_body{\n    gap:15px;\n    animation: scroll 14s linear infinite;\n}\n\n.img{\n  width: 3rem;\n  height: 3rem;\n  border-radius: 9999px;\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n  object-fit: cover;\n}\n\n.scroll-container-success{\n    position: relative;\n    overflow: hidden;\n    gap:15px;\n    scroll-behavior: smooth;\n  /*  mask-image: linear-gradient(*/\n  /*      var(--mask-direction, to right),*/\n  /*      hsl(0 0% 0% / 0),*/\n  /*      hsl(0 0% 0% / 1) 2%,*/\n  /*      hsl(0 0% 0% / 1) 98%,*/\n  /*      hsl(0 0% 0% / 0)*/\n  /*);*/\n}\n\n@keyframes scroll {\n    0% {\n        transform: translateX(0);\n    }\n    100% {\n        transform: translateX(calc(-100% - 15px));\n    }\n}\n\n/* Repeat the content to make the scroll effect continuous */\n#success_card_body::after {\n    content: attr(data-content);\n    display: block;\n}\n\n.scroll-container-success:hover .success_card_body {\n    animation-play-state: paused;\n}\n @keyframes fade {\n  to {\n    opacity: 0;\n    visibility: hidden;\n  }\n}"
+  },
+  {
+    "docstatus": 0,
+    "doctype": "Custom HTML Block",
+    "html": "<div class=\"main-container\" style=\"display: flex; gap: 15px; width: 100%; border: 1px solid #f0f0f0; border-radius: 10px; padding:10px;\">\n  <div class=\"p-2\">\n    <div style=\"font-size: 11.5px; font-weight: 550; margin-bottom: 5px;\">AVG SALARY OFFERED</div>\n    <div class=\"data\" id=\"avg_salary\" style=\"font-size: 20px; font-weight: bold; letter-spacing: 2px;\">₹</div>\n  </div>\n</div>\n",
+    "modified": "2024-07-10 19:41:46.567384",
+    "name": "Avg monthly salary",
+    "private": 0,
+    "roles": [],
+    "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.services.api.Avg_monthly_salary',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var avg_salary = root_element.getElementById('avg_salary');\n    avg_salary.innerHTML = `<span>₹ ${forms_lists !== undefined ? forms_lists[0].average_income : 0}</span>`; \n});",
+    "style": null
+  }
 ]
