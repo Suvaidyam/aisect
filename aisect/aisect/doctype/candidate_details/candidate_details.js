@@ -191,7 +191,7 @@ let pin_codePattern = /^\d{6}$/;
 frappe.ui.form.on("Placement Child", {
     placement_add(frm, cdt, cdn){
         let row = frappe.get_doc(cdt, cdn);
-        if(!frm.doc.placement[row.idx-2]?.employment_end_date){
+        if(!frm.doc.placement[row.idx-2]?.employment_end_date && frm.doc.placement.length>1){
             frappe.show_alert({message:'Please select employement end date in previous row.',indicator:'red'})
             frm.cur_grid.remove()
         }
