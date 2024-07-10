@@ -66,8 +66,8 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
-  "html": "<div class=\"main-container\" style=\"display: flex; gap: 15px; width: 100%; border: 1px solid #f0f0f0; border-radius: 10px; padding:10px;\">\n  <div class=\"p-2\">\n    <div style=\"font-size: 11.5px; font-weight: 550; margin-bottom: 5px;\">Avg Monthly Salary Offered</div>\n    <div class=\"data\" id=\"avg_salary\" style=\"font-size: 20px; font-weight: bold; letter-spacing: 2px;\">₹</div>\n  </div>\n</div>\n",
-  "modified": "2024-07-10 13:43:37.910504",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 15px; width: 100%; border: 1px solid #f0f0f0; border-radius: 10px; padding:10px;\">\n  <div class=\"p-2\">\n    <div style=\"font-size: 11.5px; font-weight: 550; margin-bottom: 5px;\">AVG SALARY OFFERED</div>\n    <div class=\"data\" id=\"avg_salary\" style=\"font-size: 20px; font-weight: bold; letter-spacing: 2px;\">₹</div>\n  </div>\n</div>\n",
+  "modified": "2024-07-10 19:41:46.567384",
   "name": "Avg monthly salary",
   "private": 0,
   "roles": [],
