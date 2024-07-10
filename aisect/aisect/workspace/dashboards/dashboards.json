@@ -2,43 +2,47 @@
  "charts": [
   {
    "chart_name": "Placement by project type",
-   "label": "Placement by project type"
+   "label": "Placements by project type"
   },
   {
-   "chart_name": "Placement by company",
-   "label": "Placement by company"
-  },
-  {
-   "chart_name": "Gender Ratio",
-   "label": "Placement by gender ratio"
-  },
-  {
-   "chart_name": "Placement by job role",
-   "label": "Placement by job role"
-  },
-  {
-   "chart_name": "Placement by salary range",
-   "label": "Placement by salary range"
+   "chart_name": "Placement By State",
+   "label": "Placements By State"
   },
   {
    "chart_name": "Candidate Aging",
    "label": "Distribution of certified candidate as per aging range"
   },
   {
+   "chart_name": "Placement by company",
+   "label": "Placements by company"
+  },
+  {
    "chart_name": "Placement by sector",
-   "label": "Placement by sector"
+   "label": "Placements by sector"
+  },
+  {
+   "chart_name": "Placement by job role",
+   "label": "Placements by job role"
+  },
+  {
+   "chart_name": "Placement by salary range",
+   "label": "Placements by salary range"
+  },
+  {
+   "chart_name": "Gender Ratio",
+   "label": "Placements by gender ratio"
   }
  ],
- "content": "[{\"id\":\"yNFV4Gh6SU\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"User Assigned Geography\",\"col\":12}},{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":4}},{\"id\":\"6S4SnwlYpi\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Avg monthly salary\",\"col\":4}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":4}},{\"id\":\"FefxbYj7py\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by project type\",\"col\":12}},{\"id\":\"UylqqYySGI\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by company\",\"col\":12}},{\"id\":\"aCuX_XQkaV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by sector\",\"col\":12}},{\"id\":\"vJ42WVugYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by job role\",\"col\":12}},{\"id\":\"Tf-EVCYkv5\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by salary range\",\"col\":12}},{\"id\":\"L_reS5fdYW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of certified candidate as per aging range\",\"col\":6}},{\"id\":\"nqZVJtlcJ9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placement by gender ratio\",\"col\":6}},{\"id\":\"WeeluJFoDU\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Candidates Success Story</b></span>\",\"col\":12}},{\"id\":\"EyHk-z6XrN\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Success Story Live\",\"col\":12}}]",
+ "content": "[{\"id\":\"yNFV4Gh6SU\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"User Assigned Geography\",\"col\":12}},{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":4}},{\"id\":\"ebQ8rbKPmE\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Avg monthly salary\",\"col\":4}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":4}},{\"id\":\"T3dCG-TRqW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 1st month salary slip\",\"col\":3}},{\"id\":\"ER0-QnhOQL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 2nd month salary slip\",\"col\":3}},{\"id\":\"B-y6wV3VA-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 3rd month salary slip\",\"col\":3}},{\"id\":\"fcQtCe2hmc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of Companies where candidates are placed\",\"col\":3}},{\"id\":\"FefxbYj7py\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placements by project type\",\"col\":12}},{\"id\":\"UylqqYySGI\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placements by company\",\"col\":12}},{\"id\":\"aCuX_XQkaV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placements by sector\",\"col\":12}},{\"id\":\"vJ42WVugYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placements by job role\",\"col\":12}},{\"id\":\"Tf-EVCYkv5\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placements by salary range\",\"col\":6}},{\"id\":\"L_reS5fdYW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of certified candidate as per aging range\",\"col\":6}},{\"id\":\"gaOqNwwKbF\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placements By State\",\"col\":12}},{\"id\":\"nqZVJtlcJ9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placements by gender ratio\",\"col\":6}},{\"id\":\"BXWDj2Ysfh\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Candidate Success Stories</b></span>\",\"col\":12}},{\"id\":\"EyHk-z6XrN\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Success Story Live\",\"col\":12}}]",
  "creation": "2024-06-14 17:40:37.410864",
  "custom_blocks": [
   {
-   "custom_block_name": "Avg monthly salary",
-   "label": "Avg monthly salary"
-  },
-  {
    "custom_block_name": "Success Story Live",
    "label": "Success Story Live"
+  },
+  {
+   "custom_block_name": "Avg monthly salary",
+   "label": "Avg monthly salary"
   },
   {
    "custom_block_name": "User Assigned Geography",
@@ -55,7 +59,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-07-10 13:38:31.202004",
+ "modified": "2024-07-10 14:38:20.403342",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
@@ -65,12 +69,28 @@
    "number_card_name": "Registered Candidates"
   },
   {
+   "label": "Candidates with 1st month salary slip",
+   "number_card_name": "Candidates with 1st month salary slip"
+  },
+  {
+   "label": "No. of Companies where candidates are placed",
+   "number_card_name": "No. of Companies where candidates are placed"
+  },
+  {
    "label": "Assessed Candidates",
    "number_card_name": "Assessed Candidates"
   },
   {
+   "label": "Candidates with 2nd month salary slip",
+   "number_card_name": "Candidates with 2nd month salary slip"
+  },
+  {
    "label": "Certified Candidates",
    "number_card_name": "Certified Candidates"
+  },
+  {
+   "label": "Candidates with 3rd month salary slip",
+   "number_card_name": "Candidates with 3rd month salary slip"
   },
   {
    "label": "Placed Candidates",
