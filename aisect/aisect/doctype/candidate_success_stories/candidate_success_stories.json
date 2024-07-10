@@ -50,7 +50,7 @@
   },
   {
    "fieldname": "remarks_of_the_training",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Remarks of the training",
    "reqd": 1
   },
@@ -60,7 +60,7 @@
   },
   {
    "fieldname": "achievement_after_training",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Achievement after Training",
    "reqd": 1
   },
@@ -134,7 +134,8 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 13:27:42.476379",
+ "make_attachments_public": 1,
+ "modified": "2024-07-10 18:15:36.381185",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Success Stories",

@@ -67,36 +67,9 @@ frappe.ui.form.on("Candidate Success Stories", {
         hide_advance_search(frm, ['name_of_the_candidate', 'project', 'batch_id', 'sector', 'job_role']);
     },
 
-    candidate_image: function (frm) {
+    candidate_image: function async(frm) {
         frm.image_uploaded = true;
-        const file_url = frm.doc.candidate_image;
-        const maxFileSize = 2 * 1024 * 1024;
-
-        if (file_url) {
-            frappe.call({
-                method: "frappe.client.get_value",
-                args: {
-                    doctype: "File",
-                    filters: { file_url: file_url },
-                    fieldname: ["file_size"]
-                },
-                callback: function (response) {
-                    if (!response.message) {
-                        frappe.show_alert({ message: "File not found", indicator: "red" });
-                        frm.set_value('candidate_image', '');
-                        return;
-                    }
-                    const file_size = response.message.file_size;
-                    if (file_size > maxFileSize) {
-                        frm.set_value('candidate_image', '');
-                        frappe.show_alert({ message: "File size must be less than 2 MB", indicator: "yellow" });
-                    }
-                }
-            });
-        }
     },
-
-
 
     name_of_the_candidate: function (frm) {
         if (frm.doc.name_of_the_candidate) {
@@ -119,5 +92,48 @@ frappe.ui.form.on("Candidate Success Stories", {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
-    }
+        const file_url = frm.doc.candidate_image;
+        const maxFileSize = 2 * 1024 * 1024; // 2 MB
+
+        if (file_url) {
+            // Check file format
+            const file_extension = file_url.split('.').pop().toLowerCase();
+            const allowed_extensions = ['jpg', 'jpeg', 'png'];
+            if (!allowed_extensions.includes(file_extension)) {
+                frappe.show_alert({ message: "Only JPG, JPEG, and PNG files are allowed", indicator: "yellow" });
+                frm.set_value('candidate_image', '');
+                return;
+            }
+
+            // Check file size
+            frappe.call({
+                method: "frappe.client.get_value",
+                args: {
+                    doctype: "File",
+                    filters: { file_url: file_url },
+                    fieldname: "file_size"
+                },
+                callback: function (response) {
+                    const file_size = response.message?.file_size;
+                    if (!file_size) {
+                        frappe.show_alert({ message: "File not found", indicator: "red" });
+                        frm.set_value('candidate_image', '');
+                    } else if (file_size > maxFileSize) {
+                        frappe.show_alert({ message: "File size must be less than 2 MB", indicator: "yellow" });
+                        frm.set_value('candidate_image', '');
+                    }
+                }
+            });
+        }
+    },
+
+    achievement_after_training: function (frm) {
+        let data = frm.doc.achievement_after_training;
+        word_length_validation(frm, data, 'achievement_after_training', 500)
+    },
+    remarks_of_the_training: function (frm) {
+        let data = frm.doc.achievement_after_training;
+        word_length_validation(frm, data, 'remarks_of_the_training', 500)
+    },
+
 });
