@@ -7,11 +7,11 @@ from frappe.model.document import Document
 from aisect.services.api import is_batch_completed
 
 class CandidateDetails(Document):
-    def validate(self):
-        if self.assessment_status !='Assessed':
-            is_completed = is_batch_completed(self.batch_id)
-            if is_completed:
-                frappe.throw('The batch is already completed.')
+    # def validate(self):
+    #     if self.assessment_status !='Assessed':
+    #         is_completed = is_batch_completed(self.batch_id)
+    #         if is_completed:
+    #             frappe.throw('The batch is already completed.')
         
     def before_save(self):
         self.full_name = self.first_name+' '+self.last_name
