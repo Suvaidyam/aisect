@@ -30,7 +30,7 @@ def set_candidate_status():
             
             for candidate in candidates:
                 try: 
-                    date_90_days = current_date + timedelta(days=90)
+                    date_90_days = item.end_date + timedelta(days=90)
                     frappe.db.set_value('Candidate Details', candidate.name,{'placement_due_date':date_90_days})
                     
                     if item.expected_assessment_date <= current_date:
