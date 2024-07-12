@@ -38,7 +38,7 @@ def set_candidate_status():
                             {
                                 'current_status':'Assessed',
                                 'assessment_status':'Assessed',
-                                'assessment_date':current_date
+                                'assessment_date':item.expected_assessment_date
                             })
                 except Exception as e:
                     print(f"Error updating candidate {candidate['name']}: {e}")
