@@ -267,14 +267,13 @@ frappe.ui.form.on("Placement Child", {
             frm.cur_grid.refresh();
         }
     },
-    mobile_number(frm, cdt, cdn) {
+    mobile_no(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (!mobilePattern.test(row.mobile_number)) {
+        if (!mobilePattern.test(row.mobile_no)) {
             frm.disable_save();
-            frappe.msgprint({
-                title: __('Validation Error'),
-                indicator: 'red',
-                message: __(`Enter valid mobile number in row ${row.idx}`)
+            frappe.show_alert({
+                message: __(`Enter valid mobile number in row ${row.idx}`),
+                indicator: 'red'
             });
         } else {
             frm.enable_save();
