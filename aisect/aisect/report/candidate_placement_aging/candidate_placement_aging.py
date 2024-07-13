@@ -25,7 +25,7 @@ def execute(filters=None):
 	if filters and filters.project:
 		str += f" AND cd.project = '{filters.project}'"
 	if filters and filters.remaining_day =='1-30 days':
-		having_str += f" HAVING remaining_days <= 30"
+		having_str += f" HAVING remaining_days > 0 AND remaining_days <= 30"
 	elif filters and filters.remaining_day =='30-60 days':
 		having_str += f" HAVING remaining_days > 30 AND remaining_days <= 60"
 	elif filters and filters.remaining_day =='60-90 days':
