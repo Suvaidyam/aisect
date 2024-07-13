@@ -25,7 +25,7 @@ def execute(filters=None):
 	if filters and filters.project:
 		str += f" AND cd.project = '{filters.project}'"
 	if filters and filters.remaining_day =='1-30 days':
-		having_str += f" HAVING remaining_days <= 30"
+		having_str += f" HAVING remaining_days > 0 AND remaining_days <= 30"
 	elif filters and filters.remaining_day =='30-60 days':
 		having_str += f" HAVING remaining_days > 30 AND remaining_days <= 60"
 	elif filters and filters.remaining_day =='60-90 days':
@@ -117,7 +117,7 @@ def execute(filters=None):
 					ct.center_location_name,
 					COUNT(cd.candidate_id) as candidate_count,
 					cd.placement_due_date AS due_date,
-					DATEDIFF(cd.placement_due_date, CURRENT_DATE) AS remaining_days,
+					GREATEST(DATEDIFF(cd.placement_due_date, CURRENT_DATE), 0) AS remaining_days,
 					ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
 					ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) AS achievement,
 					CASE 
