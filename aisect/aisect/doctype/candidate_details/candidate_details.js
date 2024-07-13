@@ -124,9 +124,6 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     after_save(frm) {
-        if (frm.doc.center_location_code != undefined && frm.doc.__unsaved != 1) {
-            frm.set_df_property('center_location_code', 'read_only', 1)
-        }
         if (frm.doc.aadhar_number) {
             if (!isValidAadhaar(frm.doc.aadhar_number)) {
                 frappe.throw('Enter valid aadhar number');
@@ -140,7 +137,7 @@ frappe.ui.form.on("Candidate Details", {
         }
         if (frm.doc.certified_status == 'Certified' && frm.doc.placement_status != 'Placed') {
             frm.set_df_property('placement_status', 'read_only', 0);
-        } else if (frm.doc.placement_status = 'Placed') {
+        } else if (frm.doc.placement_status == 'Placed') {
             frm.set_df_property('placement_status', 'read_only', 1);
         }
     },
@@ -163,10 +160,11 @@ frappe.ui.form.on("Candidate Details", {
     },
     certified_status(frm) {
         if (frm.doc.certified_status !== 'Certified') {
-            frm.set_value('placement_status', 'N/A');
-            frm.set_df_property('placement_status', 'read_only', 1);
-            frm.set_value('certification_date', '');
             frm.set_value('placement_date', '');
+            frm.set_value('certification_date', '');
+            frm.set_value('placement_status', 'N/A');
+            frm.set_value('placement', []);
+            frm.set_df_property('placement_status', 'read_only', 1);
         } else {
             frm.set_df_property('placement_status', 'read_only', 0);
         }

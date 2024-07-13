@@ -57,7 +57,8 @@ def execute(filters=None):
 						`tabCandidate Details` AS ca
 					INNER JOIN 
 						`tabPlacement Child` AS pc ON pc.parent = ca.candidate_id
-					WHERE 1 = 1 {str}
+					WHERE ca.current_status='Placed'
+					{str}
 					GROUP BY
 						monthly_income_range) AS counts
 				ON
