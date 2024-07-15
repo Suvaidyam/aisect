@@ -37,20 +37,20 @@ def execute(filters=None):
 					ranges.monthly_income_range,
 					COALESCE(candidate_count, 0) AS candidate_count
 				FROM
-					(SELECT 'Less than Rs. 5000' AS monthly_income_range
+					(SELECT '< 5000' AS monthly_income_range
 					UNION ALL
-					SELECT 'Rs. 5000 to 10000'
+					SELECT '5000 to 10000'
 					UNION ALL
-					SELECT 'Rs. 10000 to 15000'
+					SELECT '10000 to 15000'
 					UNION ALL
-					SELECT 'More than Rs. 15000') AS ranges
+					SELECT '> 15000') AS ranges
 				LEFT JOIN
 					(SELECT
 						CASE
-							WHEN pc.monthly_income < 5000 THEN 'Less than Rs. 5000'
-							WHEN pc.monthly_income BETWEEN 5000 AND 10000 THEN 'Rs. 5000 to 10000'
-							WHEN pc.monthly_income BETWEEN 10000 AND 15000 THEN 'Rs. 10000 to 15000'
-							ELSE 'More than Rs. 15000'
+							WHEN pc.monthly_income < 5000 THEN '< 5000'
+							WHEN pc.monthly_income BETWEEN 5000 AND 10000 THEN '5000 to 10000'
+							WHEN pc.monthly_income BETWEEN 10000 AND 15000 THEN '10000 to 15000'
+							ELSE '> 15000'
 						END AS monthly_income_range,
 						COUNT(*) AS candidate_count
 					FROM
@@ -64,7 +64,7 @@ def execute(filters=None):
 				ON
 					ranges.monthly_income_range = counts.monthly_income_range
 				ORDER BY
-					FIELD(ranges.monthly_income_range, 'Less than Rs. 5000', 'Rs. 5000 to 10000', 'Rs. 10000 to 15000', 'More than Rs. 15000');
+					FIELD(ranges.monthly_income_range, '< 5000', '5000 to 10000', '10000 to 15000', '> 15000');
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
