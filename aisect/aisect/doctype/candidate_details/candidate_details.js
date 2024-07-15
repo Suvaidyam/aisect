@@ -165,9 +165,7 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_value('placement_status', 'N/A');
             frm.set_value('placement', []);
             frm.set_df_property('placement_status', 'read_only', 1);
-        } else {
-            frm.set_df_property('placement_status', 'read_only', 0);
-        }
+        } 
     },
     placement_status(frm) {
         if (frm.doc.placement_status !== 'Placed') {

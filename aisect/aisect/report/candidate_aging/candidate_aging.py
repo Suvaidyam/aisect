@@ -34,7 +34,7 @@ def execute(filters=None):
 	]
 	sql_query = f"""
 				SELECT 
-					'Under 30 days' AS aging,
+					'< 30 days' AS aging,
 					COUNT(*) AS count
 				FROM 
 					`tabCandidate Details` AS ca
@@ -62,7 +62,7 @@ def execute(filters=None):
 					AND ca.current_status IN ('Assessed','Certified'){str}
 				UNION ALL
 				SELECT 
-					'More than 90 days' AS aging,
+					'> 90 days' AS aging,
 					COUNT(*) AS count
 				FROM 
 					`tabCandidate Details` AS ca
