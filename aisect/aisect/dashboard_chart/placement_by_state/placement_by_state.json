@@ -8,10 +8,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 0,
+ "idx": 3,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-10 14:16:45.074949",
+ "modified": "2024-07-15 11:22:54.785483",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement By State",
@@ -25,9 +25,6 @@
   },
   {
    "role": "Head Office (PMU)"
-  },
-  {
-   "role": "Head Office - Assessment Officer"
   }
  ],
  "source": "",
