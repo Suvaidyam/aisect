@@ -2,8 +2,8 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
-  "html": "\n    <div class=\"main-container-report\" style=\"display: flex; gap: 10px; width:40%\">\n\n  <a href=\"/app/query-report/Candidate%20Placement%20Aging\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n\n    <div class=\"p-3\">\n\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Candidate Placement Aging</div>\n\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\">2</div>\n\n    </div>\n\n  </a>\n\n</div>\n\n ",
-  "modified": "2024-07-12 15:13:00.562102",
+  "html": "\n    <div class=\"main-container-report\" style=\"display: flex; gap: 10px; width:40%\">\n\n  <a href=\"/app/query-report/Placement%20Target%20vs%20Achievement\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n\n    <div class=\"p-3\">\n\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Placement Target vs Achievement</div>\n\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\">0</div>\n\n    </div>\n\n  </a>\n\n</div>\n\n ",
+  "modified": "2024-07-16 11:26:06.136855",
   "name": "Report List",
   "private": 0,
   "roles": [],

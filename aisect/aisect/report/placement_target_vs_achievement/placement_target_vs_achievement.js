@@ -1,5 +1,7 @@
 // Copyright (c) 2024, Rahul Sah and contributors
 // For license information, please see license.txt
+// Copyright (c) 2024, Rahul Sah and contributors
+// For license information, please see license.txt
 
 var filters = []
 
@@ -58,7 +60,7 @@ filters.push({
         "label": "Remaining days",
         "options": "\n0 day\n1-30 days\n30-60 days\n60-90 days"
     })
-frappe.query_reports["Candidate Placement Aging"] = {
+frappe.query_reports["Placement Target vs Achievement"] = {
     filters: filters,
     formatter:function(value,k,column){
         if(column.fieldname=="batch_id"){
@@ -68,3 +70,4 @@ frappe.query_reports["Candidate Placement Aging"] = {
         }
     }
 };
+
