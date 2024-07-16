@@ -67,11 +67,11 @@
   "docstatus": 0,
   "doctype": "Custom HTML Block",
   "html": "<div class=\"main-container\" style=\"display: flex; gap: 15px; width: 100%; border: 1px solid #f0f0f0; border-radius: 10px; padding:10px;\">\n  <div class=\"p-2\">\n    <div style=\"font-size: 11.5px; font-weight: 550; margin-bottom: 5px;\">AVG SALARY OFFERED</div>\n    <div class=\"data\" id=\"avg_salary\" style=\"font-size: 20px; font-weight: bold; letter-spacing: 2px;\">₹</div>\n  </div>\n</div>\n",
-  "modified": "2024-07-11 11:15:39.152079",
+  "modified": "2024-07-16 15:07:03.609128",
   "name": "Avg monthly salary",
   "private": 0,
   "roles": [],
-  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.services.api.Avg_monthly_salary',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var avg_salary = root_element.getElementById('avg_salary');\n    avg_salary.innerHTML = `<span>₹ ${forms_lists[0]?.average_income ?? 0}</span>`; \n});",
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.services.api.Avg_monthly_salary',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n   var avg_salary = root_element.getElementById('avg_salary');\n    var formattedIncome = forms_lists[0]?.average_income ? forms_lists[0].average_income.toLocaleString('en-IN') : 0;\n    avg_salary.innerHTML = `<span>₹ ${formattedIncome}</span>`; \n});",
   "style": null
  }
 ]
