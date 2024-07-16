@@ -8,10 +8,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 3,
+ "idx": 8,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-15 11:22:54.785483",
+ "modified": "2024-07-16 12:42:12.984736",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement By State",
@@ -37,6 +37,7 @@
  "x_field": "state",
  "y_axis": [
   {
+   "color": "#ff7b2e",
    "y_field": "count"
   }
  ]

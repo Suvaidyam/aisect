@@ -2,8 +2,8 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
-  "html": "\n    <div class=\"main-container-report\" style=\"display: flex; gap: 10px; width:40%\">\n\n  <a href=\"/app/query-report/Placement%20Target%20vs%20Achievement\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n\n    <div class=\"p-3\">\n\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Placement Target vs Achievement</div>\n\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\">0</div>\n\n    </div>\n\n  </a>\n\n</div>\n\n ",
-  "modified": "2024-07-16 11:26:06.136855",
+  "html": "\n    <div class=\"main-container-report\" style=\"display: flex; gap: 10px; width:40%\">\n\n  <a href=\"/app/query-report/Placement%20Target%20vs%20Achievement\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n\n    <div class=\"p-3\">\n\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Placement Target vs Achievement</div>\n\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\">0</div>\n\n    </div>\n\n  </a>\n\n</div>\n\n ",
+  "modified": "2024-07-16 13:26:15.142211",
   "name": "Report List",
   "private": 0,
   "roles": [],
@@ -14,7 +14,7 @@
   "docstatus": 0,
   "doctype": "Custom HTML Block",
   "html": "<div id=\"geo_data\"></div>",
-  "modified": "2024-07-10 23:03:39.525052",
+  "modified": "2024-07-16 13:38:02.915036",
   "name": "User Assigned Geography",
   "private": 0,
   "roles": [
@@ -49,8 +49,8 @@
     "role": "Centre Placement Coordinator"
    }
   ],
-  "script": "const get_permission = async (user) => {\n    let list = await callAPI({\n        method: 'aisect.services.api.user_assign_geography',\n        freeze: true,\n        args: {\n            doctype: \"User Permission\",\n            user: user,\n            view: \"List\",\n            order_by: \"\",\n            group_by: '',\n        },\n\n        freeze_message: __(\"Getting Permissions\"),\n    });\n    return list;\n};\n\nconst rander_html = async ()=>{\n    let user=frappe.user.name;\n    let list = await get_permission(user);\n    let blocks = `<nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\" >`;\n    for (let i = 0; i < list?.length; i++) {\n        blocks = blocks +\n       ` <li class=\"breadcrumb-item active\" aria-current=\"page\">${list?.[i].allow}-${list?.[i].name_value}</li> `\n    }\n    blocks = blocks + `</ol></nav>`;\n    root_element.getElementById('geo_data').innerHTML = list?.length ? blocks : '';\n};\n\nrander_html();",
-  "style": ".breadcrumb-item + .breadcrumb-item::before {\n            content: '→';\n            color: rgb(0, 0, 255) !important;\n        }\n        .breadcrumb {\n           \n            background-color: transparent;\n        }\n.breadcrumb-item{\n color: rgb(0, 0, 255) !important;\n    font-size:15px;\n}        "
+  "script": "const get_permission = async (user) => {\n    let list = await callAPI({\n        method: 'aisect.services.api.user_assign_geography',\n        freeze: true,\n        args: {\n            doctype: \"User Permission\",\n            user: user,\n            view: \"List\",\n            order_by: \"\",\n            group_by: '',\n        },\n\n        freeze_message: __(\"Getting Permissions\"),\n    });\n    return list;\n};\n\nconst rander_html = async ()=>{\n    let user=frappe.user.name;\n    let list = await get_permission(user);\n    let blocks = `<nav aria-label=\"breadcrumb\" class=\"d-flex align-items-baseline justify-content-between\">\n            <ol class=\"breadcrumb\" >`;\n    for (let i = 0; i < list?.length; i++) {\n        blocks = blocks +\n       ` <li class=\"breadcrumb-item active\" aria-current=\"page\">${list?.[i].allow}:-${list?.[i].name_value}</li> `\n    }\n    blocks = blocks + `</ol><p class=\"user_name_a\">${frappe.session.user_fullname}</p></nav>`;\n    root_element.getElementById('geo_data').innerHTML = list?.length ? blocks : '';\n};\n\nrander_html();",
+  "style": ".breadcrumb-item + .breadcrumb-item::before {\n            content: '→';\n            color: rgb(0, 0, 255) !important;\n        }\n        .breadcrumb {\n           \n            background-color: transparent;\n        }\n.breadcrumb-item{\n color: rgb(0, 0, 255) !important;\n    font-size:15px;\n}        \n.user_name_a{\n color: rgb(0, 0, 255) !important;\n    font-size:15px;\n}        "
  },
  {
   "docstatus": 0,

@@ -14,7 +14,10 @@ class CandidateDetails(Document):
     #             frappe.throw('The batch is already completed.')
         
     def before_save(self):
-        self.full_name = self.first_name+' '+self.last_name
+        if self.last_name:
+            self.full_name = self.first_name+' '+self.last_name
+        else:
+            self.full_name = self.first_name
         if self.assessment_status and self.certified_status and self.placement_status and self.certified_status!='N/A' and self.placement_status!='N/A':
             self.current_status = self.placement_status
         elif self.assessment_status and self.certified_status and self.certified_status!='N/A':
