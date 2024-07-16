@@ -18,6 +18,7 @@
   {
    "fieldname": "state",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "State",
    "options": "State",
@@ -29,11 +30,12 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nIncative"
+   "options": "Active\nInactive"
   },
   {
    "fieldname": "zone",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "label": "Zone",
    "options": "Zone",
    "reqd": 1
@@ -41,6 +43,7 @@
   {
    "fieldname": "sector",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Sector",
    "options": "Sector",
    "reqd": 1
@@ -57,12 +60,12 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Company Type",
-   "options": "\nPvt Ltd\nProprietor\nPrivate Company\nProprietor Ship\nComputer Centre",
-   "reqd": 1
+   "options": "\nPvt Ltd\nProprietor\nPrivate Company\nProprietor Ship\nComputer Centre"
   },
   {
    "fieldname": "district",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "District",
    "options": "District",
@@ -72,7 +75,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 20:26:34.119472",
+ "modified": "2024-07-16 13:21:10.237898",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
