@@ -14,6 +14,10 @@ def execute(filters=None):
 		str += f" AND cd.zone = '{zone or filters.zone}'"
 	if state or filters.state:
 		str += f" AND cd.state = '{state or filters.state}'"
+	if filters.project:
+		str += f" AND cd.project = '{filters.project}'"
+	if filters.district:
+		str += f" AND cd.district = '{filters.district}'"
 	if center or filters.center:
 		str += f" AND cd.center_location = '{center or filters.center}'"
 	if filters and filters.batch_id:

@@ -2,43 +2,89 @@
 // For license information, please see license.txt
 var filters = [
   {
-    "fieldname": "batch_id",
-    "fieldtype": "Link",
-    "label": "Batch",
-    "options": "Batch"
-  }
-]
-
-if (frappe.user_roles.includes('Head Office (PMU)')) {
-  filters.push({
     "fieldname": "zone",
     "fieldtype": "Link",
     "label": "Zone",
-    "options": "Zone"
-  })
-}
-if (frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head Office (PMU)')) {
-  filters.push({
+    "options": "Zone",
+    "only_select":1,
+  },
+  {
     "fieldname": "state",
     "fieldtype": "Link",
     "label": "State",
-    "options": "State"
-  })
-}
-if (frappe.user_roles.includes('Head Office (PMU)') || frappe.user_roles.includes('State Placement Coordinator') || frappe.user_roles.includes('State Head') || frappe.user_roles.includes('Zonal Head')) {
-  filters.push({
+    "options": "State",
+    "only_select":1,
+    "get_query": function () {
+      var zone = frappe.query_report.get_filter_value('zone');
+      return {
+        filters: {
+          'zone': zone
+        }
+      };
+    }
+  },
+  {
+    "fieldname": "project",
+    "fieldtype": "Link",
+    "label": "Project",
+    "options": "Project",
+    "only_select":1,
+    "get_query": function () {
+      var state = frappe.query_report.get_filter_value('state');
+      return {
+        filters: [
+          ['Project', 'state', 'IN', [state, '']]
+        ]
+      };
+    }
+  },
+  {
+    "fieldname": "district",
+    "fieldtype": "Link",
+    "label": "District",
+    "options": "District",
+    "only_select":1,
+    "get_query": function () {
+      var state = frappe.query_report.get_filter_value('state');
+      return {
+        filters: {
+          'state': state
+        }
+      };
+    }
+  },
+  {
     "fieldname": "center",
     "fieldtype": "Link",
     "label": "Center",
-    "options": "Center"
-  })
-}
-filters.push({
-  "fieldname": "gender",
-  "fieldtype": "Select",
-  "label": "Gender",
-  "options": "\nMale\nFemale",
-})
+    "options": "Center",
+    "only_select":1,
+    "get_query": function () {
+      var district = frappe.query_report.get_filter_value('district');
+      return {
+        filters: {
+          'district': district
+        }
+      };
+    }
+  },
+  {
+    "fieldname": "batch_id",
+    "fieldtype": "Link",
+    "label": "Batch",
+    "options": "Batch",
+    "only_select":1,
+    "get_query": function () {
+      var center = frappe.query_report.get_filter_value('center');
+      return {
+        filters: {
+          'center_location': center
+        }
+      };
+    }
+  },
+]
+
 frappe.query_reports["Placement by job role"] = {
   filters: filters
 };
