@@ -79,4 +79,5 @@ def execute(filters=None):
 					AND ca.current_status IN ('Assessed','Certified'){str}
 	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
+	data = [] if all(candidate['count'] == 0 for candidate in data) else data
 	return columns, data

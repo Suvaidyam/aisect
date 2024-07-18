@@ -43,17 +43,17 @@ def execute(filters=None):
 				FROM
 					(SELECT '< 5k' AS monthly_income_range
 					UNION ALL
-					SELECT '5k to 10k'
+					SELECT '5k-10k'
 					UNION ALL
-					SELECT '10k to 15k'
+					SELECT '10k-15k'
 					UNION ALL
 					SELECT '> 15k') AS ranges
 				LEFT JOIN
 					(SELECT
 						CASE
 							WHEN pc.monthly_income < 5000 THEN '< 5k'
-							WHEN pc.monthly_income BETWEEN 5000 AND 10000 THEN '5k to 10k'
-							WHEN pc.monthly_income BETWEEN 10000 AND 15000 THEN '10k to 15k'
+							WHEN pc.monthly_income BETWEEN 5000 AND 10000 THEN '5k-10k'
+							WHEN pc.monthly_income BETWEEN 10000 AND 15000 THEN '10k-15k'
 							ELSE '> 15k'
 						END AS monthly_income_range,
 						COUNT(*) AS candidate_count
@@ -68,7 +68,9 @@ def execute(filters=None):
 				ON
 					ranges.monthly_income_range = counts.monthly_income_range
 				ORDER BY
-					FIELD(ranges.monthly_income_range, '< 5k', '5k to 10k', '10k to 15k', '> 15k');
+					FIELD(ranges.monthly_income_range, '< 5k', '5k-10k', '10k-15k', '> 15k');
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
+	data = [] if all(candidate['candidate_count'] == 0 for candidate in data) else data
+
 	return columns, data
