@@ -78,6 +78,16 @@ frappe.ui.form.on("Candidate Details", {
         if (frm.doc.placement_status == 'Placed') {
             frm.set_df_property('certified_status', 'read_only', 1);
         }
+        if(frm.doc.assessment_date){
+                let today = new Date(frm.doc.assessment_date);
+                today.setDate(today.getDate() + 1);
+                frm.fields_dict.certification_date.$input.datepicker({ minDate: today });
+        }
+        if(frm.doc.certification_date){
+            let today = new Date(frm.doc.certification_date);
+            today.setDate(today.getDate() + 1);
+            frm.fields_dict.placement_date.$input.datepicker({ minDate: today });
+        }
         depended_dropdown(frm, frm.doc.project, 'batch_id', 'project');
         setPlaceholders(frm, [
             { fieldName: 'first_name', placeholderText: __("Enter your first name") },
@@ -158,6 +168,17 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_df_property('certified_status', 'read_only', 0);
         }
     },
+    assessment_date(frm) {
+        let today = new Date(frm.doc.assessment_date);
+        today.setDate(today.getDate() + 1);
+        frm.fields_dict.certification_date.$input.datepicker({ minDate: today });
+    },
+    certification_date(frm) {
+        let today = new Date(frm.doc.certification_date);
+        today.setDate(today.getDate() + 1);
+        console.log(frm)
+        frm.fields_dict.placement_date.$input.datepicker({ minDate: today });
+    },
     certified_status(frm) {
         if (frm.doc.certified_status !== 'Certified') {
             frm.set_value('placement_date', '');
@@ -165,7 +186,7 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_value('placement_status', 'N/A');
             frm.set_value('placement', []);
             frm.set_df_property('placement_status', 'read_only', 1);
-        } 
+        }
     },
     placement_status(frm) {
         if (frm.doc.placement_status !== 'Placed') {

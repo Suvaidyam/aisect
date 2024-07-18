@@ -26,9 +26,9 @@ class CandidateDetails(Document):
             self.current_status = self.assessment_status
         
         current_date = date.today()
-        if self.certified_status == 'Certified':
+        if self.certified_status == 'Certified' and not self.certification_date:
             self.certification_date = current_date
-        if self.placement_status == 'Placed':
+        if self.placement_status == 'Placed' and not self.placement_date:
             self.placement_date = current_date
 
   
