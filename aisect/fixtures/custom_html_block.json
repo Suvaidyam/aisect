@@ -13,8 +13,8 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
-  "html": "<div id=\"geo_data\"></div>",
-  "modified": "2024-07-16 13:38:02.915036",
+  "html": "<div id=\"geo_data\" class=\"card py-2 px-3\"></div>",
+  "modified": "2024-07-18 14:23:45.650658",
   "name": "User Assigned Geography",
   "private": 0,
   "roles": [
@@ -49,8 +49,8 @@
     "role": "Centre Placement Coordinator"
    }
   ],
-  "script": "const get_permission = async (user) => {\n    let list = await callAPI({\n        method: 'aisect.services.api.user_assign_geography',\n        freeze: true,\n        args: {\n            doctype: \"User Permission\",\n            user: user,\n            view: \"List\",\n            order_by: \"\",\n            group_by: '',\n        },\n\n        freeze_message: __(\"Getting Permissions\"),\n    });\n    return list;\n};\n\nconst rander_html = async ()=>{\n    let user=frappe.user.name;\n    let list = await get_permission(user);\n    let blocks = `<nav aria-label=\"breadcrumb\" class=\"d-flex align-items-baseline justify-content-between\">\n            <ol class=\"breadcrumb\" >`;\n    for (let i = 0; i < list?.length; i++) {\n        blocks = blocks +\n       ` <li class=\"breadcrumb-item active\" aria-current=\"page\">${list?.[i].allow}:-${list?.[i].name_value}</li> `\n    }\n    blocks = blocks + `</ol><p class=\"user_name_a\">${frappe.session.user_fullname}</p></nav>`;\n    root_element.getElementById('geo_data').innerHTML = list?.length ? blocks : '';\n};\n\nrander_html();",
-  "style": ".breadcrumb-item + .breadcrumb-item::before {\n            content: '→';\n            color: rgb(0, 0, 255) !important;\n        }\n        .breadcrumb {\n           \n            background-color: transparent;\n        }\n.breadcrumb-item{\n color: rgb(0, 0, 255) !important;\n    font-size:15px;\n}        \n.user_name_a{\n color: rgb(0, 0, 255) !important;\n    font-size:15px;\n}        "
+  "script": "const get_permission = async (user) => {\n    let list = await callAPI({\n        method: 'aisect.services.api.user_assign_geography',\n        freeze: true,\n        args: {\n            doctype: \"User Permission\",\n            user: user,\n            view: \"List\",\n            order_by: \"\",\n            group_by: '',\n        },\n\n        freeze_message: __(\"Getting Permissions\"),\n    });\n    return list;\n};\n\nconst rander_html = async ()=>{\n    let user=frappe.user.name;\n    let list = await get_permission(user);\n    let blocks = `<nav aria-label=\"breadcrumb1\" class=\"d-flex align-items-center justify-content-between\">\n            <ol class=\"breadcrumb1\" >`;\n    for (let i = 0; i < list?.length; i++) {\n        blocks = blocks +\n       ` <li class=\"breadcrumb-item1 active\" aria-current=\"page\">${list?.[i].allow} :- ${list?.[i].name_value}</li> `\n    }\n    blocks = blocks + `</ol><p class=\"user_name_a\">${frappe.session.user_fullname}</p></nav>`;\n    root_element.getElementById('geo_data').innerHTML = list?.length ? blocks : '';\n};\n\nrander_html();",
+  "style": ".breadcrumb1 {\n    display: flex;\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    background-color: transparent;\n}\n\n.breadcrumb-item1 {\n    margin-right: 0.5rem;\n}\n\n.breadcrumb-item1 + .breadcrumb-item1::before {\n    content: \"/\";\n    margin-right: 0.5rem;\n    color: #6c757d;\n}\n\n.breadcrumb-item1.active {\n    color: #007bff;\n}\n\n.user_name_a {\n    font-weight: bold;\n    color:#264796 !important;\n    margin-bottom: 0px;\n}\n\n/*@media (max-width: 765px) {*/\n/*    .main-container-report{*/\n/*        width:100% !important;*/\n/*    }*/\n/*}*/"
  },
  {
   "docstatus": 0,
