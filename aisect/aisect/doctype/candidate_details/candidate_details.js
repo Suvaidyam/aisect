@@ -156,7 +156,7 @@ frappe.ui.form.on("Candidate Details", {
             return {
                 filters: {
                     project: frm.doc.project,
-                    end_date: ['>=', frappe.datetime.now_date()]
+                    // end_date: ['>=', frappe.datetime.now_date()]
                 },
                 page_length: 1000
             };

@@ -246,14 +246,12 @@
   {
    "fieldname": "assessment_date",
    "fieldtype": "Date",
-   "label": "Assessment Date",
-   "read_only": 1
+   "label": "Assessment Date"
   },
   {
    "fieldname": "certification_date",
    "fieldtype": "Date",
-   "label": "Certification Date",
-   "read_only": 1
+   "label": "Certification Date"
   },
   {
    "fieldname": "column_break_wrhl",
@@ -262,8 +260,7 @@
   {
    "fieldname": "placement_date",
    "fieldtype": "Date",
-   "label": "Placement Date",
-   "read_only": 1
+   "label": "Placement Date"
   },
   {
    "fieldname": "section_break_uwne",
@@ -293,7 +290,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-18 12:05:12.376017",
+ "modified": "2024-07-18 12:58:52.734792",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
