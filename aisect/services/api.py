@@ -96,6 +96,13 @@ def user_assign_geography(user, join_con=[]):
        LEFT JOIN `tabBlock` AS TB ON UP.for_value = TB.name AND UP.allow = 'Block'
        LEFT JOIN `tabVillage` AS TCS ON UP.for_value = TCS.name AND UP.allow = 'Village'
        WHERE UP.user = '{user}'
+       ORDER BY 
+        TCS.village_name,
+        TB.block_name,
+        CL.center_location_name,
+        TD.district_name,
+        TS.state_name,
+        ZN.zone_name;
    """
     return frappe.db.sql(sql_query, as_dict=True)
 
