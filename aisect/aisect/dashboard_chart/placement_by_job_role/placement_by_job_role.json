@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 25,
+ "idx": 44,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-08 18:37:32.978356",
+ "modified": "2024-07-19 18:59:33.111190",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement by job role",
@@ -51,6 +51,7 @@
  "x_field": "job_role",
  "y_axis": [
   {
+   "color": "#900c3f",
    "y_field": "count"
   }
  ]
