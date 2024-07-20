@@ -122,7 +122,7 @@ def Avg_monthly_salary():
     return frappe.db.sql(sql, as_dict=True)
 
 @frappe.whitelist()
-def placement_by_company():
+def candidate_placement_by_company():
     user_role_permission = get_user_role_permission()
     str = ""
     zone = user_role_permission.get('Zone')
@@ -137,8 +137,7 @@ def placement_by_company():
         str += f" AND cd.center_location = '{center}'"
     sql = f"""
             SELECT
-                COUNT(cd.candidate_id) AS count,
-                cp.company_name AS company_name
+                COUNT(cd.candidate_id) AS count
             FROM
                 `tabCandidate Details` cd
             INNER JOIN 
@@ -153,7 +152,7 @@ def placement_by_company():
     return frappe.db.sql(sql, as_dict=True)
 
 @frappe.whitelist()
-def placement_by_sector():
+def candidate_placement_by_sector():
     user_role_permission = get_user_role_permission()
     str = ""
     zone = user_role_permission.get('Zone')
@@ -167,8 +166,7 @@ def placement_by_sector():
     if center:
         str += f" AND cd.center_location = '{center}'"
     sql = f"""
-        SELECT
-            st.sector_name as sector,
+        SELECT 
             COUNT(cd.candidate_id) as count
         FROM
             `tabCandidate Details` AS cd
@@ -182,7 +180,7 @@ def placement_by_sector():
     return frappe.db.sql(sql, as_dict=True)
 
 @frappe.whitelist()
-def placement_by_job_role():
+def candidate_placement_by_job_role():
     user_role_permission = get_user_role_permission()
     str = ""
     zone = user_role_permission.get('Zone')
@@ -197,8 +195,7 @@ def placement_by_job_role():
         str += f" AND cd.center_location = '{center}'"
     sql = f"""
         SELECT
-            COUNT(cd.candidate_id) AS count,
-            jr.job_role_name AS job_role
+            COUNT(cd.candidate_id) AS count 
         FROM
             `tabCandidate Details` cd
         INNER JOIN
