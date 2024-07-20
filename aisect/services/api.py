@@ -45,31 +45,53 @@ def candidate_placement_ging():
     if center:
         str += f" AND cd.center_location = '{center}'"
     sql = f"""
-        SELECT
-            COUNT(*) AS candidate_count
-        FROM
-            (
-            SELECT
-                COUNT(*) AS candidate_count
-            FROM
-                `tabCandidate Details` cd
-            INNER JOIN
-                `tabState` st ON cd.state = st.name
-            INNER JOIN
-                `tabCenter` ct ON cd.center_location = ct.name
-            INNER JOIN
-                `tabDistrict` dt ON cd.district = dt.name
-            INNER JOIN
-                `tabProject` pr ON cd.project = pr.name
-            INNER JOIN
-                `tabJob Role` jb ON cd.job_role = jb.name
-            WHERE
-                cd.current_status IN ('Assessed', 'Certified','Placed')
+        SELECT 
+              (SELECT COUNT(*)
+            FROM (SELECT COUNT(*) AS candidate_count
+                FROM `tabCandidate Details` cd
+                INNER JOIN `tabState` st ON cd.state = st.name
+                INNER JOIN `tabCenter` ct ON cd.center_location = ct.name
+                INNER JOIN `tabDistrict` dt ON cd.district = dt.name
+                INNER JOIN `tabProject` pr ON cd.project = pr.name
+                INNER JOIN `tabJob Role` jb ON cd.job_role = jb.name
+                WHERE cd.current_status IN ('Assessed', 'Certified','Placed')
                 {str}
-            GROUP BY
-                    cd.batch_id) AS query;
+                GROUP BY cd.batch_id) AS query) AS `Placement Target vs Achievement`,
+            (SELECT COUNT(company_counts.count)
+            FROM (SELECT COUNT(cd.candidate_id) AS count
+                FROM `tabCandidate Details` cd
+                INNER JOIN `tabPlacement Child` AS pc ON pc.parent = cd.candidate_id
+                INNER JOIN `tabCompany` cp ON pc.name_of_organization = cp.name
+                WHERE cd.current_status='Placed'
+                {str}
+                GROUP BY cp.company_name) AS company_counts) AS `Candidate Placement by company`,
+            (SELECT COUNT(job_role_counts.count)
+            FROM (SELECT COUNT(cd.candidate_id) AS count
+                FROM `tabCandidate Details` cd
+                INNER JOIN `tabJob Role` jr ON cd.job_role = jr.name
+                WHERE cd.current_status = 'Placed'
+                {str}
+                GROUP BY jr.job_role_name) AS job_role_counts) AS `Candidate Placement by job role`,
+            (SELECT COUNT(sector_counts.count)
+            FROM (SELECT COUNT(cd.candidate_id) AS count
+                FROM `tabCandidate Details` cd
+                INNER JOIN `tabSector` AS st ON cd.sector = st.name
+                WHERE cd.current_status = 'Placed'
+                {str}
+                GROUP BY st.sector_name) AS sector_counts) AS `Candidate Placement by sector`;
     """
-    return frappe.db.sql(sql, as_dict=True)
+    data = frappe.db.sql(sql, as_dict=True)[0]
+    url_mapping = {
+        'Candidate Placement by company': "Candidate%20Placement%20By%20Comapny",
+        'Candidate Placement by job role': 'Candidate%20Placement%20by%20job%20role',
+        'Candidate Placement by sector': 'Candidate%20Placement%20by%20sector',
+        "Placement Target vs Achievement":"Placement%20Target%20vs%20Achievement"
+    }
+    response = []
+    if data:
+        for key,value in data.items():
+            response.append({"name":key,"value":value,"url":url_mapping.get(key, "")})
+    return response
 
 
 @frappe.whitelist()
@@ -118,91 +140,5 @@ def Avg_monthly_salary():
             `tabPlacement Child` AS pc ON pc.parent = ca.candidate_id
         WHERE
             ca.current_status='Placed'
-    """
-    return frappe.db.sql(sql, as_dict=True)
-
-@frappe.whitelist()
-def candidate_placement_by_company():
-    user_role_permission = get_user_role_permission()
-    str = ""
-    zone = user_role_permission.get('Zone')
-    state = user_role_permission.get('State')
-    center = user_role_permission.get('Center')
-
-    if zone:
-        str += f" AND cd.zone = '{zone}'"
-    if state:
-        str += f" AND cd.state = '{state}'"
-    if center:
-        str += f" AND cd.center_location = '{center}'"
-    sql = f"""
-            SELECT
-                COUNT(cd.candidate_id) AS count
-            FROM
-                `tabCandidate Details` cd
-            INNER JOIN 
-                    `tabPlacement Child` AS pc ON pc.parent = cd.candidate_id
-            INNER JOIN
-                `tabCompany` cp ON pc.name_of_organization = cp.name
-            WHERE cd.current_status='Placed'
-            {str}
-            GROUP BY
-                cp.company_name;
-        """
-    return frappe.db.sql(sql, as_dict=True)
-
-@frappe.whitelist()
-def candidate_placement_by_sector():
-    user_role_permission = get_user_role_permission()
-    str = ""
-    zone = user_role_permission.get('Zone')
-    state = user_role_permission.get('State')
-    center = user_role_permission.get('Center')
-
-    if zone:
-        str += f" AND cd.zone = '{zone}'"
-    if state:
-        str += f" AND cd.state = '{state}'"
-    if center:
-        str += f" AND cd.center_location = '{center}'"
-    sql = f"""
-        SELECT 
-            COUNT(cd.candidate_id) as count
-        FROM
-            `tabCandidate Details` AS cd
-        INNER JOIN
-            `tabSector` AS st ON cd.sector = st.name
-        WHERE cd.current_status='Placed'
-        {str}
-        GROUP BY 
-            st.sector_name;
-    """
-    return frappe.db.sql(sql, as_dict=True)
-
-@frappe.whitelist()
-def candidate_placement_by_job_role():
-    user_role_permission = get_user_role_permission()
-    str = ""
-    zone = user_role_permission.get('Zone')
-    state = user_role_permission.get('State')
-    center = user_role_permission.get('Center')
-
-    if zone:
-        str += f" AND cd.zone = '{zone}'"
-    if state:
-        str += f" AND cd.state = '{state}'"
-    if center:
-        str += f" AND cd.center_location = '{center}'"
-    sql = f"""
-        SELECT
-            COUNT(cd.candidate_id) AS count 
-        FROM
-            `tabCandidate Details` cd
-        INNER JOIN
-            `tabJob Role` jr on cd.job_role = jr.name
-        WHERE cd.current_status='Placed'
-        {str}
-        GROUP BY
-            job_role;
     """
     return frappe.db.sql(sql, as_dict=True)
