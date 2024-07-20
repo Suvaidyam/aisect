@@ -50,6 +50,9 @@ def execute(filters=None):
 				{str}
 				GROUP BY
 					cp.company_name
+				ORDER BY
+					count DESC
+				LIMIT 10;
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data

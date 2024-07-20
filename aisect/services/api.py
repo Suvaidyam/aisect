@@ -120,3 +120,92 @@ def Avg_monthly_salary():
             ca.current_status='Placed'
     """
     return frappe.db.sql(sql, as_dict=True)
+
+@frappe.whitelist()
+def placement_by_company():
+    user_role_permission = get_user_role_permission()
+    str = ""
+    zone = user_role_permission.get('Zone')
+    state = user_role_permission.get('State')
+    center = user_role_permission.get('Center')
+
+    if zone:
+        str += f" AND cd.zone = '{zone}'"
+    if state:
+        str += f" AND cd.state = '{state}'"
+    if center:
+        str += f" AND cd.center_location = '{center}'"
+    sql = f"""
+            SELECT
+                COUNT(cd.candidate_id) AS count,
+                cp.company_name AS company_name
+            FROM
+                `tabCandidate Details` cd
+            INNER JOIN 
+                    `tabPlacement Child` AS pc ON pc.parent = cd.candidate_id
+            INNER JOIN
+                `tabCompany` cp ON pc.name_of_organization = cp.name
+            WHERE cd.current_status='Placed'
+            {str}
+            GROUP BY
+                cp.company_name;
+        """
+    return frappe.db.sql(sql, as_dict=True)
+
+@frappe.whitelist()
+def placement_by_sector():
+    user_role_permission = get_user_role_permission()
+    str = ""
+    zone = user_role_permission.get('Zone')
+    state = user_role_permission.get('State')
+    center = user_role_permission.get('Center')
+
+    if zone:
+        str += f" AND cd.zone = '{zone}'"
+    if state:
+        str += f" AND cd.state = '{state}'"
+    if center:
+        str += f" AND cd.center_location = '{center}'"
+    sql = f"""
+        SELECT
+            st.sector_name as sector,
+            COUNT(cd.candidate_id) as count
+        FROM
+            `tabCandidate Details` AS cd
+        INNER JOIN
+            `tabSector` AS st ON cd.sector = st.name
+        WHERE cd.current_status='Placed'
+        {str}
+        GROUP BY 
+            st.sector_name;
+    """
+    return frappe.db.sql(sql, as_dict=True)
+
+@frappe.whitelist()
+def placement_by_job_role():
+    user_role_permission = get_user_role_permission()
+    str = ""
+    zone = user_role_permission.get('Zone')
+    state = user_role_permission.get('State')
+    center = user_role_permission.get('Center')
+
+    if zone:
+        str += f" AND cd.zone = '{zone}'"
+    if state:
+        str += f" AND cd.state = '{state}'"
+    if center:
+        str += f" AND cd.center_location = '{center}'"
+    sql = f"""
+        SELECT
+            COUNT(cd.candidate_id) AS count,
+            jr.job_role_name AS job_role
+        FROM
+            `tabCandidate Details` cd
+        INNER JOIN
+            `tabJob Role` jr on cd.job_role = jr.name
+        WHERE cd.current_status='Placed'
+        {str}
+        GROUP BY
+            job_role;
+    """
+    return frappe.db.sql(sql, as_dict=True)

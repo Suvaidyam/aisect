@@ -11,21 +11,23 @@ def execute(filters=None):
 	center = user_role_permission.get('Center')
 
 	if zone or filters.zone:
-		str += f" AND ca.zone = '{zone or filters.zone}'"
+		str += f" AND cd.zone = '{zone or filters.zone}'"
 	if state or filters.state:
-		str += f" AND ca.state = '{state or filters.state}'"
+		str += f" AND cd.state = '{state or filters.state}'"
 	if filters.project:
-		str += f" AND ca.project = '{filters.project}'"
+		str += f" AND cd.project = '{filters.project}'"
 	if filters.district:
-		str += f" AND ca.district = '{filters.district}'"
+		str += f" AND cd.district = '{filters.district}'"
 	if center or filters.center:
-		str += f" AND ca.center_location = '{center or filters.center}'"
+		str += f" AND cd.center_location = '{center or filters.center}'"
 	if filters and filters.batch_id:
-		str += f" AND ca.batch_id = '{filters.batch_id}'"
+		str += f" AND cd.batch_id = '{filters.batch_id}'"
+	if filters and filters.gender:
+		str += f" AND cd.gender = '{filters.gender}'"
 	columns = [
 		{
-		"fieldname":"state",
-		"label":"State",
+		"fieldname":"job_role",
+		"label":"Job Role",
 		"fieldtype":"Data",
 		"width":300
 		},
@@ -36,22 +38,18 @@ def execute(filters=None):
 		"width":200
 		}
 	]
-	sql_query = f"""			
-				SELECT  
-					COUNT(DISTINCT ca.candidate_id) as count,
-					st.state_name as state
-				FROM 
-					`tabCandidate Details` AS ca
-				INNER JOIN 
-					`tabState` AS st ON st.name = ca.state
-				WHERE 
-					ca.current_status='Placed' 
+	sql_query = f"""
+				SELECT
+					COUNT(cd.candidate_id) AS count,
+					jr.job_role_name AS job_role
+				FROM
+					`tabCandidate Details` cd
+				INNER JOIN
+					`tabJob Role` jr on cd.job_role = jr.name
+				WHERE cd.current_status='Placed'
 				{str}
-				GROUP BY 
-					ca.state
-				ORDER BY
-					count DESC
-				LIMIT 10;
+				GROUP BY
+					job_role;
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data

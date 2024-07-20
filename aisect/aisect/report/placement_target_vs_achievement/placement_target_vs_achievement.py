@@ -118,7 +118,7 @@ def execute(filters=None):
 					COUNT(cd.candidate_id) as candidate_count,
 					cd.placement_due_date AS due_date,
 					GREATEST(DATEDIFF(cd.placement_due_date, CURRENT_DATE), 0) AS remaining_days,
-					ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
+					ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
 					ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) AS achievement,
 					CASE 
 						WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) = 0 

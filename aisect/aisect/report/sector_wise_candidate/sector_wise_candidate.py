@@ -48,7 +48,11 @@ def execute(filters=None):
 				`tabSector` AS st ON cd.sector = st.name
 			WHERE cd.current_status='Placed'
 			{str}
-			GROUP BY st.sector_name;
+			GROUP BY 
+				st.sector_name
+			ORDER BY
+					count DESC
+			LIMIT 10;
 	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data

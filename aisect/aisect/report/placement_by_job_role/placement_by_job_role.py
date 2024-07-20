@@ -49,7 +49,10 @@ def execute(filters=None):
 				WHERE cd.current_status='Placed'
 				{str}
 				GROUP BY
-					job_role;
+					job_role
+				ORDER BY
+					count DESC
+				LIMIT 10;
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
