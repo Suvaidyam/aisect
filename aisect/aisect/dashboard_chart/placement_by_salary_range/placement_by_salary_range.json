@@ -11,7 +11,7 @@
  "idx": 20,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-19 17:26:20.109029",
+ "modified": "2024-07-24 18:15:39.039223",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement by salary range",
@@ -22,7 +22,7 @@
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
- "type": "Pie",
+ "type": "Bar",
  "use_report_chart": 0,
  "x_field": "monthly_income_range",
  "y_axis": [

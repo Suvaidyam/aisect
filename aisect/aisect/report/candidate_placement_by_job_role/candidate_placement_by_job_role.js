@@ -33,11 +33,13 @@ var filters = [
 		"only_select": 1,
 		"get_query": function () {
 			var state = frappe.query_report.get_filter_value('state');
-			return {
-				filters: [
-					['Project', 'state', 'IN', [state, '']]
-				]
-			};
+			if (frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head Office (PMU)')) {
+				return {
+					filters: [
+						['Project', 'state', 'IN', [state, '']]
+					]
+				};
+			}
 		}
 	},
 	{
