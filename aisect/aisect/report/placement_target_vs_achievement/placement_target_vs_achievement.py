@@ -141,7 +141,7 @@ def execute(filters=None):
 				INNER JOIN 
 					`tabJob Role` jb ON cd.job_role = jb.name
 				WHERE 
-					cd.current_status IN ('Assessed','Certified','Placed')
+					cd.current_status IN ('Assessed','Certified','Placed','Not Certified','Not Placed')
 					{str}
 				GROUP BY 
 					cd.batch_id
