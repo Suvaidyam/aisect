@@ -7,3 +7,7 @@ a[data-action="action-edit"] {
 .widget-control .add-new{
     display: none !important;
 }
+div[custom_block_name="Avg monthly salary"] .widget {
+    padding: 0px !important;
+}
+

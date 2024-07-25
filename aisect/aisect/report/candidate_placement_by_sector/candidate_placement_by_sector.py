@@ -33,7 +33,7 @@ def execute(filters=None):
 		},
 		{
 		"fieldname":"count",
-		"label":"Count",
+		"label":"Placed Candidates",
 		"fieldtype":"int",
 		"width":200
 		}
