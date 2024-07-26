@@ -52,8 +52,8 @@ def execute(filters=None):
 					(SELECT
 						CASE
 							WHEN pc.monthly_income < 5000 THEN '< 5k'
-							WHEN pc.monthly_income BETWEEN 5000 AND 10000 THEN '5k-10k'
-							WHEN pc.monthly_income BETWEEN 10000 AND 15000 THEN '10k-15k'
+							WHEN pc.monthly_income >= 5000 AND pc.monthly_income < 10000 THEN '5k-10k'
+							WHEN pc.monthly_income >= 10000 AND pc.monthly_income <= 15000 THEN '10k-15k'
 							ELSE '> 15k'
 						END AS monthly_income_range,
 						COUNT(*) AS candidate_count
