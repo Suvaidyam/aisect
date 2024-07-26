@@ -18,20 +18,21 @@ def set_candidate_status():
 
         # candidate status
         if item.end_date <= current_date:
-            candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name,'assessment_status':'Registered'})
+            candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name})
             
             for candidate in candidates:
-                try: 
-                    date_90_days = item.end_date + timedelta(days=90)
-                    frappe.db.set_value('Candidate Details', candidate.name,{'placement_due_date':date_90_days})
-                    
-                    if item.expected_assessment_date <= current_date:
-                         frappe.db.set_value('Candidate Details', candidate.name,
-                            {
-                                'current_status':'Assessed',
-                                'assessment_status':'Assessed',
-                                'assessment_date':item.expected_assessment_date
-                            })
-                except Exception as e:
-                    print(f"Error updating candidate {candidate['name']}: {e}")
+               if candidate.assessment_status == 'Registered' or candidate.placement_due_date is None:
+                    try: 
+                        date_90_days = item.end_date + timedelta(days=90)
+                        frappe.db.set_value('Candidate Details', candidate.name,{'placement_due_date':date_90_days})
+                        
+                        if item.expected_assessment_date <= current_date:
+                            frappe.db.set_value('Candidate Details', candidate.name,
+                                {
+                                    'current_status':'Assessed',
+                                    'assessment_status':'Assessed',
+                                    'assessment_date':item.expected_assessment_date
+                                })
+                    except Exception as e:
+                        print(f"Error updating candidate {candidate['name']}: {e}")
     frappe.db.commit()

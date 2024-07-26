@@ -312,18 +312,18 @@ frappe.ui.form.on("Placement Child", {
             truncate_child_table_field_value(row, frm, [
                 'offer_letter',
                 'upload_offer_letter',
-                'salary_slip',
-                'upload_salary_slip',
-                'bank_statement',
-                'upload_bank_statement',
-                'salary_slip_2',
-                'upload_salary_slip_2',
-                'bank_statement_2',
-                'upload_bank_statement_2',
-                'salary_slip_3',
-                'upload_salary_slip_3',
-                'bank_statement_3',
-                'upload_bank_statement_3'
+                'salary_slipm1',
+                'upload_salary_slipm1',
+                'bank_statementm1',
+                'upload_bank_statementm1',
+                'salary_slipm2',
+                'upload_salary_slipm2',
+                'bank_statementm2',
+                'upload_bank_statementm2',
+                'salary_slipm3',
+                'upload_salary_slipm3',
+                'bank_statementm3',
+                'upload_bank_statementm3'
             ]);
         }
         if (row.job_joined == "No") {
@@ -335,95 +335,95 @@ frappe.ui.form.on("Placement Child", {
         if (row.offer_letter !== "Yes") {
             truncate_child_table_field_value(row, frm, [
                 'upload_offer_letter',
-                'salary_slip',
-                'upload_salary_slip',
-                'bank_statement',
-                'upload_bank_statement',
-                'salary_slip_2',
-                'upload_salary_slip_2',
-                'bank_statement_2',
-                'upload_bank_statement_2',
-                'salary_slip_3',
-                'upload_salary_slip_3',
-                'bank_statement_3',
-                'upload_bank_statement_3'
+                'salary_slipm1',
+                'upload_salary_slipm1',
+                'bank_statementm1',
+                'upload_bank_statementm1',
+                'salary_slipm2',
+                'upload_salary_slipm2',
+                'bank_statementm2',
+                'upload_bank_statementm2',
+                'salary_slipm3',
+                'upload_salary_slipm3',
+                'bank_statementm3',
+                'upload_bank_statementm3'
             ]);
         }
     },
-    salary_slip(frm, cdt, cdn) {
+    salary_slipm1(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.salary_slip !== "Yes" && row.bank_statement !== "Yes") {
+        if (row.salary_slipm1 !== "Yes" && row.bank_statementm1 !== "Yes") {
             truncate_child_table_field_value(row, frm, [
-                'upload_salary_slip',
-                'bank_statement',
-                'upload_bank_statement',
-                'salary_slip_2',
-                'upload_salary_slip_2',
-                'bank_statement_2',
-                'upload_bank_statement_2',
-                'salary_slip_3',
-                'upload_salary_slip_3',
-                'bank_statement_3',
-                'upload_bank_statement_3'
+                'upload_salary_slipm1',
+                'bank_statementm1',
+                'upload_bank_statementm1',
+                'salary_slipm2',
+                'upload_salary_slipm2',
+                'bank_statementm2',
+                'upload_bank_statementm2',
+                'salary_slipm3',
+                'upload_salary_slipm3',
+                'bank_statementm3',
+                'upload_bank_statementm3'
             ]);
         }
     },
-    bank_statement(frm, cdt, cdn) {
+    bank_statementm1(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.salary_slip !== "Yes" && row.bank_statement !== "Yes") {
+        if (row.salary_slipm1 !== "Yes" && row.bank_statementm1 !== "Yes") {
             truncate_child_table_field_value(row, frm, [
-                'upload_bank_statement',
-                'salary_slip_2',
-                'upload_salary_slip_2',
-                'bank_statement_2',
-                'upload_bank_statement_2',
-                'salary_slip_3',
-                'upload_salary_slip_3',
-                'bank_statement_3',
-                'upload_bank_statement_3'
+                'upload_bank_statementm1',
+                'salary_slipm2',
+                'upload_salary_slipm2',
+                'bank_statementm2',
+                'upload_bank_statementm2',
+                'salary_slipm3',
+                'upload_salary_slipm3',
+                'bank_statementm3',
+                'upload_bank_statementm3'
             ]);
         }
     },
-    salary_slip_2(frm, cdt, cdn) {
+    salary_slipm2(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.salary_slip_2 !== "Yes" && row.bank_statement_2 !== "Yes") {
+        if (row.salary_slipm2 !== "Yes" && row.bank_statementm2 !== "Yes") {
             truncate_child_table_field_value(row, frm, [
-                'upload_salary_slip_2',
-                'bank_statement_2',
-                'upload_bank_statement_2',
-                'salary_slip_3',
-                'upload_salary_slip_3',
-                'bank_statement_3',
-                'upload_bank_statement_3'
+                'upload_salary_slipm2',
+                'bank_statementm2',
+                'upload_bank_statementm2',
+                'salary_slipm3',
+                'upload_salary_slipm3',
+                'bank_statementm3',
+                'upload_bank_statementm3'
             ]);
         }
     },
-    bank_statement_2(frm, cdt, cdn) {
+    bank_statementm2(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.salary_slip_2 !== "Yes" && row.bank_statement_2 !== "Yes") {
+        if (row.salary_slipm2 !== "Yes" && row.bank_statementm2 !== "Yes") {
             truncate_child_table_field_value(row, frm, [
-                'upload_salary_slip_2',
-                'salary_slip_3',
-                'upload_salary_slip_3',
-                'bank_statement_3',
-                'upload_bank_statement_3'
+                'upload_salary_slipm2',
+                'salary_slipm3',
+                'upload_salary_slipm3',
+                'bank_statementm3',
+                'upload_bank_statementm3'
             ]);
         }
     },
-    salary_slip_3(frm, cdt, cdn) {
+    salary_slipm3(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.salary_slip_3 !== "Yes") {
+        if (row.salary_slipm3 !== "Yes") {
             truncate_child_table_field_value(row, frm, [
-                'upload_salary_slip_3',
-                'bank_statement_3',
-                'upload_bank_statement_3'
+                'upload_salary_slipm3',
+                'bank_statementm3',
+                'upload_bank_statementm3'
             ]);
         }
     },
-    bank_statement_3(frm, cdt, cdn) {
+    bank_statementm3(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        if (row.bank_statement_3 !== "Yes") {
-            truncate_child_table_field_value(row, frm, ['upload_bank_statement_3']);
+        if (row.bank_statementm3 !== "Yes") {
+            truncate_child_table_field_value(row, frm, ['upload_bank_statementm3']);
         }
     },
     upload_offer_letter(frm, cdt, cdn) {
@@ -432,35 +432,35 @@ frappe.ui.form.on("Placement Child", {
         const child_row = row.upload_offer_letter;
         pdf_file_condition(frm, child_row, row, 'upload_offer_letter')
     },
-    upload_salary_slip(frm, cdt, cdn) {
+    upload_salary_slipm1(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
-        const child_row = row.upload_salary_slip;
-        pdf_file_condition(frm, child_row, row, 'upload_salary_slip')
+        const child_row = row.upload_salary_slipm1;
+        pdf_file_condition(frm, child_row, row, 'upload_salary_slipm1')
     },
-    upload_bank_statement(frm, cdt, cdn) {
+    upload_bank_statementm1(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
-        const child_row = row.upload_bank_statement;
-        pdf_file_condition(frm, child_row, row, 'upload_bank_statement')
+        const child_row = row.upload_bank_statementm1;
+        pdf_file_condition(frm, child_row, row, 'upload_bank_statementm1')
     },
-    upload_salary_slip_2(frm, cdt, cdn) {
+    upload_salary_slipm2(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
-        const child_row = row.upload_salary_slip_2;
-        pdf_file_condition(frm, child_row, row, 'upload_salary_slip_2')
+        const child_row = row.upload_salary_slipm2;
+        pdf_file_condition(frm, child_row, row, 'upload_salary_slipm2')
     },
-    upload_bank_statement_2(frm, cdt, cdn) {
+    upload_bank_statementm2(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
-        const child_row = row.upload_bank_statement_2;
-        pdf_file_condition(frm, child_row, row, 'upload_bank_statement_2')
+        const child_row = row.upload_bank_statementm2;
+        pdf_file_condition(frm, child_row, row, 'upload_bank_statementm2')
     },
-    upload_salary_slip_3(frm, cdt, cdn) {
+    upload_salary_slipm3(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
-        const child_row = row.upload_salary_slip_3;
-        pdf_file_condition(frm, child_row, row, 'upload_salary_slip_3')
+        const child_row = row.upload_salary_slipm3;
+        pdf_file_condition(frm, child_row, row, 'upload_salary_slipm3')
     },
-    upload_bank_statement_3(frm, cdt, cdn) {
+    upload_bank_statementm3(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
-        const child_row = row.upload_bank_statement_3;
-        pdf_file_condition(frm, child_row, row, 'upload_bank_statement_3')
+        const child_row = row.upload_bank_statementm3;
+        pdf_file_condition(frm, child_row, row, 'upload_bank_statementm3')
     },
     organization_address: function (frm, cdt, cdn) {
         const row = frappe.get_doc(cdt, cdn);
