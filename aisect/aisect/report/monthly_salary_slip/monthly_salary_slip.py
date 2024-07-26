@@ -40,9 +40,9 @@ def execute(filters=None):
 	]
 	sql_query = f"""
 				SELECT  
-					COUNT(DISTINCT CASE WHEN pc.salary_slip = 'Yes' THEN ca.candidate_id END) AS first_month_slip_count,
-					COUNT(DISTINCT CASE WHEN pc.salary_slip_2 = 'Yes' THEN ca.candidate_id END) AS second_month_slip_count,
-					COUNT(DISTINCT CASE WHEN pc.salary_slip_3 = 'Yes' THEN ca.candidate_id END) AS third_month_slip_count
+					COUNT(DISTINCT CASE WHEN pc.salary_slipm1 = 'Yes' THEN ca.candidate_id END) AS first_month_slip_count,
+					COUNT(DISTINCT CASE WHEN pc.salary_slipm2 = 'Yes' THEN ca.candidate_id END) AS second_month_slip_count,
+					COUNT(DISTINCT CASE WHEN pc.salary_slipm3 = 'Yes' THEN ca.candidate_id END) AS third_month_slip_count
 				FROM 
 					`tabCandidate Details` AS ca
 				INNER JOIN 

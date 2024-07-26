@@ -52,7 +52,7 @@ def execute(filters=None):
 				st.sector_name
 			ORDER BY
 					count DESC
-			LIMIT 10;
+			LIMIT 5;
 	"""
 	data = frappe.db.sql(sql_query,as_dict=True)
 	return columns, data
