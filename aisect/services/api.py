@@ -33,17 +33,17 @@ def is_batch_completed(batch_id):
 @frappe.whitelist()
 def candidate_placement_ging():
     user_role_permission = get_user_role_permission()
-    str = ""
+    con_str = ""
     zone = user_role_permission.get('Zone')
     state = user_role_permission.get('State')
     center = user_role_permission.get('Center')
 
     if zone:
-        str += f" AND cd.zone = '{zone}'"
+        con_str += f" AND cd.zone = '{zone}'"
     if state:
-        str += f" AND cd.state = '{state}'"
+        con_str += f" AND cd.state = '{state}'"
     if center:
-        str += f" AND cd.center_location = '{center}'"
+        con_str += f" AND cd.center_location = '{center}'"
     sql = f"""
         SELECT 
               (SELECT COUNT(*)
@@ -55,7 +55,7 @@ def candidate_placement_ging():
                 INNER JOIN `tabProject` pr ON cd.project = pr.name
                 INNER JOIN `tabJob Role` jb ON cd.job_role = jb.name
                 WHERE cd.current_status IN ('Assessed', 'Certified','Placed')
-                {str}
+                {con_str}
                 GROUP BY cd.batch_id) AS query) AS `Placement Target vs Achievement`,
             (SELECT COUNT(company_counts.count)
             FROM (SELECT COUNT(cd.candidate_id) AS count
@@ -63,29 +63,36 @@ def candidate_placement_ging():
                 INNER JOIN `tabPlacement Child` AS pc ON pc.parent = cd.candidate_id
                 INNER JOIN `tabCompany` cp ON pc.name_of_organization = cp.name
                 WHERE cd.current_status='Placed'
-                {str}
-                GROUP BY cp.company_name) AS company_counts) AS `Candidate Placement by company`,
+                {con_str}
+                GROUP BY cp.company_name) AS company_counts) AS `Candidate Placement by Company`,
             (SELECT COUNT(job_role_counts.count)
             FROM (SELECT COUNT(cd.candidate_id) AS count
                 FROM `tabCandidate Details` cd
                 INNER JOIN `tabJob Role` jr ON cd.job_role = jr.name
                 WHERE cd.current_status = 'Placed'
-                {str}
-                GROUP BY jr.job_role_name) AS job_role_counts) AS `Candidate Placement by job role`,
+                {con_str}
+                GROUP BY jr.job_role_name) AS job_role_counts) AS `Candidate Placement by Job Role`,
             (SELECT COUNT(sector_counts.count)
             FROM (SELECT COUNT(cd.candidate_id) AS count
                 FROM `tabCandidate Details` cd
                 INNER JOIN `tabSector` AS st ON cd.sector = st.name
                 WHERE cd.current_status = 'Placed'
-                {str}
-                GROUP BY st.sector_name) AS sector_counts) AS `Candidate Placement by sector`;
+                {con_str}
+                GROUP BY st.sector_name) AS sector_counts) AS `Candidate Placement by Sector`,
+            (SELECT COUNT(state_counts.count)
+            FROM (SELECT COUNT(cd.candidate_id) AS count
+                FROM `tabCandidate Details` cd
+                WHERE cd.current_status='Placed' 
+				{con_str}
+				GROUP BY cd.state) AS state_counts) AS `Candidate Placement by State`;
     """
     data = frappe.db.sql(sql, as_dict=True)[0]
     url_mapping = {
-        'Candidate Placement by company': "Candidate%20Placement%20By%20Comapny",
-        'Candidate Placement by job role': 'Candidate%20Placement%20by%20job%20role',
-        'Candidate Placement by sector': 'Candidate%20Placement%20by%20sector',
-        "Placement Target vs Achievement":"Placement%20Target%20vs%20Achievement"
+        'Candidate Placement by Company': "Candidate%20Placement%20By%20Comapny",
+        'Candidate Placement by Job Role': 'Candidate%20Placement%20by%20job%20role',
+        'Candidate Placement by Sector': 'Candidate%20Placement%20by%20sector',
+        "Placement Target vs Achievement":"Placement%20Target%20vs%20Achievement",
+        "Candidate Placement by State":"Candidate%20Placement%20By%20State"
     }
     response = []
     if data:
