@@ -21,7 +21,7 @@ def set_candidate_status():
             candidates = frappe.db.get_list('Candidate Details', fields=['name'], filters={'batch_id': item.name})
             
             for candidate in candidates:
-               if candidate.assessment_status == 'Registered' or candidate.placement_due_date is None:
+               if candidate.assessment_status == 'Registered' or candidate.placement_due_date is None or candidate.assessment_date is None:
                     try: 
                         date_90_days = item.end_date + timedelta(days=90)
                         frappe.db.set_value('Candidate Details', candidate.name,{'placement_due_date':date_90_days})
