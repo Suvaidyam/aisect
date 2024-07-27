@@ -115,22 +115,40 @@ def execute(filters=None):
 					cd.batch_id,
 					st.state_name,
 					ct.center_location_name,
-					COUNT(cd.candidate_id) as candidate_count,
+					COUNT(cd.candidate_id) AS candidate_count,
 					cd.placement_due_date AS due_date,
 					GREATEST(DATEDIFF(cd.placement_due_date, CURRENT_DATE), 0) AS remaining_days,
 					ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) AS target,
 					ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) AS achievement,
 					CASE 
-						WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) = 0 
+						WHEN ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) = 0 
 							AND ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) = 0
 						THEN 'N/A'
-						WHEN ROUND(SUM(CASE WHEN cd.current_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END))
+						WHEN ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END))
 						THEN 'Achieved'
 						ELSE 'In Progress'
-					END AS achievements_status
+					END AS achievements_status,
+					CASE 
+						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) < 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) > ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
+						THEN 'Overdue and underachieved'
+						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) < 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
+						THEN 'Overdue and overachieved'
+						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) >= 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) > ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
+						THEN 'Underachieved with remaining days >= 0'
+						ELSE 'Overachieved with remaining days >= 0'
+					END AS category,
+					CASE 
+						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) < 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) > ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
+						THEN 1
+						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) < 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
+						THEN 2
+						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) >= 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) > ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
+						THEN 3
+						ELSE 4
+					END AS priority
 				FROM
 					`tabCandidate Details` cd
-				 INNER JOIN 
+				INNER JOIN 
 					`tabState` st ON cd.state = st.name
 				INNER JOIN 
 					`tabCenter` ct ON cd.center_location = ct.name
@@ -141,12 +159,13 @@ def execute(filters=None):
 				INNER JOIN 
 					`tabJob Role` jb ON cd.job_role = jb.name
 				WHERE 
-					cd.current_status IN ('Assessed','Certified','Placed','Not Certified','Not Placed')
+					cd.current_status IN ('Assessed', 'Certified', 'Placed', 'Not Certified', 'Not Placed')
 					{str}
 				GROUP BY 
 					cd.batch_id
-				{having_str}
+					{having_str}
 				ORDER BY 
+					priority ASC,
 					target DESC,
 					remaining_days ASC;
 				"""
