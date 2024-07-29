@@ -29,13 +29,14 @@ def execute(filters=None):
 	]
 	sql_query = f"""
 				SELECT  
-					COUNT(DISTINCT pc.name_of_organization) as count
-				FROM 
-					`tabCandidate Details` AS ca
+					COUNT(DISTINCT(cp.company_name)) as count
+				FROM `tabCandidate Details` cd
 				INNER JOIN 
-					`tabPlacement Child` AS pc ON pc.parent = ca.candidate_id
+					`tabPlacement Child` AS pc ON pc.parent = cd.candidate_id
+				INNER JOIN 
+					`tabCompany` cp ON pc.name_of_organization = cp.name
 				WHERE 
-					ca.current_status='Placed'
+					cd.current_status='Placed' 
 				{str};
 				"""
 	data = frappe.db.sql(sql_query,as_dict=True)
