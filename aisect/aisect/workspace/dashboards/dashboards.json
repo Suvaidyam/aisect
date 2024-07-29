@@ -5,10 +5,6 @@
    "label": "Assesed Candidates by Aging Period"
   },
   {
-   "chart_name": "Placement by project type",
-   "label": "Placed Candidates by Project Type"
-  },
-  {
    "chart_name": "Placement by salary range",
    "label": "Placed Candidates by Salary Range (\u20b9)"
   },
@@ -25,15 +21,19 @@
    "label": "Candidate Placement by Job Role (Top 5)"
   },
   {
+   "chart_name": "Placement by project type",
+   "label": "Candidate Placement by Project Type"
+  },
+  {
    "chart_name": "Placement by company",
-   "label": "Candidate Placement by Companies (Top 10)"
+   "label": "Distribution of Placed Candidates by Companies (Top 10)"
   },
   {
    "chart_name": "Placement By State",
    "label": "Distribution of Placed Candidates by State (Top 10)"
   }
  ],
- "content": "[{\"id\":\"yNFV4Gh6SU\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"User Assigned Geography\",\"col\":12}},{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":4}},{\"id\":\"ebQ8rbKPmE\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Avg monthly salary\",\"col\":4}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":4}},{\"id\":\"T3dCG-TRqW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 1st month salary slip\",\"col\":3}},{\"id\":\"ER0-QnhOQL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 2nd month salary slip\",\"col\":3}},{\"id\":\"B-y6wV3VA-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 3rd month salary slip\",\"col\":3}},{\"id\":\"fcQtCe2hmc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of Companies where candidates are placed\",\"col\":3}},{\"id\":\"L_reS5fdYW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Assesed Candidates by Aging Period\",\"col\":6}},{\"id\":\"Tf-EVCYkv5\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placed Candidates by Salary Range (\u20b9)\",\"col\":6}},{\"id\":\"aCuX_XQkaV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Candidate Placement by Sector (Top 5)\",\"col\":6}},{\"id\":\"vJ42WVugYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Candidate Placement by Job Role (Top 5)\",\"col\":6}},{\"id\":\"FefxbYj7py\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placed Candidates by Project Type\",\"col\":6}},{\"id\":\"nqZVJtlcJ9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Distribution of Placed Candidates\",\"col\":6}},{\"id\":\"UylqqYySGI\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Candidate Placement by Companies (Top 10)\",\"col\":12}},{\"id\":\"gaOqNwwKbF\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of Placed Candidates by State (Top 10)\",\"col\":12}},{\"id\":\"BXWDj2Ysfh\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Candidate Success Stories</b></span>\",\"col\":12}},{\"id\":\"EyHk-z6XrN\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Success Story Live\",\"col\":12}}]",
+ "content": "[{\"id\":\"yNFV4Gh6SU\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"User Assigned Geography\",\"col\":12}},{\"id\":\"cz1d2iBIuf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Registered Candidates\",\"col\":3}},{\"id\":\"uqxPTPDzxM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assessed Candidates\",\"col\":3}},{\"id\":\"yRSyV4fMzM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Certified Candidates\",\"col\":3}},{\"id\":\"h6WJ46XANb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Certified Candidates\",\"col\":3}},{\"id\":\"APdkD-tpbK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Placed Candidates\",\"col\":4}},{\"id\":\"ebQ8rbKPmE\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Avg monthly salary\",\"col\":4}},{\"id\":\"0Bbo7jF4Du\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Not Placed Candidates\",\"col\":4}},{\"id\":\"T3dCG-TRqW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 1st month salary slip\",\"col\":3}},{\"id\":\"ER0-QnhOQL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 2nd month salary slip\",\"col\":3}},{\"id\":\"B-y6wV3VA-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidates with 3rd month salary slip\",\"col\":3}},{\"id\":\"fcQtCe2hmc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of Companies where candidates are placed\",\"col\":3}},{\"id\":\"L_reS5fdYW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Assesed Candidates by Aging Period\",\"col\":6}},{\"id\":\"Tf-EVCYkv5\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Placed Candidates by Salary Range (\u20b9)\",\"col\":6}},{\"id\":\"aCuX_XQkaV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Candidate Placement by Sector (Top 5)\",\"col\":6}},{\"id\":\"vJ42WVugYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Candidate Placement by Job Role (Top 5)\",\"col\":6}},{\"id\":\"FefxbYj7py\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Candidate Placement by Project Type\",\"col\":6}},{\"id\":\"nqZVJtlcJ9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Distribution of Placed Candidates\",\"col\":6}},{\"id\":\"UylqqYySGI\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of Placed Candidates by Companies (Top 10)\",\"col\":12}},{\"id\":\"gaOqNwwKbF\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Distribution of Placed Candidates by State (Top 10)\",\"col\":12}},{\"id\":\"BXWDj2Ysfh\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Candidate Success Stories</b></span>\",\"col\":12}},{\"id\":\"EyHk-z6XrN\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Success Story Live\",\"col\":12}}]",
  "creation": "2024-06-14 17:40:37.410864",
  "custom_blocks": [
   {
@@ -59,7 +59,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-07-26 13:24:39.670834",
+ "modified": "2024-07-29 14:54:13.873737",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
