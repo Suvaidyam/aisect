@@ -183,7 +183,6 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:(doc.job_joined==='Yes')",
    "fieldname": "offer_letter",
    "fieldtype": "Select",
    "label": "Offer Letter",
@@ -229,15 +228,13 @@
    "fieldname": "mobile_no",
    "fieldtype": "Data",
    "label": "Mobile No",
-   "length": 10,
-   "reqd": 1
+   "length": 10
   },
   {
    "fieldname": "hr_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Hr Name",
-   "reqd": 1
+   "label": "Hr Name"
   },
   {
    "fieldname": "salary_slipm1",
@@ -330,7 +327,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-26 07:14:48.007834",
+ "modified": "2024-07-29 14:33:59.724774",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",
