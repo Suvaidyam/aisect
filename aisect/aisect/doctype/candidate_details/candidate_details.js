@@ -2,6 +2,13 @@ let mobilePattern = /^[6-9]\d{9}$/;
 
 frappe.ui.form.on("Candidate Details", {
     refresh(frm) {
+        frm.fields_dict['placement'].grid.get_field('name_of_organization').get_query = function(doc, cdt, cdn) {
+            return {
+                filters: {
+                    status:'Active'
+                }
+            };
+        };
         if (frappe.user_roles.includes('Head Office - Assessment Officer') && !frappe.user_roles.includes('Administrator')) {
             frm.set_df_property('project', 'read_only', 1);
             frm.set_df_property('batch_id', 'read_only', 1);
@@ -76,7 +83,7 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_df_property('placement_status', 'read_only', 0);
         }
         if (frm.doc.placement_status == 'Placed') {
-            frm.set_df_property('certified_status', 'read_only', 1);
+            // frm.set_df_property('certified_status', 'read_only', 1);
         }
         if(frm.doc.assessment_date){
                 let today = new Date(frm.doc.assessment_date);
