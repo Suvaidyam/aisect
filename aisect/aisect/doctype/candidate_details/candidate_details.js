@@ -83,7 +83,7 @@ frappe.ui.form.on("Candidate Details", {
             frm.set_df_property('placement_status', 'read_only', 0);
         }
         if (frm.doc.placement_status == 'Placed') {
-            // frm.set_df_property('certified_status', 'read_only', 1);
+            frm.set_df_property('certified_status', 'read_only', 1);
         }
         if(frm.doc.assessment_date){
                 let today = new Date(frm.doc.assessment_date);
