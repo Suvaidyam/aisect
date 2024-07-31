@@ -183,6 +183,7 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:(doc.job_joined==='Yes')",
    "fieldname": "offer_letter",
    "fieldtype": "Select",
    "label": "Offer Letter",
@@ -326,7 +327,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-29 18:25:14.504163",
+ "modified": "2024-07-31 11:56:58.578369",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Child",

@@ -7,7 +7,16 @@ from frappe.model.document import Document
 from aisect.services.api import is_batch_completed
 
 class CandidateDetails(Document):
-    # def validate(self):
+    def validate(self):
+        if self.certified_status != 'Certified':
+            self.placement_status='N/A'
+            self.placement_date=''
+            self.placement=[]
+            # frappe.msgprint('Please input certified status.')
+        elif self.placement_status !='Placed':
+            self.placement_date=''
+            self.placement=[]
+            # frappe.throw('Please input placement status.')
     #     if self.assessment_status !='Assessed':
     #         is_completed = is_batch_completed(self.batch_id)
     #         if is_completed:
@@ -30,5 +39,14 @@ class CandidateDetails(Document):
             self.certification_date = current_date
         if self.placement_status == 'Placed' and not self.placement_date:
             self.placement_date = current_date
+
+
+        if self.certified_status != 'Certified':
+            self.placement_status='N/A'
+            self.placement_date=''
+            self.placement=[] 
+        elif self.placement_status !='Placed':
+            self.placement_date=''
+            self.placement=[]
 
   
