@@ -84,7 +84,7 @@ def candidate_placement_ging():
                 FROM `tabCandidate Details` cd
                 WHERE cd.current_status='Placed' 
 				{con_str}
-				GROUP BY cd.state) AS state_counts) AS `Candidate Placement by State`;
+				GROUP BY cd.state) AS state_counts) AS `Candidate Placement by State/UT`;
     """
     data = frappe.db.sql(sql, as_dict=True)[0]
     url_mapping = {
@@ -92,7 +92,7 @@ def candidate_placement_ging():
         'Candidate Placement by Job Role': 'Candidate%20Placement%20by%20job%20role',
         'Candidate Placement by Sector': 'Candidate%20Placement%20by%20sector',
         "Placement Target vs Achievement":"Placement%20Target%20vs%20Achievement",
-        "Candidate Placement by State":"Candidate%20Placement%20By%20State"
+        "Candidate Placement by State/UT":"Candidate%20Placement%20By%20State"
     }
     response = []
     if data:
