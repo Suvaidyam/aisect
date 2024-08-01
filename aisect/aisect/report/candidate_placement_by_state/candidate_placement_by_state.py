@@ -14,18 +14,18 @@ def execute(filters=None):
 		str += f" AND ca.zone = '{zone or filters.zone}'"
 	if state or filters.state:
 		str += f" AND ca.state = '{state or filters.state}'"
-	if filters.project:
-		str += f" AND ca.project = '{filters.project}'"
-	if filters.district:
-		str += f" AND ca.district = '{filters.district}'"
 	if center or filters.center:
 		str += f" AND ca.center_location = '{center or filters.center}'"
-	if filters and filters.batch_id:
-		str += f" AND ca.batch_id = '{filters.batch_id}'"
+	# if filters.project:
+	# 	str += f" AND ca.project = '{filters.project}'"
+	# if filters.district:
+	# 	str += f" AND ca.district = '{filters.district}'"
+	# if filters and filters.batch_id:
+	# 	str += f" AND ca.batch_id = '{filters.batch_id}'"
 	columns = [
 		{
 		"fieldname":"state",
-		"label":"State",
+		"label":"State/UT",
 		"fieldtype":"Data",
 		"width":300
 		},
