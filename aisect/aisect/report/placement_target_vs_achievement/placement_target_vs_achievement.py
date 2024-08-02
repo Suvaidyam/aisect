@@ -35,7 +35,7 @@ def execute(filters=None):
 	columns = [
 		{
 		"fieldname":"state_name",
-		"label":"State",
+		"label":"State/UT",
 		"fieldtype":"Data",
 		"width":160
 		},
@@ -73,37 +73,37 @@ def execute(filters=None):
 		{
 		"fieldname":"candidate_count",
 		"label":"Candidate count",
-		"fieldtype":"Data",
+		"fieldtype":"Int",
 		"width":160
 		},
 		{
 		"fieldname":"due_date",
 		"label":"Placement Due Date",
-		"fieldtype":"Data",
+		"fieldtype":"Date",
 		"width":160
 		},
 		{
 		"fieldname":"remaining_days",
 		"label":"Remaining Days",
-		"fieldtype":"Data",
+		"fieldtype":"Int",
 		"width":135
 		},
 		{
 		"fieldname":"target",
 		"label":"Target",
-		"fieldtype":"Data",
+		"fieldtype":"Int",
 		"width":160
 		},
 		{
 		"fieldname":"achievement",
 		"label":"Achievement",
-		"fieldtype":"Data",
+		"fieldtype":"Int",
 		"width":135
 		},
 		{
 		"fieldname":"achievements_status",
 		"label":"Achievement Status",
-		"fieldtype":"int",
+		"fieldtype":"Data",
 		"width":180
 		}
 	]
@@ -131,18 +131,18 @@ def execute(filters=None):
 					CASE 
 						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) < 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) > ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
 						THEN 'Overdue and underachieved'
-						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) < 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
-						THEN 'Overdue and overachieved'
 						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) >= 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) > ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
 						THEN 'Underachieved with remaining days >= 0'
-						ELSE 'Overachieved with remaining days >= 0'
+						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) >= 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
+						THEN 'Underachieved with remaining days >= 0'
+						ELSE 'Overdue and overachieved'
 					END AS category,
 					CASE 
 						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) < 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) > ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
 						THEN 1
-						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) < 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
-						THEN 2
 						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) >= 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) > ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
+						THEN 2
+						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) >= 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) <= ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
 						THEN 3
 						ELSE 4
 					END AS priority
@@ -160,10 +160,10 @@ def execute(filters=None):
 					`tabJob Role` jb ON cd.job_role = jb.name
 				WHERE 
 					cd.current_status IN ('Assessed', 'Certified', 'Placed', 'Not Certified', 'Not Placed')
-					{str}
+				{str}
 				GROUP BY 
 					cd.batch_id
-					{having_str}
+				{having_str}
 				ORDER BY 
 					priority ASC,
 					target DESC,
