@@ -8,21 +8,13 @@ from aisect.services.api import is_batch_completed
 
 class CandidateDetails(Document):
     def validate(self):
-        if self.certified_status != 'Certified':
-            self.placement_status='N/A'
-            self.placement_date=''
-            self.placement=[]
-            # frappe.msgprint('Please input certified status.')
-        elif self.placement_status !='Placed':
-            self.placement_date=''
-            self.placement=[]
-            # frappe.throw('Please input placement status.')
     #     if self.assessment_status !='Assessed':
     #         is_completed = is_batch_completed(self.batch_id)
     #         if is_completed:
     #             frappe.throw('The batch is already completed.')
-        
-    def before_save(self):
+        # if (self.certified_status != 'Certified' or self.placement_status != 'Placed') and len(self.placement):
+        #     frappe.throw("This Error")
+    #step2
         if self.last_name:
             self.full_name = self.first_name+' '+self.last_name
         else:
@@ -33,20 +25,28 @@ class CandidateDetails(Document):
             self.current_status = self.certified_status
         elif self.assessment_status:
             self.current_status = self.assessment_status
-        
+        #date
         current_date = date.today()
         if self.certified_status == 'Certified' and not self.certification_date:
             self.certification_date = current_date
         if self.placement_status == 'Placed' and not self.placement_date:
             self.placement_date = current_date
 
+        #status base
 
         if self.certified_status != 'Certified':
             self.placement_status='N/A'
             self.placement_date=''
-            self.placement=[] 
-        elif self.placement_status !='Placed':
-            self.placement_date=''
-            self.placement=[]
+            if len(self.placement):
+                self.placement=[]
+                frappe.throw('Please input certified status.')
+        else:
+            if self.placement_status !='Placed':
+                self.placement_date=''
+                if len(self.placement):
+                    self.placement=[]
+                    frappe.throw('Please input placement status.')
+    def before_save(self):
+       pass
 
   
