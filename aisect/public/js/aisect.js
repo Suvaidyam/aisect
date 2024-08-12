@@ -57,10 +57,16 @@ frappe.router.on('change', async () => {
         if (window.matchMedia("(min-width: 992px)").matches) {
             applyCustomizations();
         } else {
-            $('.sidebar-toggle-btn').show()
-            $('.layout-side-section').show();
-            $('.custom-actions').show()
-            $('.standard-actions').show();
+            if (cur_router[0] != 'Workspaces') {
+                $('.sidebar-toggle-btn').hide();
+                $('.custom-actions').hide();
+            } else{
+                $('.sidebar-toggle-btn').show()
+                $('.layout-side-section').show();
+                $('.custom-actions').show()
+                $('.standard-actions').show();
+            }
+           
         }
     }
     handleScreenResize();

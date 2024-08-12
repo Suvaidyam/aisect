@@ -161,9 +161,10 @@ def execute(filters=None):
 				WHERE 
 					cd.current_status IN ('Assessed', 'Certified', 'Placed', 'Not Certified', 'Not Placed')
 				{str}
-								GROUP BY 
-									cd.batch_id
-								{having_str}
+				GROUP BY 
+					cd.batch_id
+				{having_str}
+				HAVING SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) > 0
 				ORDER BY 
 					priority ASC,
 					target DESC,
