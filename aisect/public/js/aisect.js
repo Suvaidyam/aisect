@@ -65,6 +65,9 @@ frappe.router.on('change', async () => {
                 $('.layout-side-section').show();
                 $('.custom-actions').show()
                 $('.standard-actions').show();
+                if (!frappe.user_roles.includes('Administrator')) {
+                    $('.search-bar').hide()
+                }
             }
            
         }

@@ -150,7 +150,12 @@ def execute(filters=None):
 						WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) >= 0 AND ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) < ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END)) 
 						THEN 3
 				ELSE 4
-					END AS priority
+					END AS priority,
+				CASE 
+					WHEN DATEDIFF(cd.placement_due_date, CURRENT_DATE) > 0 
+					THEN (ROUND(SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) * 0.7) - ROUND(SUM(CASE WHEN cd.current_status = 'Placed' THEN 1 ELSE 0 END))) / DATEDIFF(cd.placement_due_date, CURRENT_DATE)
+					ELSE NULL
+				END AS target_achievement_ratio
 					
 				FROM
 					`tabCandidate Details` cd
@@ -172,7 +177,7 @@ def execute(filters=None):
 				HAVING SUM(CASE WHEN cd.certified_status = 'Certified' THEN 1 ELSE 0 END) > 0 
 		
 				{having_str}
-				ORDER BY priority ASC, target DESC,remaining_days ASC
+				ORDER BY priority ASC, target_achievement_ratio DESC, target DESC,remaining_days ASC
 		)
 		(select * from tmp where tmp.achievements_status != 'Achieved')
 		UNION ALL
