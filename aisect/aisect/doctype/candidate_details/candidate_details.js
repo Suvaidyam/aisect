@@ -2,10 +2,11 @@ let mobilePattern = /^[6-9]\d{9}$/;
 
 frappe.ui.form.on("Candidate Details", {
     refresh(frm) {
-        frm.fields_dict['placement'].grid.get_field('name_of_organization').get_query = function(doc, cdt, cdn) {
+        frm.image_uploaded = false;
+        frm.fields_dict['placement'].grid.get_field('name_of_organization').get_query = function (doc, cdt, cdn) {
             return {
                 filters: {
-                    status:'Active'
+                    status: 'Active'
                 }
             };
         };
@@ -25,7 +26,7 @@ frappe.ui.form.on("Candidate Details", {
         if (cur_frm.is_new()) {
             frm.set_value('batch_id', '')
         }
-        frm.image_uploaded = false;
+
         check_active(frm, 'project');
         frm.fields_dict['zone'].get_query = function () {
             return {
@@ -85,12 +86,12 @@ frappe.ui.form.on("Candidate Details", {
         if (frm.doc.placement_status == 'Placed') {
             frm.set_df_property('certified_status', 'read_only', 1);
         }
-        if(frm.doc.assessment_date){
-                let today = new Date(frm.doc.assessment_date);
-                today.setDate(today.getDate() + 1);
-                frm.fields_dict.certification_date.$input.datepicker({ minDate: today });
+        if (frm.doc.assessment_date) {
+            let today = new Date(frm.doc.assessment_date);
+            today.setDate(today.getDate() + 1);
+            frm.fields_dict.certification_date.$input.datepicker({ minDate: today });
         }
-        if(frm.doc.certification_date){
+        if (frm.doc.certification_date) {
             let today = new Date(frm.doc.certification_date);
             today.setDate(today.getDate() + 1);
             frm.fields_dict.placement_date.$input.datepicker({ minDate: today });
@@ -127,6 +128,11 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     validate(frm) {
+        // setTimeout(() => {
+        //     document.querySelectorAll('.datepicker').forEach(e => {
+        //         e.classList.remove('active')
+        //     })
+        // }, 2000);
         if (frm.image_uploaded) {
             frappe.validated = false;
             frm.image_uploaded = false;
@@ -324,7 +330,7 @@ frappe.ui.form.on("Placement Child", {
                 'bank_statementm1',
                 'upload_bank_statementm1',
                 'salary_slipm2',
-                'upload_salary_slipm2',
+                'upload__salary_slipm2',
                 'bank_statementm2',
                 'upload_bank_statementm2',
                 'salary_slipm3',
@@ -347,7 +353,7 @@ frappe.ui.form.on("Placement Child", {
                 'bank_statementm1',
                 'upload_bank_statementm1',
                 'salary_slipm2',
-                'upload_salary_slipm2',
+                'upload__salary_slipm2',
                 'bank_statementm2',
                 'upload_bank_statementm2',
                 'salary_slipm3',
@@ -365,7 +371,7 @@ frappe.ui.form.on("Placement Child", {
                 'bank_statementm1',
                 'upload_bank_statementm1',
                 'salary_slipm2',
-                'upload_salary_slipm2',
+                'upload__salary_slipm2',
                 'bank_statementm2',
                 'upload_bank_statementm2',
                 'salary_slipm3',
@@ -381,7 +387,7 @@ frappe.ui.form.on("Placement Child", {
             truncate_child_table_field_value(row, frm, [
                 'upload_bank_statementm1',
                 'salary_slipm2',
-                'upload_salary_slipm2',
+                'upload__salary_slipm2',
                 'bank_statementm2',
                 'upload_bank_statementm2',
                 'salary_slipm3',
@@ -395,7 +401,7 @@ frappe.ui.form.on("Placement Child", {
         let row = frappe.get_doc(cdt, cdn);
         if (row.salary_slipm2 !== "Yes" && row.bank_statementm2 !== "Yes") {
             truncate_child_table_field_value(row, frm, [
-                'upload_salary_slipm2',
+                'upload__salary_slipm2',
                 'bank_statementm2',
                 'upload_bank_statementm2',
                 'salary_slipm3',
@@ -409,7 +415,7 @@ frappe.ui.form.on("Placement Child", {
         let row = frappe.get_doc(cdt, cdn);
         if (row.salary_slipm2 !== "Yes" && row.bank_statementm2 !== "Yes") {
             truncate_child_table_field_value(row, frm, [
-                'upload_salary_slipm2',
+                'upload__salary_slipm2',
                 'salary_slipm3',
                 'upload_salary_slipm3',
                 'bank_statementm3',
@@ -449,10 +455,10 @@ frappe.ui.form.on("Placement Child", {
         const child_row = row.upload_bank_statementm1;
         pdf_file_condition(frm, child_row, row, 'upload_bank_statementm1')
     },
-    upload_salary_slipm2(frm, cdt, cdn) {
+    upload__salary_slipm2(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
-        const child_row = row.upload_salary_slipm2;
-        pdf_file_condition(frm, child_row, row, 'upload_salary_slipm2')
+        const child_row = row.upload__salary_slipm2;
+        pdf_file_condition(frm, child_row, row, 'upload__salary_slipm2')
     },
     upload_bank_statementm2(frm, cdt, cdn) {
         const row = locals[cdt][cdn];
