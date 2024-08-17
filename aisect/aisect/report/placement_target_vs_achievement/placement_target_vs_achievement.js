@@ -124,16 +124,15 @@ filters.push({
     "fieldname": "remaining_day",
     "fieldtype": "Select",
     "label": "Remaining days",
-    "options": "\n0 day\n1-30 days\n30-60 days\n60-90 days"
+    "options": "\n1-30 days\n30-60 days\n60-90 days\nLess than 0 days"
 })
 frappe.query_reports["Placement Target vs Achievement"] = {
     filters: filters,
     formatter: function (value, k, column) {
         if (column.fieldname == "batch_id") {
             return `<a href="/app/candidate-details/view/list?batch_id=${value}">${value}</a>`
-        } else {
-            return value
         }
+        return `<span>${value}</span>`
     }
 };
 
