@@ -88,7 +88,7 @@ frappe.ui.form.on("Candidate Success Stories", {
     },
 
     validate: function (frm) {
-        if (frm.image_uploaded) {
+        if (frm.image_uploaded & frm.is_new()) {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
