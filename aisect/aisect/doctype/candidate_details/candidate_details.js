@@ -128,11 +128,11 @@ frappe.ui.form.on("Candidate Details", {
         }
     },
     validate(frm) {
-        // setTimeout(() => {
-        //     document.querySelectorAll('.datepicker').forEach(e => {
-        //         e.classList.remove('active')
-        //     })
-        // }, 2000);
+        setTimeout(() => {
+            document.querySelectorAll('.datepicker').forEach(e => {
+                e.classList.remove('active')
+            })
+        }, 2000);
         if (frm.image_uploaded) {
             frappe.validated = false;
             frm.image_uploaded = false;
