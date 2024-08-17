@@ -30,8 +30,8 @@ def execute(filters=None):
 		having_str += f" AND remaining_days > 30 AND remaining_days <= 60"
 	elif filters and filters.remaining_day =='60-90 days':
 		having_str += f" AND remaining_days > 60 AND remaining_days <= 90"
-	elif filters and filters.remaining_day =='0 day':
-		having_str += f" AND remaining_days = 0"
+	elif filters and filters.remaining_day =='Less than 0 days':
+		having_str += f" AND remaining_days < 0"
 	columns = [
 		{
 		"fieldname":"state_name",
