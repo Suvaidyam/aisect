@@ -170,13 +170,24 @@ const truncate_child_table_field_value = async (row, frm, fields) => {
 };
 const pdf_file_condition = (frm, child_row, row, cur_field) => {
     frm.image_uploaded = true;
+
+    if (frm._alert_shown) {
+        // truncate_child_table_field_value(row, frm, [cur_field]);
+        return;
+    }
+
+
     if (child_row) {
         const file_url = child_row;
         const file_extension = file_url.split('.').pop().toLowerCase();
 
         if (file_extension !== 'pdf') {
-            truncate_child_table_field_value(row, frm, [cur_field]);
+            frm._alert_shown = true; // Set flag to prevent duplicate alert
             frappe.show_alert({ message: "Only PDF files are allowed", indicator: "yellow" });
+            setTimeout(() => {
+                frm._alert_shown = false;
+                truncate_child_table_field_value(row, frm, [cur_field]);
+            }, 3000);
             return;
         }
 
@@ -188,7 +199,6 @@ const pdf_file_condition = (frm, child_row, row, cur_field) => {
                 fieldname: ["file_size"]
             },
             callback: function (response) {
-                console.log(response)
                 if (!response.message) {
                     frappe.show_alert({ message: "File not found", indicator: "red" });
                     truncate_child_table_field_value(row, frm, [cur_field]);
@@ -196,26 +206,24 @@ const pdf_file_condition = (frm, child_row, row, cur_field) => {
                 }
 
                 const file_size = response.message.file_size;
-                // Fetch file details using Frappe API
-                if (cur_field === 'upload_bank_statement_2' || cur_field === 'upload_bank_statement' || cur_field === 'upload_bank_statement_3') {
-                    const maxFileSize = 5 * 1024 * 1024;
-                    if (file_size > maxFileSize) {
+                const maxFileSize = cur_field === 'upload_bank_statement_2' || cur_field === 'upload_bank_statement' || cur_field === 'upload_bank_statement_3'
+                    ? 5 * 1024 * 1024
+                    : 2 * 1024 * 1024;
+
+                if (file_size > maxFileSize) {
+                    frm._alert_shown = true; // Set flag to prevent duplicate alert
+                    frappe.show_alert({ message: `File size must be less than ${maxFileSize / (1024 * 1024)} MB`, indicator: "yellow" });
+                    setTimeout(() => {
+                        frm._alert_shown = false;
                         truncate_child_table_field_value(row, frm, [cur_field]);
-                        frappe.show_alert({ message: "File size must be less than 5 MB", indicator: "yellow" });
-                    }
-                } else {
-                    const maxFileSize = 2 * 1024 * 1024;
-                    if (file_size > maxFileSize) {
-                        truncate_child_table_field_value(row, frm, [cur_field]);
-                        frappe.show_alert({ message: "File size must be less than 2 MB", indicator: "yellow" });
-                    }
+                    }, 3000);
+                    return
                 }
-
-
             }
         });
     }
 };
+
 
 const word_length_validation = (frm, data, field_name, length) => {
     msg = field_name.replace(/_/g, ' ');
