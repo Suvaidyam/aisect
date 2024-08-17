@@ -32,7 +32,7 @@ def execute(filters=None):
 		{
 		"fieldname":"count",
 		"label":"Placed Candidates",
-		"fieldtype":"int",
+		"fieldtype":"Int",
 		"width":200
 		}
 	]

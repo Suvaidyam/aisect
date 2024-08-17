@@ -22,19 +22,19 @@ def execute(filters=None):
 		{
 		"fieldname":"first_month_slip_count",
 		"label":"First Month Salary Slip",
-		"fieldtype":"Data",
+		"fieldtype":"Int",
 		"width":200
 		},
 		{
 		"fieldname":"second_month_slip_count",
 		"label":"Second Month Salary Slip",
-		"fieldtype":"Data",
+		"fieldtype":"Int",
 		"width":200
 		},
 		{
 		"fieldname":"third_month_slip_count",
 		"label":"Third Month Salary Slip",
-		"fieldtype":"int",
+		"fieldtype":"Int",
 		"width":200
 		}
 	]
