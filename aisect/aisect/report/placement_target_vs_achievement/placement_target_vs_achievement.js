@@ -20,16 +20,16 @@ if (frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head
       "label": "State",
       "options": "State",
       "only_select": 1,
-    //   "get_query": function () {
-    //     var zone = frappe.query_report.get_filter_value('zone');
-    //     if (!frappe.user_roles.includes('Zonal Head')) {
-    //       return {
-    //         filters: {
-    //           'zone': zone
-    //         }
-    //       };
-    //     }
-    //   }
+      //   "get_query": function () {
+      //     var zone = frappe.query_report.get_filter_value('zone');
+      //     if (!frappe.user_roles.includes('Zonal Head')) {
+      //       return {
+      //         filters: {
+      //           'zone': zone
+      //         }
+      //       };
+      //     }
+      //   }
     })
 }
 filters.push(
@@ -41,12 +41,12 @@ filters.push(
     "only_select": 1,
     "get_query": function () {
       var state = frappe.query_report.get_filter_value('state');
-      if(frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head Office (PMU)')){
-          return {
-            filters: [
-              ['Project', 'state', 'IN', [state, '']]
-            ]
-          };
+      if (frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head Office (PMU)')) {
+        return {
+          filters: [
+            ['Project', 'state', 'IN', [state, '']]
+          ]
+        };
       }
     }
   },
@@ -78,12 +78,12 @@ if (frappe.user_roles.includes('Head Office (PMU)') || frappe.user_roles.include
       "only_select": 1,
       "get_query": function () {
         var district = frappe.query_report.get_filter_value('district');
-          return {
-            filters: {
-              'district': district
-            }
-          };
-        }
+        return {
+          filters: {
+            'district': district
+          }
+        };
+      }
 
     })
 }
@@ -95,7 +95,7 @@ filters.push({
   "only_select": 1,
   "get_query": function () {
     var center = frappe.query_report.get_filter_value('center');
-    if(!(frappe.user_roles.includes('Centre Placement Coordinator') || frappe.user_roles.includes('Centre Head'))){
+    if (!(frappe.user_roles.includes('Centre Placement Coordinator') || frappe.user_roles.includes('Centre Head'))) {
       return {
         filters: {
           'center_location': center
@@ -106,34 +106,30 @@ filters.push({
 },
 
 )
-if(frappe.user_roles.includes('Zonal Head') || frappe.user_roles.includes('Head Office (PMU)')){
-    filters.push({
-        "fieldname": "width",
-        "fieldtype": "Data",
-        "read_only": 1
-    },)
-}
-filters.push({
-    "fieldname": "job_role",
-    "fieldtype": "Link",
-    "label": "Job Role",
-    "options": "Job Role",
-    "only_select":1,
-},
-{
+
+filters.push(
+  {
     "fieldname": "remaining_day",
     "fieldtype": "Select",
     "label": "Remaining days",
     "options": "\n0 day\n1-30 days\n30-60 days\n60-90 days"
-})
+  },
+  {
+    "fieldname": "job_role",
+    "fieldtype": "Link",
+    "label": "Job Role",
+    "options": "Job Role",
+    "only_select": 1,
+  }
+)
 frappe.query_reports["Placement Target vs Achievement"] = {
-    filters: filters,
-    formatter: function (value, k, column) {
-        if (column.fieldname == "batch_id") {
-            return `<a href="/app/candidate-details/view/list?batch_id=${value}">${value}</a>`
-        } else {
-            return value
-        }
+  filters: filters,
+  formatter: function (value, k, column) {
+    if (column.fieldname == "batch_id") {
+      return `<a href="/app/candidate-details/view/list?batch_id=${value}">${value}</a>`
+    } else {
+      return value
     }
+  }
 };
 
