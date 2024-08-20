@@ -113,6 +113,13 @@ filters.push(
     "fieldtype": "Select",
     "label": "Remaining days",
     "options": "\n1-30 days\n30-60 days\n60-90 days\nLess than 0 days"
+  },
+  {
+    "fieldname": "job_role",
+    "fieldtype": "Link",
+    "label": "Job Role",
+    "options": "Job Role",
+    "only_select": 1,
   })
 frappe.query_reports["Placement Target vs Achievement"] = {
   filters: filters,
