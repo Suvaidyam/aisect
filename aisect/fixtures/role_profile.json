@@ -7,9 +7,6 @@
   "role_profile": "Zonal Head",
   "roles": [
    {
-    "parent": "Zonal Head",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Zonal Head"
    }
   ]
@@ -22,9 +19,6 @@
   "role_profile": "State Head",
   "roles": [
    {
-    "parent": "State Head",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "State Head"
    }
   ]
@@ -37,9 +31,6 @@
   "role_profile": "State Placement Coordinator",
   "roles": [
    {
-    "parent": "State Placement Coordinator",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "State Placement Coordinator"
    }
   ]
@@ -52,9 +43,6 @@
   "role_profile": "Center Placement Coordinator",
   "roles": [
    {
-    "parent": "Center Placement Coordinator",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Centre Placement Coordinator"
    }
   ]
@@ -67,9 +55,6 @@
   "role_profile": "Head Office - Assessment Officer",
   "roles": [
    {
-    "parent": "Head Office - Assessment Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Head Office - Assessment Officer"
    }
   ]
@@ -82,9 +67,6 @@
   "role_profile": "Head Office (PMU)",
   "roles": [
    {
-    "parent": "Head Office (PMU)",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Head Office (PMU)"
    }
   ]
@@ -97,10 +79,19 @@
   "role_profile": "Center Head",
   "roles": [
    {
-    "parent": "Center Head",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Centre Head"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-10-26 12:27:22.601158",
+  "name": "Aisect Guest",
+  "role_profile": "Aisect Guest",
+  "roles": [
+   {
+    "role": "Aisect Guest"
    }
   ]
  }

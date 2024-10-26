@@ -1,11 +1,16 @@
 {
+ "app": "aisect",
  "charts": [],
- "content": "[{\"id\":\"l8Nb4kn5U5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports List</span>\",\"col\":12}},{\"id\":\"4R48EXf7UB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Candidate Placement Aging\",\"col\":12}},{\"id\":\"XoRlnEV_MJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Candidate Placement Aging\",\"col\":3}}]",
+ "content": "[{\"id\":\"l8Nb4kn5U5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports List</span>\",\"col\":12}},{\"id\":\"4R48EXf7UB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Candidate Placement Aging\",\"col\":12}},{\"id\":\"ZyRBWBc4iK\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Placed Candidate\",\"col\":12}}]",
  "creation": "2024-06-26 13:30:54.961663",
  "custom_blocks": [
   {
    "custom_block_name": "Report List",
    "label": "Candidate Placement Aging"
+  },
+  {
+   "custom_block_name": "Placed Candidate",
+   "label": "Placed Candidate"
   }
  ],
  "docstatus": 0,
@@ -18,7 +23,7 @@
  "is_hidden": 0,
  "label": "Reports",
  "links": [],
- "modified": "2024-07-25 08:31:53.454096",
+ "modified": "2024-10-26 12:38:12.650803",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Reports",
@@ -27,8 +32,28 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Head Office (PMU)"
+  },
+  {
+   "role": "Aisect Guest"
+  },
+  {
+   "role": "Centre Head"
+  },
+  {
+   "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "State Head"
+  },
+  {
+   "role": "State Placement Coordinator"
+  }
+ ],
  "sequence_id": 5.0,
  "shortcuts": [],
- "title": "Reports"
+ "title": "Reports",
+ "type": "Workspace"
 }

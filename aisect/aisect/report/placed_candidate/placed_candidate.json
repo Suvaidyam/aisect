@@ -6,10 +6,10 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 5,
+ "idx": 7,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-10-26 11:02:35.164541",
+ "modified": "2024-10-26 12:28:36.912839",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placed Candidate",
@@ -21,28 +21,7 @@
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "System Manager"
-  },
-  {
-   "role": "Head Office (PMU)"
-  },
-  {
-   "role": "Zonal Head"
-  },
-  {
-   "role": "State Placement Coordinator"
-  },
-  {
-   "role": "State Head"
-  },
-  {
-   "role": "Centre Placement Coordinator"
-  },
-  {
-   "role": "Centre Head"
-  },
-  {
-   "role": "Head Office - Assessment Officer"
+   "role": "Aisect Guest"
   }
  ],
  "timeout": 0
