@@ -149,3 +149,17 @@ def Avg_monthly_salary():
             ca.current_status='Placed'
     """
     return frappe.db.sql(sql, as_dict=True)
+
+
+@frappe.whitelist()
+def placed_candidate():
+    sql = f"""
+        SELECT
+            COUNT(cd.candidate_id) as count
+        FROM
+            `tabCandidate Details` AS cd
+        WHERE
+            cd.placement_status='Placed'
+        """
+        
+    return frappe.db.sql(sql, as_dict=True)        

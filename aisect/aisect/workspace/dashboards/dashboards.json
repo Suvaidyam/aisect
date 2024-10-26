@@ -1,4 +1,5 @@
 {
+ "app": "aisect",
  "charts": [
   {
    "chart_name": "Candidate Aging",
@@ -59,7 +60,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-08-01 07:13:31.646743",
+ "modified": "2024-10-26 12:36:00.089667",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Dashboards",
@@ -133,9 +134,13 @@
   },
   {
    "role": "Head Office - Assessment Officer"
+  },
+  {
+   "role": "Aisect Guest"
   }
  ],
  "sequence_id": 1.0,
  "shortcuts": [],
- "title": "Dashboards"
+ "title": "Dashboards",
+ "type": "Workspace"
 }

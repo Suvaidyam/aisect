@@ -160,11 +160,11 @@ doctype_list_js = {
 # ---------------
 
 scheduler_events = {
-    # "cron":{
-    #     "* * * * *":[
-    #         "aisect.services.cron.set_candidate_status"
-    #         ]
-    # },
+    "cron":{
+        "* * * * *":[
+            "aisect.services.cron.set_candidate_status"
+            ]
+    },
     "daily": [
         "aisect.services.cron.set_candidate_status"
     ],
