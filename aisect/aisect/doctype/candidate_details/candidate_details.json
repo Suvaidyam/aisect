@@ -290,7 +290,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-31 11:27:27.998697",
+ "modified": "2024-10-26 12:58:21.364064",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
@@ -369,6 +369,16 @@
    "role": "Head Office - Assessment Officer",
    "select": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Aisect Guest",
+   "select": 1,
+   "share": 1
   }
  ],
  "show_title_field_in_link": 1,
