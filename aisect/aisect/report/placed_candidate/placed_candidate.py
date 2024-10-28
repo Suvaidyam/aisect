@@ -26,50 +26,42 @@ def execute(filters: dict | None = None):
 			"width": 150,
 		},
 		{
-			"label": _("Gender"),
-			"fieldname": "gender",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
-			"label": _("State/UT"),
-			"fieldname": "state",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
-			"label": _("Project"),
-			"fieldname": "project",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
-			"label": _("District"),
-			"fieldname": "district",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
-			"label": _("Center"),
-			"fieldname": "center",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
 			"label": _("Job Role"),
 			"fieldname": "job_role",
 			"fieldtype": "Data",
 			"width": 150,
 		},
 		{
-			"label": _("BAtch ID"),
-			"fieldname": "batch_id",
+			"label": _("Company"),
+			"fieldname": "name_of_organization",
 			"fieldtype": "Data",
 			"width": 150,
-		}
+		},
+		{
+			"label": _("Salary"),
+			"fieldname": "salary",
+			"fieldtype": "Data",
+			"width": 150,
+		},
+		
 	]
 	
-	
-	data = frappe.get_all("Candidate Details", filters=filters, fields=["full_name", "name","gender","project.project_name as project","state.state_name as state","batch_id","district.district_name as district","center_location.center_location_name as center","job_role.job_role_name as job_role"])
+	sql=f"""
+			SELECT 
+				cd.name,
+				cd.full_name,
+				jr.job_role_name AS job_role,
+				c.company_name AS name_of_organization,
+				pc.monthly_income as salary
+			FROM 
+				`tabCandidate Details` AS cd
+			LEFT JOIN 
+				`tabJob Role` AS jr ON cd.job_role = jr.name
+			LEFT JOIN 
+				`tabPlacement Child` AS pc ON cd.name = pc.parent
+			LEFT JOIN 
+				`tabCompany` AS c ON pc.name_of_organization = c.name
+			"""
+	data= frappe.db.sql(sql, as_dict=1)
 
 	return columns, data
