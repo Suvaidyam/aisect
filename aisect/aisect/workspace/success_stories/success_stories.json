@@ -1,4 +1,5 @@
 {
+ "app": "aisect",
  "charts": [],
  "content": "[{\"id\":\"5JBAwkuntO\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidate Success Stories\",\"col\":12}}]",
  "creation": "2024-06-26 13:20:52.177797",
@@ -13,7 +14,7 @@
  "is_hidden": 0,
  "label": "Success Stories",
  "links": [],
- "modified": "2024-07-25 08:31:53.376296",
+ "modified": "2024-10-28 18:19:54.329973",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Success Stories",
@@ -28,8 +29,28 @@
    "quick_list_filter": "[]"
   }
  ],
- "roles": [],
+ "roles": [
+  {
+   "role": "Head Office (PMU)"
+  },
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Centre Head"
+  },
+  {
+   "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "State Head"
+  },
+  {
+   "role": "State Placement Coordinator"
+  }
+ ],
  "sequence_id": 4.0,
  "shortcuts": [],
- "title": "Success Stories"
+ "title": "Success Stories",
+ "type": "Workspace"
 }

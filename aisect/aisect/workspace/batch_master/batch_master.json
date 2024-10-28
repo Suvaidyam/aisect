@@ -1,4 +1,5 @@
 {
+ "app": "aisect",
  "charts": [],
  "content": "[{\"id\":\"RdpzeXTp53\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Batches\",\"col\":12}}]",
  "creation": "2024-06-26 13:13:59.798099",
@@ -13,7 +14,7 @@
  "is_hidden": 0,
  "label": "Batch Master",
  "links": [],
- "modified": "2024-07-25 08:31:53.235657",
+ "modified": "2024-10-28 18:21:20.405719",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch Master",
@@ -28,8 +29,28 @@
    "quick_list_filter": "[]"
   }
  ],
- "roles": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Head Office (PMU)"
+  },
+  {
+   "role": "Centre Head"
+  },
+  {
+   "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "State Head"
+  },
+  {
+   "role": "State Placement Coordinator"
+  }
+ ],
  "sequence_id": 2.0,
  "shortcuts": [],
- "title": "Batch Master"
+ "title": "Batch Master",
+ "type": "Workspace"
 }

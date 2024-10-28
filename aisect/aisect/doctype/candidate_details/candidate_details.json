@@ -289,7 +289,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-28 10:55:27.979566",
+ "modified": "2024-10-28 18:22:54.339979",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
@@ -370,14 +370,10 @@
    "write": 1
   },
   {
-   "email": 1,
    "export": 1,
-   "print": 1,
-   "read": 1,
    "report": 1,
    "role": "Aisect Guest",
-   "select": 1,
-   "share": 1
+   "select": 1
   }
  ],
  "show_title_field_in_link": 1,
