@@ -1,4 +1,5 @@
 {
+ "app": "aisect",
  "charts": [],
  "content": "[{\"id\":\"jcMmk8qAvh\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Candidates\",\"col\":12}}]",
  "creation": "2024-06-26 13:17:56.790496",
@@ -13,7 +14,7 @@
  "is_hidden": 0,
  "label": "Placement Tracker",
  "links": [],
- "modified": "2024-07-25 08:31:53.304353",
+ "modified": "2024-10-28 18:20:47.395598",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Tracker",
@@ -28,8 +29,28 @@
    "quick_list_filter": "[]"
   }
  ],
- "roles": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Head Office (PMU)"
+  },
+  {
+   "role": "Centre Head"
+  },
+  {
+   "role": "Centre Placement Coordinator"
+  },
+  {
+   "role": "State Head"
+  },
+  {
+   "role": "State Placement Coordinator"
+  }
+ ],
  "sequence_id": 3.0,
  "shortcuts": [],
- "title": "Placement Tracker"
+ "title": "Placement Tracker",
+ "type": "Workspace"
 }
