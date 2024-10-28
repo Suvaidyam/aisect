@@ -194,8 +194,7 @@
    "fieldname": "assessment_status",
    "fieldtype": "Select",
    "label": "Assessment Status",
-   "options": "Registered\nAssessed",
-   "read_only": 1
+   "options": "Registered\nAssessed"
   },
   {
    "default": "N/A",
@@ -290,7 +289,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-26 12:58:21.364064",
+ "modified": "2024-10-28 10:55:27.979566",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Candidate Details",
