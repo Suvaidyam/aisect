@@ -14,32 +14,62 @@ def execute(filters: dict | None = None):
 	"""
 	columns = [
 		{
-			"label": _("Name"),
-			"fieldname": "first_name",
+			"label": _("Candidate ID"),
+			"fieldname": "name",
 			"fieldtype": "Data",
+			"width": 150,
 		},
 		{
-			"label": _("Candidate ID"),
-			"fieldname": "candidate_id",
+			"label": _("Full Name"),
+			"fieldname": "full_name",
 			"fieldtype": "Data",
+			"width": 150,
 		},
 		{
 			"label": _("Gender"),
 			"fieldname": "gender",
 			"fieldtype": "Data",
+			"width": 150,
 		},
+		{
+			"label": _("State/UT"),
+			"fieldname": "state",
+			"fieldtype": "Data",
+			"width": 150,
+		},
+		{
+			"label": _("Project"),
+			"fieldname": "project",
+			"fieldtype": "Data",
+			"width": 150,
+		},
+		{
+			"label": _("District"),
+			"fieldname": "district",
+			"fieldtype": "Data",
+			"width": 150,
+		},
+		{
+			"label": _("Center"),
+			"fieldname": "center",
+			"fieldtype": "Data",
+			"width": 150,
+		},
+		{
+			"label": _("Job Role"),
+			"fieldname": "job_role",
+			"fieldtype": "Data",
+			"width": 150,
+		},
+		{
+			"label": _("BAtch ID"),
+			"fieldname": "batch_id",
+			"fieldtype": "Data",
+			"width": 150,
+		}
 	]
 	
-	sql_query = """
-		SELECT
-			cd.first_name,
-			cd.candidate_id,
-			cd.gender
-		FROM
-			`tabCandidate Details` as cd
-		WHERE
-            cd.placement_status='Placed'	
-	"""
-	data = frappe.db.sql(sql_query, as_dict=True)
+	
+	data = frappe.get_all("Candidate Details", filters=filters, fields=["full_name", "name","gender","project.project_name as project","state.state_name as state","batch_id","district.district_name as district","center_location.center_location_name as center","job_role.job_role_name as job_role"])
 
 	return columns, data
