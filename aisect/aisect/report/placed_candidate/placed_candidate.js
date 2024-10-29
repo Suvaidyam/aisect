@@ -3,11 +3,93 @@
 
 frappe.query_reports["Placed Candidate"] = {
 	filters: [
-		// {
-		// 	"fieldname": "my_filter",
-		// 	"label": __("My Filter"),
-		// 	"fieldtype": "Data",
-		// 	"reqd": 1,
-		// },
+		{
+			"fieldname": "zone",
+			"label": __("Zone"),
+			"fieldtype": "Link",
+			"options": "Zone",
+			"only_select": 1,
+		},
+		{
+			"fieldname": "state",
+			"label": __("State"),
+			"fieldtype": "Link",
+			"options": "State",
+			"only_select": 1,
+			"get_query": function () {
+				var zone = frappe.query_report.get_filter_value('zone');
+				return {
+					filters: {
+						'zone': zone
+					}
+				};
+			}
+		},
+		{
+			"fieldname": "project",
+			"label": __("Project"),
+			"fieldtype": "Link",
+			"options": "Project",
+			"only_select": 1,
+			"get_query": function () {
+				var state = frappe.query_report.get_filter_value('state');
+					return {
+						filters: [
+							['Project', 'state', 'IN', [state,'']]
+						]
+					};
+			}
+		},
+		{
+			"fieldname": "district",
+			"label": __("District"),
+			"fieldtype": "Link",
+			"options": "District",
+			"only_select": 1,
+			"get_query": function () {
+				var state = frappe.query_report.get_filter_value('state');
+					return {
+						filters: {
+							'state': state
+						}
+					};
+			}
+		},
+		{
+			"fieldname": "center",
+			"label": __("Center"),
+			"fieldtype": "Link",
+			"options": "Center",
+			"only_select": 1,
+			"get_query": function () {
+				var district = frappe.query_report.get_filter_value('district');
+				return {
+					filters: {
+						'district': district
+					}
+				};
+			}
+		},
+		{
+			"fieldname": "job_role",
+			"label": __("Job Role"),
+			"fieldtype": "Link",
+			"options": "Job Role",
+			"only_select": 1,
+		},
+		{
+			"fieldname": "company_name",
+			"label": __("Company"),
+			"fieldtype": "Link",
+			"options": "Company",
+			"only_select": 1,
+		},
+		{
+			"fieldname": "monthly_income",
+			"label": __("Salary"),
+			"fieldtype": "Select",
+			"options": "\n<5K\n5K-10K\n10K-15K\n>15K",
+			"only_select": 1,
+		},
 	],
 };

@@ -26,50 +26,71 @@ def execute(filters: dict | None = None):
 			"width": 150,
 		},
 		{
-			"label": _("Gender"),
-			"fieldname": "gender",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
-			"label": _("State/UT"),
-			"fieldname": "state",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
-			"label": _("Project"),
-			"fieldname": "project",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
-			"label": _("District"),
-			"fieldname": "district",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
-			"label": _("Center"),
-			"fieldname": "center",
-			"fieldtype": "Data",
-			"width": 150,
-		},
-		{
 			"label": _("Job Role"),
 			"fieldname": "job_role",
 			"fieldtype": "Data",
 			"width": 150,
 		},
 		{
-			"label": _("BAtch ID"),
-			"fieldname": "batch_id",
+			"label": _("Company"),
+			"fieldname": "name_of_organization",
 			"fieldtype": "Data",
 			"width": 150,
-		}
+		},
+		{
+			"label": _("Salary"),
+			"fieldname": "salary",
+			"fieldtype": "Data",
+			"width": 150,
+		},	
 	]
+
+	str = ""
 	
+	if filters.zone:
+		str += f" AND cd.zone = '{filters.zone}'"
+	if filters.state:
+		str += f" AND cd.state = '{filters.state}'"
+	if filters.project:
+		str += f" AND cd.project = '{filters.project}'"
+	if filters.district:
+		str += f" AND cd.district = '{filters.district}'"
+	if filters.center:
+		str += f" AND cd.center_location = '{filters.center}'"
+	if filters.job_role:
+		str += f" AND cd.job_role = '{filters.job_role}'"
+	if	filters.company_name:
+		str += f" AND pc.name_of_organization = '{filters.company_name}'"
+	if filters.monthly_income:
+		if filters.monthly_income == "<5K":
+			str += f" AND pc.monthly_income < 5000"
+		if filters.monthly_income == "5K-10K":
+			str += f" AND pc.monthly_income BETWEEN 5000 AND 10000"
+		if filters.monthly_income == "10K-15K":
+			str += f" AND pc.monthly_income BETWEEN 10000 AND 15000"
+		if filters.monthly_income == ">15K":
+			str += f" AND pc.monthly_income > 15000"
+
 	
-	data = frappe.get_all("Candidate Details", filters=filters, fields=["full_name", "name","gender","project.project_name as project","state.state_name as state","batch_id","district.district_name as district","center_location.center_location_name as center","job_role.job_role_name as job_role"])
+	sql=f"""
+			SELECT 
+				cd.name,
+				cd.full_name,
+				jr.job_role_name AS job_role,
+				c.company_name AS name_of_organization,
+				pc.monthly_income as salary
+			FROM 
+				`tabCandidate Details` AS cd
+			LEFT JOIN 
+				`tabJob Role` AS jr ON cd.job_role = jr.name
+			LEFT JOIN 
+				`tabPlacement Child` AS pc ON cd.name = pc.parent
+			LEFT JOIN 
+				`tabCompany` AS c ON pc.name_of_organization = c.name
+			WHERE
+				cd.placement_status = 'Placed'
+				{str}	
+			"""
+	data= frappe.db.sql(sql, as_dict=1)
 
 	return columns, data
