@@ -42,9 +42,35 @@ def execute(filters: dict | None = None):
 			"fieldname": "salary",
 			"fieldtype": "Data",
 			"width": 150,
-		},
-		
+		},	
 	]
+
+	str = ""
+	
+	if filters.zone:
+		str += f" AND cd.zone = '{filters.zone}'"
+	if filters.state:
+		str += f" AND cd.state = '{filters.state}'"
+	if filters.project:
+		str += f" AND cd.project = '{filters.project}'"
+	if filters.district:
+		str += f" AND cd.district = '{filters.district}'"
+	if filters.center:
+		str += f" AND cd.center_location = '{filters.center}'"
+	if filters.job_role:
+		str += f" AND cd.job_role = '{filters.job_role}'"
+	if	filters.company_name:
+		str += f" AND pc.name_of_organization = '{filters.company_name}'"
+	if filters.monthly_income:
+		if filters.monthly_income == "<5K":
+			str += f" AND pc.monthly_income < 5000"
+		if filters.monthly_income == "5K-10K":
+			str += f" AND pc.monthly_income BETWEEN 5000 AND 10000"
+		if filters.monthly_income == "10K-15K":
+			str += f" AND pc.monthly_income BETWEEN 10000 AND 15000"
+		if filters.monthly_income == ">15K":
+			str += f" AND pc.monthly_income > 15000"
+
 	
 	sql=f"""
 			SELECT 
@@ -61,6 +87,9 @@ def execute(filters: dict | None = None):
 				`tabPlacement Child` AS pc ON cd.name = pc.parent
 			LEFT JOIN 
 				`tabCompany` AS c ON pc.name_of_organization = c.name
+			WHERE
+				cd.placement_status = 'Placed'
+				{str}	
 			"""
 	data= frappe.db.sql(sql, as_dict=1)
 
