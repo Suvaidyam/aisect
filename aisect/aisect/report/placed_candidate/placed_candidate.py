@@ -17,31 +17,31 @@ def execute(filters: dict | None = None):
 			"label": _("Candidate ID"),
 			"fieldname": "name",
 			"fieldtype": "Data",
-			"width": 150,
+			"width": 250,
 		},
 		{
 			"label": _("Full Name"),
 			"fieldname": "full_name",
 			"fieldtype": "Data",
-			"width": 150,
+			"width": 250,
 		},
 		{
 			"label": _("Job Role"),
 			"fieldname": "job_role",
 			"fieldtype": "Data",
-			"width": 150,
+			"width": 250,
 		},
 		{
 			"label": _("Company"),
 			"fieldname": "name_of_organization",
 			"fieldtype": "Data",
-			"width": 150,
+			"width": 250,
 		},
 		{
 			"label": _("Salary"),
 			"fieldname": "salary",
 			"fieldtype": "Data",
-			"width": 150,
+			"width": 250,
 		},	
 	]
 
