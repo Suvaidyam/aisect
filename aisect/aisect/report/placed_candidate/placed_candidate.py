@@ -40,7 +40,7 @@ def execute(filters: dict | None = None):
 		{
 			"label": _("Salary"),
 			"fieldname": "salary",
-			"fieldtype": "Data",
+			"fieldtype": "Int",
 			"width": 250,
 		},	
 	]
