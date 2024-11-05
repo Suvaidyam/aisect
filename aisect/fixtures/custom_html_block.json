@@ -62,21 +62,6 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
-  "html": "<div class=\"col-lg-4 col-xs-12 col-md-6 py-2\">\n  <a href=\"/app/query-report/Placed%20Candidate\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Placed Candidates</div>\n      <div class=\"data\"  style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
-  "modified": "2024-10-26 12:27:59.708714",
-  "name": "Placed Candidate",
-  "private": 0,
-  "roles": [
-   {
-    "role": "Aisect Guest"
-   }
-  ],
-  "script": "async function get_data() {\n    try {\n        const response = await frappe.call({\n            method: 'aisect.services.api.placed_candidate',\n            freeze: true,\n        });\n        \n        const data = response.message;\n        \n        return data;\n    } catch (error) {\n        console.log(error);\n    }\n}\n\n// Use async/await or .then to handle the promise\nasync function displayData() {\n    const count = await get_data();\n    const block = root_element.querySelector('.data');\n    \n    // Check if count exists and has data before accessing the first element\n    block.innerHTML = count && count[0] && count[0].count ? count[0].count : 0;\n}\n\ndisplayData();\n\n\n",
-  "style": null
- },
- {
-  "docstatus": 0,
-  "doctype": "Custom HTML Block",
   "html": "\n<div id=\"fpo_count\" class=\"row\">\n    \n</div>\n\n\n ",
   "modified": "2024-10-28 18:18:34.143827",
   "name": "Report List",
@@ -103,5 +88,20 @@
   ],
   "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n \ncallAPI({\n  method: 'aisect.services.api.candidate_placement_ging',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => { \n    let card=''\n    forms_lists.map((e)=>{\n        \n     card+= `<div class=\"col-lg-4 col-xs-12 col-md-6 py-2\">\n          <a href=\"/app/query-report/${e.url}\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n            <div class=\"p-3\">\n              <div style=\"font-size: 11.5px; font-weight: 550;\">${e.name}</div>\n              <div class=\"data\"  style=\"font-size: 20px; font-weight: bold;\">${e.value}</div>\n            </div>\n          </a>\n        </div>`\n    })\n    var fpo_count = root_element.getElementById('fpo_count').innerHTML=card;\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists[0].candidate_count : 0; \n});",
   "style": "#fpo_count{\n    /*gap:8px*/\n}\n@media (max-width: 765px) {\n   \n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"col-lg-4 col-xs-12 col-md-6 py-2\">\n  <a href=\"/app/query-report/Placed%20Candidate\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Candidate Placement Report</div>\n      <div class=\"data\"  style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
+  "modified": "2024-11-05 11:02:42.029879",
+  "name": "Placed Candidate",
+  "private": 0,
+  "roles": [
+   {
+    "role": "Aisect Guest"
+   }
+  ],
+  "script": "async function get_data() {\n    try {\n        const response = await frappe.call({\n            method: 'aisect.services.api.placed_candidate',\n            freeze: true,\n        });\n        \n        const data = response.message;\n        \n        return data;\n    } catch (error) {\n        console.log(error);\n    }\n}\n\n// Use async/await or .then to handle the promise\nasync function displayData() {\n    const count = await get_data();\n    const block = root_element.querySelector('.data');\n    \n    // Check if count exists and has data before accessing the first element\n    block.innerHTML = count && count[0] && count[0].count ? count[0].count : 0;\n}\n\ndisplayData();\n\n\n",
+  "style": null
  }
 ]

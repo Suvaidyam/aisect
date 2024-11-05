@@ -1,0 +1,41 @@
+{
+ "app": "aisect",
+ "charts": [],
+ "content": "[{\"id\":\"3etJHunvft\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Placed Candidate\",\"col\":12}}]",
+ "creation": "2024-11-05 11:00:46.605717",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Placed Candidate",
+   "label": "Placed Candidate"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "notebook-text",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Placement report",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2024-11-05 11:03:56.310040",
+ "modified_by": "Administrator",
+ "module": "Aisect",
+ "name": "Placement report",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Aisect Guest"
+  }
+ ],
+ "sequence_id": 23.0,
+ "shortcuts": [],
+ "title": "Placement report",
+ "type": "Workspace"
+}
