@@ -2,13 +2,23 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Placed Candidate"] = {
-	onload: function(report) {
-		report.page.add_action_item(__('Reset Filters'), function() {
-            frappe.query_report.filters.forEach(filter => {
-                filter.set_input(null);
-            });
-            frappe.query_report.refresh();
-        });
+	onload: async function(report) {
+		let export_btn = await report.get_menu_items().find(item => item.label === 'Export');
+		report.page.clear_menu();
+		report.page.add_menu_item(
+			__('Clear Filters'), function() {
+				frappe.query_report.filters.forEach(filter => {
+					filter.set_input(null);
+				});
+				frappe.query_report.refresh();
+			}
+		);
+		report.page.add_menu_item(
+			export_btn.label,
+			export_btn.action,
+			export_btn.standard,
+
+		);
     },
 	filters: [
 		{
