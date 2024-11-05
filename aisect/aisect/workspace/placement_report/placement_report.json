@@ -1,5 +1,4 @@
 {
- "app": "aisect",
  "charts": [],
  "content": "[{\"id\":\"3etJHunvft\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Placed Candidate\",\"col\":12}}]",
  "creation": "2024-11-05 11:00:46.605717",
@@ -13,14 +12,13 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "notebook-text",
+ "icon": "small-file",
  "idx": 0,
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Placement report",
- "link_type": "DocType",
  "links": [],
- "modified": "2024-11-05 11:03:56.310040",
+ "modified": "2024-11-05 14:17:20.952158",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement report",
@@ -36,6 +34,5 @@
  ],
  "sequence_id": 23.0,
  "shortcuts": [],
- "title": "Placement report",
- "type": "Workspace"
+ "title": "Placement report"
 }
