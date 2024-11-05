@@ -63,7 +63,7 @@
    "link_fieldname": "project"
   }
  ],
- "modified": "2024-10-30 10:22:24.038308",
+ "modified": "2024-11-05 12:26:39.422290",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Project",
@@ -138,6 +138,7 @@
    "email": 1,
    "export": 1,
    "print": 1,
+   "read": 1,
    "report": 1,
    "role": "Aisect Guest",
    "select": 1,
