@@ -14,7 +14,7 @@
  "is_hidden": 0,
  "label": "Batch Master",
  "links": [],
- "modified": "2024-10-28 18:21:20.405719",
+ "modified": "2024-11-05 11:20:38.578708",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Batch Master",
@@ -47,6 +47,9 @@
   },
   {
    "role": "State Placement Coordinator"
+  },
+  {
+   "role": "Zonal Head"
   }
  ],
  "sequence_id": 2.0,

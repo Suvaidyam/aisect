@@ -14,7 +14,7 @@
  "is_hidden": 0,
  "label": "Success Stories",
  "links": [],
- "modified": "2024-10-28 18:19:54.329973",
+ "modified": "2024-11-05 11:20:52.246365",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Success Stories",
@@ -47,6 +47,9 @@
   },
   {
    "role": "State Placement Coordinator"
+  },
+  {
+   "role": "Zonal Head"
   }
  ],
  "sequence_id": 4.0,

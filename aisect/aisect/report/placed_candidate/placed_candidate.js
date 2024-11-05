@@ -2,6 +2,14 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Placed Candidate"] = {
+	onload: function(report) {
+		report.page.add_action_item(__('Reset Filters'), function() {
+            frappe.query_report.filters.forEach(filter => {
+                filter.set_input(null);
+            });
+            frappe.query_report.refresh();
+        });
+    },
 	filters: [
 		{
 			"fieldname": "zone",

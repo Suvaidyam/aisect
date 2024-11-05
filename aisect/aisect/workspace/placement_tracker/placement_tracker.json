@@ -14,7 +14,7 @@
  "is_hidden": 0,
  "label": "Placement Tracker",
  "links": [],
- "modified": "2024-10-28 18:20:47.395598",
+ "modified": "2024-11-05 11:21:06.451735",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Placement Tracker",
@@ -47,6 +47,9 @@
   },
   {
    "role": "State Placement Coordinator"
+  },
+  {
+   "role": "Zonal Head"
   }
  ],
  "sequence_id": 3.0,
