@@ -21,8 +21,7 @@
    "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "State",
-   "options": "State",
-   "reqd": 1
+   "options": "State"
   },
   {
    "default": "Active",
@@ -37,8 +36,7 @@
    "fieldtype": "Link",
    "ignore_user_permissions": 1,
    "label": "Zone",
-   "options": "Zone",
-   "reqd": 1
+   "options": "Zone"
   },
   {
    "fieldname": "sector",
@@ -68,14 +66,13 @@
    "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "District",
-   "options": "District",
-   "reqd": 1
+   "options": "District"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-05 12:27:19.255530",
+ "modified": "2025-03-07 15:21:12.074160",
  "modified_by": "Administrator",
  "module": "Aisect",
  "name": "Company",
