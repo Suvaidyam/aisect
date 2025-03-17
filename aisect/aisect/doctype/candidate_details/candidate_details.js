@@ -243,8 +243,8 @@ frappe.ui.form.on("Placement Child", {
         }
         if (row.name_of_organization) {
             frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
-            frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
-            frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
+            // frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
+            // frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
             frm.cur_grid.refresh();
         }
         if (frm.doc.placement[row.idx - 2]?.employment_end_date && frm.doc.placement.length > 1) {
@@ -286,14 +286,14 @@ frappe.ui.form.on("Placement Child", {
         if (row.name_of_organization) {
             setTimeout(() => {
                 frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 1;
-                frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
-                frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
+                // frm.cur_grid.grid_form.fields_dict.state.df.read_only = 1;
+                // frm.cur_grid.grid_form.fields_dict.district.df.read_only = 1;
                 frm.cur_grid.refresh();
             }, 500);
         } else {
             frm.cur_grid.grid_form.fields_dict.type_of_organization.df.read_only = 0;
-            frm.cur_grid.grid_form.fields_dict.state.df.read_only = 0;
-            frm.cur_grid.grid_form.fields_dict.district.df.read_only = 0;
+            // frm.cur_grid.grid_form.fields_dict.state.df.read_only = 0;
+            // frm.cur_grid.grid_form.fields_dict.district.df.read_only = 0;
             frm.cur_grid.refresh();
         }
     },
